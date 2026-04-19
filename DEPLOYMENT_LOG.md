@@ -4,6 +4,37 @@ A running record of every build, deploy, and meaningful change to the site. Newe
 
 ---
 
+## v0.3.0 — Inventory expansion: +113 machines (280 total)
+**Date:** 2026-04-19
+**Status:** ✅ Live
+**Commit:** "feat: add 109 more machines (Aristocrat Mark V, IGT I+ 044, IGT I+ 3902 9-line, IGT S2000 9-top)"
+
+### What was added
+After the user pointed me at additional category URLs, I retried the WebFetch scrape and four pages rendered this time:
+- `/aristocrat-mark-v` → **3** machines (50 Dragons, Buffalo, Tiki Torch) — first Aristocrats!
+- `/igt-video-044-games` → **17** I+ 044 video slots (Cleopatra 2, Wolf Run, Davinci Diamonds, White Orchid, Treasures of Troy, Nefertiti, Coyote Moon, Cats, Bombay, etc.)
+- `/igtvideoslots9` → **20** I+ 3902 9-line video slots (Cleopatra, Cops & Donuts, Creature of the Black Lagoon, Dragons Gold, Enchanted Unicorn, Evel Knievel, Ghost Island, Kingpin Bowling, Wild Taxi, etc.)
+- `/igts2000-9-top` → **69** IGT S2000 9-inch-top mechanical reels (Triple Diamond, Double R/W/B, Wild Thing Devil, Five Times Pay variants, Tabasco, Phantom of the Opera, Jekyl & Hyde, etc.)
+
+### Totals now
+- **280** `/machines/*` URLs in sitemap (was 167)
+- Aristocrat brand page now has real inventory
+- Every product uses its real photo from usedslotshop.com's CDN
+
+### Still missing (same SPA rendering issue)
+- WMS Bluebird 2, Bluebird 3, Gamefield XD
+- Aruze Innovator, Muso
+- Konami Cube X, S23, S32
+These pages still return empty under WebFetch. Getting them requires a headless-browser scrape (Playwright) which needs Node installed locally.
+
+### Verified live
+- `/shop` — 280 products
+- `/shop/aristocrat` — 200
+- `/machines/aristocrat-mark-v-buffalo` — 200
+- `/machines/igt-video-044-wolf-run` — 200
+
+---
+
 ## v0.2.1 — Google Analytics 4
 **Date:** 2026-04-19
 **Status:** ✅ Live
