@@ -4,6 +4,59 @@ A running record of every build, deploy, and meaningful change to the site. Newe
 
 ---
 
+## v0.4.0 — Owner admin CMS, Phase 1 (forms + draft/publish/history)
+**Date:** 2026-04-19
+**Status:** ✅ Live, awaiting ADMIN_PASSWORD to unlock
+**Commit:** "feat: Phase 1 admin CMS…" + "fix: wrap LoginForm in Suspense"
+
+### What shipped
+- **Auth:** `/admin/login` with password + signed HTTP-only cookie (7-day session)
+- **Middleware:** guards `/admin/*` and `/api/admin/*` on the edge
+- **Dashboard:** `/admin` shows drafts + admin-published machines with stats + env-health panel
+- **Add:** `/admin/new` form with photo upload, all fields, AI-research button (Phase 2)
+- **Edit:** `/admin/edit/[slug]` full editor + delete
+- **History:** `/admin/history` shows last 50 commits to `data/machines-custom.json` with links to GitHub diffs
+- **Chat placeholder:** `/admin/chat` (wired in Phase 2 once Anthropic key is set)
+
+### API routes (Node runtime, auth-guarded)
+- `POST /api/admin/login` — verify password, set cookie
+- `POST /api/admin/logout` — clear cookie
+- `GET/POST/PATCH/DELETE /api/admin/machines` — CRUD via GitHub Contents API
+- `POST /api/admin/upload` — image upload, commits to `public/uploads/{slug}/`
+- `GET /api/admin/history` — commit log
+- `POST /api/admin/research` — Claude vision + text → structured machine data (needs ANTHROPIC_API_KEY)
+
+### Storage
+- **No database.** Everything is git-backed.
+- New machines: `data/machines-custom.json`
+- Images: `public/uploads/{slug}/{filename}`
+- Version history: git log
+- Rollback: git revert
+
+### How it works end-to-end
+1. Owner logs in → cookie set
+2. Uploads photo → API commits to `public/uploads/` via GitHub API
+3. Fills form (or clicks "AI research" — Phase 2)
+4. Saves as draft → commits `machines-custom.json`
+5. Reviews, clicks "Publish live" → status changes to "published" + commit
+6. Vercel auto-redeploys → live in ~60 seconds
+
+### Vercel env vars set by build agent
+- ✅ `ADMIN_SESSION_SECRET` (random 256-bit hex)
+- ✅ `GITHUB_TOKEN`, `GITHUB_OWNER`, `GITHUB_REPO`, `GITHUB_BRANCH`
+
+### Vercel env vars still needed (user must set)
+- ❌ `ADMIN_PASSWORD` — owner picks this. Until set, the login page will report "Admin not configured yet"
+- ❌ `ANTHROPIC_API_KEY` — for Phase 2 chat agent + AI research button on the form. Not required for Phase 1 operation
+
+### Sanity checks (all green)
+- `/admin/login` → 200
+- `/admin` → 307 (redirects to login, correct)
+- `/api/admin/machines` → 401 (correctly blocked)
+- `/` → 200 (main site unaffected)
+
+---
+
 ## v0.3.1 — Inventory completeness verified via headless-browser scrape
 **Date:** 2026-04-19
 **Status:** ✅ No redeploy needed — inventory already complete
