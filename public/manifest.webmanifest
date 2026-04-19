@@ -1,0 +1,12 @@
+{
+  "name": "Used Slot Shop",
+  "short_name": "UsedSlotShop",
+  "description": "Refurbished casino slot machines for sale — shipped nationwide.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#06070a",
+  "theme_color": "#ffb300",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
