@@ -5,6 +5,9 @@ const config: NextConfig = {
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com" },
       { protocol: "https", hostname: "cdn.usedslotshop.com" },
+      { protocol: "https", hostname: "images.leadconnectorhq.com" },
+      { protocol: "https", hostname: "assets.cdn.filesafe.space" },
+      { protocol: "https", hostname: "cdn.filesafe.space" },
     ],
   },
   compress: true,
