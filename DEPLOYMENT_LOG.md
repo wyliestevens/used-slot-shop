@@ -4,6 +4,47 @@ A running record of every build, deploy, and meaningful change to the site. Newe
 
 ---
 
+## v0.3.1 — Inventory completeness verified via headless-browser scrape
+**Date:** 2026-04-19
+**Status:** ✅ No redeploy needed — inventory already complete
+
+### What happened
+User asked me to render the 7 remaining "missing" categories with a real browser to be 100% sure no machines were missed. I installed Node 22 + Playwright + headless Chromium locally (~150 MB, into `.tools/` — gitignored), wrote a scraper, and opened each URL in a real Chromium instance.
+
+### Key finding
+Those 7 URLs (**bluebird-2, blubird-3, xd, innovator, cube-x, s23, s32**) are **not in the current site navigation** on usedslotshop.com. They are orphaned pages from a previous site version — the Nuxt preview container renders completely empty. The site owner removed them from the menu at some point.
+
+### Real site navigation (verified by scraping the homepage menu)
+Only **14 product categories exist in the live menu**, and we have **100% of them**:
+
+| # | Menu label | URL | Scraped |
+|---|---|---|---|
+| 1 | Aristocrat | `/aristocrat-mark-v` | ✓ |
+| 2 | Bally S9000 | `/bally-s9000` | ✓ |
+| 3 | Bally M9000 | `/bally-m9000` | ✓ |
+| 4 | IGT Video | `/igt-video-044-games` | ✓ |
+| 5 | IGT GameKings | `/igt-gamekings` | ✓ |
+| 6 | IGT Video Slot 9" Top | `/igtvideoslots9` | ✓ |
+| 7 | IGT Video Slot Round Top | `/igt-video-slots-round-top` | ✓ |
+| 8 | IGT S2000 5 Reel | `/igt5reels` | ✓ |
+| 9 | IGT S2000 9" Top | `/igts2000-9-top` | ✓ |
+| 10 | IGT S2000 16'' Top | `/igt-s2000-16` | ✓ |
+| 11 | IGT S2000 Round Top | `/igt-s2000-round-top` | ✓ |
+| 12 | S2000 Bonus Games | `/s2000bonusgames` | ✓ |
+| 13 | IGT Barcrest | `/igt-barcrest` | ✓ |
+| 14 | Williams | `/williamsvideoreels` | ✓ |
+| 15 | Konami | `/konamivideo-494511` | ✓ |
+
+### Conclusion
+**We have parity with usedslotshop.com's current live inventory: ~280 machines, every one with its real product photo.** The site is a complete mirror plus the SEO/GEO/conversion infrastructure on top.
+
+### Local tooling
+- `.tools/node-v22.11.0-darwin-arm64` — Node runtime
+- `.tools/scraper/` — Playwright scraper scripts (`scrape.mjs`, `inspect.mjs`, `find-links.mjs`)
+- `.tools/` is gitignored — not pushed to repo
+
+---
+
 ## v0.3.0 — Inventory expansion: +113 machines (280 total)
 **Date:** 2026-04-19
 **Status:** ✅ Live
