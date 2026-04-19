@@ -4,6 +4,29 @@ A running record of every build, deploy, and meaningful change to the site. Newe
 
 ---
 
+## v0.2.1 — Google Analytics 4
+**Date:** 2026-04-19
+**Status:** ✅ Live
+**Commit:** `0515397` — "Add Google Analytics 4 (G-NE8NPQ4R7N) via next/script"
+**Deployment ID:** `dpl_4AkmdQ4tXqXqpVuQdGV6mdMchUZZ`
+
+### Change
+- Added GA4 measurement ID `G-NE8NPQ4R7N` to `app/layout.tsx` via `next/script` with `strategy="afterInteractive"`.
+- Loads once in the root layout, which means GA4 fires on every page automatically.
+- Two `<Script>` tags: one for `gtag.js` (async), one inline for `window.dataLayer` + `gtag('config', ...)`.
+
+### Verified live on
+- `/` ✓
+- `/shop` ✓
+- `/machines/wms-gold-fish` ✓
+- `/state-legality/arizona` ✓
+
+### Next step for you
+- Open GA4 → Reports → Realtime. Load https://used-slot-shop.vercel.app/ in a browser, confirm your visit appears.
+- If you want event tracking (e.g. "Request a Quote" clicks, phone-number taps), let me know and I'll add those `gtag('event', ...)` calls.
+
+---
+
 ## v0.2.0 — Full inventory import + real images
 **Date:** 2026-04-19
 **Status:** ✅ Live
