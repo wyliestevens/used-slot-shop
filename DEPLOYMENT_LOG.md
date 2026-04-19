@@ -21,6 +21,11 @@ A running record of every build, deploy, and meaningful change to the site. Newe
 - `/machines/wms-gold-fish` ✓
 - `/state-legality/arizona` ✓
 
+### GA4 reference info
+- Measurement ID (in use): `G-NE8NPQ4R7N`
+- Stream ID (for future Measurement Protocol / server-side events): `14398470828`
+- API Secret: not yet generated — create one in GA4 → Admin → Data Streams → Measurement Protocol if we add server-side tracking
+
 ### Next step for you
 - Open GA4 → Reports → Realtime. Load https://used-slot-shop.vercel.app/ in a browser, confirm your visit appears.
 - If you want event tracking (e.g. "Request a Quote" clicks, phone-number taps), let me know and I'll add those `gtag('event', ...)` calls.
