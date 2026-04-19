@@ -7,7 +7,7 @@ import { Section } from "@/components/Section";
 import TrustBar from "@/components/TrustBar";
 import MachineCard from "@/components/MachineCard";
 import Faq from "@/components/Faq";
-import { machines } from "@/data/machines";
+import { machines, featuredMachines } from "@/data/machines";
 import { faqs } from "@/data/faq";
 import { site } from "@/lib/site";
 
@@ -18,7 +18,7 @@ export const metadata = buildMetadata({
   path: "/",
 });
 
-const featured = machines.slice(0, 6);
+const featured = featuredMachines(8);
 
 const testimonials = [
   {
@@ -113,14 +113,14 @@ export default function Home() {
         title="In-stock, tested, and ready to ship."
         subtitle="Every machine is stripped, cleaned, bench-tested, and warrantied. No surprises, no guesswork."
       >
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {featured.map((m) => (
             <MachineCard key={m.slug} m={m} />
           ))}
         </div>
         <div className="mt-10 text-center">
           <Link href="/shop" className="btn-outline">
-            View All {machines.length}+ Machines <ArrowRight className="h-4 w-4" />
+            View All {machines.length} Machines <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </Section>

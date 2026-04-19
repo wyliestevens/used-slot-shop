@@ -381,5 +381,29 @@ export function relatedMachines(slug: string, limit = 3) {
     .filter(
       (m) => m.slug !== slug && (m.brand === current.brand || m.type === current.type)
     )
+    .sort((a, b) => {
+      const aScore = (a.brand === current.brand ? 2 : 0) + (a.type === current.type ? 1 : 0);
+      const bScore = (b.brand === current.brand ? 2 : 0) + (b.type === current.type ? 1 : 0);
+      return bScore - aScore;
+    })
     .slice(0, limit);
+}
+
+export function featuredMachines(limit = 8): Machine[] {
+  // Spread featured picks across every brand for a diverse homepage grid.
+  const perBrand = new Map<string, Machine[]>();
+  for (const m of machines) {
+    if (!perBrand.has(m.brand)) perBrand.set(m.brand, []);
+    perBrand.get(m.brand)!.push(m);
+  }
+  const out: Machine[] = [];
+  let idx = 0;
+  while (out.length < limit && idx < 50) {
+    for (const list of perBrand.values()) {
+      if (out.length >= limit) break;
+      if (list[idx]) out.push(list[idx]);
+    }
+    idx++;
+  }
+  return out.slice(0, limit);
 }

@@ -4,6 +4,43 @@ A running record of every build, deploy, and meaningful change to the site. Newe
 
 ---
 
+## v0.2.0 — Full inventory import + real images
+**Date:** 2026-04-19
+**Status:** ✅ Live
+**Commit:** `15c0f07` — "feat: import full inventory (~174 machines) with real product images"
+**Deployment ID:** `dpl_DkT3tobrEsTejfbESX4BDsC6T1Jo`
+
+### Change
+- Scraped usedslotshop.com sitemap + 15+ category pages and extracted every product card
+- Replaced 12 placeholder products with **~168 real machines** (167 unique slugs in sitemap)
+- Every machine now uses the **real product image** from usedslotshop.com's CDN (leadconnectorhq.com → assets.cdn.filesafe.space)
+- Added image CDN hosts to `next.config.ts` `images.remotePatterns` so `next/image` optimizes them
+- Introduced `featuredMachines(n)` helper that spreads homepage picks across every brand (not just IGT)
+- Improved `relatedMachines()` to prioritize same-brand matches before same-type
+
+### Inventory by brand
+| Brand | Count |
+|---|---|
+| IGT (Barcrest S2000, I+ 3902 video, S2000 reel + bonus, Game King) | ~100 |
+| Bally (Alpha 1 M9000, S9000 mechanical) | 17 |
+| Konami (K2V video, including dual-screen Extra Rewards) | 14 |
+| WMS / Williams (BB1 video) | 26 |
+| Aristocrat / Ainsworth / Aruze | 0 (pages remain; SPA scraping missed these — retry in a future pass) |
+
+### Sitemap now contains
+- 167 `/machines/*` product URLs
+- 7 `/shop/*` brand pages
+- 50 `/state-legality/*` state pages
+- 10 static pages
+- **234 total indexed URLs**
+
+### Known limitations (to address)
+- Some usedslotshop.com pages (bluebird-2, innovator, cube-x, xd, blubird-3, s23, s32) are client-rendered SPAs that WebFetch couldn't render — missed approximately 150–300 additional machines including Bluebird 2 / 3, Aruze Innovator, Konami Cube X / S23 / S32, WMS XD. Can be captured in a future pass with a headless-browser scraping approach.
+- Images are hot-linked through their CDN; if usedslotshop.com ever takes those URLs down, we lose imagery. Worth downloading + self-hosting if this becomes a real business.
+- Prices, descriptions, and specs are sourced directly from their site — if they update, we need to re-sync.
+
+---
+
 ## v0.1.1 — Google Search Console verification
 **Date:** 2026-04-19
 **Status:** ✅ Live
