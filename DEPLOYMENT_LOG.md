@@ -4,6 +4,28 @@ A running record of every build, deploy, and meaningful change to the site. Newe
 
 ---
 
+## v0.1.1 — Google Search Console verification
+**Date:** 2026-04-19
+**Status:** ✅ Live
+**Commit:** `a5bfdfd` — "Add Google Search Console verification token"
+**Deployment ID:** `dpl_oDEwcoRjjbB1sK2ZL8qYHP9adD7e`
+
+### Change
+- Set `verification.google` in `app/layout.tsx` to `y3L6r7e-sN4GGbNWsXadOrcSa84qikHhsojKosjBh60`.
+- Next.js Metadata API emits `<meta name="google-site-verification" ...>` into `<head>` on every route automatically.
+
+### Verified on production
+- `/` ✓
+- `/shop` ✓
+- `/machines/igt-s2000-double-diamond` ✓
+- `/state-legality/arizona` ✓
+
+### Next step for you
+- In Google Search Console, click "Verify" on the HTML-tag method for `used-slot-shop.vercel.app` (or your custom domain once pointed).
+- Submit `/sitemap.xml` inside GSC once verified.
+
+---
+
 ## v0.1.0 — Initial scaffold, content & first production deploy
 **Date:** 2026-04-19
 **Status:** ✅ Live at https://used-slot-shop.vercel.app
