@@ -1,11 +1,14 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
 import { organizationJsonLd } from "@/lib/seo";
 import { site } from "@/lib/site";
+
+const GA_ID = "G-NE8NPQ4R7N";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
 const grotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-display", display: "swap" });
@@ -52,6 +55,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${inter.variable} ${grotesk.variable}`}>
       <body>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GA_ID}');`}
+        </Script>
         <JsonLd data={organizationJsonLd()} />
         <a
           href="#main"
