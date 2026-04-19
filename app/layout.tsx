@@ -35,8 +35,7 @@ export const metadata: Metadata = {
   publisher: site.legalName,
   formatDetection: { telephone: true, address: true, email: true },
   verification: {
-    // Replace with real verification token after Search Console setup.
-    google: "ADD-GOOGLE-SEARCH-CONSOLE-VERIFICATION-HERE",
+    google: "y3L6r7e-sN4GGbNWsXadOrcSa84qikHhsojKosjBh60",
   },
   icons: { icon: "/favicon.svg", apple: "/apple-touch-icon.png" },
   manifest: "/manifest.webmanifest",
