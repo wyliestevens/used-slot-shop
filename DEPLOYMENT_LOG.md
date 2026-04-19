@@ -4,9 +4,9 @@ A running record of every build, deploy, and meaningful change to the site. Newe
 
 ---
 
-## v0.1.0 — Initial scaffold & content (in progress)
+## v0.1.0 — Initial scaffold, content & first production deploy
 **Date:** 2026-04-19
-**Status:** 🟡 Building
+**Status:** ✅ Live at https://used-slot-shop.vercel.app
 
 ### What was built
 - **Framework:** Next.js 15 (App Router) + React 19 + TypeScript + Tailwind CSS
@@ -56,9 +56,28 @@ A running record of every build, deploy, and meaningful change to the site. Newe
 - `/api/contact` — form submission endpoint
 
 ### Deployment
-- **GitHub repo:** TBD (pushed at end of v0.1.0)
-- **Vercel project:** TBD
-- **Production URL:** TBD
+- **GitHub repo:** https://github.com/wyliestevens/used-slot-shop
+- **Vercel project:** `prj_35CpsSpEm4pti3vQsmizv9Yx5Wa3` (team `wylies-projects-5e343842`)
+- **Production URL:** https://used-slot-shop.vercel.app
+- **Aliases:** `used-slot-shop-wylies-projects-5e343842.vercel.app`, `used-slot-shop-git-main-wylies-projects-5e343842.vercel.app`
+- **Deployment ID (current prod):** `dpl_5gJAF2Xh1RKWAnxT6xFNP4uTEVwz`
+- **Commits shipped:**
+  - `4450aa0` Initial scaffold: Next.js 15 + content + SEO
+  - `9adea43` Bump Next.js to 15.4.0 (CVE-2025-29927 patch)
+  - `1f...` Bump Next.js to 16.2 for latest security patches → build succeeded
+- **Deployment protection:** disabled (public access)
+
+### Smoke test (all returned 200)
+- `/` home
+- `/shop` catalog
+- `/machines/igt-s2000-double-diamond` product
+- `/state-legality` hub
+- `/sitemap.xml`, `/robots.txt`, `/llms.txt`
+
+### Build issues encountered & resolved
+1. Vercel blocked Next.js 15.1.6 as vulnerable → bumped to 15.4.0.
+2. Vercel still flagged 15.4.0 → bumped to `^16.2.0` which passed.
+3. First deploy returned 401 (Vercel Hobby deployment protection) → disabled via API PATCH on `ssoProtection`.
 
 ---
 
