@@ -481,7 +481,54 @@ const _uniqueSeeds = SEEDS.map((s) => {
   return [slug, ...s.slice(1)] as Seed;
 });
 
-export const machines: Machine[] = _uniqueSeeds.map(buildMachine);
+const _seedMachines: Machine[] = _uniqueSeeds.map(buildMachine);
+
+// Merge in admin-managed machines from data/machines-custom.json.
+// Only `status: "published"` entries are rendered on the public site.
+// Build-time import — no runtime I/O.
+import customRaw from "./machines-custom.json";
+type CustomEntry = {
+  slug: string;
+  name: string;
+  brand: BrandSlug;
+  type: MachineType;
+  price: number;
+  image: string;
+  description: string;
+  highlights?: string[];
+  specs?: Record<string, string>;
+  cabinet?: string;
+  condition?: "Professionally Refurbished" | "Collector Grade" | "Like New";
+  inStock?: number;
+  status: "draft" | "published";
+};
+
+const customPublished: Machine[] = (customRaw as CustomEntry[])
+  .filter((c) => c.status === "published")
+  .map((c) => {
+    const isReel = c.type === "reel";
+    return {
+      slug: c.slug,
+      name: c.name,
+      brand: c.brand,
+      brandLabel: brandLabels[c.brand],
+      type: c.type,
+      price: c.price,
+      denomination: isReel ? "$0.25" : "$0.01",
+      reels: c.type === "video-poker" ? 0 : isReel ? 3 : 5,
+      cabinet: c.cabinet,
+      condition: c.condition ?? "Professionally Refurbished",
+      inStock: c.inStock ?? 1,
+      image: c.image,
+      tagline: c.description.length > 120 ? c.description.slice(0, 117) + "…" : c.description,
+      description: c.description,
+      highlights: c.highlights ?? defaultHighlights(c.type),
+      specs: c.specs ?? defaultSpecsFor(c.brand, c.type, c.cabinet),
+    };
+  });
+
+// Custom entries first so the dashboard's latest additions surface on top.
+export const machines: Machine[] = [...customPublished, ..._seedMachines];
 
 export function machinesByBrand(brand: string) {
   return machines.filter((m) => m.brand === brand);
