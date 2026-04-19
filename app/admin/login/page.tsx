@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import LoginForm from "./LoginForm";
 import type { Metadata } from "next";
 
@@ -5,6 +6,8 @@ export const metadata: Metadata = {
   title: "Admin Login",
   robots: { index: false, follow: false },
 };
+
+export const dynamic = "force-dynamic";
 
 export default function LoginPage() {
   return (
@@ -19,7 +22,9 @@ export default function LoginPage() {
             Manage your inventory. Sign in with your admin password.
           </p>
         </div>
-        <LoginForm />
+        <Suspense fallback={<div className="card p-6 text-ink-400 text-sm">Loading…</div>}>
+          <LoginForm />
+        </Suspense>
       </div>
     </div>
   );
