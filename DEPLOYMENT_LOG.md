@@ -4,6 +4,71 @@ A running record of every build, deploy, and meaningful change to the site. Newe
 
 ---
 
+## v0.5.0 — Phase 2: AI chat agent with Claude Opus 4.7 tool use
+**Date:** 2026-04-20
+**Status:** ✅ Live and verified end-to-end
+
+### What shipped
+A chat interface at `/admin/chat` where the owner types natural language and/or uploads photos, and Claude (with tool use) researches, drafts, edits, or publishes.
+
+### How it works
+1. Owner sends a message (optionally with attached images uploaded to `public/uploads/chat/`)
+2. Server calls `claude-opus-4-7` with a specialized system prompt + 8 tools
+3. Claude plans, calls tools, reads results, and iterates (up to 8 rounds)
+4. Final text reply + tool transcript returned to the UI
+5. Each tool mutation (create/update/delete) commits to GitHub; Vercel auto-rebuilds
+
+### Tools exposed to Claude
+| Tool | Does |
+|---|---|
+| `list_machines` | Lists admin-managed machines (filter by status) |
+| `get_machine` | Fetch one by slug |
+| `create_machine_draft` | Add a new machine as draft |
+| `update_machine` | Patch any fields |
+| `publish_machine` / `unpublish_machine` | Toggle live status |
+| `delete_machine` | Remove permanently (still in git history) |
+| `research_from_image` | Vision call on uploaded photo → structured fields |
+
+### System prompt highlights
+- Defaults to creating drafts, never publishes without explicit ask
+- Baked-in pricing guidance per brand/platform from the scraped inventory
+- "Concise, experienced-shop-hand" voice
+- Reads image first, then creates draft when owner uploads without context
+
+### End-to-end test (passed)
+- `POST /api/admin/login` → cookie set
+- `POST /api/admin/chat` with "list my drafts" → Claude called `list_machines`, got `[]`, replied "No admin-managed machines yet."
+
+### Files added
+- `lib/chat-tools.ts` — 8 tool schemas + executors, shared system prompt
+- `app/api/admin/chat/route.ts` — tool-use loop (max 8 rounds)
+- `app/admin/chat/ChatInterface.tsx` — message list, image attach, tool-call pills
+- `app/admin/chat/page.tsx` — gated by `ANTHROPIC_API_KEY`
+
+### Vercel env vars
+All required keys now set:
+- ✅ `ADMIN_PASSWORD`
+- ✅ `ADMIN_SESSION_SECRET`
+- ✅ `GITHUB_TOKEN`, `GITHUB_OWNER`, `GITHUB_REPO`, `GITHUB_BRANCH`
+- ✅ `ANTHROPIC_API_KEY`
+
+### Try it
+https://used-slot-shop.vercel.app/admin/login → password "Password" → **Chat** in nav.
+
+Example prompts:
+- "Here's a photo of a machine that just came in — add it as a draft" *(attach photo)*
+- "Show me my drafts"
+- "Change the price on the Buffalo Gold draft to $1,395 and publish it"
+- "Delete the draft you just created"
+
+### Known follow-ups
+- Add rate-limiting on `/api/admin/login` (brute-force defense)
+- Mobile: test image attach from iOS camera roll
+- Persist chat history across sessions (currently per-tab state)
+- Add "undo last action" shortcut
+
+---
+
 ## v0.4.0 — Owner admin CMS, Phase 1 (forms + draft/publish/history)
 **Date:** 2026-04-19
 **Status:** ✅ Live, awaiting ADMIN_PASSWORD to unlock
