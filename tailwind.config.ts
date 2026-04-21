@@ -5,30 +5,52 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Brand palette — coral/salmon, sampled from the "USED" wordmark in the logo.
         brand: {
-          50: "#fff8e1",
-          100: "#ffecb3",
-          200: "#ffe082",
-          300: "#ffd54f",
-          400: "#ffca28",
-          500: "#ffb300",
-          600: "#ff8f00",
-          700: "#e65100",
-          800: "#bf360c",
-          900: "#8c1c0c",
+          50: "#fff4f0",
+          100: "#ffe2d7",
+          200: "#ffcab9",
+          300: "#ffae94",
+          400: "#f59679",
+          500: "#ef7a58",
+          600: "#d65a3d",
+          700: "#a8472f",
+          800: "#7d3524",
+          900: "#502318",
         },
+        // Accent palette — sage mint, sampled from the slot-machine icon + "SLOT SHOP" text.
+        accent: {
+          50: "#f0f7f4",
+          100: "#deece4",
+          200: "#c2ded1",
+          300: "#a5cfbf",
+          400: "#8bbfaa",
+          500: "#73ae93",
+          600: "#5a9278",
+          700: "#46715d",
+          800: "#365544",
+          900: "#243a30",
+        },
+        // Cream — the logo's background, used sparingly as a warm neutral.
+        cream: {
+          50: "#faf6f0",
+          100: "#f5efe3",
+          200: "#ebe1cd",
+        },
+        // Ink — dark-mode foundation. Warmed very slightly with green undertone
+        // so coral + mint read as cohesive against it.
         ink: {
-          950: "#06070a",
-          900: "#0b0d14",
-          800: "#11141d",
-          700: "#1a1e2a",
-          600: "#262b3a",
-          500: "#3a3f52",
-          400: "#646a80",
-          300: "#9aa0b4",
-          200: "#c9cddb",
-          100: "#e6e8f0",
-          50: "#f4f5f9",
+          950: "#08090c",
+          900: "#0d1014",
+          800: "#151922",
+          700: "#1f2431",
+          600: "#2c3243",
+          500: "#424858",
+          400: "#6b7289",
+          300: "#9ea4ba",
+          200: "#cbd0de",
+          100: "#e7e9f1",
+          50: "#f5f6fa",
         },
       },
       fontFamily: {
@@ -36,11 +58,18 @@ const config: Config = {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
       },
       boxShadow: {
-        glow: "0 0 0 1px rgba(255,179,0,.35), 0 10px 40px -10px rgba(255,143,0,.35)",
+        glow:
+          "0 0 0 1px rgba(239,122,88,.35), 0 10px 40px -10px rgba(239,122,88,.35)",
+        mint:
+          "0 0 0 1px rgba(139,191,170,.35), 0 10px 40px -10px rgba(115,174,147,.3)",
       },
       backgroundImage: {
+        // Kept the old class name so existing components still compile;
+        // gradient now uses coral + sage, not gold.
         "radial-gold":
-          "radial-gradient(ellipse at top, rgba(255,179,0,.25), transparent 55%), radial-gradient(ellipse at bottom, rgba(191,54,12,.2), transparent 55%)",
+          "radial-gradient(ellipse at top, rgba(239,122,88,.22), transparent 55%), radial-gradient(ellipse at bottom, rgba(115,174,147,.18), transparent 55%)",
+        "radial-brand":
+          "radial-gradient(ellipse at top, rgba(239,122,88,.22), transparent 55%), radial-gradient(ellipse at bottom, rgba(115,174,147,.18), transparent 55%)",
       },
     },
   },

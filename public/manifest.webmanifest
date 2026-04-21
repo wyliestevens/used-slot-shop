@@ -4,9 +4,9 @@
   "description": "Refurbished casino slot machines for sale — shipped nationwide.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#06070a",
-  "theme_color": "#ffb300",
+  "background_color": "#08090c",
+  "theme_color": "#ef7a58",
   "icons": [
-    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+    { "src": "/logo.png", "sizes": "any", "type": "image/png" }
   ]
 }
