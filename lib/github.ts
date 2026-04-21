@@ -123,6 +123,64 @@ export async function saveCustomMachines(machines: CustomMachine[], message: str
   });
 }
 
+export type UploadedImage = {
+  path: string;
+  name: string;
+  url: string;
+  size: number;
+  sha: string;
+};
+
+// Walks `public/uploads/` recursively via the Contents API and returns every
+// file in it. URLs point at the branch tip (not a pinned commit) so the
+// library always reflects the latest version of a file if it was overwritten.
+export async function listUploads(): Promise<UploadedImage[]> {
+  const root = "public/uploads";
+  const out: UploadedImage[] = [];
+
+  async function walk(path: string) {
+    let entries: any[];
+    try {
+      entries = await gh(`/contents/${encodeURI(path)}?ref=${BRANCH}`);
+    } catch (err) {
+      // Missing directory = empty library, not an error.
+      if (String(err).includes("404")) return;
+      throw err;
+    }
+    if (!Array.isArray(entries)) return;
+    // Kick off dir walks in parallel so large libraries don't crawl serially.
+    const dirJobs: Promise<void>[] = [];
+    for (const entry of entries) {
+      if (entry.type === "dir") {
+        dirJobs.push(walk(entry.path));
+      } else if (entry.type === "file") {
+        out.push({
+          path: entry.path,
+          name: entry.name,
+          size: Number(entry.size) || 0,
+          sha: entry.sha,
+          url: `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/${entry.path}`,
+        });
+      }
+    }
+    await Promise.all(dirJobs);
+  }
+
+  await walk(root);
+  return out;
+}
+
+export async function deleteFile(path: string, sha: string, message: string) {
+  return gh(`/contents/${encodeURI(path)}`, {
+    method: "DELETE",
+    body: JSON.stringify({
+      message,
+      sha,
+      branch: BRANCH,
+    }),
+  });
+}
+
 export async function uploadImage(opts: { slug: string; filename: string; base64: string }) {
   const safeName = opts.filename.replace(/[^a-zA-Z0-9._-]/g, "-");
   const path = `public/uploads/${opts.slug}/${safeName}`;
