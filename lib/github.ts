@@ -123,6 +123,43 @@ export async function saveCustomMachines(machines: CustomMachine[], message: str
   });
 }
 
+// ─── Seed machine overrides ──────────────────────────────────────────────────
+// Admin edits to the 280 static seed machines don't modify the TS source —
+// they live in this overlay file. Each entry is a slug + partial patch
+// (price, description, image, etc.), plus an optional `hidden` flag for
+// unpublishing a seed without deleting its record. `data/machines.ts` merges
+// seeds with overrides at build time.
+export type MachineOverride = {
+  slug: string;
+  patch?: Record<string, any>;
+  hidden?: boolean;
+  updatedAt: string;
+};
+
+const OVERRIDES_PATH = "data/machines-overrides.json";
+
+export async function loadMachineOverrides(): Promise<{ overrides: MachineOverride[]; sha: string | null }> {
+  const file = await readFile(OVERRIDES_PATH);
+  if (!file) return { overrides: [], sha: null };
+  const parsed = JSON.parse(file.content || "[]") as MachineOverride[];
+  return { overrides: Array.isArray(parsed) ? parsed : [], sha: file.sha };
+}
+
+export async function saveMachineOverrides(
+  overrides: MachineOverride[],
+  message: string,
+  sha: string | null
+) {
+  const content = JSON.stringify(overrides, null, 2) + "\n";
+  const b64 = Buffer.from(content, "utf8").toString("base64");
+  return writeFile({
+    path: OVERRIDES_PATH,
+    contentBase64: b64,
+    message,
+    sha: sha ?? undefined,
+  });
+}
+
 export type UploadedImage = {
   path: string;
   name: string;

@@ -527,8 +527,46 @@ const customPublished: Machine[] = (customRaw as CustomEntry[])
     };
   });
 
+// ── Seed overrides ──
+// Admin edits to seed machines are stored in data/machines-overrides.json
+// (see lib/github.ts loadMachineOverrides). Each entry is {slug, patch?, hidden?}.
+// `patch` fields override the seed; `hidden:true` removes it from the site.
+import overridesRaw from "./machines-overrides.json";
+type OverrideEntry = {
+  slug: string;
+  patch?: Partial<Machine>;
+  hidden?: boolean;
+  updatedAt?: string;
+};
+const overrideMap = new Map<string, OverrideEntry>(
+  (overridesRaw as OverrideEntry[]).map((o) => [o.slug, o])
+);
+
+const seedsWithOverrides: Machine[] = _seedMachines
+  .filter((m) => !overrideMap.get(m.slug)?.hidden)
+  .map((m) => {
+    const o = overrideMap.get(m.slug);
+    if (!o?.patch) return m;
+    const p = o.patch;
+    return {
+      ...m,
+      ...p,
+      // Keep consistent derived fields when brand/type change.
+      brandLabel: p.brand ? brandLabels[p.brand as BrandSlug] : m.brandLabel,
+      highlights: p.highlights ?? m.highlights,
+      specs: p.specs ?? m.specs,
+    };
+  });
+
 // Custom entries first so the dashboard's latest additions surface on top.
-export const machines: Machine[] = [...customPublished, ..._seedMachines];
+export const machines: Machine[] = [...customPublished, ...seedsWithOverrides];
+
+// Expose the raw seed list (without overrides applied) so the admin can show
+// the "default" values alongside any active override for comparison.
+export const seedMachines: Machine[] = _seedMachines;
+export function isSeedSlug(slug: string): boolean {
+  return _seedMachines.some((m) => m.slug === slug);
+}
 
 export function machinesByBrand(brand: string) {
   return machines.filter((m) => m.brand === brand);

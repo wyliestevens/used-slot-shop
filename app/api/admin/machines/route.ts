@@ -1,5 +1,13 @@
 import { NextResponse } from "next/server";
-import { loadCustomMachines, saveCustomMachines, CustomMachine } from "@/lib/github";
+import {
+  loadCustomMachines,
+  saveCustomMachines,
+  loadMachineOverrides,
+  saveMachineOverrides,
+  CustomMachine,
+  MachineOverride,
+} from "@/lib/github";
+import { isSeedSlug } from "@/data/machines";
 
 export const runtime = "nodejs";
 
@@ -46,7 +54,7 @@ export async function POST(req: Request) {
   let slug = baseSlug;
   let i = 2;
   const existing = new Set([...machines.map((m) => m.slug)]);
-  while (existing.has(slug)) slug = `${baseSlug}-${i++}`;
+  while (existing.has(slug) || isSeedSlug(slug)) slug = `${baseSlug}-${i++}`;
 
   const entry: CustomMachine = {
     slug,
@@ -75,31 +83,109 @@ export async function POST(req: Request) {
   return NextResponse.json({ ok: true, machine: entry });
 }
 
+// PATCH routes updates to the right file:
+//   - If slug is in machines-custom.json → patch that file directly.
+//   - If slug is a seed → upsert into machines-overrides.json.
+// Special: patch = {} with no keys + reset=true clears any override for a seed.
 export async function PATCH(req: Request) {
   const body = await req.json().catch(() => ({} as any));
-  const { slug, patch } = body as { slug?: string; patch?: Partial<CustomMachine> };
-  if (!slug || !patch) {
-    return NextResponse.json({ error: "slug + patch required" }, { status: 400 });
+  const { slug, patch, reset } = body as {
+    slug?: string;
+    patch?: Partial<CustomMachine> & { hidden?: boolean };
+    reset?: boolean;
+  };
+  if (!slug) {
+    return NextResponse.json({ error: "slug required" }, { status: 400 });
   }
+
+  // 1) Custom machine path
   const { machines, sha } = await loadCustomMachines();
-  const idx = machines.findIndex((m) => m.slug === slug);
-  if (idx === -1) return NextResponse.json({ error: "Not found" }, { status: 404 });
-  const updated = { ...machines[idx], ...patch, updatedAt: new Date().toISOString() };
-  const next = [...machines];
-  next[idx] = updated;
-  await saveCustomMachines(next, `admin: update ${slug}`, sha);
-  return NextResponse.json({ ok: true, machine: updated });
+  const customIdx = machines.findIndex((m) => m.slug === slug);
+  if (customIdx !== -1) {
+    if (!patch) return NextResponse.json({ error: "patch required" }, { status: 400 });
+    const updated = { ...machines[customIdx], ...patch, updatedAt: new Date().toISOString() };
+    const next = [...machines];
+    next[customIdx] = updated;
+    await saveCustomMachines(next, `admin: update ${slug}`, sha);
+    return NextResponse.json({ ok: true, machine: updated, source: "custom" });
+  }
+
+  // 2) Seed override path
+  if (!isSeedSlug(slug)) {
+    return NextResponse.json({ error: "Not found" }, { status: 404 });
+  }
+  const { overrides, sha: ovSha } = await loadMachineOverrides();
+  const ovIdx = overrides.findIndex((o) => o.slug === slug);
+
+  // Reset: remove existing override so the seed defaults reappear.
+  if (reset) {
+    if (ovIdx === -1) return NextResponse.json({ ok: true, note: "No override to reset" });
+    const next = overrides.filter((_, i) => i !== ovIdx);
+    await saveMachineOverrides(next, `admin: reset override ${slug}`, ovSha);
+    return NextResponse.json({ ok: true, slug, source: "seed", reset: true });
+  }
+
+  if (!patch) return NextResponse.json({ error: "patch required" }, { status: 400 });
+
+  const now = new Date().toISOString();
+  let next: MachineOverride[];
+  if (ovIdx === -1) {
+    // Normalize: the `hidden` flag lives at the top of the override, not in patch.
+    const { hidden, ...rest } = patch as any;
+    const entry: MachineOverride = {
+      slug,
+      patch: Object.keys(rest).length ? rest : undefined,
+      hidden: hidden === true ? true : undefined,
+      updatedAt: now,
+    };
+    next = [...overrides, entry];
+  } else {
+    const existing = overrides[ovIdx];
+    const { hidden, ...rest } = patch as any;
+    const mergedPatch = { ...(existing.patch || {}), ...rest };
+    const entry: MachineOverride = {
+      slug,
+      patch: Object.keys(mergedPatch).length ? mergedPatch : undefined,
+      hidden: hidden === true ? true : hidden === false ? undefined : existing.hidden,
+      updatedAt: now,
+    };
+    next = [...overrides];
+    next[ovIdx] = entry;
+  }
+
+  await saveMachineOverrides(next, `admin: override ${slug}`, ovSha);
+  return NextResponse.json({ ok: true, slug, source: "seed" });
 }
 
+// DELETE:
+//   - Custom slug → physically removed from machines-custom.json.
+//   - Seed slug → hidden:true override (record stays in git; site drops it).
 export async function DELETE(req: Request) {
   const { searchParams } = new URL(req.url);
   const slug = searchParams.get("slug");
   if (!slug) return NextResponse.json({ error: "slug required" }, { status: 400 });
+
   const { machines, sha } = await loadCustomMachines();
-  const next = machines.filter((m) => m.slug !== slug);
-  if (next.length === machines.length) {
+  const customIdx = machines.findIndex((m) => m.slug === slug);
+  if (customIdx !== -1) {
+    const next = machines.filter((m) => m.slug !== slug);
+    await saveCustomMachines(next, `admin: delete ${slug}`, sha);
+    return NextResponse.json({ ok: true, source: "custom" });
+  }
+
+  if (!isSeedSlug(slug)) {
     return NextResponse.json({ error: "Not found" }, { status: 404 });
   }
-  await saveCustomMachines(next, `admin: delete ${slug}`, sha);
-  return NextResponse.json({ ok: true });
+  const { overrides, sha: ovSha } = await loadMachineOverrides();
+  const idx = overrides.findIndex((o) => o.slug === slug);
+  const now = new Date().toISOString();
+  let next: MachineOverride[];
+  if (idx === -1) {
+    next = [...overrides, { slug, hidden: true, updatedAt: now }];
+  } else {
+    next = [...overrides];
+    next[idx] = { ...overrides[idx], hidden: true, updatedAt: now };
+  }
+  await saveMachineOverrides(next, `admin: hide ${slug}`, ovSha);
+  return NextResponse.json({ ok: true, source: "seed", hidden: true });
 }

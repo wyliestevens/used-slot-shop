@@ -1,10 +1,32 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import type { CustomMachine } from "@/lib/github";
-import { Save, Upload, Trash2 } from "lucide-react";
+import { Save, Upload, Trash2, RotateCcw, EyeOff, Eye } from "lucide-react";
 
-export default function EditForm({ initial }: { initial: CustomMachine }) {
+type InitialMachine = {
+  slug: string;
+  name: string;
+  brand: string;
+  type: string;
+  price: number;
+  image: string;
+  description: string;
+  cabinet?: string;
+  condition?: string;
+  inStock?: number;
+  highlights?: string[];
+  status: "draft" | "published";
+};
+
+type Props = {
+  source: "custom" | "seed";
+  initial: InitialMachine;
+  hidden: boolean;
+  hasOverride: boolean;
+  seedDefaults?: { name: string; price: number; image: string; description: string };
+};
+
+export default function EditForm({ source, initial, hidden, hasOverride, seedDefaults }: Props) {
   const router = useRouter();
   const [form, setForm] = useState(() => ({
     name: initial.name,
@@ -18,10 +40,12 @@ export default function EditForm({ initial }: { initial: CustomMachine }) {
     inStock: String(initial.inStock ?? 1),
     highlights: (initial.highlights || []).join("\n"),
     status: initial.status,
+    hidden,
   }));
   const [localPreview, setLocalPreview] = useState<string>("");
   const [uploading, setUploading] = useState(false);
   const [saving, setSaving] = useState(false);
+  const [resetting, setResetting] = useState(false);
   const [err, setErr] = useState("");
 
   function up<K extends keyof typeof form>(k: K, v: typeof form[K]) {
@@ -53,9 +77,29 @@ export default function EditForm({ initial }: { initial: CustomMachine }) {
     setSaving(true);
     setErr("");
     try {
-      const payload = {
-        slug: initial.slug,
-        patch: {
+      // Only send changed fields for a seed override — keeps the override JSON minimal
+      // and easy to reason about. For custom machines, send the full patch (the
+      // custom file stores the full record anyway).
+      let patch: any;
+      if (source === "seed" && seedDefaults) {
+        patch = {};
+        if (form.name !== seedDefaults.name) patch.name = form.name;
+        if (Number(form.price) !== seedDefaults.price) patch.price = Number(form.price);
+        if (form.image !== seedDefaults.image) patch.image = form.image;
+        if (form.description !== seedDefaults.description) patch.description = form.description;
+        // brand/type/cabinet/condition/inStock/highlights always included if diff-checking
+        // is complex — for simplicity send them; the backend merges.
+        patch.brand = form.brand;
+        patch.type = form.type;
+        patch.cabinet = form.cabinet || undefined;
+        patch.condition = form.condition;
+        patch.inStock = form.inStock ? Number(form.inStock) : 1;
+        patch.highlights = form.highlights
+          ? form.highlights.split("\n").map((s) => s.trim()).filter(Boolean)
+          : undefined;
+        patch.hidden = form.hidden;
+      } else {
+        patch = {
           name: form.name,
           brand: form.brand,
           type: form.type,
@@ -63,16 +107,18 @@ export default function EditForm({ initial }: { initial: CustomMachine }) {
           image: form.image,
           description: form.description,
           cabinet: form.cabinet || undefined,
-          condition: form.condition as any,
+          condition: form.condition,
           inStock: form.inStock ? Number(form.inStock) : 1,
-          highlights: form.highlights ? form.highlights.split("\n").map((s) => s.trim()).filter(Boolean) : undefined,
+          highlights: form.highlights
+            ? form.highlights.split("\n").map((s) => s.trim()).filter(Boolean)
+            : undefined,
           status: form.status,
-        },
-      };
+        };
+      }
       const res = await fetch("/api/admin/machines", {
         method: "PATCH",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({ slug: initial.slug, patch }),
       });
       if (!res.ok) throw new Error((await res.json()).error || "Save failed");
       router.push("/admin");
@@ -84,7 +130,11 @@ export default function EditForm({ initial }: { initial: CustomMachine }) {
   }
 
   async function del() {
-    if (!confirm(`Delete "${initial.name}"?`)) return;
+    const msg =
+      source === "seed"
+        ? `Hide "${initial.name}" from the site? The record stays in git history and can be restored later.`
+        : `Delete "${initial.name}"? This is logged in git history.`;
+    if (!confirm(msg)) return;
     const res = await fetch(`/api/admin/machines?slug=${encodeURIComponent(initial.slug)}`, {
       method: "DELETE",
     });
@@ -96,8 +146,41 @@ export default function EditForm({ initial }: { initial: CustomMachine }) {
     }
   }
 
+  async function resetToDefault() {
+    if (!confirm(`Reset "${initial.name}" to its original inventory values? Your override is discarded.`)) return;
+    setResetting(true);
+    try {
+      const res = await fetch("/api/admin/machines", {
+        method: "PATCH",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ slug: initial.slug, reset: true }),
+      });
+      if (!res.ok) throw new Error((await res.json()).error || "Reset failed");
+      router.push("/admin");
+      router.refresh();
+    } catch (e) {
+      setErr(e instanceof Error ? e.message : "Reset failed");
+      setResetting(false);
+    }
+  }
+
   return (
     <div className="space-y-6">
+      {source === "seed" && (
+        <div className="card p-4 border-brand-500/30 bg-brand-500/5 text-sm text-brand-100">
+          <div className="font-semibold text-brand-300 mb-1">Inventory machine (seed)</div>
+          <div>
+            Edits here save to <code className="text-brand-300">data/machines-overrides.json</code> —
+            a clean layer on top of the original scrape.{" "}
+            {hasOverride ? (
+              <>Override is currently active. Click <strong>Reset to default</strong> below to clear it.</>
+            ) : (
+              <>No override yet. Change anything and hit Save to create one.</>
+            )}
+          </div>
+        </div>
+      )}
+
       <div className="card p-6">
         <div className="text-sm font-semibold text-white mb-3">Photo</div>
         <div className="flex items-center gap-4">
@@ -118,12 +201,12 @@ export default function EditForm({ initial }: { initial: CustomMachine }) {
         <Field label="Name"><input className={inp} value={form.name} onChange={(e) => up("name", e.target.value)} /></Field>
         <div className="grid sm:grid-cols-2 gap-4">
           <Field label="Brand">
-            <select className={inp} value={form.brand} onChange={(e) => up("brand", e.target.value as typeof form.brand)}>
+            <select className={inp} value={form.brand} onChange={(e) => up("brand", e.target.value)}>
               {["igt","bally","aristocrat","williams","konami","ainsworth","aruze"].map((v) => <option key={v} value={v}>{v.toUpperCase()}</option>)}
             </select>
           </Field>
           <Field label="Type">
-            <select className={inp} value={form.type} onChange={(e) => up("type", e.target.value as typeof form.type)}>
+            <select className={inp} value={form.type} onChange={(e) => up("type", e.target.value)}>
               {["reel","video","video-poker","vintage"].map((v) => <option key={v} value={v}>{v}</option>)}
             </select>
           </Field>
@@ -134,7 +217,7 @@ export default function EditForm({ initial }: { initial: CustomMachine }) {
           <Field label="In stock"><input className={inp} type="number" value={form.inStock} onChange={(e) => up("inStock", e.target.value)} /></Field>
         </div>
         <Field label="Condition">
-          <select className={inp} value={form.condition} onChange={(e) => up("condition", e.target.value as typeof form.condition)}>
+          <select className={inp} value={form.condition} onChange={(e) => up("condition", e.target.value)}>
             <option>Professionally Refurbished</option>
             <option>Collector Grade</option>
             <option>Like New</option>
@@ -142,20 +225,51 @@ export default function EditForm({ initial }: { initial: CustomMachine }) {
         </Field>
         <Field label="Description"><textarea className={inp} rows={5} value={form.description} onChange={(e) => up("description", e.target.value)} /></Field>
         <Field label="Highlights (one per line)"><textarea className={inp} rows={4} value={form.highlights} onChange={(e) => up("highlights", e.target.value)} /></Field>
-        <Field label="Status">
-          <select className={inp} value={form.status} onChange={(e) => up("status", e.target.value as typeof form.status)}>
-            <option value="draft">Draft</option>
-            <option value="published">Published (live)</option>
-          </select>
-        </Field>
+
+        {source === "custom" && (
+          <Field label="Status">
+            <select className={inp} value={form.status} onChange={(e) => up("status", e.target.value as "draft" | "published")}>
+              <option value="draft">Draft (hidden from site)</option>
+              <option value="published">Published (live on site)</option>
+            </select>
+          </Field>
+        )}
+
+        {source === "seed" && (
+          <Field label="Visibility">
+            <div className="flex items-center gap-3">
+              <button
+                type="button"
+                onClick={() => up("hidden", !form.hidden)}
+                className={`btn-ghost !py-2 !px-4 text-sm ${form.hidden ? "!border-red-500/40 !text-red-300" : ""}`}
+              >
+                {form.hidden ? <><EyeOff className="h-4 w-4" /> Hidden from site</> : <><Eye className="h-4 w-4" /> Live on site</>}
+              </button>
+              <span className="text-xs text-ink-400">
+                {form.hidden ? "Customers will not see this machine." : "Customers can see and buy this machine."}
+              </span>
+            </div>
+          </Field>
+        )}
       </div>
 
       {err && <div className="rounded-lg border border-red-500/40 bg-red-500/10 px-4 py-3 text-sm text-red-200">{err}</div>}
 
-      <div className="flex items-center justify-between gap-3">
-        <button onClick={del} className="btn-ghost !border-red-500/40 !text-red-300 hover:!bg-red-500/10">
-          <Trash2 className="h-4 w-4" /> Delete
-        </button>
+      <div className="flex items-center justify-between gap-3 flex-wrap">
+        <div className="flex items-center gap-2">
+          {source === "seed" && hasOverride && (
+            <button
+              onClick={resetToDefault}
+              disabled={resetting}
+              className="btn-ghost !border-yellow-500/40 !text-yellow-300 hover:!bg-yellow-500/10"
+            >
+              <RotateCcw className="h-4 w-4" /> {resetting ? "Resetting…" : "Reset to default"}
+            </button>
+          )}
+          <button onClick={del} className="btn-ghost !border-red-500/40 !text-red-300 hover:!bg-red-500/10">
+            <Trash2 className="h-4 w-4" /> {source === "seed" ? "Hide from site" : "Delete"}
+          </button>
+        </div>
         <button onClick={save} disabled={saving} className="btn-primary">
           <Save className="h-4 w-4" /> {saving ? "Saving…" : "Save changes"}
         </button>

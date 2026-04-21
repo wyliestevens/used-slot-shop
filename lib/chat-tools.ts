@@ -1,12 +1,16 @@
 import {
   loadCustomMachines,
   saveCustomMachines,
+  loadMachineOverrides,
+  saveMachineOverrides,
   listUploads,
   deleteFile,
   CustomMachine,
+  MachineOverride,
 } from "./github";
 import { loadContent, saveContent, PAGE_CONTENT_FILES, ContentFile } from "./content";
 import { loadPosts, savePosts, type BlogPost } from "./blog";
+import { seedMachines, isSeedSlug } from "@/data/machines";
 
 function slugify(s: string) {
   return s
@@ -22,17 +26,22 @@ export const toolSchemas = [
   {
     name: "list_machines",
     description:
-      "List admin-managed machines (drafts and/or published). Does not include the 280 seeded inventory machines — those are static and only edited via code.",
+      "List machines. By default returns admin-created (custom) machines only. Pass `scope: 'seed'` to search the 280-piece scraped inventory (with any admin overrides applied) — when the owner asks to edit 'the Gold Fish' or 'the Cleopatra video', search seeds first. Pass `scope: 'all'` for both.",
     input_schema: {
       type: "object",
       properties: {
         status: { type: "string", enum: ["draft", "published", "all"] },
+        scope: { type: "string", enum: ["custom", "seed", "all"] },
+        query: {
+          type: "string",
+          description: "Case-insensitive substring match on name or slug. Use to narrow seed search.",
+        },
       },
     },
   },
   {
     name: "get_machine",
-    description: "Fetch a single admin-managed machine by slug.",
+    description: "Fetch a single machine by slug. Works for both admin-created (custom) and seeded inventory (with overrides applied).",
     input_schema: { type: "object", properties: { slug: { type: "string" } }, required: ["slug"] },
   },
   {
@@ -58,7 +67,8 @@ export const toolSchemas = [
   },
   {
     name: "update_machine",
-    description: "Update fields on an existing admin-managed machine by slug.",
+    description:
+      "Update fields on ANY machine — custom or seed. For seed machines the patch is saved as an override layer; the original seed data is preserved and can be restored with reset_machine.",
     input_schema: {
       type: "object",
       properties: { slug: { type: "string" }, patch: { type: "object" } },
@@ -67,17 +77,26 @@ export const toolSchemas = [
   },
   {
     name: "publish_machine",
-    description: "Flip a machine draft to published.",
+    description:
+      "Make a machine live on the site. For custom drafts this flips status to published. For seed machines hidden by admin, this removes the hidden flag.",
     input_schema: { type: "object", properties: { slug: { type: "string" } }, required: ["slug"] },
   },
   {
     name: "unpublish_machine",
-    description: "Flip a published machine back to draft.",
+    description:
+      "Remove a machine from the live site. For custom machines this flips to draft. For seed machines this sets hidden:true on the override.",
     input_schema: { type: "object", properties: { slug: { type: "string" } }, required: ["slug"] },
   },
   {
     name: "delete_machine",
-    description: "Permanently remove an admin-managed machine (still in git history).",
+    description:
+      "Remove a machine. Custom: physically deletes from machines-custom.json. Seed: sets hidden:true on the override (safer — seed record stays in git for restore).",
+    input_schema: { type: "object", properties: { slug: { type: "string" } }, required: ["slug"] },
+  },
+  {
+    name: "reset_machine",
+    description:
+      "Clear an admin override on a seed machine, restoring the original seeded values. No-op if there's no override.",
     input_schema: { type: "object", properties: { slug: { type: "string" } }, required: ["slug"] },
   },
   {
@@ -293,22 +312,70 @@ export const toolExecutors: Record<string, (input: any, ctx: ToolCtx) => Promise
   // ─── Machines ───
   async list_machines(input) {
     const status = (input?.status as string) || "all";
-    const { machines } = await loadCustomMachines();
-    const filtered = status === "all" ? machines : machines.filter((m) => m.status === status);
-    return filtered.map((m) => ({
-      slug: m.slug,
-      name: m.name,
-      brand: m.brand,
-      type: m.type,
-      price: m.price,
-      status: m.status,
-      updatedAt: m.updatedAt,
-    }));
+    const scope = (input?.scope as string) || "custom";
+    const q = ((input?.query as string) || "").toLowerCase().trim();
+
+    const out: any[] = [];
+
+    if (scope === "custom" || scope === "all") {
+      const { machines } = await loadCustomMachines();
+      const filtered = status === "all" ? machines : machines.filter((m) => m.status === status);
+      for (const m of filtered) {
+        if (q && !m.name.toLowerCase().includes(q) && !m.slug.toLowerCase().includes(q)) continue;
+        out.push({
+          slug: m.slug,
+          name: m.name,
+          brand: m.brand,
+          type: m.type,
+          price: m.price,
+          status: m.status,
+          source: "custom",
+        });
+      }
+    }
+
+    if (scope === "seed" || scope === "all") {
+      const { overrides } = await loadMachineOverrides();
+      const ovMap = new Map(overrides.map((o) => [o.slug, o]));
+      for (const m of seedMachines) {
+        const o = ovMap.get(m.slug);
+        if (q && !m.name.toLowerCase().includes(q) && !m.slug.toLowerCase().includes(q)) continue;
+        const merged = { ...m, ...(o?.patch || {}) };
+        out.push({
+          slug: m.slug,
+          name: merged.name,
+          brand: merged.brand,
+          type: merged.type,
+          price: merged.price,
+          status: o?.hidden ? "hidden" : "live",
+          source: "seed",
+          hasOverride: Boolean(o && (o.patch || o.hidden)),
+        });
+      }
+    }
+
+    // Cap the response so giant seed lists don't blow the tool context.
+    const LIMIT = 40;
+    return {
+      total: out.length,
+      truncated: out.length > LIMIT,
+      machines: out.slice(0, LIMIT),
+    };
   },
 
   async get_machine(input) {
+    const slug = input.slug as string;
+    // Custom first
     const { machines } = await loadCustomMachines();
-    return machines.find((m) => m.slug === input.slug) || { error: "not found", slug: input.slug };
+    const custom = machines.find((m) => m.slug === slug);
+    if (custom) return { ...custom, source: "custom" };
+    // Seed with override
+    const seed = seedMachines.find((m) => m.slug === slug);
+    if (!seed) return { error: "not found", slug };
+    const { overrides } = await loadMachineOverrides();
+    const o = overrides.find((x) => x.slug === slug);
+    const merged = { ...seed, ...(o?.patch || {}) };
+    return { ...merged, source: "seed", hidden: o?.hidden === true, hasOverride: Boolean(o) };
   },
 
   async create_machine_draft(input) {
@@ -341,31 +408,90 @@ export const toolExecutors: Record<string, (input: any, ctx: ToolCtx) => Promise
   },
 
   async update_machine(input) {
-    const { slug, patch } = input as { slug: string; patch: Partial<CustomMachine> };
-    const { machines, sha } = await loadCustomMachines();
-    const idx = machines.findIndex((m) => m.slug === slug);
-    if (idx === -1) return { error: "not found", slug };
-    const updated = { ...machines[idx], ...patch, updatedAt: new Date().toISOString() };
-    const next = [...machines];
-    next[idx] = updated;
-    await saveCustomMachines(next, `chat: update ${slug}`, sha);
-    return { ok: true, slug, status: updated.status };
+    const { slug, patch } = input as { slug: string; patch: Partial<CustomMachine> & { hidden?: boolean } };
+    // 1) Custom machine?
+    const custom = await loadCustomMachines();
+    const idx = custom.machines.findIndex((m) => m.slug === slug);
+    if (idx !== -1) {
+      const updated = { ...custom.machines[idx], ...patch, updatedAt: new Date().toISOString() };
+      const next = [...custom.machines];
+      next[idx] = updated;
+      await saveCustomMachines(next, `chat: update ${slug}`, custom.sha);
+      return { ok: true, slug, source: "custom", status: updated.status };
+    }
+    // 2) Seed override
+    if (!isSeedSlug(slug)) return { error: "not found", slug };
+    const { overrides, sha: ovSha } = await loadMachineOverrides();
+    const ovIdx = overrides.findIndex((o) => o.slug === slug);
+    const now = new Date().toISOString();
+    const { hidden, ...rest } = patch as any;
+    let next: MachineOverride[];
+    if (ovIdx === -1) {
+      next = [
+        ...overrides,
+        {
+          slug,
+          patch: Object.keys(rest).length ? rest : undefined,
+          hidden: hidden === true ? true : undefined,
+          updatedAt: now,
+        },
+      ];
+    } else {
+      const existing = overrides[ovIdx];
+      const merged = { ...(existing.patch || {}), ...rest };
+      next = [...overrides];
+      next[ovIdx] = {
+        slug,
+        patch: Object.keys(merged).length ? merged : undefined,
+        hidden:
+          hidden === true ? true : hidden === false ? undefined : existing.hidden,
+        updatedAt: now,
+      };
+    }
+    await saveMachineOverrides(next, `chat: override ${slug}`, ovSha);
+    return { ok: true, slug, source: "seed" };
   },
 
   async publish_machine(input, ctx) {
-    return toolExecutors.update_machine({ slug: input.slug, patch: { status: "published" } }, ctx);
+    const slug = input.slug as string;
+    if (isSeedSlug(slug)) {
+      // "Publish" a seed means: ensure it's not hidden.
+      return toolExecutors.update_machine({ slug, patch: { hidden: false } }, ctx);
+    }
+    return toolExecutors.update_machine({ slug, patch: { status: "published" } }, ctx);
   },
 
   async unpublish_machine(input, ctx) {
-    return toolExecutors.update_machine({ slug: input.slug, patch: { status: "draft" } }, ctx);
+    const slug = input.slug as string;
+    if (isSeedSlug(slug)) {
+      return toolExecutors.update_machine({ slug, patch: { hidden: true } }, ctx);
+    }
+    return toolExecutors.update_machine({ slug, patch: { status: "draft" } }, ctx);
   },
 
-  async delete_machine(input) {
+  async delete_machine(input, ctx) {
+    const slug = input.slug as string;
     const { machines, sha } = await loadCustomMachines();
-    const next = machines.filter((m) => m.slug !== input.slug);
-    if (next.length === machines.length) return { error: "not found", slug: input.slug };
-    await saveCustomMachines(next, `chat: delete ${input.slug}`, sha);
-    return { ok: true, slug: input.slug };
+    if (machines.some((m) => m.slug === slug)) {
+      const next = machines.filter((m) => m.slug !== slug);
+      await saveCustomMachines(next, `chat: delete ${slug}`, sha);
+      return { ok: true, slug, source: "custom" };
+    }
+    if (isSeedSlug(slug)) {
+      // Hide the seed rather than deleting. Keeps git history clean.
+      return toolExecutors.update_machine({ slug, patch: { hidden: true } }, ctx);
+    }
+    return { error: "not found", slug };
+  },
+
+  async reset_machine(input) {
+    const slug = input.slug as string;
+    if (!isSeedSlug(slug)) return { error: "reset only applies to seed machines", slug };
+    const { overrides, sha } = await loadMachineOverrides();
+    if (!overrides.some((o) => o.slug === slug)) return { ok: true, note: "no override to reset", slug };
+    const next = overrides.filter((o) => o.slug !== slug);
+    await saveMachineOverrides(next, `chat: reset override ${slug}`, sha);
+    return { ok: true, slug, reset: true };
   },
 
   async research_from_image(input, ctx) {
