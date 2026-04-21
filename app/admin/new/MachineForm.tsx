@@ -58,6 +58,7 @@ function slugGuess(name: string) {
 export default function MachineForm() {
   const router = useRouter();
   const [form, setForm] = useState<FormState>(empty);
+  const [localPreview, setLocalPreview] = useState<string>(""); // object URL for instant feedback
   const [uploading, setUploading] = useState(false);
   const [saving, setSaving] = useState<"draft" | "publish" | null>(null);
   const [err, setErr] = useState("");
@@ -70,6 +71,9 @@ export default function MachineForm() {
   async function onFile(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
     if (!file) return;
+    // Revoke previous preview so we don't leak object URLs.
+    if (localPreview) URL.revokeObjectURL(localPreview);
+    setLocalPreview(URL.createObjectURL(file));
     setUploading(true);
     setErr("");
     try {
@@ -164,8 +168,15 @@ export default function MachineForm() {
         <div className="text-sm font-semibold text-white mb-3">Product photo</div>
         <div className="flex items-center gap-4">
           <div className="relative h-40 w-32 rounded border border-ink-700 bg-ink-900 overflow-hidden flex-shrink-0">
-            {form.image ? (
-              <Image src={form.image} alt="Preview" fill sizes="128px" className="object-cover" />
+            {localPreview || form.image ? (
+              // Plain <img> so the browser can render local object URLs and
+              // freshly-committed GitHub raw URLs without the Next optimizer.
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={localPreview || form.image}
+                alt="Preview"
+                className="h-full w-full object-cover"
+              />
             ) : (
               <div className="h-full w-full grid place-items-center text-xs text-ink-500">No photo yet</div>
             )}
@@ -176,7 +187,14 @@ export default function MachineForm() {
               <input type="file" accept="image/*" onChange={onFile} disabled={uploading} className="hidden" />
             </label>
             <p className="text-xs text-ink-400 mt-2">JPG / PNG, under 8 MB. Mobile camera roll works too.</p>
-            {form.image && <p className="text-xs text-ink-400 mt-1 break-all">{form.image}</p>}
+            {form.image && (
+              <p className="text-xs text-ink-400 mt-1 break-all">
+                Saved: {form.image.length > 80 ? form.image.slice(0, 77) + "…" : form.image}
+              </p>
+            )}
+            {uploading && !form.image && (
+              <p className="text-xs text-brand-300 mt-1">Uploading to GitHub…</p>
+            )}
           </div>
         </div>
       </div>

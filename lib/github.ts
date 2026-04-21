@@ -127,11 +127,18 @@ export async function uploadImage(opts: { slug: string; filename: string; base64
   const safeName = opts.filename.replace(/[^a-zA-Z0-9._-]/g, "-");
   const path = `public/uploads/${opts.slug}/${safeName}`;
   const existing = await readFile(path);
-  await writeFile({
+  const result = await writeFile({
     path,
     contentBase64: opts.base64,
     message: `upload: image for ${opts.slug}`,
     sha: existing?.sha,
   });
-  return `/uploads/${opts.slug}/${safeName}`;
+  // Pin to the exact commit SHA so the URL works immediately and is cache-safe
+  // (avoids the ~60s wait for Vercel to rebuild and publish /uploads/... files).
+  const commitSha: string | undefined = (result as any)?.commit?.sha;
+  if (commitSha) {
+    return `https://raw.githubusercontent.com/${OWNER}/${REPO}/${commitSha}/${path}`;
+  }
+  // Fallback: raw on the branch tip. Works once GitHub's CDN invalidates (~seconds).
+  return `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/${path}`;
 }

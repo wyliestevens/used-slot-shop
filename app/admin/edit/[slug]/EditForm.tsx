@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import type { CustomMachine } from "@/lib/github";
@@ -20,6 +19,7 @@ export default function EditForm({ initial }: { initial: CustomMachine }) {
     highlights: (initial.highlights || []).join("\n"),
     status: initial.status,
   }));
+  const [localPreview, setLocalPreview] = useState<string>("");
   const [uploading, setUploading] = useState(false);
   const [saving, setSaving] = useState(false);
   const [err, setErr] = useState("");
@@ -31,6 +31,8 @@ export default function EditForm({ initial }: { initial: CustomMachine }) {
   async function onFile(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
     if (!file) return;
+    if (localPreview) URL.revokeObjectURL(localPreview);
+    setLocalPreview(URL.createObjectURL(file));
     setUploading(true);
     try {
       const fd = new FormData();
@@ -100,7 +102,10 @@ export default function EditForm({ initial }: { initial: CustomMachine }) {
         <div className="text-sm font-semibold text-white mb-3">Photo</div>
         <div className="flex items-center gap-4">
           <div className="relative h-40 w-32 rounded border border-ink-700 bg-ink-900 overflow-hidden">
-            {form.image && <Image src={form.image} alt="" fill sizes="128px" className="object-cover" />}
+            {(localPreview || form.image) && (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={localPreview || form.image} alt="" className="h-full w-full object-cover" />
+            )}
           </div>
           <label className="btn-ghost cursor-pointer">
             <Upload className="h-4 w-4" /> {uploading ? "Uploading…" : "Replace photo"}

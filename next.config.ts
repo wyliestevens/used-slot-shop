@@ -8,6 +8,7 @@ const config: NextConfig = {
       { protocol: "https", hostname: "images.leadconnectorhq.com" },
       { protocol: "https", hostname: "assets.cdn.filesafe.space" },
       { protocol: "https", hostname: "cdn.filesafe.space" },
+      { protocol: "https", hostname: "raw.githubusercontent.com" },
     ],
   },
   compress: true,
