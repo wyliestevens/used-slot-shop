@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "slug": "ainsworth-three-amigos-a-star-slot-machine",
+    "name": "Ainsworth Three Amigos A-Star Slot Machine",
+    "brand": "ainsworth",
+    "type": "video",
+    "price": 1895,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/507b13b24add762b31949354728fdfe0666b4cab/public/uploads/unsorted/A560-Three-Amigos.png",
+    "description": "This Ainsworth Three Amigos slot machine is housed in the tall A-Star portrait cabinet with a vibrant chasing-light topper that really draws the eye. The game is part of the Bonus Bonanza four-tier progressive series, featuring Grand, Major, Minor, and Mini jackpots along with a fun Latin-themed bonus round. Refurbished and ready for home game room use, it ships tested with a standard dealer warranty.",
+    "highlights": [
+      "Tall portrait HD video display with vivid Three Amigos theme",
+      "Bonus Bonanza 4-tier progressive jackpots (Grand, Major, Minor, Mini)",
+      "Eye-catching illuminated chasing-light topper",
+      "TITO ticket-in/ticket-out ready, converts to free play for home use",
+      "Refurbished and backed by a dealer warranty"
+    ],
+    "cabinet": "A-Star",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-04-21T20:09:49.826Z",
+    "updatedAt": "2026-04-21T20:09:49.826Z"
+  }
+]
