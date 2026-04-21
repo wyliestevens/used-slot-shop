@@ -4,12 +4,37 @@
 
 import { readFile, writeFile } from "./github";
 
-export type ContentFile = "site" | "homepage";
+export type ContentFile =
+  | "site"
+  | "homepage"
+  | "about"
+  | "buying-guide"
+  | "faq"
+  | "shipping"
+  | "warranty"
+  | "maintenance";
 
 const FILE_PATHS: Record<ContentFile, string> = {
   site: "data/content/site.json",
   homepage: "data/content/homepage.json",
+  about: "data/content/pages/about.json",
+  "buying-guide": "data/content/pages/buying-guide.json",
+  faq: "data/content/faq.json",
+  shipping: "data/content/pages/shipping.json",
+  warranty: "data/content/pages/warranty.json",
+  maintenance: "data/content/pages/maintenance.json",
 };
+
+// Editable copy pages surfaced by the /admin/pages editor (excludes site + homepage,
+// which have bespoke forms).
+export const PAGE_CONTENT_FILES: ContentFile[] = [
+  "about",
+  "buying-guide",
+  "faq",
+  "shipping",
+  "warranty",
+  "maintenance",
+];
 
 export async function loadContent<T = any>(
   file: ContentFile

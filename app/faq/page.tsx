@@ -2,7 +2,7 @@ import { buildMetadata, breadcrumbJsonLd, faqJsonLd } from "@/lib/seo";
 import { JsonLd } from "@/components/JsonLd";
 import { Section } from "@/components/Section";
 import Faq from "@/components/Faq";
-import { faqs } from "@/data/faq";
+import { faqs } from "@/lib/faq";
 
 export const metadata = buildMetadata({
   title: "Slot Machine Buyer FAQ — Answers to Every Common Question",

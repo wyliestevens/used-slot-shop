@@ -8,7 +8,7 @@ import TrustBar from "@/components/TrustBar";
 import MachineCard from "@/components/MachineCard";
 import Faq from "@/components/Faq";
 import { machines, featuredMachines } from "@/data/machines";
-import { faqs } from "@/data/faq";
+import { faqs } from "@/lib/faq";
 import { site } from "@/lib/site";
 import homepage from "@/data/content/homepage.json";
 

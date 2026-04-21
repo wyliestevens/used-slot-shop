@@ -1,0 +1,48 @@
+{
+  "metaTitle": "Slot Machine Repair & Maintenance Service — Nationwide Parts",
+  "metaDescription": "Slot machine repair, diagnostic, and parts sourcing service. IGT, Bally, Aristocrat, WMS, Konami factory-trained technicians. Ship us your machine or get a phone diagnosis.",
+  "eyebrow": "Repair & Service",
+  "title": "Broken slot machine? We've probably seen it.",
+  "subtitle": "33+ years of slot machine repair. If you bought it from us, support is free forever. If you didn't, we'll still help.",
+  "sections": [
+    {
+      "heading": "Services we offer",
+      "paragraphs": [],
+      "bullets": [
+        "Full diagnostic and repair (ship-in or mail-in)",
+        "Phone and video tech support",
+        "Replacement parts sourcing (main boards, power supplies, validators, printers, displays)",
+        "Reel strip reproduction and replacement",
+        "Bezel, button, and cabinet refurbishment",
+        "Bill validator and hopper service"
+      ]
+    },
+    {
+      "heading": "How it works",
+      "paragraphs": [
+        "Call or email our service team (contact info in Site Settings) with a description of the issue and, ideally, a short video of the symptom. We'll diagnose over the phone in most cases. If a physical repair is needed, we'll coordinate inbound freight (at your cost) and provide a firm bench estimate before any work begins."
+      ],
+      "bullets": []
+    },
+    {
+      "heading": "Parts",
+      "paragraphs": [
+        "We maintain one of the deepest inventories of legacy slot machine parts in North America — IGT S2000, Bally S9000/Alpha, WMS Bluebird, Konami Podium, Aristocrat MK6, and more. If we don't have it in stock, we know who does."
+      ],
+      "bullets": []
+    },
+    {
+      "heading": "Platforms we service",
+      "paragraphs": [],
+      "bullets": [
+        "IGT — S+, S2000, Game King, AVP, G20, Axxis",
+        "Bally — S6000, S9000, V32, V22, Alpha, Alpha 2, Pro V32",
+        "Aristocrat — MK5, MK6, Viridian, Helix, Arc Single / Arc Double",
+        "WMS — Bluebird, Bluebird 2, Gamefield XD, BB3",
+        "Konami — Podium, K2V, Selexion, Concerto",
+        "Ainsworth — A560, A600",
+        "Aruze — Gen 2 Muso, Innovator"
+      ]
+    }
+  ]
+}

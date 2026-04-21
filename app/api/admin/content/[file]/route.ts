@@ -3,7 +3,16 @@ import { loadContent, saveContent, ContentFile } from "@/lib/content";
 
 export const runtime = "nodejs";
 
-const ALLOWED: ContentFile[] = ["site", "homepage"];
+const ALLOWED: ContentFile[] = [
+  "site",
+  "homepage",
+  "about",
+  "buying-guide",
+  "faq",
+  "shipping",
+  "warranty",
+  "maintenance",
+];
 
 export async function GET(
   _req: Request,
@@ -26,13 +35,16 @@ export async function PATCH(
     return NextResponse.json({ error: "Unknown content file" }, { status: 400 });
   }
   const body = await req.json().catch(() => ({}));
-  const patch = body.patch || body.content;
-  if (!patch || typeof patch !== "object") {
-    return NextResponse.json({ error: "patch object required" }, { status: 400 });
+  const patch = body.patch ?? body.content;
+  if (patch === undefined || patch === null || typeof patch !== "object") {
+    return NextResponse.json({ error: "patch object or array required" }, { status: 400 });
   }
   const current = await loadContent(file as ContentFile);
-  // Deep-merge one level: preserve unchanged keys, overwrite supplied ones.
-  const next = deepMerge(current.content as Record<string, any>, patch);
+  // If the new content is an array (e.g. the FAQ list), replace the whole file
+  // with it. Otherwise deep-merge: preserve unchanged keys, overwrite supplied ones.
+  const next = Array.isArray(patch)
+    ? patch
+    : deepMerge(current.content as Record<string, any>, patch);
   await saveContent(file as ContentFile, next, current.sha, `admin: update ${file}`);
   return NextResponse.json({ ok: true, content: next });
 }

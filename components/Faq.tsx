@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
-import { FaqItem } from "@/data/faq";
+import { FaqItem } from "@/lib/faq";
 
 export default function Faq({ items, limit }: { items: FaqItem[]; limit?: number }) {
   const [open, setOpen] = useState<number | null>(0);

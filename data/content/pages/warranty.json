@@ -1,0 +1,54 @@
+{
+  "metaTitle": "Warranty & Return Policy — 1-Year Home-Use Coverage",
+  "metaDescription": "Every slot machine from Used Slot Shop includes a 1-year home-use warranty and free lifetime phone/video tech support. Full coverage details.",
+  "eyebrow": "Warranty",
+  "title": "Every machine is covered for a full year.",
+  "subtitle": "Plus free lifetime tech support from the people who refurbished it.",
+  "sections": [
+    {
+      "heading": "What's covered (12 months from delivery)",
+      "paragraphs": [],
+      "bullets": [
+        "Main boards, RAM, and CPU modules",
+        "Power supplies",
+        "Bill validators and ticket printers",
+        "Reel mechanics (steppers, optics, strip retainers)",
+        "LCD and CRT displays (failures, not impact damage)",
+        "Buttons, candle lights, speakers"
+      ]
+    },
+    {
+      "heading": "What's not covered",
+      "paragraphs": [],
+      "bullets": [
+        "Light bulbs and light bulb starters",
+        "Fuses (consumables)",
+        "Glass, LCD, or bezel breakage from impact or drop",
+        "Damage from power surges (use a surge protector)",
+        "Unauthorized modifications or opened/tampered hardware",
+        "Commercial use (home-use warranty only)"
+      ]
+    },
+    {
+      "heading": "How the warranty works",
+      "paragraphs": [
+        "If something fails in the first 12 months, call our service line or email our service email (both are in Site Settings). A technician will diagnose over the phone or video. If it's a covered part, we ship the replacement at no cost to you. You are responsible for return shipping of the defective component."
+      ],
+      "bullets": []
+    },
+    {
+      "heading": "Return policy",
+      "paragraphs": [
+        "We accept returns within 14 days of delivery on machines that are in original condition. The buyer is responsible for return freight. A 15% restocking fee applies to all non-defective returns. If your machine arrived damaged in transit, call us immediately (within 48 hours) and we'll handle the freight claim and replacement on our end."
+      ],
+      "bullets": []
+    },
+    {
+      "heading": "Free lifetime tech support",
+      "paragraphs": [
+        "The warranty period is 12 months. Phone and video tech support is forever. Even a decade from now, if you can't figure out why your hopper isn't feeding or your bill validator stopped reading $20s, call us. Parts availability is never guaranteed for legacy platforms, but advice always is."
+      ],
+      "bullets": []
+    }
+  ]
+}
