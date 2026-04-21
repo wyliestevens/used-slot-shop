@@ -24,6 +24,7 @@ const types = [
 type FormState = {
   name: string;
   brand: string;
+  model: string;
   type: string;
   price: string;
   image: string;
@@ -37,6 +38,7 @@ type FormState = {
 const empty: FormState = {
   name: "",
   brand: "igt",
+  model: "",
   type: "reel",
   price: "",
   image: "",
@@ -92,19 +94,27 @@ export default function MachineForm() {
   }
 
   async function research() {
-    if (!form.image && !form.name) {
-      setErr("Add an image or a name first for AI research");
+    if (!form.image && !form.name && !form.model) {
+      setErr("Add an image, name, or model number first for AI research");
       return;
     }
     setResearching(true);
     setErr("");
     try {
+      // Build a specific hint that includes brand + model so the AI can find
+      // accurate specs rather than guessing from the photo alone.
+      const hintParts: string[] = [];
+      if (form.brand) hintParts.push(`Brand: ${form.brand.toUpperCase()}`);
+      if (form.model) hintParts.push(`Model: ${form.model}`);
+      if (form.name) hintParts.push(`Name/theme: ${form.name}`);
       const res = await fetch("/api/admin/research", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({
           image: form.image,
-          hint: form.name,
+          hint: hintParts.join(" · "),
+          brand: form.brand || undefined,
+          model: form.model || undefined,
         }),
       });
       const data = await res.json();
@@ -114,6 +124,7 @@ export default function MachineForm() {
         ...f,
         name: f.name || data.name || "",
         brand: data.brand || f.brand,
+        model: f.model || data.model || "",
         type: data.type || f.type,
         price: f.price || (data.priceSuggestion ? String(data.priceSuggestion) : ""),
         description: f.description || data.description || "",
@@ -138,6 +149,7 @@ export default function MachineForm() {
       const payload = {
         name: form.name,
         brand: form.brand,
+        model: form.model || undefined,
         type: form.type,
         price: Number(form.price),
         image: form.image,
@@ -215,11 +227,19 @@ export default function MachineForm() {
         <Field label="Name" required>
           <input value={form.name} onChange={(e) => update("name", e.target.value)} className={inp} placeholder="e.g. IGT Buffalo Gold MK6" />
         </Field>
-        <div className="grid sm:grid-cols-2 gap-4">
+        <div className="grid sm:grid-cols-3 gap-4">
           <Field label="Brand">
             <select value={form.brand} onChange={(e) => update("brand", e.target.value)} className={inp}>
               {brands.map((b) => <option key={b.v} value={b.v}>{b.l}</option>)}
             </select>
+          </Field>
+          <Field label="Model #">
+            <input
+              value={form.model}
+              onChange={(e) => update("model", e.target.value)}
+              className={inp}
+              placeholder="e.g. S2000, MK6, M9000"
+            />
           </Field>
           <Field label="Type">
             <select value={form.type} onChange={(e) => update("type", e.target.value)} className={inp}>
@@ -227,6 +247,9 @@ export default function MachineForm() {
             </select>
           </Field>
         </div>
+        <p className="text-xs text-ink-400 -mt-2">
+          Fill in the model number for more accurate AI research. Examples: <code>S2000</code> (IGT reel), <code>MK6</code> (Aristocrat), <code>S9000</code> / <code>M9000</code> (Bally), <code>BB1/BB2</code> (WMS), <code>K2V</code> (Konami), <code>A560/A-Star</code> (Ainsworth).
+        </p>
         <div className="grid sm:grid-cols-3 gap-4">
           <Field label="Price (USD)" required>
             <input type="number" value={form.price} onChange={(e) => update("price", e.target.value)} className={inp} placeholder="1200" />

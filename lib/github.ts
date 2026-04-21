@@ -89,6 +89,7 @@ export type CustomMachine = {
   slug: string;
   name: string;
   brand: "igt" | "bally" | "aristocrat" | "williams" | "konami" | "ainsworth" | "aruze";
+  model?: string;
   type: "reel" | "video" | "video-poker" | "vintage";
   price: number;
   image: string;

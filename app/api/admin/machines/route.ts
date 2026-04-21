@@ -29,6 +29,7 @@ export async function POST(req: Request) {
   const {
     name,
     brand,
+    model,
     type,
     price,
     image,
@@ -60,6 +61,7 @@ export async function POST(req: Request) {
     slug,
     name,
     brand,
+    model: model || undefined,
     type,
     price: Number(price),
     image,

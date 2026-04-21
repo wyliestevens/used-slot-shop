@@ -7,6 +7,7 @@ type InitialMachine = {
   slug: string;
   name: string;
   brand: string;
+  model?: string;
   type: string;
   price: number;
   image: string;
@@ -31,6 +32,7 @@ export default function EditForm({ source, initial, hidden, hasOverride, seedDef
   const [form, setForm] = useState(() => ({
     name: initial.name,
     brand: initial.brand,
+    model: initial.model || "",
     type: initial.type,
     price: String(initial.price),
     image: initial.image,
@@ -90,6 +92,7 @@ export default function EditForm({ source, initial, hidden, hasOverride, seedDef
         // brand/type/cabinet/condition/inStock/highlights always included if diff-checking
         // is complex — for simplicity send them; the backend merges.
         patch.brand = form.brand;
+        if (form.model) patch.model = form.model;
         patch.type = form.type;
         patch.cabinet = form.cabinet || undefined;
         patch.condition = form.condition;
@@ -102,6 +105,7 @@ export default function EditForm({ source, initial, hidden, hasOverride, seedDef
         patch = {
           name: form.name,
           brand: form.brand,
+          model: form.model || undefined,
           type: form.type,
           price: Number(form.price),
           image: form.image,
@@ -199,11 +203,19 @@ export default function EditForm({ source, initial, hidden, hasOverride, seedDef
 
       <div className="card p-6 space-y-4">
         <Field label="Name"><input className={inp} value={form.name} onChange={(e) => up("name", e.target.value)} /></Field>
-        <div className="grid sm:grid-cols-2 gap-4">
+        <div className="grid sm:grid-cols-3 gap-4">
           <Field label="Brand">
             <select className={inp} value={form.brand} onChange={(e) => up("brand", e.target.value)}>
               {["igt","bally","aristocrat","williams","konami","ainsworth","aruze"].map((v) => <option key={v} value={v}>{v.toUpperCase()}</option>)}
             </select>
+          </Field>
+          <Field label="Model #">
+            <input
+              className={inp}
+              value={form.model}
+              onChange={(e) => up("model", e.target.value)}
+              placeholder="e.g. S2000, MK6"
+            />
           </Field>
           <Field label="Type">
             <select className={inp} value={form.type} onChange={(e) => up("type", e.target.value)}>
