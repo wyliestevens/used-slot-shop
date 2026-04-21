@@ -595,6 +595,17 @@ export function relatedMachines(slug: string, limit = 3) {
     .slice(0, limit);
 }
 
+// Deterministic "machine of the day" — same for every visitor within a day,
+// rotates to a different machine tomorrow. Zero maintenance.
+export function machineOfTheDay(date?: Date): Machine | null {
+  if (machines.length === 0) return null;
+  const d = date ?? new Date();
+  const key = d.toISOString().slice(0, 10); // YYYY-MM-DD (UTC)
+  let h = 0;
+  for (let i = 0; i < key.length; i++) h = (h * 31 + key.charCodeAt(i)) | 0;
+  return machines[Math.abs(h) % machines.length];
+}
+
 export function featuredMachines(limit = 8): Machine[] {
   // Spread featured picks across every brand for a diverse homepage grid.
   const perBrand = new Map<string, Machine[]>();

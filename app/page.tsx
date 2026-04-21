@@ -7,7 +7,7 @@ import { Section } from "@/components/Section";
 import TrustBar from "@/components/TrustBar";
 import MachineCard from "@/components/MachineCard";
 import Faq from "@/components/Faq";
-import { machines, featuredMachines } from "@/data/machines";
+import { machines, featuredMachines, machineOfTheDay } from "@/data/machines";
 import { faqs } from "@/lib/faq";
 import { site } from "@/lib/site";
 import homepage from "@/data/content/homepage.json";
@@ -19,7 +19,12 @@ export const metadata = buildMetadata({
   path: "/",
 });
 
+// Re-pick the "machine of the day" at least once an hour so the rotation
+// actually kicks over when the UTC date rolls, even without a deploy.
+export const revalidate = 3600;
+
 const featured = featuredMachines(8);
+const spotlight = machineOfTheDay();
 
 const testimonials = [
   {
@@ -96,13 +101,22 @@ export default function Home() {
                   className="object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -left-6 rounded-2xl bg-accent-500 text-ink-950 p-5 shadow-mint max-w-[240px]">
-                <div className="text-[11px] uppercase text-ink-950/70 font-bold mb-1 tracking-widest">{homepage.hero.sidebarProductLabel}</div>
-                <div className="font-display text-lg font-bold text-ink-950 leading-tight">
-                  {homepage.hero.sidebarProductTitle}
-                </div>
-                <div className="mt-2 text-2xl font-black text-ink-950">{homepage.hero.sidebarProductPrice}</div>
-              </div>
+              {spotlight && (
+                <Link
+                  href={`/machines/${spotlight.slug}`}
+                  className="absolute -bottom-6 -left-6 block rounded-2xl bg-accent-500 text-ink-950 p-5 shadow-mint max-w-[240px] hover:-translate-y-0.5 transition"
+                >
+                  <div className="text-[11px] uppercase text-ink-950/70 font-bold mb-1 tracking-widest">
+                    {homepage.hero.sidebarProductLabel}
+                  </div>
+                  <div className="font-display text-lg font-bold text-ink-950 leading-tight line-clamp-2">
+                    {spotlight.name}
+                  </div>
+                  <div className="mt-2 text-2xl font-black text-ink-950">
+                    ${spotlight.price.toLocaleString()}
+                  </div>
+                </Link>
+              )}
             </div>
           </div>
         </div>
