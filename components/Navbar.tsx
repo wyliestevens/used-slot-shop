@@ -12,6 +12,7 @@ const nav = [
   { href: "/shop/aristocrat", label: "Aristocrat" },
   { href: "/buying-guide", label: "Buying Guide" },
   { href: "/state-legality", label: "State Laws" },
+  { href: "/blog", label: "Blog" },
   { href: "/faq", label: "FAQ" },
 ];
 

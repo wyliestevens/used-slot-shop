@@ -2,14 +2,16 @@ import { MetadataRoute } from "next";
 import { site } from "@/lib/site";
 import { machines } from "@/data/machines";
 import { states } from "@/data/states";
+import { loadPosts } from "@/lib/blog";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
   const staticPages = [
     "",
     "/shop",
     "/buying-guide",
     "/state-legality",
+    "/blog",
     "/faq",
     "/warranty",
     "/shipping",
@@ -40,5 +42,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly" as const,
     priority: 0.6,
   }));
-  return [...staticPages, ...brandPages, ...machinePages, ...statePages];
+
+  let blogPages: MetadataRoute.Sitemap = [];
+  try {
+    const { posts } = await loadPosts();
+    blogPages = posts
+      .filter((p) => p.status === "published")
+      .map((p) => ({
+        url: `${site.url}/blog/${p.slug}`,
+        lastModified: new Date(p.updatedAt || p.publishedAt || p.createdAt),
+        changeFrequency: "monthly" as const,
+        priority: 0.7,
+      }));
+  } catch {
+    blogPages = [];
+  }
+
+  return [...staticPages, ...brandPages, ...machinePages, ...statePages, ...blogPages];
 }

@@ -128,6 +128,41 @@ export function productJsonLd(m: {
   };
 }
 
+export function articleJsonLd(p: {
+  slug: string;
+  title: string;
+  excerpt: string;
+  author: string;
+  coverImage: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt?: string;
+}) {
+  const url = `${site.url}/blog/${p.slug}`;
+  const image = p.coverImage.startsWith("http")
+    ? p.coverImage
+    : new URL(p.coverImage, site.url).toString();
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    headline: p.title,
+    description: p.excerpt,
+    image: [image],
+    datePublished: p.publishedAt || p.createdAt,
+    dateModified: p.updatedAt,
+    author: { "@type": "Person", name: p.author },
+    publisher: {
+      "@type": "Organization",
+      name: site.name,
+      logo: {
+        "@type": "ImageObject",
+        url: new URL(site.logoUrl || "/logo.png", site.url).toString(),
+      },
+    },
+  };
+}
+
 export function faqJsonLd(items: { q: string; a: string }[]) {
   return {
     "@context": "https://schema.org",
