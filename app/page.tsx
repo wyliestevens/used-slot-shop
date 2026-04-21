@@ -10,6 +10,7 @@ import Faq from "@/components/Faq";
 import { machines, featuredMachines } from "@/data/machines";
 import { faqs } from "@/data/faq";
 import { site } from "@/lib/site";
+import homepage from "@/data/content/homepage.json";
 
 export const metadata = buildMetadata({
   title: "Refurbished Casino Slot Machines for Sale — Shipped Nationwide",
@@ -54,24 +55,22 @@ export default function Home() {
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-brand-500/40 bg-brand-500/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-brand-300 uppercase">
                 <Star className="h-3.5 w-3.5 fill-brand-400 text-brand-400" />
-                {site.yearsInBusiness}+ Years · 12,000+ Machines Delivered
+                {homepage.hero.eyebrow}
               </div>
               <h1 className="mt-6 font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[0.95] tracking-tight">
-                The casino floor,
+                {homepage.hero.titleTop}
                 <br />
-                <span className="hl-gold">delivered home.</span>
+                <span className="hl-gold">{homepage.hero.titleBottom}</span>
               </h1>
               <p className="mt-6 text-lg text-ink-200 max-w-xl leading-relaxed">
-                Authentic, fully refurbished slot machines from IGT, Bally, Aristocrat, WMS,
-                Konami, Ainsworth and Aruze — bench-tested, casino-grade, and shipped on an
-                insured pallet anywhere in the U.S.
+                {homepage.hero.subtitle}
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-3">
-                <Link href="/shop" className="btn-primary">
-                  Shop Machines <ArrowRight className="h-4 w-4" />
+                <Link href={homepage.hero.primaryCtaHref} className="btn-primary">
+                  {homepage.hero.primaryCtaText} <ArrowRight className="h-4 w-4" />
                 </Link>
-                <Link href="/buying-guide" className="btn-ghost">
-                  Read the Buying Guide
+                <Link href={homepage.hero.secondaryCtaHref} className="btn-ghost">
+                  {homepage.hero.secondaryCtaText}
                 </Link>
               </div>
               <div className="mt-8 flex flex-wrap gap-5 text-sm text-ink-200">
@@ -85,8 +84,8 @@ export default function Home() {
             <div className="relative">
               <div className="aspect-[4/5] relative rounded-3xl overflow-hidden shadow-glow border border-brand-500/30">
                 <Image
-                  src="https://images.unsplash.com/photo-1606167668584-78701c57f13d?auto=format&fit=crop&w=900&q=85"
-                  alt="Refurbished IGT slot machine ready for delivery"
+                  src={homepage.hero.image}
+                  alt="Featured slot machine"
                   fill
                   priority
                   sizes="(min-width: 1024px) 40vw, 90vw"
@@ -94,11 +93,11 @@ export default function Home() {
                 />
               </div>
               <div className="absolute -bottom-6 -left-6 rounded-2xl bg-ink-900/90 backdrop-blur border border-ink-700 p-5 shadow-glow max-w-[220px]">
-                <div className="text-xs uppercase text-brand-400 font-semibold mb-1">Now Shipping</div>
+                <div className="text-xs uppercase text-brand-400 font-semibold mb-1">{homepage.hero.sidebarProductLabel}</div>
                 <div className="font-display text-lg font-bold text-white leading-tight">
-                  IGT S2000 Double Diamond
+                  {homepage.hero.sidebarProductTitle}
                 </div>
-                <div className="mt-2 text-2xl font-bold text-brand-300">$2,195</div>
+                <div className="mt-2 text-2xl font-bold text-brand-300">{homepage.hero.sidebarProductPrice}</div>
               </div>
             </div>
           </div>

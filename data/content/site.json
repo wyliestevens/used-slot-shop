@@ -1,0 +1,26 @@
+{
+  "name": "Used Slot Shop",
+  "tagline": "Authentic casino-grade slot machines, expertly refurbished and shipped nationwide.",
+  "logoUrl": "/logo.png",
+  "phone": "928-418-5549",
+  "email": "info@usedslotshop.com",
+  "salesEmail": "sales@usedslotshop.com",
+  "serviceEmail": "service@usedslotshop.com",
+  "address": {
+    "street": "7252 E Concho Dr Ste B",
+    "city": "Kingman",
+    "region": "AZ",
+    "postalCode": "86401",
+    "country": "US"
+  },
+  "hours": {
+    "weekdays": "Mon–Fri 8:00 AM – 6:00 PM MST",
+    "saturday": "Sat 9:00 AM – 3:00 PM MST",
+    "sunday": "Sun Closed"
+  },
+  "socials": {
+    "facebook": "",
+    "instagram": "",
+    "youtube": ""
+  }
+}

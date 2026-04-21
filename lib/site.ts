@@ -1,33 +1,32 @@
+// Site config: merges static constants with admin-editable overrides from
+// data/content/site.json. Changes made from the admin UI update that JSON
+// file and redeploy, so this reads the latest at build time.
+import siteContent from "@/data/content/site.json";
+
+function toTel(raw: string) {
+  const digits = (raw || "").replace(/\D/g, "");
+  return digits ? `tel:+1${digits.replace(/^1/, "")}` : "";
+}
+
+const founded = 1992;
+
 export const site = {
-  name: "Used Slot Shop",
+  name: siteContent.name,
   legalName: "Used Slot Shop LLC",
-  tagline: "Authentic casino-grade slot machines, expertly refurbished and shipped nationwide.",
+  tagline: siteContent.tagline,
+  logoUrl: siteContent.logoUrl || "/logo.png",
   url: "https://usedslotshop.com",
   vercelUrl: "https://used-slot-shop.vercel.app",
-  phone: "928-418-5549",
-  phoneHref: "tel:+19284185549",
-  email: "info@usedslotshop.com",
-  salesEmail: "sales@usedslotshop.com",
-  serviceEmail: "service@usedslotshop.com",
-  address: {
-    street: "7252 E Concho Dr Ste B",
-    city: "Kingman",
-    region: "AZ",
-    postalCode: "86401",
-    country: "US",
-  },
-  hours: {
-    weekdays: "Mon–Fri 8:00 AM – 6:00 PM MST",
-    saturday: "Sat 9:00 AM – 3:00 PM MST",
-    sunday: "Sun Closed",
-  },
-  founded: 1992,
-  yearsInBusiness: new Date().getFullYear() - 1992,
-  socials: {
-    facebook: "",
-    instagram: "",
-    youtube: "",
-  },
+  phone: siteContent.phone,
+  phoneHref: toTel(siteContent.phone),
+  email: siteContent.email,
+  salesEmail: siteContent.salesEmail,
+  serviceEmail: siteContent.serviceEmail,
+  address: siteContent.address,
+  hours: siteContent.hours,
+  founded,
+  yearsInBusiness: new Date().getFullYear() - founded,
+  socials: siteContent.socials,
   geo: { lat: 35.189, lng: -114.049 },
   brands: [
     { slug: "igt", name: "IGT", blurb: "Industry benchmark reels and video slots" },
@@ -38,6 +37,6 @@ export const site = {
     { slug: "ainsworth", name: "Ainsworth", blurb: "A560 and A600 cabinets" },
     { slug: "aruze", name: "Aruze", blurb: "Innovator and Muso cabinets" },
   ],
-} as const;
+};
 
 export type Brand = (typeof site.brands)[number];
