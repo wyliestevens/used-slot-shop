@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "slug": "three-amigos",
+    "name": "Three Amigos",
+    "brand": "ainsworth",
+    "type": "video",
+    "price": 2495,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/55cff374fe54aea05cc743a7970d9f791bebbf16/public/uploads/unsorted/A560-Three-Amigos.png",
+    "description": "The Ainsworth Three Amigos is a vibrant Bonus Bonanza title presented on the tall A-Star cabinet with a portrait-oriented HD LCD and a brilliantly lit marquee topper. This Mexican-themed game features a four-tier progressive jackpot (Mini, Minor, Major, and Grand) along with free-game bonus rounds. Professionally refurbished and ready for home use on standard 110V household power.",
+    "highlights": [
+      "Ainsworth A-Star upright cabinet with illuminated marquee topper",
+      "Portrait HD LCD display with Bonus Bonanza four-level progressives",
+      "Free spin bonus feature with themed Three Amigos symbols",
+      "Accepts bills with TITO ticket printer; keys and manual included",
+      "Plugs into standard 110V outlet; 30-day dealer warranty"
+    ],
+    "cabinet": "A-Star",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-04-21T18:45:40.845Z",
+    "updatedAt": "2026-04-21T18:45:40.845Z"
+  }
+]
