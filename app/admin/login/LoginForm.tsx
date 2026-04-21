@@ -1,12 +1,13 @@
 "use client";
 import { useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { LogIn } from "lucide-react";
 
 export default function LoginForm() {
-  const router = useRouter();
   const params = useSearchParams();
-  const next = params.get("next") || "/admin";
+  const nextRaw = params.get("next") || "/admin";
+  // Only allow same-origin relative paths as redirect targets.
+  const next = nextRaw.startsWith("/") && !nextRaw.startsWith("//") ? nextRaw : "/admin";
   const [password, setPassword] = useState("");
   const [state, setState] = useState<"idle" | "loading" | "error">("idle");
   const [err, setErr] = useState("");
@@ -20,13 +21,16 @@ export default function LoginForm() {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ password }),
+        credentials: "same-origin",
       });
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
         throw new Error(data.error || "Login failed");
       }
-      router.push(next);
-      router.refresh();
+      // Full page navigation guarantees the newly-set cookie is sent on the
+      // request so middleware sees an authenticated session. router.push /
+      // router.refresh sometimes races the Set-Cookie on App Router.
+      window.location.href = next;
     } catch (e) {
       setState("error");
       setErr(e instanceof Error ? e.message : "Login failed");
