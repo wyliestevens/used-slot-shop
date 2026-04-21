@@ -4,6 +4,54 @@ A running record of every build, deploy, and meaningful change to the site. Newe
 
 ---
 
+## v0.6.0 — Full no-code site editor
+**Date:** 2026-04-21
+**Status:** ✅ Live
+**Commits shipped (5 parallel streams merged):**
+- `cedc735` Phase 3.0 — site settings + homepage editor + one-click history restore
+- `afe3f6a` Image library / media manager (agent 1)
+- `7dc6e60` Blog system, public + admin (agent 2)
+- `b9602de` Editable copy for About / Buying Guide / FAQ / Shipping / Warranty / Maintenance (agent 3)
+- `01bbc14` Unified admin nav + chat tools for everything above
+
+### What the owner can now do from /admin
+| Area | Via form | Via chat |
+|---|---|---|
+| Add / edit / publish / delete machines | ✓ | ✓ |
+| Research a machine from a photo (vision) | ✓ | ✓ |
+| Change logo, phone, email, address, hours, socials | ✓ | ✓ |
+| Edit homepage hero (image, headline, subtitle, CTAs) | ✓ | ✓ |
+| Edit copy on About, Buying Guide, FAQ, Shipping, Warranty, Maintenance — add/remove/reorder sections, paragraphs, bullets | ✓ | ✓ |
+| Add / edit / publish / delete blog posts (w/ cover photo + markdown body) | ✓ | ✓ |
+| Browse image library, copy URLs, delete unused photos | ✓ | ✓ |
+| Restore entire site to any prior commit | ✓ (one-click in History) | — |
+
+### Admin chat tool count
+**22 tools** wired: 8 machine, 2 site, 2 homepage, 2 page copy, 6 blog, 2 image library. Claude Opus 4.7 plans and executes autonomously.
+
+### Data model
+All content is JSON in the repo — zero database:
+- `data/content/site.json` — branding, contact, hours
+- `data/content/homepage.json` — hero config
+- `data/content/pages/{about,buying-guide,shipping,warranty,maintenance}.json`
+- `data/content/faq.json`
+- `data/content/blog-posts.json`
+- `data/machines-custom.json`
+- `public/uploads/` — every photo ever uploaded
+
+### Public-site wiring
+- Navbar/Footer now read logo + contact info from `site.json`
+- Homepage hero reads from `homepage.json`
+- Six info pages render from their JSON (copy, meta, structure all editable)
+- `/blog` index + `/blog/[slug]` detail, JSON-LD Article schema
+- Sitemap includes every published blog post
+
+### All smoke tests passing
+- `/`, `/blog`, `/about`, `/buying-guide`, `/faq`, `/shipping`, `/warranty`, `/maintenance`, `/shop` → **200**
+- `/admin`, `/admin/blog`, `/admin/pages`, `/admin/images`, `/admin/homepage`, `/admin/site-settings`, `/admin/chat` → **307** (redirect to login, correct)
+
+---
+
 ## v0.5.0 — Phase 2: AI chat agent with Claude Opus 4.7 tool use
 **Date:** 2026-04-20
 **Status:** ✅ Live and verified end-to-end
