@@ -35,7 +35,7 @@ export default async function AdminBlogHome() {
 
       <div className="grid sm:grid-cols-3 gap-4 mb-8">
         <Stat label="Drafts" value={drafts.length} icon={Clock} accent="text-yellow-300" />
-        <Stat label="Published" value={published.length} icon={CheckCircle2} accent="text-green-300" />
+        <Stat label="Published" value={published.length} icon={CheckCircle2} accent="text-accent-300" />
         <Stat label="Total posts" value={posts.length} icon={FileText} accent="text-brand-300" />
       </div>
 

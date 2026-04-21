@@ -74,9 +74,13 @@ export default function Home() {
                 </Link>
               </div>
               <div className="mt-8 flex flex-wrap gap-5 text-sm text-ink-200">
-                {["1-Year Warranty", "Free Tech Support", "Nationwide Freight"].map((t) => (
+                {[
+                  { t: "1-Year Warranty", c: "text-brand-400" },
+                  { t: "Free Tech Support", c: "text-accent-300" },
+                  { t: "Nationwide Freight", c: "text-brand-400" },
+                ].map(({ t, c }) => (
                   <div key={t} className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-brand-400" /> {t}
+                    <CheckCircle2 className={`h-4 w-4 ${c}`} /> {t}
                   </div>
                 ))}
               </div>
@@ -92,8 +96,8 @@ export default function Home() {
                   className="object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -left-6 rounded-2xl bg-ink-900/90 backdrop-blur border border-ink-700 p-5 shadow-glow max-w-[220px]">
-                <div className="text-xs uppercase text-brand-400 font-semibold mb-1">{homepage.hero.sidebarProductLabel}</div>
+              <div className="absolute -bottom-6 -left-6 rounded-2xl bg-ink-900/90 backdrop-blur border border-accent-500/40 p-5 shadow-mint max-w-[220px]">
+                <div className="text-xs uppercase text-accent-300 font-semibold mb-1 tracking-wider">{homepage.hero.sidebarProductLabel}</div>
                 <div className="font-display text-lg font-bold text-white leading-tight">
                   {homepage.hero.sidebarProductTitle}
                 </div>
@@ -118,7 +122,10 @@ export default function Home() {
           ))}
         </div>
         <div className="mt-10 text-center">
-          <Link href="/shop" className="btn-outline">
+          <Link
+            href="/shop"
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-accent-500 px-6 py-3 text-sm font-semibold text-accent-300 transition hover:bg-accent-500 hover:text-ink-950"
+          >
             View All {machines.length} Machines <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
@@ -131,16 +138,22 @@ export default function Home() {
         subtitle="IGT reels. Bally classics. Aristocrat blockbusters. Whatever you're chasing, we stock it — or we'll find it."
       >
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3">
-          {site.brands.map((b) => (
-            <Link
-              key={b.slug}
-              href={`/shop/${b.slug}`}
-              className="card p-6 text-center hover:-translate-y-1 transition"
-            >
-              <div className="font-display font-bold text-lg text-white">{b.name}</div>
-              <div className="mt-2 text-xs text-ink-300 leading-snug">{b.blurb}</div>
-            </Link>
-          ))}
+          {site.brands.map((b, i) => {
+            const hover =
+              i % 2 === 0
+                ? "hover:border-brand-500/60 hover:shadow-glow"
+                : "hover:border-accent-500/60 hover:shadow-mint";
+            return (
+              <Link
+                key={b.slug}
+                href={`/shop/${b.slug}`}
+                className={`card p-6 text-center hover:-translate-y-1 transition ${hover}`}
+              >
+                <div className="font-display font-bold text-lg text-white">{b.name}</div>
+                <div className="mt-2 text-xs text-ink-300 leading-snug">{b.blurb}</div>
+              </Link>
+            );
+          })}
         </div>
       </Section>
 
@@ -154,28 +167,37 @@ export default function Home() {
           {[
             {
               icon: Shield,
+              tone: "brand" as const,
               title: "Casino-grade compliance",
               text: "Every board, RAM chip, bill validator, RNG, and hopper is tested against casino-floor spec before it leaves our bay.",
             },
             {
               icon: Wrench,
+              tone: "accent" as const,
               title: "Certified technicians",
               text: "Our bench techs average 12+ years in the industry — IGT, Bally, and Aristocrat factory-trained.",
             },
             {
               icon: Truck,
+              tone: "brand" as const,
               title: "Logistics that just work",
               text: "Insured pallet freight with liftgate residential available. Tracking, photos, and a real phone number if anything goes sideways.",
             },
-          ].map((f) => (
-            <div key={f.title} className="card p-7">
-              <div className="grid h-12 w-12 place-items-center rounded-lg bg-brand-500/10 border border-brand-500/30">
-                <f.icon className="h-6 w-6 text-brand-400" />
+          ].map((f) => {
+            const cls =
+              f.tone === "accent"
+                ? "bg-accent-500/15 border-accent-500/40 text-accent-300"
+                : "bg-brand-500/10 border-brand-500/30 text-brand-400";
+            return (
+              <div key={f.title} className="card p-7">
+                <div className={`grid h-12 w-12 place-items-center rounded-lg border ${cls}`}>
+                  <f.icon className="h-6 w-6" />
+                </div>
+                <h3 className="mt-5 font-display text-xl font-bold text-white">{f.title}</h3>
+                <p className="mt-2 text-ink-300">{f.text}</p>
               </div>
-              <h3 className="mt-5 font-display text-xl font-bold text-white">{f.title}</h3>
-              <p className="mt-2 text-ink-300">{f.text}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </Section>
 

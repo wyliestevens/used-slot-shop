@@ -74,7 +74,7 @@ export default async function AdminHome() {
 
       <div className="grid sm:grid-cols-4 gap-4 mb-8">
         <Stat label="Drafts" value={drafts.length} icon={Clock} accent="text-yellow-300" />
-        <Stat label="Published (admin)" value={published.length} icon={CheckCircle2} accent="text-green-300" />
+        <Stat label="Published (admin)" value={published.length} icon={CheckCircle2} accent="text-accent-300" />
         <Stat label="Inventory (seeds)" value={seedRows.length} icon={Package} accent="text-brand-300" />
         <Stat label="Overridden" value={overriddenCount} icon={CheckCircle2} accent="text-purple-300" />
       </div>

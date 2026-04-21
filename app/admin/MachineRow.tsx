@@ -43,7 +43,7 @@ export default function MachineRow({ m }: { m: CustomMachine }) {
       <div className="min-w-0 flex-1">
         <div className="font-semibold text-white truncate">{m.name}</div>
         <div className="text-xs text-ink-400 truncate">
-          {m.brand.toUpperCase()} · {m.type} · ${m.price.toLocaleString()} · <span className={m.status === "published" ? "text-green-300" : "text-yellow-300"}>{m.status}</span>
+          {m.brand.toUpperCase()} · {m.type} · ${m.price.toLocaleString()} · <span className={m.status === "published" ? "text-accent-300" : "text-yellow-300"}>{m.status}</span>
         </div>
       </div>
       <div className="flex items-center gap-2">

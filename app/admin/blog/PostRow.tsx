@@ -47,7 +47,7 @@ export default function PostRow({ p }: { p: BlogPost }) {
         <div className="font-semibold text-white truncate">{p.title}</div>
         <div className="text-xs text-ink-400 truncate">
           {p.author} · {new Date(p.updatedAt).toLocaleDateString()} ·{" "}
-          <span className={p.status === "published" ? "text-green-300" : "text-yellow-300"}>
+          <span className={p.status === "published" ? "text-accent-300" : "text-yellow-300"}>
             {p.status}
           </span>
           {p.tags.length > 0 && <> · {p.tags.join(", ")}</>}

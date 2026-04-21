@@ -122,7 +122,7 @@ export default function SeedSearch({ rows }: { rows: Row[] }) {
                       <EyeOff className="h-3 w-3" /> Hidden
                     </span>
                   ) : (
-                    <span className="inline-flex items-center gap-1 rounded-full border border-green-500/40 bg-green-500/10 px-2 py-0.5 text-green-300">
+                    <span className="inline-flex items-center gap-1 rounded-full border border-accent-500/40 bg-accent-500/10 px-2 py-0.5 text-accent-300">
                       <Eye className="h-3 w-3" /> Live
                     </span>
                   )}

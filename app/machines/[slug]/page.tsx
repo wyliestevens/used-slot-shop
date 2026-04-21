@@ -70,7 +70,7 @@ export default async function MachinePage({ params }: { params: Promise<{ slug: 
                 <span className="rounded-full bg-ink-950/85 backdrop-blur px-3 py-1 text-xs font-semibold text-brand-300 border border-brand-500/40">
                   {m.brandLabel}
                 </span>
-                <span className="rounded-full bg-green-500/20 border border-green-500/40 backdrop-blur px-3 py-1 text-xs font-semibold text-green-300">
+                <span className="rounded-full bg-accent-500/20 border border-accent-500/40 backdrop-blur px-3 py-1 text-xs font-semibold text-accent-300">
                   {m.inStock > 0 ? `${m.inStock} in stock` : "Made to order"}
                 </span>
               </div>

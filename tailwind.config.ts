@@ -65,11 +65,11 @@ const config: Config = {
       },
       backgroundImage: {
         // Kept the old class name so existing components still compile;
-        // gradient now uses coral + sage, not gold.
+        // gradient now uses coral + sage, not gold — mint stop bumped up.
         "radial-gold":
-          "radial-gradient(ellipse at top, rgba(239,122,88,.22), transparent 55%), radial-gradient(ellipse at bottom, rgba(115,174,147,.18), transparent 55%)",
+          "radial-gradient(ellipse at top right, rgba(239,122,88,.28), transparent 55%), radial-gradient(ellipse at bottom left, rgba(139,191,170,.32), transparent 55%)",
         "radial-brand":
-          "radial-gradient(ellipse at top, rgba(239,122,88,.22), transparent 55%), radial-gradient(ellipse at bottom, rgba(115,174,147,.18), transparent 55%)",
+          "radial-gradient(ellipse at top right, rgba(239,122,88,.28), transparent 55%), radial-gradient(ellipse at bottom left, rgba(139,191,170,.32), transparent 55%)",
       },
     },
   },

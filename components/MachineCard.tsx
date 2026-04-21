@@ -28,7 +28,7 @@ export default function MachineCard({ m }: { m: Machine }) {
           )}
         </div>
         <div className="absolute bottom-3 right-3">
-          <span className="rounded-full bg-green-500/20 border border-green-500/40 px-3 py-1 text-[11px] font-semibold text-green-300">
+          <span className="rounded-full bg-accent-500/20 border border-accent-500/40 px-3 py-1 text-[11px] font-semibold text-accent-300">
             {m.inStock > 0 ? `${m.inStock} in stock` : "Made to order"}
           </span>
         </div>

@@ -280,7 +280,7 @@ function ToolResultPill({ content, error }: { content: string; error?: boolean }
   const slug = parsed && typeof parsed === "object" ? parsed.slug : null;
   const editUrl = parsed && typeof parsed === "object" ? parsed.editUrl : null;
   return (
-    <div className={`inline-flex items-start gap-2 rounded-lg px-3 py-1.5 text-xs ${error ? "bg-red-500/10 border border-red-500/30 text-red-200" : "bg-green-500/10 border border-green-500/30 text-green-200"}`}>
+    <div className={`inline-flex items-start gap-2 rounded-lg px-3 py-1.5 text-xs ${error ? "bg-red-500/10 border border-red-500/30 text-red-200" : "bg-accent-500/10 border border-accent-500/30 text-accent-200"}`}>
       {error ? <AlertTriangle className="h-3.5 w-3.5 mt-0.5" /> : <CheckCircle2 className="h-3.5 w-3.5 mt-0.5" />}
       <div className="font-mono max-w-[60ch] truncate">
         {typeof parsed === "string" ? parsed : JSON.stringify(parsed).slice(0, 120)}

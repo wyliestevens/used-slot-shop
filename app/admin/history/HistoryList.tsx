@@ -42,7 +42,7 @@ export default function HistoryList({ commits }: { commits: Commit[] }) {
   return (
     <div className="space-y-3">
       {done && (
-        <div className="card p-4 border-green-500/40 bg-green-500/10 text-sm text-green-200">
+        <div className="card p-4 border-accent-500/40 bg-accent-500/10 text-sm text-accent-200">
           Restore commit <code>{done.slice(0, 7)}</code> pushed. Site is rebuilding — live in ~60
           seconds.
         </div>

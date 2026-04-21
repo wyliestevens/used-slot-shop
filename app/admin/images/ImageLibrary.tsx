@@ -339,7 +339,7 @@ function PendingTile({
           </>
         ) : p.status === "done" ? (
           <>
-            <Check className="h-5 w-5 text-green-300" />
+            <Check className="h-5 w-5 text-accent-300" />
             <div className="text-[11px] text-white">Done</div>
           </>
         ) : (
@@ -442,7 +442,7 @@ function DetailModal({
                 className="flex-1 rounded-lg border border-ink-600 bg-ink-900 px-3 py-2 text-xs text-ink-100 font-mono focus:border-brand-500 focus:outline-none"
               />
               <button onClick={copy} className="btn-ghost !py-2 !px-3 text-xs flex-shrink-0">
-                {copied ? <Check className="h-4 w-4 text-green-300" /> : <Copy className="h-4 w-4" />}
+                {copied ? <Check className="h-4 w-4 text-accent-300" /> : <Copy className="h-4 w-4" />}
                 {copied ? "Copied" : "Copy"}
               </button>
             </div>
