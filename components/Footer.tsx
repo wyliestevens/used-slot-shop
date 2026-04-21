@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { site } from "@/lib/site";
 
@@ -7,10 +8,19 @@ export default function Footer() {
     <footer className="mt-20 border-t border-ink-800 bg-ink-950">
       <div className="container-wide grid grid-cols-2 md:grid-cols-4 gap-8 py-14">
         <div className="col-span-2">
-          <div className="font-display text-xl font-bold">
-            Used<span className="text-brand-400">Slot</span>Shop
+          <div className="flex items-center gap-3">
+            <Image
+              src="/logo.png"
+              alt="Used Slot Shop"
+              width={200}
+              height={200}
+              className="h-16 w-16 rounded-lg object-cover"
+            />
+            <div className="font-display text-xl font-bold">
+              Used<span className="text-brand-400">Slot</span>Shop
+            </div>
           </div>
-          <p className="mt-3 text-sm text-ink-300 max-w-sm">
+          <p className="mt-4 text-sm text-ink-300 max-w-sm">
             America's trusted source for professionally refurbished casino slot machines.
             Serving home collectors, bars, and private game rooms since {site.founded}.
           </p>

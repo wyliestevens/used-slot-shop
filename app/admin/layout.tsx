@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { LogOut, LayoutDashboard, Plus, History, MessageSquare } from "lucide-react";
 import LogoutButton from "./LogoutButton";
@@ -15,7 +16,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         <div className="container-wide flex items-center justify-between h-14">
           <div className="flex items-center gap-6">
             <Link href="/admin" className="font-display font-bold text-white flex items-center gap-2">
-              <span className="grid h-7 w-7 place-items-center rounded bg-brand-500 text-ink-950 text-xs font-black">7</span>
+              <Image src="/logo.png" alt="" width={64} height={64} className="h-8 w-8 rounded object-cover" />
               Admin
             </Link>
             <nav className="flex items-center gap-5 text-sm text-ink-300">

@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Menu, X, ShoppingCart } from "lucide-react";
 import { useState } from "react";
 import { site } from "@/lib/site";
@@ -19,11 +20,16 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-ink-800 bg-ink-950/85 backdrop-blur-xl">
       <div className="container-wide flex h-16 items-center justify-between gap-4">
-        <Link href="/" className="flex items-center gap-2">
-          <span className="grid h-9 w-9 place-items-center rounded-lg bg-gradient-to-br from-brand-400 to-brand-700 text-ink-950 font-black">
-            7
-          </span>
-          <span className="font-display text-lg font-bold tracking-tight">
+        <Link href="/" className="flex items-center gap-2" aria-label="Used Slot Shop — home">
+          <Image
+            src="/logo.png"
+            alt="Used Slot Shop"
+            width={160}
+            height={160}
+            priority
+            className="h-12 w-12 rounded-lg object-cover"
+          />
+          <span className="hidden sm:inline font-display text-lg font-bold tracking-tight text-white">
             Used<span className="text-brand-400">Slot</span>Shop
           </span>
         </Link>

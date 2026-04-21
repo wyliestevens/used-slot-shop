@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   verification: {
     google: "y3L6r7e-sN4GGbNWsXadOrcSa84qikHhsojKosjBh60",
   },
-  icons: { icon: "/favicon.svg", apple: "/apple-touch-icon.png" },
+  icons: { icon: "/logo.png", apple: "/logo.png" },
   manifest: "/manifest.webmanifest",
 };
 
