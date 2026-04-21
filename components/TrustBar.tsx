@@ -7,9 +7,9 @@ const items = [
   { icon: Award, title: "33+ Years Experience", blurb: "Trusted by collectors since 1992", tone: "accent" as const },
 ];
 
-const TONE: Record<"brand" | "accent", { bg: string; border: string; text: string }> = {
-  brand: { bg: "bg-brand-500/10", border: "border-brand-500/30", text: "text-brand-400" },
-  accent: { bg: "bg-accent-500/15", border: "border-accent-500/40", text: "text-accent-300" },
+const TONE: Record<"brand" | "accent", { bg: string; text: string }> = {
+  brand: { bg: "bg-brand-500", text: "text-white" },
+  accent: { bg: "bg-accent-500", text: "text-ink-950" },
 };
 
 export default function TrustBar() {
@@ -20,8 +20,8 @@ export default function TrustBar() {
           const t = TONE[i.tone];
           return (
             <div key={i.title} className="flex items-center gap-3">
-              <div className={`grid h-11 w-11 place-items-center rounded-lg border ${t.bg} ${t.border}`}>
-                <i.icon className={`h-5 w-5 ${t.text}`} />
+              <div className={`grid h-12 w-12 place-items-center rounded-xl ${t.bg}`}>
+                <i.icon className={`h-6 w-6 ${t.text}`} strokeWidth={2.25} />
               </div>
               <div>
                 <div className="font-semibold text-white text-sm">{i.title}</div>

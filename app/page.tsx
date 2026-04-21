@@ -47,9 +47,9 @@ export default function Home() {
     <>
       <JsonLd data={faqJsonLd(faqs.slice(0, 6))} />
 
-      {/* HERO */}
-      <section className="relative overflow-hidden bg-radial-gold">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-ink-950/60 to-ink-950" aria-hidden />
+      {/* HERO — backdrop glow is now the fixed AmbientGlow in the root layout */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-ink-950/30 to-ink-950/60" aria-hidden />
         <div className="container-wide relative pt-20 pb-24 lg:pt-28 lg:pb-32">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -96,12 +96,12 @@ export default function Home() {
                   className="object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -left-6 rounded-2xl bg-ink-900/90 backdrop-blur border border-accent-500/40 p-5 shadow-mint max-w-[220px]">
-                <div className="text-xs uppercase text-accent-300 font-semibold mb-1 tracking-wider">{homepage.hero.sidebarProductLabel}</div>
-                <div className="font-display text-lg font-bold text-white leading-tight">
+              <div className="absolute -bottom-6 -left-6 rounded-2xl bg-accent-500 text-ink-950 p-5 shadow-mint max-w-[240px]">
+                <div className="text-[11px] uppercase text-ink-950/70 font-bold mb-1 tracking-widest">{homepage.hero.sidebarProductLabel}</div>
+                <div className="font-display text-lg font-bold text-ink-950 leading-tight">
                   {homepage.hero.sidebarProductTitle}
                 </div>
-                <div className="mt-2 text-2xl font-bold text-brand-300">{homepage.hero.sidebarProductPrice}</div>
+                <div className="mt-2 text-2xl font-black text-ink-950">{homepage.hero.sidebarProductPrice}</div>
               </div>
             </div>
           </div>
@@ -184,14 +184,12 @@ export default function Home() {
               text: "Insured pallet freight with liftgate residential available. Tracking, photos, and a real phone number if anything goes sideways.",
             },
           ].map((f) => {
-            const cls =
-              f.tone === "accent"
-                ? "bg-accent-500/15 border-accent-500/40 text-accent-300"
-                : "bg-brand-500/10 border-brand-500/30 text-brand-400";
+            const iconCls =
+              f.tone === "accent" ? "bg-accent-500 text-ink-950" : "bg-brand-500 text-white";
             return (
               <div key={f.title} className="card p-7">
-                <div className={`grid h-12 w-12 place-items-center rounded-lg border ${cls}`}>
-                  <f.icon className="h-6 w-6" />
+                <div className={`grid h-14 w-14 place-items-center rounded-xl ${iconCls}`}>
+                  <f.icon className="h-7 w-7" strokeWidth={2.25} />
                 </div>
                 <h3 className="mt-5 font-display text-xl font-bold text-white">{f.title}</h3>
                 <p className="mt-2 text-ink-300">{f.text}</p>
@@ -201,25 +199,27 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* TESTIMONIALS */}
-      <Section eyebrow="Real Customers" title="Built on word of mouth.">
-        <div className="grid md:grid-cols-3 gap-6">
-          {testimonials.map((t) => (
-            <div key={t.name} className="card p-7">
-              <div className="flex gap-1">
-                {Array.from({ length: t.rating }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-brand-400 text-brand-400" />
-                ))}
+      {/* TESTIMONIALS — sits on a mint wash to anchor the accent in the page */}
+      <div className="bg-accent-500/10 border-y border-accent-500/30">
+        <Section eyebrow="Real Customers" title="Built on word of mouth.">
+          <div className="grid md:grid-cols-3 gap-6">
+            {testimonials.map((t) => (
+              <div key={t.name} className="card p-7">
+                <div className="flex gap-1">
+                  {Array.from({ length: t.rating }).map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-brand-400 text-brand-400" />
+                  ))}
+                </div>
+                <p className="mt-4 text-ink-100 leading-relaxed">&ldquo;{t.text}&rdquo;</p>
+                <div className="mt-5 text-sm">
+                  <div className="font-semibold text-white">{t.name}</div>
+                  <div className="text-ink-400">{t.location}</div>
+                </div>
               </div>
-              <p className="mt-4 text-ink-100 leading-relaxed">&ldquo;{t.text}&rdquo;</p>
-              <div className="mt-5 text-sm">
-                <div className="font-semibold text-white">{t.name}</div>
-                <div className="text-ink-400">{t.location}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </Section>
+            ))}
+          </div>
+        </Section>
+      </div>
 
       {/* FAQ */}
       <Section

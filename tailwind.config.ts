@@ -64,12 +64,15 @@ const config: Config = {
           "0 0 0 1px rgba(139,191,170,.35), 0 10px 40px -10px rgba(115,174,147,.3)",
       },
       backgroundImage: {
-        // Kept the old class name so existing components still compile;
-        // gradient now uses coral + sage, not gold — mint stop bumped up.
+        // Bright coral + mint glow behind the hero. High opacity so the mint is
+        // unmistakable against the near-black backdrop.
         "radial-gold":
-          "radial-gradient(ellipse at top right, rgba(239,122,88,.28), transparent 55%), radial-gradient(ellipse at bottom left, rgba(139,191,170,.32), transparent 55%)",
+          "radial-gradient(ellipse at top right, rgba(239,122,88,.55), transparent 50%), radial-gradient(ellipse at bottom left, rgba(139,191,170,.55), transparent 50%)",
         "radial-brand":
-          "radial-gradient(ellipse at top right, rgba(239,122,88,.28), transparent 55%), radial-gradient(ellipse at bottom left, rgba(139,191,170,.32), transparent 55%)",
+          "radial-gradient(ellipse at top right, rgba(239,122,88,.55), transparent 50%), radial-gradient(ellipse at bottom left, rgba(139,191,170,.55), transparent 50%)",
+        // Subtle mint wash for section backgrounds that need to lean sage.
+        "mint-wash":
+          "linear-gradient(180deg, rgba(139,191,170,.10), rgba(139,191,170,.04) 40%, transparent)",
       },
     },
   },
