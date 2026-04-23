@@ -4,8 +4,10 @@ import { Resend } from "resend";
 export const runtime = "nodejs";
 
 const OWNER_EMAIL = "usedslotshop@gmail.com";
-// Resend requires a verified domain. Until usedslotmachineshop.com is verified
-// in Resend, we fall back to their shared test sender.
+// Resend requires a verified domain to send to arbitrary recipients. Until
+// usedslotmachineshop.com is verified, we fall back to their shared sender
+// — which can only email the Resend account owner. In that case the
+// customer auto-reply is best-effort and we don't block the submission.
 const FROM_VERIFIED = "Used Slot Shop <noreply@usedslotmachineshop.com>";
 const FROM_FALLBACK = "Used Slot Shop <onboarding@resend.dev>";
 
@@ -50,6 +52,16 @@ function customerHtml(name: string) {
 </body></html>`;
 }
 
+function isDomainError(r: any) {
+  const msg: string = r?.error?.message || "";
+  return /domain is not verified|not verified/i.test(msg);
+}
+
+function isRecipientRestrictionError(r: any) {
+  const msg: string = r?.error?.message || "";
+  return /testing emails to your own/i.test(msg);
+}
+
 export async function POST(req: Request) {
   try {
     const body = await req.json();
@@ -68,58 +80,58 @@ export async function POST(req: Request) {
     const resend = new Resend(apiKey);
     const fields = { name, email, phone, state, machine, message };
 
-    async function trySend(from: string) {
-      const owner = await resend.emails.send({
-        from,
-        to: [OWNER_EMAIL],
-        replyTo: email,
-        subject: `New inquiry from ${name}${machine ? ` — ${machine}` : ""}`,
-        html: ownerHtml(fields),
-      });
-      const customer = await resend.emails.send({
-        from,
-        to: [email],
-        replyTo: OWNER_EMAIL,
-        subject: "Thanks for reaching out to Used Slot Shop",
-        html: customerHtml(name),
-      });
-      return { owner, customer };
+    // Try the verified domain first; fall back to shared sender on domain error.
+    async function sendOne(to: string, subject: string, html: string, replyTo: string) {
+      let r = await resend.emails.send({ from: FROM_VERIFIED, to: [to], replyTo, subject, html });
+      let fromUsed = FROM_VERIFIED;
+      if (isDomainError(r)) {
+        r = await resend.emails.send({ from: FROM_FALLBACK, to: [to], replyTo, subject, html });
+        fromUsed = FROM_FALLBACK;
+      }
+      return { r, fromUsed };
     }
 
-    // Resend surfaces domain-not-verified as response.error (not a thrown exception),
-    // so we have to explicitly detect it and retry with the shared sender.
-    function isDomainError(r: any) {
-      const msg: string = r?.error?.message || "";
-      return /domain is not verified|not verified/i.test(msg);
-    }
-
-    let result = await trySend(FROM_VERIFIED);
-    let fromUsed = FROM_VERIFIED;
-    if (isDomainError(result.owner) || isDomainError(result.customer)) {
-      result = await trySend(FROM_FALLBACK);
-      fromUsed = FROM_FALLBACK;
-    }
-
-    const failed = [result.owner?.error, result.customer?.error].filter(Boolean);
-    if (failed.length) {
-      console.error("[contact] send errors", failed);
+    // Owner notification — critical. If this fails, the form fails.
+    const ownerResult = await sendOne(
+      OWNER_EMAIL,
+      `New inquiry from ${name}${machine ? ` — ${machine}` : ""}`,
+      ownerHtml(fields),
+      email
+    );
+    if (ownerResult.r.error) {
+      console.error("[contact] owner send failed", ownerResult.r.error);
       return NextResponse.json(
-        {
-          ok: false,
-          delivered: false,
-          from: fromUsed,
-          errors: failed.map((e: any) => e?.message ?? String(e)),
-        },
+        { ok: false, delivered: false, error: "We couldn't deliver your message. Please call 928-418-5549." },
         { status: 502 }
       );
+    }
+
+    // Customer auto-reply — best-effort. If it fails (e.g. because the
+    // shared Resend sender can't email non-owner addresses), log and move on.
+    // Once the domain is verified in Resend, this path will succeed automatically.
+    const customerResult = await sendOne(
+      email,
+      "Thanks for reaching out to Used Slot Shop",
+      customerHtml(name),
+      OWNER_EMAIL
+    );
+    let autoReplySent = true;
+    if (customerResult.r.error) {
+      autoReplySent = false;
+      if (isRecipientRestrictionError(customerResult.r)) {
+        console.warn(
+          "[contact] auto-reply skipped — domain not verified in Resend, using shared sender which can't email non-owner addresses. Verify usedslotmachineshop.com at resend.com/domains to enable auto-replies."
+        );
+      } else {
+        console.error("[contact] customer auto-reply failed", customerResult.r.error);
+      }
     }
 
     return NextResponse.json({
       ok: true,
       delivered: true,
-      from: fromUsed,
-      ownerId: result.owner?.data?.id,
-      customerId: result.customer?.data?.id,
+      autoReplySent,
+      ownerFrom: ownerResult.fromUsed,
     });
   } catch (err: any) {
     console.error("[contact] failure", err);
