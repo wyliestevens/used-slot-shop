@@ -36,11 +36,12 @@ export default function ContactPage() {
             </div>
             <div className="card p-6 flex items-start gap-4">
               <Mail className="h-6 w-6 text-brand-400 mt-1" />
-              <div className="space-y-1">
+              <div>
                 <div className="text-xs uppercase text-ink-400 font-semibold">Email</div>
-                <div><a href={`mailto:${site.salesEmail}`} className="text-white hover:text-brand-300">{site.salesEmail}</a> <span className="text-ink-400 text-sm">(sales)</span></div>
-                <div><a href={`mailto:${site.serviceEmail}`} className="text-white hover:text-brand-300">{site.serviceEmail}</a> <span className="text-ink-400 text-sm">(service)</span></div>
-                <div><a href={`mailto:${site.email}`} className="text-white hover:text-brand-300">{site.email}</a> <span className="text-ink-400 text-sm">(general)</span></div>
+                <a href={`mailto:${site.email}`} className="text-xl font-bold text-white hover:text-brand-300">
+                  {site.email}
+                </a>
+                <div className="text-sm text-ink-300">Sales & Service</div>
               </div>
             </div>
             <div className="card p-6 flex items-start gap-4">
