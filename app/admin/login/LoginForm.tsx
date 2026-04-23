@@ -6,8 +6,8 @@ import { LogIn } from "lucide-react";
 export default function LoginForm() {
   const params = useSearchParams();
   const nextRaw = params.get("next") || "/admin";
-  // Only allow same-origin relative paths as redirect targets.
   const next = nextRaw.startsWith("/") && !nextRaw.startsWith("//") ? nextRaw : "/admin";
+  const [email, setEmail] = useState("usedslotshop@gmail.com");
   const [password, setPassword] = useState("");
   const [state, setState] = useState<"idle" | "loading" | "error">("idle");
   const [err, setErr] = useState("");
@@ -20,17 +20,13 @@ export default function LoginForm() {
       const res = await fetch("/api/admin/login", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ password }),
+        body: JSON.stringify({ email, password }),
         credentials: "same-origin",
       });
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        throw new Error(data.error || "Login failed");
-      }
-      // Full page navigation guarantees the newly-set cookie is sent on the
-      // request so middleware sees an authenticated session. router.push /
-      // router.refresh sometimes races the Set-Cookie on App Router.
-      window.location.href = next;
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.error || "Login failed");
+      const target = data.mustChangePassword ? "/admin/change-password" : next;
+      window.location.href = target;
     } catch (e) {
       setState("error");
       setErr(e instanceof Error ? e.message : "Login failed");
@@ -39,6 +35,17 @@ export default function LoginForm() {
 
   return (
     <form onSubmit={submit} className="card p-6 space-y-4">
+      <div>
+        <label className="text-sm font-medium text-ink-200 block mb-1.5">Email</label>
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          autoComplete="email"
+          className="w-full rounded-lg border border-ink-600 bg-ink-900 px-4 py-3 text-ink-100 placeholder:text-ink-500 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/40"
+        />
+      </div>
       <div>
         <label className="text-sm font-medium text-ink-200 block mb-1.5">Password</label>
         <input

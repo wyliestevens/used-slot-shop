@@ -11,6 +11,7 @@ import {
   Newspaper,
   Image as ImageIcon,
   FileText,
+  UserCircle,
 } from "lucide-react";
 import LogoutButton from "./LogoutButton";
 
@@ -29,6 +30,7 @@ const navItems = [
   { href: "/admin/images", label: "Images", icon: ImageIcon },
   { href: "/admin/site-settings", label: "Site", icon: Settings },
   { href: "/admin/history", label: "History", icon: History },
+  { href: "/admin/account", label: "Account", icon: UserCircle },
 ];
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
