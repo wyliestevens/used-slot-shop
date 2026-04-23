@@ -86,18 +86,30 @@ export async function POST(req: Request) {
       return { owner, customer };
     }
 
-    let result;
-    try {
-      result = await trySend(FROM_VERIFIED);
-    } catch {
+    // Resend surfaces domain-not-verified as response.error (not a thrown exception),
+    // so we have to explicitly detect it and retry with the shared sender.
+    function isDomainError(r: any) {
+      const msg: string = r?.error?.message || "";
+      return /domain is not verified|not verified/i.test(msg);
+    }
+
+    let result = await trySend(FROM_VERIFIED);
+    let fromUsed = FROM_VERIFIED;
+    if (isDomainError(result.owner) || isDomainError(result.customer)) {
       result = await trySend(FROM_FALLBACK);
+      fromUsed = FROM_FALLBACK;
     }
 
     const failed = [result.owner?.error, result.customer?.error].filter(Boolean);
     if (failed.length) {
       console.error("[contact] send errors", failed);
       return NextResponse.json(
-        { ok: false, delivered: false, errors: failed.map((e: any) => e?.message ?? String(e)) },
+        {
+          ok: false,
+          delivered: false,
+          from: fromUsed,
+          errors: failed.map((e: any) => e?.message ?? String(e)),
+        },
         { status: 502 }
       );
     }
@@ -105,6 +117,7 @@ export async function POST(req: Request) {
     return NextResponse.json({
       ok: true,
       delivered: true,
+      from: fromUsed,
       ownerId: result.owner?.data?.id,
       customerId: result.customer?.data?.id,
     });
