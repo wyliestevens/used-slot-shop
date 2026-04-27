@@ -8,6 +8,7 @@ import AmbientGlow from "@/components/AmbientGlow";
 import { JsonLd } from "@/components/JsonLd";
 import { organizationJsonLd } from "@/lib/seo";
 import { site } from "@/lib/site";
+import { seriesByBrand } from "@/data/machines";
 
 const GA_ID = "G-NE8NPQ4R7N";
 
@@ -53,6 +54,11 @@ export const viewport: Viewport = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const navBrands = site.brands.map((b) => ({
+    slug: b.slug,
+    name: b.name,
+    series: seriesByBrand(b.slug),
+  }));
   return (
     <html lang="en" className={`${inter.variable} ${grotesk.variable}`}>
       <body>
@@ -74,7 +80,7 @@ gtag('config', '${GA_ID}');`}
         >
           Skip to content
         </a>
-        <Navbar />
+        <Navbar brands={navBrands} />
         <main id="main">{children}</main>
         <Footer />
       </body>

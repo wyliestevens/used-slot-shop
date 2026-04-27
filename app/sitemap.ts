@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 import { site } from "@/lib/site";
-import { machines } from "@/data/machines";
+import { machines, seriesByBrand } from "@/data/machines";
 import { states } from "@/data/states";
 import { loadPosts } from "@/lib/blog";
 
@@ -30,6 +30,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: "weekly" as const,
     priority: 0.7,
   }));
+  const seriesPages = site.brands.flatMap((b) =>
+    seriesByBrand(b.slug).map((s) => ({
+      url: `${site.url}/shop/${b.slug}/${s.slug}`,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    }))
+  );
   const machinePages = machines.map((m) => ({
     url: `${site.url}/machines/${m.slug}`,
     lastModified: now,
@@ -58,5 +66,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     blogPages = [];
   }
 
-  return [...staticPages, ...brandPages, ...machinePages, ...statePages, ...blogPages];
+  return [...staticPages, ...brandPages, ...seriesPages, ...machinePages, ...statePages, ...blogPages];
 }

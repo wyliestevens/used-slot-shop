@@ -572,6 +572,39 @@ export function machinesByBrand(brand: string) {
   return machines.filter((m) => m.brand === brand);
 }
 
+export function seriesSlugFor(cabinet: string | undefined): string {
+  return cabinet ? slugify(cabinet) : "other";
+}
+
+export type Series = {
+  slug: string;
+  name: string;
+  count: number;
+};
+
+export function seriesByBrand(brand: string): Series[] {
+  const map = new Map<string, Series>();
+  for (const m of machines) {
+    if (m.brand !== brand) continue;
+    const name = m.cabinet ?? "Other";
+    const slug = seriesSlugFor(m.cabinet);
+    const existing = map.get(slug);
+    if (existing) existing.count += 1;
+    else map.set(slug, { slug, name, count: 1 });
+  }
+  return [...map.values()].sort((a, b) => a.name.localeCompare(b.name));
+}
+
+export function machinesBySeries(brand: string, seriesSlug: string) {
+  return machines.filter(
+    (m) => m.brand === brand && seriesSlugFor(m.cabinet) === seriesSlug
+  );
+}
+
+export function getSeries(brand: string, seriesSlug: string): Series | null {
+  return seriesByBrand(brand).find((s) => s.slug === seriesSlug) ?? null;
+}
+
 export function machinesByType(type: MachineType) {
   return machines.filter((m) => m.type === type);
 }

@@ -4,7 +4,7 @@ import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import { JsonLd } from "@/components/JsonLd";
 import { Section } from "@/components/Section";
 import MachineCard from "@/components/MachineCard";
-import { machinesByBrand } from "@/data/machines";
+import { machinesByBrand, seriesByBrand } from "@/data/machines";
 import { site } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -27,6 +27,7 @@ export default async function BrandPage({ params }: { params: Promise<{ brand: s
   const b = site.brands.find((x) => x.slug === brand);
   if (!b) notFound();
   const list = machinesByBrand(b.slug);
+  const series = seriesByBrand(b.slug);
   return (
     <>
       <JsonLd
@@ -41,7 +42,7 @@ export default async function BrandPage({ params }: { params: Promise<{ brand: s
         title={`${b.name} Slot Machines for Sale`}
         subtitle={`${b.blurb}. ${list.length} machine${list.length === 1 ? "" : "s"} currently in stock.`}
       >
-        <div className="flex flex-wrap gap-2 mb-8">
+        <div className="flex flex-wrap gap-2 mb-4">
           <Link href="/shop" className="rounded-full border border-ink-600 bg-ink-800/50 px-4 py-2 text-sm font-medium text-ink-200 hover:border-brand-500 hover:text-brand-300">
             All brands
           </Link>
@@ -59,6 +60,25 @@ export default async function BrandPage({ params }: { params: Promise<{ brand: s
             </Link>
           ))}
         </div>
+        {series.length > 0 && (
+          <div className="mb-8">
+            <p className="text-xs uppercase tracking-wider text-ink-400 mb-2">
+              Browse {b.name} by series
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {series.map((s) => (
+                <Link
+                  key={s.slug}
+                  href={`/shop/${b.slug}/${s.slug}`}
+                  className="rounded-full border border-ink-700 bg-ink-900/50 px-3 py-1.5 text-xs font-medium text-ink-200 hover:border-brand-500 hover:text-brand-300"
+                >
+                  {s.name}{" "}
+                  <span className="text-ink-400">({s.count})</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
         {list.length === 0 ? (
           <div className="card p-12 text-center">
             <p className="text-ink-200">
