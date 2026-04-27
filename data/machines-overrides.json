@@ -45,7 +45,7 @@
       "brand": "igt",
       "model": "S2000",
       "type": "reel",
-      "cabinet": "Barcrest S2000",
+      "cabinet": "Barcrest ",
       "condition": "Professionally Refurbished",
       "inStock": 1,
       "highlights": [
@@ -54,9 +54,10 @@
         "Ticket In – Ticket Out (TITO) Additional Cost",
         "Updated bill validator ($1–$100)",
         "1-year home-use warranty"
-      ]
+      ],
+      "name": "IGT Double Top Dollar Barcrest "
     },
-    "updatedAt": "2026-04-27T19:04:49.173Z"
+    "updatedAt": "2026-04-27T19:40:27.500Z"
   },
   {
     "slug": "igt-quack-shot-barcrest",
