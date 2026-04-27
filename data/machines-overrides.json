@@ -404,5 +404,24 @@
       ]
     },
     "updatedAt": "2026-04-27T22:36:16.560Z"
+  },
+  {
+    "slug": "igt-s2000-cleopatra-5reel",
+    "patch": {
+      "description": "IGT S2000 5-reel mechanical slot with 9 line, 45 coin configuration. Enhanced sound and TITO. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+      "brand": "igt",
+      "type": "reel",
+      "cabinet": "IGT S2000 5-Reel",
+      "condition": "Professionally Refurbished",
+      "inStock": 1,
+      "highlights": [
+        "Classic mechanical reel action",
+        "Enhanced sound package",
+        "Ticket In – Ticket Out (TITO) Additional Cost",
+        "Updated bill validator ($1–$100)",
+        "1-year home-use warranty"
+      ]
+    },
+    "updatedAt": "2026-04-27T22:37:09.966Z"
   }
 ]
