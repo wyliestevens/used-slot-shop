@@ -37,5 +37,25 @@
       ]
     },
     "updatedAt": "2026-04-27T19:02:00.846Z"
+  },
+  {
+    "slug": "igt-double-top-dollar-barcrest",
+    "patch": {
+      "description": "Premium Barcrest S2000 with bonus features, enhanced sound, and interactive dollar-sign pick bonus. Includes TITO and updated bill validator. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+      "brand": "igt",
+      "model": "S2000",
+      "type": "reel",
+      "cabinet": "Barcrest S2000",
+      "condition": "Professionally Refurbished",
+      "inStock": 1,
+      "highlights": [
+        "Classic mechanical reel action",
+        "Enhanced sound package",
+        "Ticket In – Ticket Out (TITO) Additional Cost",
+        "Updated bill validator ($1–$100)",
+        "1-year home-use warranty"
+      ]
+    },
+    "updatedAt": "2026-04-27T19:04:49.173Z"
   }
 ]
