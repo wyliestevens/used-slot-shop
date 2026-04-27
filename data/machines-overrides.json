@@ -79,5 +79,24 @@
       ]
     },
     "updatedAt": "2026-04-27T19:41:05.187Z"
+  },
+  {
+    "slug": "igt-money-mad-martians-barcrest",
+    "patch": {
+      "description": "Barcrest S2000 featuring bonus gameplay, enhanced audio, and interactive second-screen elements. Includes modern bill validator and one-year warranty. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+      "brand": "igt",
+      "type": "reel",
+      "cabinet": "Barcrest S2000",
+      "condition": "Professionally Refurbished",
+      "inStock": 1,
+      "highlights": [
+        "Classic mechanical reel action",
+        "Enhanced sound package",
+        "Ticket In – Ticket Out (TITO) Additional Cost",
+        "Updated bill validator ($1–$100)",
+        "1-year home-use warranty"
+      ]
+    },
+    "updatedAt": "2026-04-27T19:42:06.307Z"
   }
 ]
