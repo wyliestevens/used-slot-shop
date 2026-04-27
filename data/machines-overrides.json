@@ -57,5 +57,26 @@
       ]
     },
     "updatedAt": "2026-04-27T19:04:49.173Z"
+  },
+  {
+    "slug": "igt-quack-shot-barcrest",
+    "patch": {
+      "name": "IGT Quack Shot Barcrest ",
+      "description": "Barcrest S2000 slot machine with bonus features and enhanced sound system. Available in various colors and top sizes with TITO capability. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+      "brand": "igt",
+      "model": "S2000",
+      "type": "reel",
+      "cabinet": "Barcrest S2000",
+      "condition": "Professionally Refurbished",
+      "inStock": 1,
+      "highlights": [
+        "Classic mechanical reel action",
+        "Enhanced sound package",
+        "Ticket In – Ticket Out (TITO) Additional Cost",
+        "Updated bill validator ($1–$100)",
+        "1-year home-use warranty"
+      ]
+    },
+    "updatedAt": "2026-04-27T19:21:21.448Z"
   }
 ]
