@@ -481,5 +481,24 @@
       ]
     },
     "updatedAt": "2026-04-27T22:41:43.634Z"
+  },
+  {
+    "slug": "igt-s2000-leopard-claw",
+    "patch": {
+      "description": "IGT S2000 5-reel with 9 line, 90 coin. Modern validators and one-year warranty. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse.Ships in a fully insured crate nationwide.",
+      "brand": "igt",
+      "type": "reel",
+      "cabinet": "IGT S2000 5-Reel",
+      "condition": "Professionally Refurbished",
+      "inStock": 1,
+      "highlights": [
+        "Classic mechanical reel action",
+        "Enhanced sound package",
+        "Ticket In – Ticket Out (TITO) Additional Cost",
+        "Updated bill validator ($1–$100)",
+        "1-year home-use warranty"
+      ]
+    },
+    "updatedAt": "2026-04-27T22:44:23.384Z"
   }
 ]
