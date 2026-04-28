@@ -645,7 +645,7 @@
   {
     "slug": "igt-game-king-31-games-9-top",
     "patch": {
-      "description": "IGT Game King multi-denomination cabinet with 17-inch LCD, red or blue glass. Poker, keno, slots and blackjack with TITO. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+      "description": "IGT Game King 3.0 multi-denomination cabinet with 17-inch LCD, red or blue glass. Poker, keno, slots and blackjack with TITO. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
       "brand": "igt",
       "type": "video-poker",
       "cabinet": "IGT Game King",
@@ -693,9 +693,10 @@
         "Triple Bonus Poker Plus",
         "Shockwave Poker",
         "Blackjack"
-      ]
+      ],
+      "name": "IGT Game King 3.0 31 Games 9-inch Top"
     },
-    "updatedAt": "2026-04-28T16:44:26.565Z"
+    "updatedAt": "2026-04-28T20:40:07.733Z"
   },
   {
     "slug": "igt-game-king-31-games-17-lcd",
