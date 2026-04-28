@@ -277,7 +277,7 @@ Return ONLY the JSON object, no markdown fences.`;
       "content-type": "application/json",
     },
     body: JSON.stringify({
-      model: "claude-opus-4-7",
+      model: "claude-sonnet-4-6",
       max_tokens: 1024,
       system: systemPrompt,
       messages: [{ role: "user", content: userContent }],

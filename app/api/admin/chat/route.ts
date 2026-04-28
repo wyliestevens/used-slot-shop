@@ -34,7 +34,7 @@ export async function POST(req: Request) {
 
   for (let round = 0; round < MAX_ROUNDS; round++) {
     const reqBody = {
-      model: "claude-opus-4-7",
+      model: "claude-sonnet-4-6",
       max_tokens: 2048,
       system: CHAT_SYSTEM_PROMPT,
       tools: toolSchemas,
