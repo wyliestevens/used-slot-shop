@@ -83,6 +83,20 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      <div className="border-t border-ink-800 bg-ink-950">
+        <div className="container-wide py-4 text-center text-xs text-ink-400">
+          Built and powered by{" "}
+          <a
+            href="https://www.aipeakbiz.com"
+            target="_blank"
+            rel="noopener"
+            className="font-semibold text-brand-300 hover:text-brand-200"
+          >
+            AI Peak Biz
+          </a>
+          .
+        </div>
+      </div>
     </footer>
   );
 }
