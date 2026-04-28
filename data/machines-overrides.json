@@ -754,5 +754,26 @@
       "price": 1350
     },
     "updatedAt": "2026-04-28T20:39:06.553Z"
+  },
+  {
+    "slug": "igt-game-king-31-games-19-lcd",
+    "patch": {
+      "name": "IGT Game King 3.0 31 Games Round Top (19\" LCD)",
+      "description": "Multi-denomination Game King with 19-inch LCD. Poker, keno, slots and blackjack with modern bill validation. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+      "brand": "igt",
+      "type": "video-poker",
+      "cabinet": "IGT Game King Round Top",
+      "condition": "Professionally Refurbished",
+      "inStock": 1,
+      "highlights": [
+        "Multi-game",
+        "Enhanced Sound System",
+        "19-inch LCD",
+        "Free Ticket In- Ticket Out (TITO) Free Play System",
+        "Updated bill validator ($1 -$100)",
+        "1-year home-use warranty"
+      ]
+    },
+    "updatedAt": "2026-04-28T20:46:32.081Z"
   }
 ]
