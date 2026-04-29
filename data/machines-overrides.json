@@ -995,7 +995,7 @@
     "patch": {
       "brand": "igt",
       "type": "reel",
-      "cabinet": "IGT S2000 Round Top",
+      "cabinet": "IGT S2000 16\" Top",
       "condition": "Professionally Refurbished",
       "inStock": 1,
       "highlights": [
@@ -1004,9 +1004,10 @@
         "Free Ticket In – Ticket Out (TITO) Free play system",
         "Updated bill validator ($1–$100)",
         "1-year home-use warranty"
-      ]
+      ],
+      "description": "IGT S2000 16\"-top Butterfly Sevens. Enhanced sound, TITO with optional Free Play. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships freight on an insured pallet nationwide."
     },
-    "updatedAt": "2026-04-29T01:04:08.938Z"
+    "updatedAt": "2026-04-29T01:17:31.821Z"
   },
   {
     "slug": "igt-s2000-double-classic-7s",
