@@ -988,5 +988,23 @@
       ]
     },
     "updatedAt": "2026-04-29T00:59:42.677Z"
+  },
+  {
+    "slug": "igt-s2000-butterfly-sevens",
+    "patch": {
+      "brand": "igt",
+      "type": "reel",
+      "cabinet": "IGT S2000 Round Top",
+      "condition": "Professionally Refurbished",
+      "inStock": 1,
+      "highlights": [
+        "Classic mechanical reel action",
+        "Enhanced sound system",
+        "Free Ticket In – Ticket Out (TITO) Free play system",
+        "Updated bill validator ($1–$100)",
+        "1-year home-use warranty"
+      ]
+    },
+    "updatedAt": "2026-04-29T01:04:08.938Z"
   }
 ]
