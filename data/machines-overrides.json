@@ -1643,5 +1643,24 @@
       "name": "IGT Dragons Gold I+ 3902 "
     },
     "updatedAt": "2026-05-04T22:55:34.013Z"
+  },
+  {
+    "slug": "igt-vs9-enchanted-unicorn",
+    "patch": {
+      "name": "IGT Enchanted Unicorn I+ 3902 ",
+      "brand": "igt",
+      "type": "video",
+      "cabinet": "IGT I+ 3902 9-Line",
+      "condition": "Professionally Refurbished",
+      "inStock": 1,
+      "highlights": [
+        "Multi-line, multi-coin video play",
+        "Bonus rounds + enhanced sound",
+        "Free Ticket In – Ticket Out (TITO)",
+        "17-inch LCD display",
+        "1-year home-use warranty"
+      ]
+    },
+    "updatedAt": "2026-05-04T22:59:20.715Z"
   }
 ]
