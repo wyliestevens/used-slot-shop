@@ -1141,5 +1141,24 @@
       ]
     },
     "updatedAt": "2026-05-04T01:11:25.037Z"
+  },
+  {
+    "slug": "igt-s2000-haywire",
+    "patch": {
+      "description": "IGT S2000 16\" -top Haywire 2 coin. Enhanced sound, TITO, optional Free Play. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships freight on an insured pallet nationwide.",
+      "brand": "igt",
+      "type": "reel",
+      "cabinet": "IGT S2000 16\" Top",
+      "condition": "Professionally Refurbished",
+      "inStock": 1,
+      "highlights": [
+        "Classic mechanical reel action",
+        "Enhanced sound system",
+        "Free Ticket In – Ticket Out (TITO) Free play system",
+        "Updated bill validator ($1–$100)",
+        "1-year home-use warranty"
+      ]
+    },
+    "updatedAt": "2026-05-04T01:15:03.537Z"
   }
 ]
