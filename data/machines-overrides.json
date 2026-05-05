@@ -1779,5 +1779,24 @@
       ]
     },
     "updatedAt": "2026-05-05T01:38:23.262Z"
+  },
+  {
+    "slug": "igt-vs9-kingpin-bowling",
+    "patch": {
+      "name": "IGT Kingpin Bowling I+ 3902 ",
+      "brand": "igt",
+      "type": "video",
+      "cabinet": "IGT I+ 3902 ",
+      "condition": "Professionally Refurbished",
+      "inStock": 1,
+      "highlights": [
+        "Multi-line, multi-coin video play",
+        "Bonus rounds + enhanced sound",
+        "Ticket In – Ticket Out (TITO)",
+        "17-inch LCD display",
+        "1-year home-use warranty"
+      ]
+    },
+    "updatedAt": "2026-05-05T01:41:26.552Z"
   }
 ]
