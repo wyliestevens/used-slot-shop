@@ -1936,5 +1936,25 @@
       ]
     },
     "updatedAt": "2026-05-05T02:31:58.853Z"
+  },
+  {
+    "slug": "igt-s2000-double-diamond-16-alt",
+    "patch": {
+      "name": "IGT S2000 Double Diamond ",
+      "description": "Classic S2000 Double Diamond. Round Top Enhanced sound, TITO, updated bill validator. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships freight on an insured pallet nationwide.",
+      "brand": "igt",
+      "type": "reel",
+      "cabinet": "IGT S2000 Round Top",
+      "condition": "Professionally Refurbished",
+      "inStock": 1,
+      "highlights": [
+        "Classic mechanical reel action",
+        "Enhanced sound system",
+        "Ticket In – Ticket Out (TITO)",
+        "Updated bill validator ($1–$100)",
+        "1-year home-use warranty"
+      ]
+    },
+    "updatedAt": "2026-05-05T02:36:23.579Z"
   }
 ]
