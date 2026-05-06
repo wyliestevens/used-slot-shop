@@ -2841,5 +2841,24 @@
       ]
     },
     "updatedAt": "2026-05-06T18:18:01.741Z"
+  },
+  {
+    "slug": "bally-arctic-treasures",
+    "patch": {
+      "description": "Bally M9000 video slot with multi-line, multi-coin play, TITO Free play option, 19-inch LCD. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+      "brand": "bally",
+      "type": "video",
+      "cabinet": "Bally M9000",
+      "condition": "Professionally Refurbished",
+      "inStock": 1,
+      "highlights": [
+        "Multi-line, multi-coin video play",
+        "Bonus rounds + enhanced sound",
+        "Ticket In – Ticket Out (TITO)",
+        "19-inch LCD display",
+        "1-year home-use warranty"
+      ]
+    },
+    "updatedAt": "2026-05-06T18:37:16.861Z"
   }
 ]
