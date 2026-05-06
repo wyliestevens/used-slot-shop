@@ -3771,5 +3771,25 @@
       ]
     },
     "updatedAt": "2026-05-06T22:58:26.408Z"
+  },
+  {
+    "slug": "wms-kilauea",
+    "patch": {
+      "price": 1050,
+      "description": "WMS BB1 Kilauea. Bonus features, multi-line, multi-coin, 19-inch LCD, TITO. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+      "brand": "williams",
+      "type": "video",
+      "cabinet": "WMS BB1",
+      "condition": "Professionally Refurbished",
+      "inStock": 1,
+      "highlights": [
+        "Multi-line, multi-coin video play",
+        "Bonus rounds + enhanced sound",
+        "Ticket In – Ticket Out (TITO)",
+        "19-inch LCD display",
+        "1-year home-use warranty"
+      ]
+    },
+    "updatedAt": "2026-05-06T23:03:24.211Z"
   }
 ]
