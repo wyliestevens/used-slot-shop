@@ -3690,5 +3690,25 @@
       ]
     },
     "updatedAt": "2026-05-06T22:51:08.455Z"
+  },
+  {
+    "slug": "wms-running-wild",
+    "patch": {
+      "price": 1050,
+      "description": "WMS BB1 Running Wild. Bonus features, multi-line, multi-coin, 19-inch LCD, TITO Free play option. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+      "brand": "williams",
+      "type": "video",
+      "cabinet": "WMS BB1",
+      "condition": "Professionally Refurbished",
+      "inStock": 1,
+      "highlights": [
+        "Multi-line, multi-coin video play",
+        "Bonus rounds + enhanced sound",
+        "Ticket In – Ticket Out (TITO)",
+        "19-inch LCD display",
+        "1-year home-use warranty"
+      ]
+    },
+    "updatedAt": "2026-05-06T22:52:46.288Z"
   }
 ]
