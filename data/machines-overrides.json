@@ -2345,7 +2345,7 @@
   {
     "slug": "igt-s2000-triple-double-stars-5line",
     "patch": {
-      "description": "IGT S2000 Triple Double Stars 5 coin 5 line. Enhanced sound, TITO Free play option, updated validator. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships freight on an insured pallet nationwide.",
+      "description": "IGT S2000 Triple Double Stars 5 coin 5 line. Enhanced sound, TITO Free play option, updated validator. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
       "brand": "igt",
       "type": "reel",
       "cabinet": "IGT S2000 Round Top",
@@ -2357,8 +2357,9 @@
         "Ticket In – Ticket Out (TITO)",
         "Updated bill validator ($1–$100)",
         "1-year home-use warranty"
-      ]
+      ],
+      "name": "IGT S2000 Triple Double Stars "
     },
-    "updatedAt": "2026-05-06T17:15:37.429Z"
+    "updatedAt": "2026-05-06T17:17:32.399Z"
   }
 ]
