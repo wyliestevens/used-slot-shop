@@ -3470,5 +3470,25 @@
       ]
     },
     "updatedAt": "2026-05-06T21:09:08.941Z"
+  },
+  {
+    "slug": "wms-brazilian-beauty",
+    "patch": {
+      "price": 1050,
+      "description": "WMS BB1 Brazilian Beauty. Bonus features, multi-line, multi-coin, 19-inch LCD, TITO Free play option. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships freight on an insured pallet nationwide.",
+      "brand": "williams",
+      "type": "video",
+      "cabinet": "WMS BB1",
+      "condition": "Professionally Refurbished",
+      "inStock": 1,
+      "highlights": [
+        "Multi-line, multi-coin video play",
+        "Bonus rounds + enhanced sound",
+        "Ticket In – Ticket Out (TITO)",
+        "19-inch LCD display",
+        "1-year home-use warranty"
+      ]
+    },
+    "updatedAt": "2026-05-06T21:10:36.421Z"
   }
 ]
