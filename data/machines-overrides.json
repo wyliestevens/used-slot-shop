@@ -2,7 +2,7 @@
   {
     "slug": "wms-keepin-up-with-jones",
     "patch": {
-      "description": "WMS BB1 Keepin Up With Jones. Bonus features, multi-line, multi-coin, 19-inch LCD, TITO. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships freight on an insured pallet nationwide..",
+      "description": "WMS BB1 Keepin Up With Jones. Bonus features, multi-line, multi-coin, 19-inch LCD, TITO Free play option. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
       "brand": "williams",
       "type": "video",
       "cabinet": "WMS BB1",
@@ -14,9 +14,10 @@
         "Ticket In – Ticket Out (TITO)",
         "19-inch LCD display",
         "1-year home-use warranty"
-      ]
+      ],
+      "price": 1050
     },
-    "updatedAt": "2026-04-21T20:42:51.463Z"
+    "updatedAt": "2026-05-06T23:00:32.817Z"
   },
   {
     "slug": "igt-s2000-black-pearl-sevens",
