@@ -247,7 +247,7 @@
   {
     "slug": "igt-moolah",
     "patch": {
-      "description": "IGT I+ 3902 video slot with bonus features, multi-line play, and enhanced sound. TITO included. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+      "description": "IGT I+ 3902 video slot with bonus features, multi-line play, and enhanced sound. TITO Free play system. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
       "brand": "igt",
       "type": "video",
       "cabinet": "IGT I+ 3902",
@@ -258,12 +258,12 @@
         "Bonus rounds",
         "Enhanced sound system",
         "Updated bill validator ($1 - $100)",
-        "Free Ticket In – Ticket Out (TITO) Free Play System",
+        "Ticket In – Ticket Out (TITO)",
         "17-inch LCD display",
         "1-year home-use warranty"
       ]
     },
-    "updatedAt": "2026-04-28T19:05:22.059Z"
+    "updatedAt": "2026-05-06T00:44:29.723Z"
   },
   {
     "slug": "igt-mystical-mermaid",
