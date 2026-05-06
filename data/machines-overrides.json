@@ -2879,5 +2879,24 @@
       ]
     },
     "updatedAt": "2026-05-06T18:40:39.453Z"
+  },
+  {
+    "slug": "bally-fairy-play",
+    "patch": {
+      "description": "Bally M9000 Fairy Play video slot. Multi-line, multi-coin, TITO Free play option, 19-inch LCD. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+      "brand": "bally",
+      "type": "video",
+      "cabinet": "Bally M9000",
+      "condition": "Professionally Refurbished",
+      "inStock": 1,
+      "highlights": [
+        "Multi-line, multi-coin video play",
+        "Bonus rounds + enhanced sound",
+        "Ticket In – Ticket Out (TITO)",
+        "19-inch LCD display",
+        "1-year home-use warranty"
+      ]
+    },
+    "updatedAt": "2026-05-06T18:42:01.136Z"
   }
 ]
