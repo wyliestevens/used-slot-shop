@@ -3373,5 +3373,24 @@
       ]
     },
     "updatedAt": "2026-05-06T20:02:56.565Z"
+  },
+  {
+    "slug": "konami-panda-power-dual",
+    "patch": {
+      "description": "Konami K2V dual-screen Panda Power. Bonus features, multi-line, 19-inch LCD. TITO free play option. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+      "brand": "konami",
+      "type": "video",
+      "cabinet": "Konami K2V Dual",
+      "condition": "Professionally Refurbished",
+      "inStock": 1,
+      "highlights": [
+        "Multi-line, multi-coin video play",
+        "Bonus rounds + enhanced sound",
+        "Ticket In – Ticket Out (TITO)",
+        "19-inch LCD display",
+        "1-year home-use warranty"
+      ]
+    },
+    "updatedAt": "2026-05-06T20:04:22.447Z"
   }
 ]
