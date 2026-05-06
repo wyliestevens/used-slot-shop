@@ -492,7 +492,7 @@
   {
     "slug": "igt-s2000-double-dollars-free-spin",
     "patch": {
-      "description": "IGT S2000 5-reel with free spin bonus. 9 line, 180 coin play and enhanced audio. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+      "description": "IGT S2000 5-reel with free spin bonus. 9 line, 180 coin play and enhanced audio Free play option. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
       "brand": "igt",
       "type": "reel",
       "cabinet": "IGT S2000 5-Reel",
@@ -501,13 +501,13 @@
       "highlights": [
         "Classic mechanical reel action",
         "Enhanced sound system",
-        "Free Ticket In – Ticket Out (TITO) Free Play System",
+        "Ticket In – Ticket Out (TITO)",
         "Updated bill validator ($1–$100)",
         "1-year home-use warranty",
         "Topper is Additional Cost"
       ]
     },
-    "updatedAt": "2026-04-28T20:25:35.900Z"
+    "updatedAt": "2026-05-06T01:09:28.485Z"
   },
   {
     "slug": "igt-s2000-leopard-claw",
