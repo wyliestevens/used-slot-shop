@@ -1,19 +1,25 @@
 [
   {
     "slug": "igt-i-3902",
-    "name": "IGT i+ 3902",
+    "name": "IGT Money Storm",
     "brand": "igt",
     "type": "video",
     "price": 1650,
     "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/08cca8edd415aa06f04454bbbbd7cd8f50cf2e7e/public/uploads/unsorted/item_368_full_image.jpg",
     "description": "IGT I+ 3902 Money Storm with bonus features. Multi-line, multi-coin, 17-inch LCD, TITO Free play option. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide..",
     "highlights": [
-      "IGT I+ 3902 Money Storm with bonus features. Multi-line, multi-coin, 17-inch LCD, TITO."
+      "Multi-line, multi-coin video play",
+      "Bonus rounds",
+      "Enhanced sound system",
+      "Ticket In – Ticket Out (TITO)",
+      "17-inch LCD display",
+      "1-year home-use warranty"
     ],
     "condition": "Professionally Refurbished",
     "inStock": 1,
     "status": "published",
     "createdAt": "2026-05-13T18:24:11.236Z",
-    "updatedAt": "2026-05-13T18:25:30.489Z"
+    "updatedAt": "2026-05-13T18:31:34.450Z",
+    "cabinet": "IGT I+ 3902"
   }
 ]
