@@ -1,5 +1,27 @@
 [
   {
+    "slug": "igt-triple-star",
+    "name": "IGT Triple Star",
+    "brand": "igt",
+    "type": "reel",
+    "price": 950,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/e0995535249f3fe19502dddf4a7d3cd954bec4c9/public/uploads/unsorted/item_890_full_image.jpg",
+    "description": "IGT S2000 Triple Star 5-reel mechanical slot with 9 line, 45 coin configuration. Enhanced sound and TITO Free play option. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+    "highlights": [
+      "Classic mechanical reel action",
+      "Enhanced sound system",
+      "Ticket In – Ticket Out (TITO)",
+      "Updated bill validator ($1–$100)",
+      "1-year home-use warranty"
+    ],
+    "cabinet": "IGT S2000 5-Reel",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-05-13T21:05:39.463Z",
+    "updatedAt": "2026-05-13T21:05:39.463Z"
+  },
+  {
     "slug": "igt-double-diamond-run",
     "name": "IGT Double Diamond Run",
     "brand": "igt",
