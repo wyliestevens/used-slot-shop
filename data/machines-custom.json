@@ -1,5 +1,20 @@
 [
   {
+    "slug": "wms-dragon-s-fire",
+    "name": "WMS Dragon's Fire",
+    "brand": "williams",
+    "type": "video",
+    "price": 1350,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/3ad95638448820deb009ae13963ad17eb3da5a42/public/uploads/unsorted/Dragon-s-Fire.JPG",
+    "description": "WMS BB2 Dragon's Fire. Bonus features, multi-line, multi-coin, 19-inch LCD, TITO Free play option. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+    "cabinet": "WMS BB2",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-05-13T22:59:22.993Z",
+    "updatedAt": "2026-05-13T22:59:22.993Z"
+  },
+  {
     "slug": "wms-buffalo-spirit",
     "name": "WMS Buffalo Spirit",
     "brand": "williams",
