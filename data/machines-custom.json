@@ -1,5 +1,27 @@
 [
   {
+    "slug": "igt-triple-diamond-haywire",
+    "name": "IGT Triple Diamond Haywire",
+    "brand": "igt",
+    "type": "reel",
+    "price": 850,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/bbfb4be8a1e8a3264ffbbff5c6df3300f7cd72b7/public/uploads/unsorted/item_950_full_image.jpg",
+    "description": "IGT S2000 Round Top Triple Diamond Haywire 3 coin. Enhanced sound, TITO Free play option. updated bill validator. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide..",
+    "highlights": [
+      "Classic mechanical reel action",
+      "Enhanced sound system",
+      "Ticket In – Ticket Out (TITO)",
+      "Updated bill validator ($1–$100)",
+      "1-year home-use warranty"
+    ],
+    "cabinet": "IGT S2000 Round Top",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-05-13T20:35:11.681Z",
+    "updatedAt": "2026-05-13T20:35:11.681Z"
+  },
+  {
     "slug": "igt-red-white-blue-wild-star",
     "name": "IGT Red,White,Blue Wild Star",
     "brand": "igt",
