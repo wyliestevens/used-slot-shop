@@ -1,5 +1,27 @@
 [
   {
+    "slug": "igt-double-times-pay-3x4x5",
+    "name": "IGT Double Times Pay 3x4x5",
+    "brand": "igt",
+    "type": "reel",
+    "price": 750,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/2b40e841230a0a3441541080c1a3aae2ea73da40/public/uploads/unsorted/item_433_full_image.jpg",
+    "description": "IGT S2000 Round Top, Double Times Pay 3x4x5x 2 coin. Enhanced sound, TITO Free play option. updated bill validator. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+    "highlights": [
+      "Classic mechanical reel action",
+      "Enhanced sound system",
+      "Ticket In – Ticket Out (TITO)",
+      "Updated bill validator ($1–$100)",
+      "1-year home-use warranty"
+    ],
+    "cabinet": "IGT S2000 Round Top",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-05-13T20:01:46.286Z",
+    "updatedAt": "2026-05-13T20:01:46.286Z"
+  },
+  {
     "slug": "igt-biker-babe",
     "name": "IGT Biker Babe ",
     "brand": "igt",
