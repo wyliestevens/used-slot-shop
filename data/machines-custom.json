@@ -1,5 +1,20 @@
 [
   {
+    "slug": "igt-biker-babe",
+    "name": "IGT Biker Babe ",
+    "brand": "igt",
+    "type": "reel",
+    "price": 850,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/5cab06b22aac89bad9f071945e3233b8f5d4fbe6/public/uploads/unsorted/IMG_1143.JPG",
+    "description": "IGT S2000 Round Top 2 coin. Enhanced sound, TITO Free play option, updated bill validator. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+    "cabinet": "IGT S2000 Round Top",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-05-13T19:46:05.662Z",
+    "updatedAt": "2026-05-13T19:46:05.662Z"
+  },
+  {
     "slug": "igt-stinkin-rich",
     "name": "IGT Stinkin Rich",
     "brand": "igt",
