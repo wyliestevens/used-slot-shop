@@ -12,7 +12,14 @@
     "inStock": 1,
     "status": "published",
     "createdAt": "2026-05-13T20:25:27.040Z",
-    "updatedAt": "2026-05-13T20:25:27.040Z"
+    "updatedAt": "2026-05-13T20:27:20.266Z",
+    "highlights": [
+      "Classic mechanical reel action",
+      "Enhanced sound system",
+      "Ticket In – Ticket Out (TITO)",
+      "Updated bill validator ($1–$100)",
+      "1-year home-use warranty"
+    ]
   },
   {
     "slug": "igt-triple-diamond-strike",
