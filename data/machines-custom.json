@@ -1,5 +1,27 @@
 [
   {
+    "slug": "wms-buffalo-spirit",
+    "name": "WMS Buffalo Spirit",
+    "brand": "williams",
+    "type": "video",
+    "price": 1350,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/440db175dd3ef9ff13eec41764c978aa4d64c2eb/public/uploads/unsorted/Buffalo-Spirit.JPG",
+    "description": "WMS BB2 Buffalo Spirit. Bonus features, multi-line, multi-coin, 19-inch LCD, TITO Free play option. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+    "highlights": [
+      "Multi-line, multi-coin video play",
+      "Bonus rounds + enhanced sound",
+      "Ticket In – Ticket Out (TITO)",
+      "19-inch LCD display",
+      "1-year home-use warranty"
+    ],
+    "cabinet": "WMS BB2",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-05-13T22:54:10.977Z",
+    "updatedAt": "2026-05-13T22:54:10.977Z"
+  },
+  {
     "slug": "wms-bb2",
     "name": "WMS Bird Of Prey",
     "brand": "williams",
