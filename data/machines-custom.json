@@ -1,5 +1,27 @@
 [
   {
+    "slug": "wms-super-jackpot-block-party",
+    "name": "WMS Super Jackpot Block Party",
+    "brand": "williams",
+    "type": "video",
+    "price": 1350,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/a669e5a97774518ec3dc82a515c010a3f5992d2e/public/uploads/unsorted/IMG_0787.JPG",
+    "description": "WMS BB2 Super Jackpot Party Block Party. Bonus features, multi-line, multi-coin, 19-inch LCD, TITO Free play option. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+    "highlights": [
+      "Multi-line, multi-coin video play",
+      "Bonus rounds + enhanced sound",
+      "Ticket In – Ticket Out (TITO)",
+      "19-inch LCD display",
+      "1-year home-use warranty"
+    ],
+    "cabinet": "WMS BB2",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-05-13T23:25:44.972Z",
+    "updatedAt": "2026-05-13T23:25:44.972Z"
+  },
+  {
     "slug": "wms-airplane",
     "name": "WMS Airplane",
     "brand": "williams",
