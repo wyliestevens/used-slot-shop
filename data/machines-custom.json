@@ -1,5 +1,27 @@
 [
   {
+    "slug": "wms-tiger-realm",
+    "name": "WMS Tiger Realm",
+    "brand": "williams",
+    "type": "video",
+    "price": 1350,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/19b39fe356926a8b1ab5799794bdcc2eaaf5c03d/public/uploads/unsorted/Tiger-s-realm.JPG",
+    "description": "WMS BB2 Tiger Realm. Bonus features, multi-line, multi-coin, 19-inch LCD, TITO Free play option. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+    "highlights": [
+      "Multi-line, multi-coin video play",
+      "Bonus rounds + enhanced sound",
+      "Ticket In – Ticket Out (TITO)",
+      "19-inch LCD display",
+      "1-year home-use warranty"
+    ],
+    "cabinet": "WMS BB2",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-05-13T23:13:58.344Z",
+    "updatedAt": "2026-05-13T23:13:58.344Z"
+  },
+  {
     "slug": "wms-knights-keep",
     "name": "WMS Knights Keep",
     "brand": "williams",
