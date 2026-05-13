@@ -1,5 +1,27 @@
 [
   {
+    "slug": "igt-triple-double-diamond",
+    "name": "IGT Triple Double Diamond",
+    "brand": "igt",
+    "type": "reel",
+    "price": 750,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/8128a13bc74599cab2fe60aaaf98fa21e6a9385c/public/uploads/unsorted/item_704_full_image.jpg",
+    "description": "IGT S2000 Round Top Triple Red Hot 7's 5 coin 5 line. Enhanced sound, TITO Free play option. updated bill validator. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+    "highlights": [
+      "Classic mechanical reel action",
+      "Enhanced sound system",
+      "Ticket In – Ticket Out (TITO)",
+      "Updated bill validator ($1–$100)",
+      "1-year home-use warranty"
+    ],
+    "cabinet": "IGT S2000 Round Top",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-05-13T20:29:31.682Z",
+    "updatedAt": "2026-05-13T20:29:31.682Z"
+  },
+  {
     "slug": "igt-crystal-sevens",
     "name": "IGT Crystal Sevens",
     "brand": "igt",
