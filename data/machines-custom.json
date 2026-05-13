@@ -1,5 +1,27 @@
 [
   {
+    "slug": "igt-triple-diamond-strike",
+    "name": "IGT Triple Diamond Strike",
+    "brand": "igt",
+    "type": "reel",
+    "price": 750,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/3df684dbefe124c58d2aabe6e8c204e12392986b/public/uploads/unsorted/item_533_full_image.jpg",
+    "description": "IGT S2000 Round Top Triple Diamond Strike 3 coin. Enhanced sound, TITO Free play option, updated bill validator. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+    "highlights": [
+      "Classic mechanical reel action",
+      "Enhanced sound system",
+      "Ticket In – Ticket Out (TITO)",
+      "Updated bill validator ($1–$100)",
+      "1-year home-use warranty"
+    ],
+    "cabinet": "IGT S2000 Round Top",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-05-13T20:12:06.395Z",
+    "updatedAt": "2026-05-13T20:12:06.395Z"
+  },
+  {
     "slug": "igt-triple-red-hot-7-s",
     "name": "IGT Triple Red Hot 7's ",
     "brand": "igt",
