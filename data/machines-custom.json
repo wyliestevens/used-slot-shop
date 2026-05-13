@@ -1,5 +1,27 @@
 [
   {
+    "slug": "igt-cleopatra",
+    "name": "IGT Cleopatra",
+    "brand": "igt",
+    "type": "reel",
+    "price": 950,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/edc1403eef6956ebca13f53fe657a120856b27f6/public/uploads/igt-double-diamond-12-free-spin/item_737_full_image.jpg",
+    "description": "IGT S2000 Cleopatra 5-reel mechanical slot with 9 line, 45 coin configuration. Enhanced sound and TITO Free play option. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+    "highlights": [
+      "Classic mechanical reel action",
+      "Enhanced sound system",
+      "Ticket In – Ticket Out (TITO)",
+      "Updated bill validator ($1–$100)",
+      "1-year home-use warranty"
+    ],
+    "cabinet": "IGT S2000 5-Reel",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-05-13T20:57:47.029Z",
+    "updatedAt": "2026-05-13T20:57:47.029Z"
+  },
+  {
     "slug": "igt-triple-diamond-haywire",
     "name": "IGT Triple Diamond Haywire",
     "brand": "igt",
