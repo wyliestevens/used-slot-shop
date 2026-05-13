@@ -1,1 +1,19 @@
-[]
+[
+  {
+    "slug": "igt-i-3902",
+    "name": "IGT i+ 3902",
+    "brand": "igt",
+    "type": "video",
+    "price": 1650,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/08cca8edd415aa06f04454bbbbd7cd8f50cf2e7e/public/uploads/unsorted/item_368_full_image.jpg",
+    "description": "IGT I+ 3902 Texas Tea with bonus features. Multi-line, multi-coin, 17-inch LCD, TITO Free play option. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide..",
+    "highlights": [
+      "IGT I+ 3902 Texas Tea with bonus features. Multi-line, multi-coin, 17-inch LCD, TITO."
+    ],
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-05-13T18:24:11.236Z",
+    "updatedAt": "2026-05-13T18:24:11.236Z"
+  }
+]
