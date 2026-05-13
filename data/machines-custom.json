@@ -1,5 +1,20 @@
 [
   {
+    "slug": "igt-it-s-my-party",
+    "name": "IGT It's My Party",
+    "brand": "igt",
+    "type": "video",
+    "price": 1650,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/6ee697141d477339c8460c34a7641bee1c47f90f/public/uploads/unsorted/item_373_full_image.jpg",
+    "description": "IGT I+ 3902 platform with bonus features, multi-line, multi-coin gameplay, 17-inch LCD display, enhanced sound and TITO Free play option. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+    "cabinet": "IGT I+ 3902",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-05-13T18:46:57.151Z",
+    "updatedAt": "2026-05-13T18:46:57.151Z"
+  },
+  {
     "slug": "igt-enchanted-unicorn",
     "name": "IGT Enchanted Unicorn",
     "brand": "igt",
