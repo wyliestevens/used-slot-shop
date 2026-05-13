@@ -1,5 +1,28 @@
 [
   {
+    "slug": "igt-enchanted-unicorn",
+    "name": "IGT Enchanted Unicorn",
+    "brand": "igt",
+    "type": "video",
+    "price": 1650,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/6cc71584ea51304c03e55c67901aa959fab62a6e/public/uploads/unsorted/item_372_full_image.jpg",
+    "description": "IGT I+ 3902 Enchanted Unicorn platform with bonus features, multi-line, multi-coin gameplay, 17-inch LCD display, enhanced sound and TITO Free play option. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+    "highlights": [
+      "Multi-line, multi-coin video play",
+      "Bonus rounds",
+      "Enhanced sound system",
+      "Ticket In – Ticket Out (TITO)",
+      "17-inch LCD display",
+      "1-year home-use warranty"
+    ],
+    "cabinet": "IGT I+ 3902",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-05-13T18:40:43.259Z",
+    "updatedAt": "2026-05-13T18:40:43.259Z"
+  },
+  {
     "slug": "igt-i-3902",
     "name": "IGT Money Storm",
     "brand": "igt",
