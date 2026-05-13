@@ -1,5 +1,27 @@
 [
   {
+    "slug": "wms-wizard-of-oz-ruby-slippers",
+    "name": "WMS Wizard Of Oz Ruby Slippers",
+    "brand": "williams",
+    "type": "video",
+    "price": 1350,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/9d0e5331275186f6b5b4edd87d3137f8e67258cf/public/uploads/unsorted/Wizard-Of-Oz-Ruby-Slippers.JPG",
+    "description": "WMS BB2 Wizard Of Oz Ruby Slippers. Bonus features, multi-line, multi-coin, 19-inch LCD, TITO Free play option. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+    "highlights": [
+      "Multi-line, multi-coin video play",
+      "Bonus rounds + enhanced sound",
+      "Ticket In – Ticket Out (TITO)",
+      "19-inch LCD display",
+      "1-year home-use warranty"
+    ],
+    "cabinet": "WMS BB2",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-05-13T23:18:49.405Z",
+    "updatedAt": "2026-05-13T23:18:49.405Z"
+  },
+  {
     "slug": "wms-winning-bid-2",
     "name": "WMS Winning Bid 2",
     "brand": "williams",
