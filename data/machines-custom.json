@@ -1,5 +1,27 @@
 [
   {
+    "slug": "igt-shocking-headline",
+    "name": "IGT Shocking Headline",
+    "brand": "igt",
+    "type": "video",
+    "price": 1650,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/372d57a1244f855a1d5f331e1f2f531ea8a84d12/public/uploads/unsorted/item_454_full_image.jpg",
+    "description": "IGT I+ 3902 Shocking headline, platform with bonus features, multi-line, multi-coin gameplay, 17-inch LCD display, enhanced sound and TITO Free play option. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+    "highlights": [
+      "Multi-line, multi-coin video play",
+      "Bonus rounds",
+      "Enhanced sound system",
+      "Ticket In – Ticket Out (TITO)",
+      "17-inch LCD display",
+      "1-year home-use warranty"
+    ],
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-05-13T18:49:28.948Z",
+    "updatedAt": "2026-05-13T18:49:28.948Z"
+  },
+  {
     "slug": "igt-it-s-my-party",
     "name": "IGT It's My Party",
     "brand": "igt",
