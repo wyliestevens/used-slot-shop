@@ -11,7 +11,15 @@
     "inStock": 1,
     "status": "published",
     "createdAt": "2026-05-13T22:42:52.321Z",
-    "updatedAt": "2026-05-13T22:42:52.321Z"
+    "updatedAt": "2026-05-13T22:45:50.147Z",
+    "cabinet": "WMS BB2",
+    "highlights": [
+      "Multi-line, multi-coin video play",
+      "Bonus rounds + enhanced sound",
+      "Ticket In – Ticket Out (TITO)",
+      "19-inch LCD display",
+      "1-year home-use warranty"
+    ]
   },
   {
     "slug": "igt-triple-star",
