@@ -1,7 +1,7 @@
 [
   {
     "slug": "wms-bb2",
-    "name": "WMS BB2",
+    "name": "WMS Bird Of Prey",
     "brand": "williams",
     "type": "video",
     "price": 1350,
@@ -11,7 +11,7 @@
     "inStock": 1,
     "status": "published",
     "createdAt": "2026-05-13T22:42:52.321Z",
-    "updatedAt": "2026-05-13T22:45:50.147Z",
+    "updatedAt": "2026-05-13T22:49:18.747Z",
     "cabinet": "WMS BB2",
     "highlights": [
       "Multi-line, multi-coin video play",
