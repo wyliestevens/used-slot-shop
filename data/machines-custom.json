@@ -1,5 +1,27 @@
 [
   {
+    "slug": "wms-knights-keep",
+    "name": "WMS Knights Keep",
+    "brand": "williams",
+    "type": "video",
+    "price": 1350,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/abadf516c6c8beebe9dc6fcc3fdf7822e13ca2f8/public/uploads/unsorted/Knight-s-Keep.JPG",
+    "description": "WMS BB2 Knights Keep. Bonus features, multi-line, multi-coin, 19-inch LCD, TITO Free play option. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+    "highlights": [
+      "Multi-line, multi-coin video play",
+      "Bonus rounds + enhanced sound",
+      "Ticket In – Ticket Out (TITO)",
+      "19-inch LCD display",
+      "1-year home-use warranty"
+    ],
+    "cabinet": "WMS BB2",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-05-13T23:11:42.579Z",
+    "updatedAt": "2026-05-13T23:11:42.579Z"
+  },
+  {
     "slug": "wms-i-love-lucy",
     "name": "WMS I Love Lucy",
     "brand": "williams",
