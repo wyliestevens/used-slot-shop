@@ -1,5 +1,27 @@
 [
   {
+    "slug": "wms-i-love-lucy",
+    "name": "WMS I Love Lucy",
+    "brand": "williams",
+    "type": "video",
+    "price": 1350,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/a16c7b9c5de00d8b8ccb6f8e6d58b8d7aceb185b/public/uploads/unsorted/I-Love-Lucy.JPG",
+    "description": "WMS BB2 I Love Lucy. Bonus features, multi-line, multi-coin, 19-inch LCD, TITO Free play option. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+    "highlights": [
+      "Multi-line, multi-coin video play",
+      "Bonus rounds + enhanced sound",
+      "Ticket In – Ticket Out (TITO)",
+      "19-inch LCD display",
+      "1-year home-use warranty"
+    ],
+    "cabinet": "WMS BB2",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-05-13T23:09:21.050Z",
+    "updatedAt": "2026-05-13T23:09:21.050Z"
+  },
+  {
     "slug": "wms-duke-of-hazard",
     "name": "WMS Duke Of Hazard",
     "brand": "williams",
