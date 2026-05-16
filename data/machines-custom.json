@@ -1,5 +1,20 @@
 [
   {
+    "slug": "igt-s2000-sevens-times-pay",
+    "name": "IGT S2000 Sevens Times Pay",
+    "brand": "igt",
+    "type": "reel",
+    "price": 950,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/19fff41b939db33b8fce30acdd2070666c29f2c6/public/uploads/unsorted/item_515_full_image.jpg",
+    "description": "IGT S2000 Sevens Times Pay 5-reel mechanical slot with 9 line, 45 coin configuration. Enhanced sound and TITO Free play option. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+    "cabinet": "IGT s2000 5-Reel",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-05-16T22:24:11.521Z",
+    "updatedAt": "2026-05-16T22:24:11.521Z"
+  },
+  {
     "slug": "igt-s2000-cleopatra",
     "name": "IGT S2000 Cleopatra",
     "brand": "igt",
