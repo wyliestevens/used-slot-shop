@@ -1,5 +1,27 @@
 [
   {
+    "slug": "wms-jewels-of-the-night",
+    "name": "WMS Jewels Of The Night",
+    "brand": "williams",
+    "type": "video",
+    "price": 1050,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/5ba9c54794bceff768ee55abfe2fdacc1dece083/public/uploads/unsorted/item_976_thumb.jpg",
+    "description": "WMS BB1 Ancient Fortune. Bonus, multi-line, multi-coin, 19-inch LCD, TITO Free play option. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+    "highlights": [
+      "Multi-line, multi-coin video play",
+      "Bonus rounds + enhanced sound",
+      "Ticket In – Ticket Out (TITO)",
+      "19-inch LCD display",
+      "1-year home-use warranty"
+    ],
+    "cabinet": "WMS BB1",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-05-17T20:14:09.278Z",
+    "updatedAt": "2026-05-17T20:14:09.278Z"
+  },
+  {
     "slug": "wms-king-wild",
     "name": "WMS King Wild",
     "brand": "williams",
