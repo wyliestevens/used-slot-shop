@@ -1,5 +1,27 @@
 [
   {
+    "slug": "igt-s2000-double-red-white-blue-3-coin-9-top",
+    "name": "IGT S2000 Double Red, White, Blue 3 Coin (9-top)",
+    "brand": "igt",
+    "type": "reel",
+    "price": 750,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/3ff6ac48f3aa37e32f5fe1812f022d52c0d19958/public/uploads/unsorted/item_684_full_image.jpg",
+    "description": "IGT S2000 9-top Double R/W/B 3 coin. Enhanced sound, TITO, Free Play option. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+    "highlights": [
+      "Classic mechanical reel action",
+      "Enhanced sound system",
+      "Ticket In – Ticket Out (TITO)",
+      "Updated bill validator ($1–$100)",
+      "1-year home-use warranty"
+    ],
+    "cabinet": "IGT S2000 9-Top",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-05-17T22:57:56.853Z",
+    "updatedAt": "2026-05-17T22:57:56.853Z"
+  },
+  {
     "slug": "igt-s2000-seven-times-pay-3-coin-9-top",
     "name": "IGT S2000 Seven Times Pay 3 Coin (9-top)",
     "brand": "igt",
