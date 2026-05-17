@@ -1,5 +1,27 @@
 [
   {
+    "slug": "wms-great-eagle-ii",
+    "name": "WMS Great Eagle II",
+    "brand": "williams",
+    "type": "video",
+    "price": 1050,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/e6d53ec7e99c6d0f25d612df6ef4d96cbadd8551/public/uploads/unsorted/item_979_thumb.jpg",
+    "description": "WMS BB1 Great Eagle II. Bonus, multi-line, multi-coin, 19-inch LCD, TITO Free play option. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+    "highlights": [
+      "Multi-line, multi-coin video play",
+      "Bonus rounds + enhanced sound",
+      "Ticket In – Ticket Out (TITO)",
+      "19-inch LCD display",
+      "1-year home-use warranty"
+    ],
+    "cabinet": "WMS BB1",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-05-17T21:19:53.296Z",
+    "updatedAt": "2026-05-17T21:19:53.296Z"
+  },
+  {
     "slug": "wms-jackpot-party-classic",
     "name": "WMS Jackpot Party Classic",
     "brand": "williams",
