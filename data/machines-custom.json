@@ -1,5 +1,23 @@
 [
   {
+    "slug": "wms-ancient-fortune",
+    "name": "WMS Ancient Fortune",
+    "brand": "williams",
+    "type": "video",
+    "price": 1050,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/304b314f5de6e71aaa779660b62bef52a2ee6da9/public/uploads/wms-ancient-fortune/item_973_thumb.jpg",
+    "description": "WMS BB1 Ancient Fortune. Bonus features, multi-line, multi-coin, 19-inch LCD, TITO.",
+    "highlights": [
+      "WMS BB1 Ancient Fortune. Bonus features, multi-line, multi-coin, 19-inch LCD, TITO Free play option. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide."
+    ],
+    "cabinet": "WMS BB1",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-05-17T19:45:55.206Z",
+    "updatedAt": "2026-05-17T19:45:55.206Z"
+  },
+  {
     "slug": "williams-zeus-ii",
     "name": "Williams Zeus II",
     "brand": "williams",
