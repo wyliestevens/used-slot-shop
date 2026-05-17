@@ -1,5 +1,27 @@
 [
   {
+    "slug": "wms-super-jackpot-party-2",
+    "name": "WMS Super Jackpot Party",
+    "brand": "williams",
+    "type": "video",
+    "price": 1050,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/151ab3527f7d368fda3412cb4512e99ae97b2e61/public/uploads/unsorted/item_982_thumb.jpg",
+    "description": "WMS BB1 Super Jackpot Party. Bonus, multi-line, multi-coin, 19-inch LCD, TITO Free play option. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+    "highlights": [
+      "Multi-line, multi-coin video play",
+      "Bonus rounds + enhanced sound",
+      "Ticket In – Ticket Out (TITO)",
+      "19-inch LCD display",
+      "1-year home-use warranty"
+    ],
+    "cabinet": "WMS BB1",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-05-17T21:22:20.613Z",
+    "updatedAt": "2026-05-17T21:22:20.613Z"
+  },
+  {
     "slug": "wms-great-eagle-ii",
     "name": "WMS Great Eagle II",
     "brand": "williams",
