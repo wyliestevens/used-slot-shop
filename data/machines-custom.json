@@ -1,5 +1,20 @@
 [
   {
+    "slug": "wms-pegasus",
+    "name": "WMS Pegasus ",
+    "brand": "williams",
+    "type": "video",
+    "price": 1050,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/20349e3cbcb40cc2d2a5787df846c65db74c2039/public/uploads/unsorted/item_977_thumb.jpg",
+    "description": "WMS BB1 Pegasus. Bonus, multi-line, multi-coin, 19-inch LCD, TITO Free play option. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+    "cabinet": "WMS BB1",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-05-17T20:42:14.961Z",
+    "updatedAt": "2026-05-17T20:42:14.961Z"
+  },
+  {
     "slug": "wms-jewels-of-the-night",
     "name": "WMS Jewels Of The Night",
     "brand": "williams",
