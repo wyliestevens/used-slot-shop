@@ -4,6 +4,19 @@ A running record of every build, deploy, and meaningful change to the site. Newe
 
 ---
 
+## v0.7.3 — Admin activity (IGT S2000 Double Diamond publish + image uploads)
+**Date:** 2026-05-18
+**Status:** ✅ Live
+**Headline commits:**
+- `c05521b` admin: publish igt-s2000-double-diamond
+- `13bf461` admin: update igt-s2000-double-diamond
+- `0d6270b` / `1e5babe` upload: image for unsorted
+
+### What changed
+Owner used the admin to publish and update `igt-s2000-double-diamond` and upload two more images to the library. Caught up at first session resume.
+
+---
+
 ## v0.7.2 — AI Peak Biz credit + AI model switch
 **Date:** 2026-04-28
 **Status:** ✅ Live
