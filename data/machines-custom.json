@@ -1,5 +1,20 @@
 [
   {
+    "slug": "igt-s2000-double-diamond-deluxe",
+    "name": "IGT S2000 Double diamond deluxe ",
+    "brand": "igt",
+    "type": "reel",
+    "price": 750,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/03f30beb12f14d67086c3bd596de6c8078191813/public/uploads/unsorted/item_189_full_image.jpg",
+    "description": "IGT S2000 16\" Top 3-reel mechanical slot. 2 coin play with enhanced sound, TITO and optional Free Play. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+    "cabinet": "S2000 16\" Top",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-05-18T00:13:17.854Z",
+    "updatedAt": "2026-05-18T00:13:17.854Z"
+  },
+  {
     "slug": "igt-s2000-triple-red-white-blue-3-coin-9-top",
     "name": "IGT S2000 Triple Red/White/Blue 3 Coin (9-top)",
     "brand": "igt",
