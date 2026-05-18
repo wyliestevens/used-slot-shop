@@ -4,6 +4,30 @@ A running record of every build, deploy, and meaningful change to the site. Newe
 
 ---
 
+## v0.7.4 — Bugfix: blog form race condition + clearer missing-field error
+**Date:** 2026-05-18
+**Status:** ✅ Live
+**Headline commits:**
+- `080bd16` fix(admin/blog): block save/publish while cover upload is in flight + specific missing-field error
+
+### What changed
+Owner reported he couldn't add a blog post the day before. Root cause: the "Save draft" / "Publish live" buttons on `/admin/blog/new` weren't disabled while the cover-image upload was in flight, so clicking Publish before the upload finished triggered client-side validation with a misleading generic error. Fixed:
+
+- Both buttons now disable during upload and label themselves "Waiting for upload…"
+- Validation error now names the specific missing field(s) (e.g. `"Please fill in: cover image."`) instead of a one-size-fits-all message
+- Same race-condition fix applied to the Edit Post form
+
+### Verification (partial — full e2e blocked on admin password)
+- `GET /admin/blog/new` → 307 (redirect to login) ✓
+- `POST /api/admin/blog` without auth → 401 ✓
+- `POST /api/admin/login` returns structured 400/401 errors ✓
+- Production reachable, Vercel served fresh `x-vercel-id` after push ✓
+- Image upload route confirmed healthy (5 successful admin uploads in the past 24h)
+
+Full e2e (login → upload cover → POST blog → confirm `blog-posts.json` entry) requires the owner's password and was left for the owner to validate in-browser.
+
+---
+
 ## v0.7.3 — Admin activity (IGT S2000 Double Diamond publish + image uploads)
 **Date:** 2026-05-18
 **Status:** ✅ Live
