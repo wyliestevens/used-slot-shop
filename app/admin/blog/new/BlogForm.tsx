@@ -64,8 +64,16 @@ export default function BlogForm() {
   }
 
   async function save(status: "draft" | "published") {
-    if (!form.title || !form.coverImage || !form.author) {
-      setErr("Title, cover image, and author are required");
+    if (uploading) {
+      setErr("Cover image is still uploading — wait for it to finish, then try again.");
+      return;
+    }
+    const missing: string[] = [];
+    if (!form.title) missing.push("title");
+    if (!form.coverImage) missing.push("cover image");
+    if (!form.author) missing.push("author");
+    if (missing.length) {
+      setErr(`Please fill in: ${missing.join(", ")}.`);
       return;
     }
     setSaving(status === "published" ? "publish" : "draft");
@@ -198,11 +206,21 @@ export default function BlogForm() {
       )}
 
       <div className="flex items-center justify-between gap-3">
-        <button onClick={() => save("draft")} disabled={!!saving} className="btn-ghost">
-          <Save className="h-4 w-4" /> {saving === "draft" ? "Saving…" : "Save draft"}
+        <button
+          onClick={() => save("draft")}
+          disabled={!!saving || uploading}
+          className="btn-ghost"
+        >
+          <Save className="h-4 w-4" />{" "}
+          {saving === "draft" ? "Saving…" : uploading ? "Waiting for upload…" : "Save draft"}
         </button>
-        <button onClick={() => save("published")} disabled={!!saving} className="btn-primary">
-          <Upload className="h-4 w-4" /> {saving === "publish" ? "Publishing…" : "Publish live"}
+        <button
+          onClick={() => save("published")}
+          disabled={!!saving || uploading}
+          className="btn-primary"
+        >
+          <Upload className="h-4 w-4" />{" "}
+          {saving === "publish" ? "Publishing…" : uploading ? "Waiting for upload…" : "Publish live"}
         </button>
       </div>
     </div>

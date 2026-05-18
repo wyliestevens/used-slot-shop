@@ -193,8 +193,13 @@ export default function EditForm({ initial }: { initial: BlogPost }) {
         >
           <Trash2 className="h-4 w-4" /> {deleting ? "Deleting…" : "Delete"}
         </button>
-        <button onClick={save} disabled={saving || deleting} className="btn-primary">
-          <Save className="h-4 w-4" /> {saving ? "Saving…" : "Save changes"}
+        <button
+          onClick={save}
+          disabled={saving || deleting || uploading}
+          className="btn-primary"
+        >
+          <Save className="h-4 w-4" />{" "}
+          {saving ? "Saving…" : uploading ? "Waiting for upload…" : "Save changes"}
         </button>
       </div>
     </div>
