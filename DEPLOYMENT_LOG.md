@@ -4,6 +4,90 @@ A running record of every build, deploy, and meaningful change to the site. Newe
 
 ---
 
+## v0.7.2 — AI Peak Biz credit + AI model switch
+**Date:** 2026-04-28
+**Status:** ✅ Live
+**Headline commits:**
+- `bd4fb28` chore(admin): switch admin AI model from Opus 4.7 → Sonnet 4.6
+- `595a5ce` feat(footer): "Built and powered by AI Peak Biz" credit with backlink
+
+### What changed
+- **Admin AI model swap.** Cost/latency optimization — the admin chat agent and AI research tools now run on Claude Sonnet 4.6 instead of Opus 4.7. Same tool surface, faster + cheaper per edit.
+- **Footer attribution.** Public site footer now carries a "Built and powered by AI Peak Biz" credit linking back to aipeakbiz.com — converts every served page into a soft marketing impression.
+
+### Admin AI activity (~22 machine overrides this batch)
+Owner used the admin chat agent to edit copy/specs/pricing on individual machines: `igt-game-king-31-games-17-lcd`, `igt-game-king-31-games-9-top`, `igt-double-top-dollar-barcrest`, `igt-quack-shot-barcrest`, `igt-money-mad-martians-barcrest`, `igt-triple-double-diamond-deluxe-barcrest`, `igt-cleopatra-video`, `igt-lucky-larry-lobster-mania`, `igt-hexbreaker`, `igt-money-storm` (x2), `igt-monster-mansion`, `igt-my-rich-uncle`, `igt-moolah`, `igt-mystical-mermaid`, `igt-nurse-follies`, `igt-super-cherry`, `igt-super-sally-shrimp-mania` (x2), `igt-pharaohs-fortune`.
+
+Every edit was a separate commit via the GitHub Contents API — full audit trail in git log.
+
+---
+
+## v0.7.1 — Nested Shop menu + chat-driven FAQ polish
+**Date:** 2026-04-27
+**Status:** ✅ Live
+**Headline commits:**
+- `cb85b18` feat(shop): nested Shop menu with brand → series fly-out + series routes
+- `9db3364` / `d7b8ad6` chat: update FAQ copy (via admin agent)
+
+### What changed
+- **Two-level navigation.** Shop menu now expands to brand → series fly-outs (e.g. IGT → Game King, S2000 5-Reel, Barcrest, etc.). New series-level routes ship along with it. Cuts the path from homepage to a specific machine model.
+- **FAQ rewrites.** Owner used the admin chat agent to edit FAQ copy directly — no engineer in the loop.
+
+### Admin AI activity (~25 machine overrides this batch)
+Across IGT S2000 5-Reel series (`cleopatra-5reel`, `double-diamond-run`, `double-diamond-free-spin`, `double-dollars-free-spin`, `leopard-claw`, `five-times-pay-5reel`, `penny-barn`, `triple-red-hot-sevens-5reel`, `triple-lucky-sevens-5reel`, `triple-butterfly-sevens`, `triple-strike-5reel`, `black-pearl-sevens`), Barcrest titles, Game King variants, and several themed I+ machines.
+
+---
+
+## v0.7.0 — Contact form goes live + real user accounts
+**Date:** 2026-04-23
+**Status:** ✅ Live
+**Headline commits:**
+- `ae0bb4f` feat: wire contact form to Resend — owner notification + customer auto-reply
+- `f4dd32d` feat: email+password login, forced first-time change, self-service account page
+- `47ac0e6` fix: contact form fallback to resend.dev when custom domain unverified
+- `474dbba` fix(contact): split owner + customer sends, degrade gracefully on auto-reply failure
+- `c8b0b43` style: swap homepage hero image to a fuller casino-floor shot
+- `ac6c654` style(contact): collapse email block to a single address
+
+### What changed
+- **Contact form is now real.** `POST /api/contact` calls Resend twice — one notification to the owner, one auto-reply to the customer. Auto-reply failure no longer kills the owner notification.
+- **Resend fallback.** If the custom sending domain isn't verified yet, falls back to `onboarding@resend.dev` so production never silently drops messages.
+- **Real auth, not just password.** Admin login became email + password with a forced password change on first login. Added `/admin/account` page where the owner self-serves password rotation. Previously was a single shared password env var.
+- **Hero refresh.** Homepage hero image swapped to a richer casino-floor photo.
+
+### Storage note
+User credentials now live alongside other content as JSON in the repo, hashed. Same git-backed, no-database model as the rest of the admin CMS.
+
+### Quiet 2026-04-25 admin activity
+- `000a0a1` admin: password updated (owner self-service via the new account page — proved end-to-end)
+- `55c7cdf` admin: update site
+
+---
+
+## v0.6.1 — Editable seed inventory + brand palette
+**Date:** 2026-04-21 (same-day follow-on to v0.6.0)
+**Status:** ✅ Live
+**Headline commits:**
+- `2d37a19` feat(admin): editable seed machines — override layer, searchable dashboard, chat-tool updates
+- `5566582` feat(admin): Model # field on Add/Edit Machine forms; AI research uses brand+model for accurate specs
+- `f5da7f4` feat(admin): pagination on inventory list (80 per page, numbered nav)
+- `fe48aa6` style: rebrand site palette to match logo (coral primary + sage mint accent, warm-dark backdrop)
+- `7b2a7c5` style: boost mint prominence — green→accent everywhere, alternating coral/mint icons, mint hero tag + outline CTA, stronger mint in hero radial
+- `c6d5ce7` style: fixed ambient glow (coral top-right, mint bottom-left) + solid-fill mint icons + mint testimonials band
+- `569ad76` feat: daily-rotating 'Now Shipping' spotlight — picks a deterministic machine from live inventory, links to its page
+
+### What changed
+- **All 280 imported machines are now editable.** v0.6.0 only edited admin-created machines. The override layer means any seed machine (the originally-scraped catalog) can be patched via /admin or the chat agent. Dashboard now also searchable.
+- **Model # field.** Add/Edit Machine forms gained a "Model #" input. AI research tool combines `brand + model` for more accurate spec lookups via Claude vision.
+- **Pagination.** Inventory list paginated at 80/page with numbered nav — previous single-list view was unusable at 280 items.
+- **Brand palette rebrand.** Three style commits dialed the site colors to match the new logo: coral primary, sage mint accent, warm-dark backdrop, ambient glow, alternating coral/mint icons, mint hero tag/outline CTA, mint testimonials band.
+- **Daily spotlight.** Homepage now renders a "Now Shipping" tile that deterministically picks one live machine per day and links to its detail page — fresh content with zero owner effort.
+
+### Admin shake-out activity
+- Owner test-cycled `ainsworth-three-amigos-a-star-slot-machine` and `wms-keepin-up-with-jones` through draft → update → publish/override → delete to validate the override layer and chat tools end-to-end.
+
+---
+
 ## v0.6.0 — Full no-code site editor
 **Date:** 2026-04-21
 **Status:** ✅ Live
