@@ -11,9 +11,9 @@
       "buying guide"
     ],
     "status": "published",
-    "createdAt": "2026-03-27T12:00:00.000Z",
-    "updatedAt": "2026-03-27T12:00:00.000Z",
-    "publishedAt": "2026-03-27T12:00:00.000Z"
+    "createdAt": "2026-05-25T12:00:00.000Z",
+    "updatedAt": "2026-05-25T12:00:00.000Z",
+    "publishedAt": "2026-05-25T12:00:00.000Z"
   },
   {
     "slug": "how-much-does-a-slot-machine-cost-pricing-guide",
@@ -27,9 +27,9 @@
       "buying guide"
     ],
     "status": "published",
-    "createdAt": "2026-03-30T12:00:00.000Z",
-    "updatedAt": "2026-03-30T12:00:00.000Z",
-    "publishedAt": "2026-03-30T12:00:00.000Z"
+    "createdAt": "2026-05-25T12:00:00.000Z",
+    "updatedAt": "2026-05-25T12:00:00.000Z",
+    "publishedAt": "2026-05-25T12:00:00.000Z"
   },
   {
     "slug": "complete-slot-machine-buyers-guide",
@@ -43,9 +43,9 @@
       "featured"
     ],
     "status": "published",
-    "createdAt": "2026-04-01T12:00:00.000Z",
-    "updatedAt": "2026-04-01T12:00:00.000Z",
-    "publishedAt": "2026-04-01T12:00:00.000Z"
+    "createdAt": "2026-05-25T12:00:00.000Z",
+    "updatedAt": "2026-05-25T12:00:00.000Z",
+    "publishedAt": "2026-05-25T12:00:00.000Z"
   },
   {
     "slug": "how-we-ship-a-275-pound-slot-machine",
@@ -58,10 +58,9 @@
       "shipping",
       "how-to"
     ],
-    "status": "published",
-    "createdAt": "2026-04-03T12:00:00.000Z",
-    "updatedAt": "2026-04-03T12:00:00.000Z",
-    "publishedAt": "2026-04-03T12:00:00.000Z"
+    "status": "draft",
+    "createdAt": "2026-05-25T12:00:00.000Z",
+    "updatedAt": "2026-05-25T12:00:00.000Z"
   },
   {
     "slug": "igt-s2000-americas-most-popular-home-slot-machine",
@@ -74,10 +73,9 @@
       "igt",
       "product guide"
     ],
-    "status": "published",
-    "createdAt": "2026-04-06T12:00:00.000Z",
-    "updatedAt": "2026-04-06T12:00:00.000Z",
-    "publishedAt": "2026-04-06T12:00:00.000Z"
+    "status": "draft",
+    "createdAt": "2026-05-25T12:00:00.000Z",
+    "updatedAt": "2026-05-25T12:00:00.000Z"
   },
   {
     "slug": "refurbished-vs-used-slot-machines-whats-the-difference",
@@ -90,10 +88,9 @@
       "buying guide",
       "education"
     ],
-    "status": "published",
-    "createdAt": "2026-04-08T12:00:00.000Z",
-    "updatedAt": "2026-04-08T12:00:00.000Z",
-    "publishedAt": "2026-04-08T12:00:00.000Z"
+    "status": "draft",
+    "createdAt": "2026-05-25T12:00:00.000Z",
+    "updatedAt": "2026-05-25T12:00:00.000Z"
   },
   {
     "slug": "how-to-set-up-your-slot-machine-at-home",
@@ -106,10 +103,9 @@
       "how-to",
       "setup"
     ],
-    "status": "published",
-    "createdAt": "2026-04-10T12:00:00.000Z",
-    "updatedAt": "2026-04-10T12:00:00.000Z",
-    "publishedAt": "2026-04-10T12:00:00.000Z"
+    "status": "draft",
+    "createdAt": "2026-05-25T12:00:00.000Z",
+    "updatedAt": "2026-05-25T12:00:00.000Z"
   },
   {
     "slug": "slot-machine-maintenance-homeowners-guide",
@@ -122,10 +118,9 @@
       "maintenance",
       "how-to"
     ],
-    "status": "published",
-    "createdAt": "2026-04-13T12:00:00.000Z",
-    "updatedAt": "2026-04-13T12:00:00.000Z",
-    "publishedAt": "2026-04-13T12:00:00.000Z"
+    "status": "draft",
+    "createdAt": "2026-05-25T12:00:00.000Z",
+    "updatedAt": "2026-05-25T12:00:00.000Z"
   },
   {
     "slug": "coin-vs-coinless-tito-slot-machines",
@@ -138,10 +133,9 @@
       "buying guide",
       "education"
     ],
-    "status": "published",
-    "createdAt": "2026-04-15T12:00:00.000Z",
-    "updatedAt": "2026-04-15T12:00:00.000Z",
-    "publishedAt": "2026-04-15T12:00:00.000Z"
+    "status": "draft",
+    "createdAt": "2026-05-25T12:00:00.000Z",
+    "updatedAt": "2026-05-25T12:00:00.000Z"
   },
   {
     "slug": "best-slot-machines-for-home-game-room-2026",
@@ -154,10 +148,9 @@
       "buying guide",
       "featured"
     ],
-    "status": "published",
-    "createdAt": "2026-04-17T12:00:00.000Z",
-    "updatedAt": "2026-04-17T12:00:00.000Z",
-    "publishedAt": "2026-04-17T12:00:00.000Z"
+    "status": "draft",
+    "createdAt": "2026-05-25T12:00:00.000Z",
+    "updatedAt": "2026-05-25T12:00:00.000Z"
   },
   {
     "slug": "igt-vs-bally-vs-aristocrat-comparing-slot-machine-brands",
@@ -170,10 +163,9 @@
       "buying guide",
       "education"
     ],
-    "status": "published",
-    "createdAt": "2026-04-20T12:00:00.000Z",
-    "updatedAt": "2026-04-20T12:00:00.000Z",
-    "publishedAt": "2026-04-20T12:00:00.000Z"
+    "status": "draft",
+    "createdAt": "2026-05-25T12:00:00.000Z",
+    "updatedAt": "2026-05-25T12:00:00.000Z"
   },
   {
     "slug": "how-much-electricity-does-a-slot-machine-use",
@@ -186,10 +178,9 @@
       "maintenance",
       "education"
     ],
-    "status": "published",
-    "createdAt": "2026-04-22T12:00:00.000Z",
-    "updatedAt": "2026-04-22T12:00:00.000Z",
-    "publishedAt": "2026-04-22T12:00:00.000Z"
+    "status": "draft",
+    "createdAt": "2026-05-25T12:00:00.000Z",
+    "updatedAt": "2026-05-25T12:00:00.000Z"
   },
   {
     "slug": "aristocrat-buffalo-slot-machine-buyers-guide",
@@ -202,10 +193,9 @@
       "aristocrat",
       "product guide"
     ],
-    "status": "published",
-    "createdAt": "2026-04-24T12:00:00.000Z",
-    "updatedAt": "2026-04-24T12:00:00.000Z",
-    "publishedAt": "2026-04-24T12:00:00.000Z"
+    "status": "draft",
+    "createdAt": "2026-05-25T12:00:00.000Z",
+    "updatedAt": "2026-05-25T12:00:00.000Z"
   },
   {
     "slug": "what-is-free-play-mode-on-a-slot-machine",
@@ -218,10 +208,9 @@
       "education",
       "how-to"
     ],
-    "status": "published",
-    "createdAt": "2026-04-27T12:00:00.000Z",
-    "updatedAt": "2026-04-27T12:00:00.000Z",
-    "publishedAt": "2026-04-27T12:00:00.000Z"
+    "status": "draft",
+    "createdAt": "2026-05-25T12:00:00.000Z",
+    "updatedAt": "2026-05-25T12:00:00.000Z"
   },
   {
     "slug": "where-to-find-slot-machine-parts",
@@ -234,10 +223,9 @@
       "maintenance",
       "parts"
     ],
-    "status": "published",
-    "createdAt": "2026-04-29T12:00:00.000Z",
-    "updatedAt": "2026-04-29T12:00:00.000Z",
-    "publishedAt": "2026-04-29T12:00:00.000Z"
+    "status": "draft",
+    "createdAt": "2026-05-25T12:00:00.000Z",
+    "updatedAt": "2026-05-25T12:00:00.000Z"
   },
   {
     "slug": "25-year-rule-antique-slot-machine-laws",
@@ -250,10 +238,9 @@
       "legal",
       "education"
     ],
-    "status": "published",
-    "createdAt": "2026-05-01T12:00:00.000Z",
-    "updatedAt": "2026-05-01T12:00:00.000Z",
-    "publishedAt": "2026-05-01T12:00:00.000Z"
+    "status": "draft",
+    "createdAt": "2026-05-25T12:00:00.000Z",
+    "updatedAt": "2026-05-25T12:00:00.000Z"
   },
   {
     "slug": "how-to-build-home-casino",
@@ -266,10 +253,9 @@
       "lifestyle",
       "setup"
     ],
-    "status": "published",
-    "createdAt": "2026-05-04T12:00:00.000Z",
-    "updatedAt": "2026-05-04T12:00:00.000Z",
-    "publishedAt": "2026-05-04T12:00:00.000Z"
+    "status": "draft",
+    "createdAt": "2026-05-25T12:00:00.000Z",
+    "updatedAt": "2026-05-25T12:00:00.000Z"
   },
   {
     "slug": "slot-machine-error-codes-what-they-mean",
@@ -282,10 +268,9 @@
       "maintenance",
       "troubleshooting"
     ],
-    "status": "published",
-    "createdAt": "2026-05-06T12:00:00.000Z",
-    "updatedAt": "2026-05-06T12:00:00.000Z",
-    "publishedAt": "2026-05-06T12:00:00.000Z"
+    "status": "draft",
+    "createdAt": "2026-05-25T12:00:00.000Z",
+    "updatedAt": "2026-05-25T12:00:00.000Z"
   },
   {
     "slug": "used-slot-machines-vs-new-is-refurbished-worth-it",
@@ -298,10 +283,9 @@
       "buying guide",
       "education"
     ],
-    "status": "published",
-    "createdAt": "2026-05-08T12:00:00.000Z",
-    "updatedAt": "2026-05-08T12:00:00.000Z",
-    "publishedAt": "2026-05-08T12:00:00.000Z"
+    "status": "draft",
+    "createdAt": "2026-05-25T12:00:00.000Z",
+    "updatedAt": "2026-05-25T12:00:00.000Z"
   },
   {
     "slug": "buying-slot-machine-as-gift",
@@ -314,10 +298,9 @@
       "buying guide",
       "seasonal"
     ],
-    "status": "published",
-    "createdAt": "2026-05-11T12:00:00.000Z",
-    "updatedAt": "2026-05-11T12:00:00.000Z",
-    "publishedAt": "2026-05-11T12:00:00.000Z"
+    "status": "draft",
+    "createdAt": "2026-05-25T12:00:00.000Z",
+    "updatedAt": "2026-05-25T12:00:00.000Z"
   },
   {
     "slug": "how-to-move-a-slot-machine-into-your-home",
@@ -330,10 +313,9 @@
       "how-to",
       "setup"
     ],
-    "status": "published",
-    "createdAt": "2026-05-13T12:00:00.000Z",
-    "updatedAt": "2026-05-13T12:00:00.000Z",
-    "publishedAt": "2026-05-13T12:00:00.000Z"
+    "status": "draft",
+    "createdAt": "2026-05-25T12:00:00.000Z",
+    "updatedAt": "2026-05-25T12:00:00.000Z"
   },
   {
     "slug": "hosting-casino-night-at-home-slot-machine-parties",
@@ -346,10 +328,9 @@
       "lifestyle",
       "entertainment"
     ],
-    "status": "published",
-    "createdAt": "2026-05-15T12:00:00.000Z",
-    "updatedAt": "2026-05-15T12:00:00.000Z",
-    "publishedAt": "2026-05-15T12:00:00.000Z"
+    "status": "draft",
+    "createdAt": "2026-05-25T12:00:00.000Z",
+    "updatedAt": "2026-05-25T12:00:00.000Z"
   },
   {
     "slug": "slot-machine-glossary-75-terms-every-buyer-should-know",
@@ -362,10 +343,9 @@
       "education",
       "reference"
     ],
-    "status": "published",
-    "createdAt": "2026-05-18T12:00:00.000Z",
-    "updatedAt": "2026-05-18T12:00:00.000Z",
-    "publishedAt": "2026-05-18T12:00:00.000Z"
+    "status": "draft",
+    "createdAt": "2026-05-25T12:00:00.000Z",
+    "updatedAt": "2026-05-25T12:00:00.000Z"
   },
   {
     "slug": "slot-machines-as-investment-do-they-hold-or-gain-value",
@@ -378,10 +358,9 @@
       "investment",
       "education"
     ],
-    "status": "published",
-    "createdAt": "2026-05-20T12:00:00.000Z",
-    "updatedAt": "2026-05-20T12:00:00.000Z",
-    "publishedAt": "2026-05-20T12:00:00.000Z"
+    "status": "draft",
+    "createdAt": "2026-05-25T12:00:00.000Z",
+    "updatedAt": "2026-05-25T12:00:00.000Z"
   },
   {
     "slug": "slot-machines-for-airbnb-vacation-rental-properties",
@@ -394,10 +373,9 @@
       "investment",
       "hospitality"
     ],
-    "status": "published",
-    "createdAt": "2026-05-22T12:00:00.000Z",
-    "updatedAt": "2026-05-22T12:00:00.000Z",
-    "publishedAt": "2026-05-22T12:00:00.000Z"
+    "status": "draft",
+    "createdAt": "2026-05-25T12:00:00.000Z",
+    "updatedAt": "2026-05-25T12:00:00.000Z"
   },
   {
     "slug": "how-to-manage-slot-machine-noise-volume-control-muting-soundproofing",
@@ -410,10 +388,9 @@
       "setup",
       "tips"
     ],
-    "status": "published",
+    "status": "draft",
     "createdAt": "2026-05-25T12:00:00.000Z",
-    "updatedAt": "2026-05-25T12:00:00.000Z",
-    "publishedAt": "2026-05-25T12:00:00.000Z"
+    "updatedAt": "2026-05-25T12:00:00.000Z"
   },
   {
     "slug": "crt-to-lcd-monitor-upgrade-slot-machine-display",
@@ -426,10 +403,9 @@
       "upgrades",
       "DIY"
     ],
-    "status": "published",
-    "createdAt": "2026-05-20T12:00:00.000Z",
-    "updatedAt": "2026-05-20T12:00:00.000Z",
-    "publishedAt": "2026-05-20T12:00:00.000Z"
+    "status": "draft",
+    "createdAt": "2026-05-25T12:00:00.000Z",
+    "updatedAt": "2026-05-25T12:00:00.000Z"
   },
   {
     "slug": "slot-machine-insurance-protecting-your-investment",
@@ -442,10 +418,9 @@
       "tips",
       "investment"
     ],
-    "status": "published",
-    "createdAt": "2026-05-22T12:00:00.000Z",
-    "updatedAt": "2026-05-22T12:00:00.000Z",
-    "publishedAt": "2026-05-22T12:00:00.000Z"
+    "status": "draft",
+    "createdAt": "2026-05-25T12:00:00.000Z",
+    "updatedAt": "2026-05-25T12:00:00.000Z"
   },
   {
     "slug": "slot-machine-lighting-mods-led-upgrades-ambient-effects",
@@ -458,9 +433,8 @@
       "upgrades",
       "DIY"
     ],
-    "status": "published",
-    "createdAt": "2026-05-25T14:00:00.000Z",
-    "updatedAt": "2026-05-25T14:00:00.000Z",
-    "publishedAt": "2026-05-25T14:00:00.000Z"
+    "status": "draft",
+    "createdAt": "2026-05-25T12:00:00.000Z",
+    "updatedAt": "2026-05-25T12:00:00.000Z"
   }
 ]
