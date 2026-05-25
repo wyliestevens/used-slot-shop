@@ -42,7 +42,13 @@ export const metadata: Metadata = {
   verification: {
     google: "y3L6r7e-sN4GGbNWsXadOrcSa84qikHhsojKosjBh60",
   },
-  icons: { icon: "/logo.png", apple: "/logo.png" },
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/logo.png", sizes: "256x256", type: "image/png" },
+    ],
+    apple: "/logo.png",
+  },
   manifest: "/manifest.webmanifest",
 };
 

@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
+import { buildMetadata, breadcrumbJsonLd, itemListJsonLd } from "@/lib/seo";
 import { JsonLd } from "@/components/JsonLd";
 import { Section } from "@/components/Section";
 import MachineCard from "@/components/MachineCard";
@@ -31,11 +31,20 @@ export default async function BrandPage({ params }: { params: Promise<{ brand: s
   return (
     <>
       <JsonLd
-        data={breadcrumbJsonLd([
-          { name: "Home", path: "/" },
-          { name: "Shop", path: "/shop" },
-          { name: b.name, path: `/shop/${b.slug}` },
-        ])}
+        data={[
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Shop", path: "/shop" },
+            { name: b.name, path: `/shop/${b.slug}` },
+          ]),
+          itemListJsonLd(
+            list.slice(0, 50).map((m, i) => ({
+              name: m.name,
+              url: `${site.url}/machines/${m.slug}`,
+              position: i + 1,
+            }))
+          ),
+        ]}
       />
       <Section
         eyebrow={b.name}

@@ -74,6 +74,16 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
               licensed attorney in your state for binding guidance.
             </p>
 
+            <h2>Helpful resources</h2>
+            <ul>
+              <li><Link href="/buying-guide">Slot Machine Buyer&apos;s Guide</Link> — what to know before you buy</li>
+              <li><Link href="/faq">Frequently Asked Questions</Link> — legality, shipping, setup, and more</li>
+              <li><Link href="/blog/is-it-legal-to-own-a-slot-machine-state-by-state-guide">Full State-by-State Legality Guide</Link> — detailed breakdown for all 50 states</li>
+              {s.status !== "prohibited" && (
+                <li><Link href="/blog/how-much-does-a-slot-machine-cost-pricing-guide">Pricing Guide</Link> — what slot machines cost in 2026</li>
+              )}
+            </ul>
+
             {s.status !== "prohibited" && (
               <>
                 <h2>Ready to buy?</h2>
@@ -81,6 +91,8 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                   We ship to {s.name} weekly. Browse{" "}
                   <Link href="/shop">our full inventory</Link> or call{" "}
                   <a href={site.phoneHref}>{site.phone}</a> for a personal recommendation.
+                  Every machine comes with a 1-year warranty, free lifetime tech support,
+                  and insured freight delivery.
                 </p>
               </>
             )}

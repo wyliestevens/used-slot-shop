@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEO Cluster Map - Used Slot Shop</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f172a; color: #e2e8f0; min-height: 100vh; }
+  .header { padding: 24px 32px; border-bottom: 1px solid #1e293b; display: flex; justify-content: space-between; align-items: center; }
+  .header h1 { font-size: 1.5rem; font-weight: 700; }
+  .stats { display: flex; gap: 24px; }
+  .stat { text-align: center; }
+  .stat-value { font-size: 1.25rem; font-weight: 700; color: #38bdf8; }
+  .stat-label { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; }
+  .container { display: flex; height: calc(100vh - 80px); }
+  .sidebar { width: 320px; border-right: 1px solid #1e293b; overflow-y: auto; padding: 16px; }
+  .cluster-group { margin-bottom: 16px; }
+  .cluster-title { font-size: 0.875rem; font-weight: 600; padding: 8px 12px; border-radius: 6px; margin-bottom: 8px; cursor: pointer; }
+  .cluster-title:hover { opacity: 0.8; }
+  .post-item { padding: 8px 12px 8px 24px; border-radius: 4px; margin-bottom: 4px; cursor: pointer; font-size: 0.8rem; transition: background 0.2s; }
+  .post-item:hover { background: #1e293b; }
+  .post-item .keyword { color: #94a3b8; font-size: 0.7rem; display: block; margin-top: 2px; }
+  .post-item .meta { display: flex; gap: 8px; margin-top: 4px; }
+  .post-item .badge { font-size: 0.65rem; padding: 1px 6px; border-radius: 3px; background: #1e293b; color: #94a3b8; }
+  .canvas { flex: 1; position: relative; overflow: hidden; }
+  svg { width: 100%; height: 100%; }
+  .node { cursor: pointer; transition: transform 0.2s; }
+  .node:hover { transform: scale(1.05); }
+  .node-circle { stroke-width: 2; }
+  .node-label { font-size: 11px; fill: #e2e8f0; text-anchor: middle; pointer-events: none; }
+  .node-volume { font-size: 9px; fill: #94a3b8; text-anchor: middle; pointer-events: none; }
+  .link-line { stroke-opacity: 0.3; fill: none; }
+  .link-mandatory { stroke: #38bdf8; stroke-width: 2; }
+  .link-recommended { stroke: #a78bfa; stroke-width: 1.5; stroke-dasharray: 4,4; }
+  .link-optional { stroke: #4ade80; stroke-width: 1; stroke-dasharray: 2,4; }
+  .legend { position: absolute; bottom: 16px; right: 16px; background: #1e293b; padding: 12px 16px; border-radius: 8px; font-size: 0.75rem; }
+  .legend-item { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+  .legend-line { width: 24px; height: 2px; }
+  .pillar-glow { filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.5)); }
+  .tooltip { position: absolute; background: #1e293b; border: 1px solid #334155; padding: 12px; border-radius: 8px; font-size: 0.8rem; max-width: 280px; pointer-events: none; display: none; z-index: 100; }
+  .tooltip h4 { margin-bottom: 4px; color: #f1f5f9; }
+  .tooltip p { color: #94a3b8; margin-bottom: 4px; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>SEO Cluster Map: Used Slot Shop</h1>
+  <div class="stats">
+    <div class="stat"><div class="stat-value">14</div><div class="stat-label">Total Posts</div></div>
+    <div class="stat"><div class="stat-value">5</div><div class="stat-label">Clusters</div></div>
+    <div class="stat"><div class="stat-value">56</div><div class="stat-label">Internal Links</div></div>
+    <div class="stat"><div class="stat-value">~21,300</div><div class="stat-label">Est. Words</div></div>
+  </div>
+</div>
+<div class="container">
+  <div class="sidebar" id="sidebar"></div>
+  <div class="canvas">
+    <svg id="cluster-svg" viewBox="0 0 900 700"></svg>
+    <div class="legend">
+      <div class="legend-item"><div class="legend-line" style="background:#38bdf8;"></div> Mandatory (pillar-spoke)</div>
+      <div class="legend-item"><div class="legend-line" style="background:#a78bfa; border-top:2px dashed #a78bfa; height:0;"></div> Recommended (within cluster)</div>
+      <div class="legend-item"><div class="legend-line" style="background:#4ade80; border-top:1px dotted #4ade80; height:0;"></div> Optional (cross-cluster)</div>
+    </div>
+    <div class="tooltip" id="tooltip"></div>
+  </div>
+</div>
+<script>
+const CLUSTER_DATA = {
+  pillar: { title: "Complete Guide to Buying Used & Refurbished Slot Machines", keyword: "used slot machines for sale", volume: 6600, template: "ultimate-guide", wordCount: 3500, url: "/blog/used-slot-machines-for-sale-complete-guide" },
+  clusters: [
+    { name: "Refurbished & Home Use", color: "#38bdf8", posts: [
+      { title: "Refurbished Slot Machines for Home", keyword: "refurbished slot machines for home", volume: 1900, template: "how-to", wordCount: 1500, url: "/blog/refurbished-slot-machines-for-home", status: "planned" },
+      { title: "Best Slot Machines for Game Room", keyword: "best slot machines for home game room", volume: 1300, template: "best-of", wordCount: 1600, url: "/blog/best-slot-machines-home-game-room", status: "planned" },
+      { title: "How Much Does a Slot Machine Cost?", keyword: "how much does a slot machine cost", volume: 2400, template: "explainer", wordCount: 1500, url: "/blog/how-much-does-a-slot-machine-cost", status: "planned" }
+    ]},
+    { name: "Brands & Models", color: "#f472b6", posts: [
+      { title: "IGT Slot Machines: S2000, Game King & More", keyword: "IGT slot machines for sale", volume: 2900, template: "comparison", wordCount: 1800, url: "/blog/igt-slot-machines-for-sale", status: "planned" },
+      { title: "Aristocrat Buffalo Gold Buying Guide", keyword: "Buffalo Gold slot machine for sale", volume: 1600, template: "review", wordCount: 1400, url: "/blog/buffalo-gold-slot-machine-for-sale", status: "planned" },
+      { title: "Bally vs WMS vs Konami Comparison", keyword: "Bally slot machines for sale", volume: 1100, template: "comparison", wordCount: 1600, url: "/blog/bally-vs-wms-vs-konami-slot-machines", status: "planned" }
+    ]},
+    { name: "Legality & Ownership", color: "#fbbf24", posts: [
+      { title: "Slot Machine Laws by State (2026)", keyword: "slot machine ownership laws by state", volume: 3600, template: "ultimate-guide", wordCount: 1800, url: "/blog/slot-machine-ownership-laws-by-state", status: "planned" },
+      { title: "Slot Machines for Bars & Restaurants", keyword: "buy slot machine for bar restaurant", volume: 880, template: "how-to", wordCount: 1400, url: "/blog/buy-slot-machine-bar-restaurant", status: "planned" }
+    ]},
+    { name: "Parts & Maintenance", color: "#4ade80", posts: [
+      { title: "Slot Machine Parts & Accessories Guide", keyword: "slot machine parts and accessories", volume: 1900, template: "ultimate-guide", wordCount: 1500, url: "/blog/slot-machine-parts-accessories-guide", status: "planned" },
+      { title: "Slot Machine Maintenance Tips", keyword: "slot machine maintenance tips", volume: 720, template: "how-to", wordCount: 1400, url: "/blog/slot-machine-maintenance-tips", status: "planned" },
+      { title: "Bill Validator & TITO Troubleshooting", keyword: "slot machine bill validator replacement", volume: 590, template: "how-to", wordCount: 1300, url: "/blog/bill-validator-tito-troubleshooting-guide", status: "planned" }
+    ]},
+    { name: "Shipping & Collecting", color: "#c084fc", posts: [
+      { title: "Slot Machine Shipping & Freight Guide", keyword: "slot machine shipping delivery", volume: 720, template: "explainer", wordCount: 1300, url: "/blog/slot-machine-shipping-freight-delivery", status: "planned" },
+      { title: "Vintage & Antique Slot Machine Guide", keyword: "vintage antique slot machines for sale", volume: 1300, template: "listicle", wordCount: 1500, url: "/blog/vintage-antique-slot-machines-collectors-guide", status: "planned" }
+    ]}
+  ],
+  links: [
+    { from: "pillar", to: "c0p0", type: "mandatory" },{ from: "pillar", to: "c0p1", type: "mandatory" },{ from: "pillar", to: "c0p2", type: "mandatory" },
+    { from: "pillar", to: "c1p0", type: "mandatory" },{ from: "pillar", to: "c1p1", type: "mandatory" },{ from: "pillar", to: "c1p2", type: "mandatory" },
+    { from: "pillar", to: "c2p0", type: "mandatory" },{ from: "pillar", to: "c2p1", type: "mandatory" },
+    { from: "pillar", to: "c3p0", type: "mandatory" },{ from: "pillar", to: "c3p1", type: "mandatory" },{ from: "pillar", to: "c3p2", type: "mandatory" },
+    { from: "pillar", to: "c4p0", type: "mandatory" },{ from: "pillar", to: "c4p1", type: "mandatory" },
+    { from: "c0p0", to: "c0p1", type: "recommended" },{ from: "c0p0", to: "c0p2", type: "recommended" },{ from: "c0p1", to: "c0p2", type: "recommended" },
+    { from: "c1p0", to: "c1p1", type: "recommended" },{ from: "c1p0", to: "c1p2", type: "recommended" },{ from: "c1p1", to: "c1p2", type: "recommended" },
+    { from: "c2p0", to: "c2p1", type: "recommended" },
+    { from: "c3p0", to: "c3p1", type: "recommended" },{ from: "c3p0", to: "c3p2", type: "recommended" },{ from: "c3p1", to: "c3p2", type: "recommended" },
+    { from: "c4p0", to: "c4p1", type: "recommended" },
+    { from: "c0p0", to: "c2p0", type: "optional" },{ from: "c0p1", to: "c1p1", type: "optional" },
+    { from: "c1p0", to: "c3p0", type: "optional" },{ from: "c0p2", to: "c4p0", type: "optional" },{ from: "c2p1", to: "c0p2", type: "optional" }
+  ],
+  meta: { totalPosts: 14, totalClusters: 5, totalLinks: 53, estimatedWords: 21300 }
+};
+
+// Node positions
+const pillarPos = { x: 450, y: 350 };
+const clusterPositions = [
+  [{ x: 200, y: 150 }, { x: 350, y: 100 }, { x: 150, y: 250 }],
+  [{ x: 650, y: 120 }, { x: 750, y: 220 }, { x: 550, y: 200 }],
+  [{ x: 150, y: 480 }, { x: 250, y: 570 }],
+  [{ x: 650, y: 450 }, { x: 750, y: 540 }, { x: 550, y: 560 }],
+  [{ x: 350, y: 600 }, { x: 500, y: 630 }]
+];
+
+const nodeMap = { pillar: pillarPos };
+CLUSTER_DATA.clusters.forEach((cluster, ci) => {
+  cluster.posts.forEach((post, pi) => {
+    nodeMap[`c${ci}p${pi}`] = clusterPositions[ci][pi];
+  });
+});
+
+// Render SVG
+const svg = document.getElementById('cluster-svg');
+let svgContent = '';
+
+// Draw links
+CLUSTER_DATA.links.forEach(link => {
+  const from = nodeMap[link.from];
+  const to = nodeMap[link.to];
+  if (!from || !to) return;
+  const cls = `link-line link-${link.type}`;
+  svgContent += `<line x1="${from.x}" y1="${from.y}" x2="${to.x}" y2="${to.y}" class="${cls}"/>`;
+});
+
+// Draw pillar node
+svgContent += `<g class="node pillar-glow" data-id="pillar">
+  <circle cx="${pillarPos.x}" cy="${pillarPos.y}" r="40" fill="#0f172a" stroke="#38bdf8" class="node-circle" stroke-width="3"/>
+  <text x="${pillarPos.x}" y="${pillarPos.y - 5}" class="node-label" font-weight="700">PILLAR</text>
+  <text x="${pillarPos.x}" y="${pillarPos.y + 12}" class="node-volume">6,600/mo</text>
+</g>`;
+
+// Draw cluster nodes
+CLUSTER_DATA.clusters.forEach((cluster, ci) => {
+  cluster.posts.forEach((post, pi) => {
+    const pos = clusterPositions[ci][pi];
+    const r = Math.max(18, Math.min(30, post.volume / 100));
+    svgContent += `<g class="node" data-id="c${ci}p${pi}">
+      <circle cx="${pos.x}" cy="${pos.y}" r="${r}" fill="#0f172a" stroke="${cluster.color}" class="node-circle"/>
+      <text x="${pos.x}" y="${pos.y - 3}" class="node-label" font-size="9">${post.keyword.split(' ').slice(0, 3).join(' ')}</text>
+      <text x="${pos.x}" y="${pos.y + 10}" class="node-volume">${post.volume.toLocaleString()}/mo</text>
+    </g>`;
+  });
+});
+
+svg.innerHTML = svgContent;
+
+// Sidebar
+const sidebar = document.getElementById('sidebar');
+let sidebarHTML = `<div class="cluster-group">
+  <div class="cluster-title" style="background:#1e3a5f;color:#38bdf8;">PILLAR: ${CLUSTER_DATA.pillar.keyword}</div>
+  <div class="post-item">
+    <strong>${CLUSTER_DATA.pillar.title}</strong>
+    <span class="keyword">${CLUSTER_DATA.pillar.keyword} (${CLUSTER_DATA.pillar.volume.toLocaleString()}/mo)</span>
+    <div class="meta"><span class="badge">${CLUSTER_DATA.pillar.template}</span><span class="badge">${CLUSTER_DATA.pillar.wordCount} words</span></div>
+  </div>
+</div>`;
+
+CLUSTER_DATA.clusters.forEach((cluster, ci) => {
+  sidebarHTML += `<div class="cluster-group">
+    <div class="cluster-title" style="background:${cluster.color}22;color:${cluster.color};">${cluster.name}</div>`;
+  cluster.posts.forEach((post, pi) => {
+    sidebarHTML += `<div class="post-item" data-id="c${ci}p${pi}">
+      <strong>${post.title}</strong>
+      <span class="keyword">${post.keyword} (${post.volume.toLocaleString()}/mo)</span>
+      <div class="meta"><span class="badge">${post.template}</span><span class="badge">${post.wordCount} words</span></div>
+    </div>`;
+  });
+  sidebarHTML += '</div>';
+});
+sidebar.innerHTML = sidebarHTML;
+
+// Tooltip
+const tooltip = document.getElementById('tooltip');
+document.querySelectorAll('.node').forEach(node => {
+  node.addEventListener('mouseenter', (e) => {
+    const id = node.dataset.id;
+    let data;
+    if (id === 'pillar') { data = CLUSTER_DATA.pillar; }
+    else {
+      const ci = parseInt(id[1]), pi = parseInt(id[3]);
+      data = CLUSTER_DATA.clusters[ci].posts[pi];
+    }
+    tooltip.innerHTML = `<h4>${data.title}</h4><p>Keyword: ${data.keyword}</p><p>Volume: ${data.volume.toLocaleString()}/mo | Template: ${data.template} | Words: ${data.wordCount}</p>`;
+    tooltip.style.display = 'block';
+    const rect = node.getBoundingClientRect();
+    tooltip.style.left = (rect.left + rect.width/2) + 'px';
+    tooltip.style.top = (rect.top - 80) + 'px';
+  });
+  node.addEventListener('mouseleave', () => { tooltip.style.display = 'none'; });
+});
+</script>
+</body>
+</html>

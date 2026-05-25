@@ -14,6 +14,12 @@ const config: NextConfig = {
   },
   compress: true,
   poweredByHeader: false,
+  async rewrites() {
+    return [
+      { source: "/.well-known/llms.txt", destination: "/llms.txt" },
+      { source: "/feed.xml", destination: "/api/feed" },
+    ];
+  },
   async headers() {
     return [
       {

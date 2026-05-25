@@ -24,7 +24,10 @@ export default function BuyingGuide() {
           { name: "Buying Guide", path: "/buying-guide" },
         ])}
       />
-      <Section eyebrow={page.eyebrow} title={page.title} subtitle={page.subtitle}>
+      <Section eyebrow={page.eyebrow} subtitle={page.subtitle}>
+        <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-12">
+          {page.title}
+        </h1>
         <div className="prose-slot max-w-3xl">
           <PageSections sections={page.sections} />
         </div>

@@ -7,12 +7,14 @@ export function buildMetadata({
   path = "/",
   image = "/og-default.png",
   noindex = false,
+  ogType = "website",
 }: {
   title: string;
   description: string;
   path?: string;
   image?: string;
   noindex?: boolean;
+  ogType?: "website" | "article" | "product";
 }): Metadata {
   const url = new URL(path, site.url).toString();
   const ogImage = new URL(image, site.url).toString();
@@ -22,7 +24,7 @@ export function buildMetadata({
     description,
     alternates: { canonical: url },
     openGraph: {
-      type: "website",
+      type: ogType === "product" ? "website" : ogType,
       url,
       siteName: site.name,
       title,

@@ -22,6 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     description: `${m.tagline} $${m.price.toLocaleString()}. ${m.condition}. 1-year warranty, free lifetime tech support, nationwide freight.`,
     path: `/machines/${m.slug}`,
     image: m.image,
+    ogType: "product",
   });
 }
 
@@ -87,12 +88,8 @@ export default async function MachinePage({ params }: { params: Promise<{ slug: 
             <p className="mt-3 text-lg text-ink-200">{m.tagline}</p>
 
             <div className="mt-5 flex items-center gap-2">
-              <div className="flex gap-1">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-brand-400 text-brand-400" />
-                ))}
-              </div>
-              <span className="text-sm text-ink-300">Trusted by collectors since 1992</span>
+              <Shield className="h-4 w-4 text-brand-400" />
+              <span className="text-sm text-ink-300">Professionally refurbished · Trusted since 1992</span>
             </div>
 
             <div className="mt-6 flex items-end gap-4">
@@ -162,6 +159,21 @@ export default async function MachinePage({ params }: { params: Promise<{ slug: 
                 </div>
               ))}
             </dl>
+          </div>
+        </div>
+
+        <div className="mt-12 card p-6">
+          <h2 className="font-display text-lg font-bold text-white mb-3">Buyer Resources</h2>
+          <div className="grid sm:grid-cols-3 gap-4 text-sm">
+            <Link href="/buying-guide" className="text-brand-300 hover:text-brand-200 underline">
+              Slot Machine Buying Guide →
+            </Link>
+            <Link href="/state-legality" className="text-brand-300 hover:text-brand-200 underline">
+              Check Your State&apos;s Laws →
+            </Link>
+            <Link href="/warranty" className="text-brand-300 hover:text-brand-200 underline">
+              1-Year Warranty Details →
+            </Link>
           </div>
         </div>
 

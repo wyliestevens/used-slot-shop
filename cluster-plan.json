@@ -1,0 +1,257 @@
+{
+  "version": "1.9.0",
+  "seed_keyword": "used slot machines for sale",
+  "created_at": "2026-05-25T00:00:00Z",
+  "pillar": {
+    "title": "The Complete Guide to Buying Used & Refurbished Slot Machines",
+    "keyword": "used slot machines for sale",
+    "volume": 6600,
+    "template": "ultimate-guide",
+    "wordCount": 3500,
+    "url": "/blog/used-slot-machines-for-sale-complete-guide",
+    "status": "planned"
+  },
+  "clusters": [
+    {
+      "name": "Refurbished Machines & Home Use",
+      "posts": [
+        {
+          "title": "Refurbished Slot Machines for Home: What to Expect When You Buy",
+          "keyword": "refurbished slot machines for home",
+          "volume": 1900,
+          "template": "how-to",
+          "wordCount": 1500,
+          "url": "/blog/refurbished-slot-machines-for-home",
+          "status": "planned"
+        },
+        {
+          "title": "Best Slot Machines for Your Man Cave or Game Room",
+          "keyword": "best slot machines for home game room",
+          "volume": 1300,
+          "template": "best-of",
+          "wordCount": 1600,
+          "url": "/blog/best-slot-machines-home-game-room",
+          "status": "planned"
+        },
+        {
+          "title": "How Much Does a Used Slot Machine Cost? Pricing Guide by Brand & Type",
+          "keyword": "how much does a slot machine cost",
+          "volume": 2400,
+          "template": "explainer",
+          "wordCount": 1500,
+          "url": "/blog/how-much-does-a-slot-machine-cost",
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "name": "Slot Machine Brands & Models",
+      "posts": [
+        {
+          "title": "IGT Slot Machines for Sale: S2000, Game King & Video Slots Compared",
+          "keyword": "IGT slot machines for sale",
+          "volume": 2900,
+          "template": "comparison",
+          "wordCount": 1800,
+          "url": "/blog/igt-slot-machines-for-sale",
+          "status": "planned"
+        },
+        {
+          "title": "Aristocrat Buffalo Gold Slot Machine: Buying Guide for Home Owners",
+          "keyword": "Buffalo Gold slot machine for sale",
+          "volume": 1600,
+          "template": "review",
+          "wordCount": 1400,
+          "url": "/blog/buffalo-gold-slot-machine-for-sale",
+          "status": "planned"
+        },
+        {
+          "title": "Bally vs WMS vs Konami: Which Slot Machine Brand Is Right for You?",
+          "keyword": "Bally slot machines for sale",
+          "volume": 1100,
+          "template": "comparison",
+          "wordCount": 1600,
+          "url": "/blog/bally-vs-wms-vs-konami-slot-machines",
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "name": "Legality & Ownership",
+      "posts": [
+        {
+          "title": "Slot Machine Ownership Laws by State: Complete 2026 Guide",
+          "keyword": "slot machine ownership laws by state",
+          "volume": 3600,
+          "template": "ultimate-guide",
+          "wordCount": 1800,
+          "url": "/blog/slot-machine-ownership-laws-by-state",
+          "status": "planned"
+        },
+        {
+          "title": "How to Buy a Slot Machine for Your Bar or Restaurant",
+          "keyword": "buy slot machine for bar restaurant",
+          "volume": 880,
+          "template": "how-to",
+          "wordCount": 1400,
+          "url": "/blog/buy-slot-machine-bar-restaurant",
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "name": "Parts, Maintenance & Support",
+      "posts": [
+        {
+          "title": "Slot Machine Parts & Accessories: Complete Buyer's Guide",
+          "keyword": "slot machine parts and accessories",
+          "volume": 1900,
+          "template": "ultimate-guide",
+          "wordCount": 1500,
+          "url": "/blog/slot-machine-parts-accessories-guide",
+          "status": "planned"
+        },
+        {
+          "title": "Slot Machine Maintenance: How to Keep Your Machine Running Like New",
+          "keyword": "slot machine maintenance tips",
+          "volume": 720,
+          "template": "how-to",
+          "wordCount": 1400,
+          "url": "/blog/slot-machine-maintenance-tips",
+          "status": "planned"
+        },
+        {
+          "title": "Bill Validators & TITO Systems: Troubleshooting and Replacement Guide",
+          "keyword": "slot machine bill validator replacement",
+          "volume": 590,
+          "template": "how-to",
+          "wordCount": 1300,
+          "url": "/blog/bill-validator-tito-troubleshooting-guide",
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "name": "Shipping, Setup & Vintage Collecting",
+      "posts": [
+        {
+          "title": "Slot Machine Shipping: How Freight Delivery Works for Home Buyers",
+          "keyword": "slot machine shipping delivery",
+          "volume": 720,
+          "template": "explainer",
+          "wordCount": 1300,
+          "url": "/blog/slot-machine-shipping-freight-delivery",
+          "status": "planned"
+        },
+        {
+          "title": "Vintage & Antique Slot Machines: Collector's Guide to Mills, Jennings & More",
+          "keyword": "vintage antique slot machines for sale",
+          "volume": 1300,
+          "template": "listicle",
+          "wordCount": 1500,
+          "url": "/blog/vintage-antique-slot-machines-collectors-guide",
+          "status": "planned"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {"from": "pillar", "to": "cluster-0-post-0", "type": "mandatory", "anchor": "refurbished slot machines for home"},
+    {"from": "pillar", "to": "cluster-0-post-1", "type": "mandatory", "anchor": "best slot machines for game rooms"},
+    {"from": "pillar", "to": "cluster-0-post-2", "type": "mandatory", "anchor": "how much slot machines cost"},
+    {"from": "pillar", "to": "cluster-1-post-0", "type": "mandatory", "anchor": "IGT slot machines"},
+    {"from": "pillar", "to": "cluster-1-post-1", "type": "mandatory", "anchor": "Buffalo Gold slot machine"},
+    {"from": "pillar", "to": "cluster-1-post-2", "type": "mandatory", "anchor": "Bally, WMS, and Konami brands"},
+    {"from": "pillar", "to": "cluster-2-post-0", "type": "mandatory", "anchor": "slot machine ownership laws"},
+    {"from": "pillar", "to": "cluster-2-post-1", "type": "mandatory", "anchor": "slot machines for bars and restaurants"},
+    {"from": "pillar", "to": "cluster-3-post-0", "type": "mandatory", "anchor": "slot machine parts"},
+    {"from": "pillar", "to": "cluster-3-post-1", "type": "mandatory", "anchor": "maintenance tips"},
+    {"from": "pillar", "to": "cluster-3-post-2", "type": "mandatory", "anchor": "bill validator troubleshooting"},
+    {"from": "pillar", "to": "cluster-4-post-0", "type": "mandatory", "anchor": "shipping and delivery"},
+    {"from": "pillar", "to": "cluster-4-post-1", "type": "mandatory", "anchor": "vintage and antique slot machines"},
+    {"from": "cluster-0-post-0", "to": "pillar", "type": "mandatory", "anchor": "used slot machines for sale"},
+    {"from": "cluster-0-post-1", "to": "pillar", "type": "mandatory", "anchor": "buy a used slot machine"},
+    {"from": "cluster-0-post-2", "to": "pillar", "type": "mandatory", "anchor": "used slot machines for sale"},
+    {"from": "cluster-1-post-0", "to": "pillar", "type": "mandatory", "anchor": "used slot machines for sale"},
+    {"from": "cluster-1-post-1", "to": "pillar", "type": "mandatory", "anchor": "used slot machines for sale"},
+    {"from": "cluster-1-post-2", "to": "pillar", "type": "mandatory", "anchor": "used slot machines for sale"},
+    {"from": "cluster-2-post-0", "to": "pillar", "type": "mandatory", "anchor": "buying used slot machines"},
+    {"from": "cluster-2-post-1", "to": "pillar", "type": "mandatory", "anchor": "used slot machines for sale"},
+    {"from": "cluster-3-post-0", "to": "pillar", "type": "mandatory", "anchor": "used slot machines"},
+    {"from": "cluster-3-post-1", "to": "pillar", "type": "mandatory", "anchor": "refurbished slot machines"},
+    {"from": "cluster-3-post-2", "to": "pillar", "type": "mandatory", "anchor": "used slot machines"},
+    {"from": "cluster-4-post-0", "to": "pillar", "type": "mandatory", "anchor": "used slot machines for sale"},
+    {"from": "cluster-4-post-1", "to": "pillar", "type": "mandatory", "anchor": "used slot machines for sale"},
+    {"from": "cluster-0-post-0", "to": "cluster-0-post-1", "type": "recommended", "anchor": "best slot machines for home"},
+    {"from": "cluster-0-post-0", "to": "cluster-0-post-2", "type": "recommended", "anchor": "slot machine pricing"},
+    {"from": "cluster-0-post-1", "to": "cluster-0-post-0", "type": "recommended", "anchor": "refurbished slot machines"},
+    {"from": "cluster-0-post-1", "to": "cluster-0-post-2", "type": "recommended", "anchor": "how much do slot machines cost"},
+    {"from": "cluster-0-post-2", "to": "cluster-0-post-0", "type": "recommended", "anchor": "refurbished slot machines for home"},
+    {"from": "cluster-0-post-2", "to": "cluster-0-post-1", "type": "recommended", "anchor": "best machines for game rooms"},
+    {"from": "cluster-1-post-0", "to": "cluster-1-post-1", "type": "recommended", "anchor": "Buffalo Gold by Aristocrat"},
+    {"from": "cluster-1-post-0", "to": "cluster-1-post-2", "type": "recommended", "anchor": "Bally and WMS alternatives"},
+    {"from": "cluster-1-post-1", "to": "cluster-1-post-0", "type": "recommended", "anchor": "IGT slot machines"},
+    {"from": "cluster-1-post-1", "to": "cluster-1-post-2", "type": "recommended", "anchor": "compare other brands"},
+    {"from": "cluster-1-post-2", "to": "cluster-1-post-0", "type": "recommended", "anchor": "IGT slot machines for sale"},
+    {"from": "cluster-1-post-2", "to": "cluster-1-post-1", "type": "recommended", "anchor": "Buffalo Gold slot machine"},
+    {"from": "cluster-2-post-0", "to": "cluster-2-post-1", "type": "recommended", "anchor": "commercial slot machine use"},
+    {"from": "cluster-2-post-1", "to": "cluster-2-post-0", "type": "recommended", "anchor": "slot machine ownership laws"},
+    {"from": "cluster-3-post-0", "to": "cluster-3-post-1", "type": "recommended", "anchor": "maintenance tips"},
+    {"from": "cluster-3-post-0", "to": "cluster-3-post-2", "type": "recommended", "anchor": "bill validator replacement"},
+    {"from": "cluster-3-post-1", "to": "cluster-3-post-0", "type": "recommended", "anchor": "slot machine parts"},
+    {"from": "cluster-3-post-1", "to": "cluster-3-post-2", "type": "recommended", "anchor": "bill validator troubleshooting"},
+    {"from": "cluster-3-post-2", "to": "cluster-3-post-0", "type": "recommended", "anchor": "slot machine parts and accessories"},
+    {"from": "cluster-3-post-2", "to": "cluster-3-post-1", "type": "recommended", "anchor": "slot machine maintenance"},
+    {"from": "cluster-4-post-0", "to": "cluster-4-post-1", "type": "recommended", "anchor": "vintage slot machine collecting"},
+    {"from": "cluster-4-post-1", "to": "cluster-4-post-0", "type": "recommended", "anchor": "slot machine shipping"},
+    {"from": "cluster-0-post-0", "to": "cluster-2-post-0", "type": "optional", "anchor": "check your state laws"},
+    {"from": "cluster-0-post-1", "to": "cluster-1-post-1", "type": "optional", "anchor": "Buffalo Gold slot machine"},
+    {"from": "cluster-1-post-0", "to": "cluster-3-post-0", "type": "optional", "anchor": "IGT replacement parts"},
+    {"from": "cluster-0-post-2", "to": "cluster-4-post-0", "type": "optional", "anchor": "shipping costs"},
+    {"from": "cluster-2-post-1", "to": "cluster-0-post-2", "type": "optional", "anchor": "slot machine pricing"},
+    {"from": "cluster-0-post-2", "to": "cluster-2-post-1", "type": "optional", "anchor": "slot machines for bars and restaurants"},
+    {"from": "cluster-4-post-1", "to": "cluster-1-post-2", "type": "optional", "anchor": "Bally and WMS vintage models"},
+    {"from": "cluster-0-post-2", "to": "cluster-4-post-1", "type": "optional", "anchor": "vintage and antique slot machines"}
+  ],
+  "serp_matrix": {
+    "keywords": [
+      "used slot machines for sale",
+      "refurbished slot machines for home",
+      "best slot machines for home game room",
+      "how much does a slot machine cost",
+      "IGT slot machines for sale",
+      "Buffalo Gold slot machine for sale",
+      "Bally slot machines for sale",
+      "slot machine ownership laws by state",
+      "buy slot machine for bar restaurant",
+      "slot machine parts and accessories",
+      "slot machine maintenance tips",
+      "slot machine bill validator replacement",
+      "slot machine shipping delivery",
+      "vintage antique slot machines for sale"
+    ],
+    "scores": [
+      [10, 6, 5, 5, 6, 4, 5, 2, 2, 3, 2, 1, 3, 2],
+      [6, 10, 6, 5, 4, 4, 4, 2, 1, 2, 2, 1, 2, 1],
+      [5, 6, 10, 5, 4, 5, 4, 1, 1, 1, 1, 0, 2, 1],
+      [5, 5, 5, 10, 4, 3, 3, 1, 2, 2, 1, 1, 3, 2],
+      [6, 4, 4, 4, 10, 4, 5, 1, 1, 3, 1, 1, 2, 1],
+      [4, 4, 5, 3, 4, 10, 4, 1, 0, 1, 0, 0, 1, 1],
+      [5, 4, 4, 3, 5, 4, 10, 1, 1, 2, 1, 1, 2, 1],
+      [2, 2, 1, 1, 1, 1, 1, 10, 4, 0, 0, 0, 0, 0],
+      [2, 1, 1, 2, 1, 0, 1, 4, 10, 1, 1, 0, 0, 0],
+      [3, 2, 1, 2, 3, 1, 2, 0, 1, 10, 5, 6, 2, 1],
+      [2, 2, 1, 1, 1, 0, 1, 0, 1, 5, 10, 4, 1, 0],
+      [1, 1, 0, 1, 1, 0, 1, 0, 0, 6, 4, 10, 1, 0],
+      [3, 2, 2, 3, 2, 1, 2, 0, 0, 2, 1, 1, 10, 2],
+      [2, 1, 1, 2, 1, 1, 1, 0, 0, 1, 0, 0, 2, 10]
+    ]
+  },
+  "scorecard": {
+    "coverage": 0.0,
+    "linkDensity": 3.7,
+    "orphanPages": 0,
+    "cannibalization": 0,
+    "contentGaps": 0
+  }
+}
