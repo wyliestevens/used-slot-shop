@@ -25,9 +25,11 @@ export default function FAQPage() {
       />
       <Section
         eyebrow="Frequently Asked"
-        title="Every question, answered."
         subtitle="33 years of buying, selling, and refurbishing slot machines. These are the questions we get every week."
       >
+        <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-12">
+          Slot Machine Buyer FAQ — Every Question, Answered
+        </h1>
         <div className="max-w-3xl">
           <Faq items={faqs} />
         </div>

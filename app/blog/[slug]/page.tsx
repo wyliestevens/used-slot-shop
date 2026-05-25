@@ -6,7 +6,7 @@ import { buildMetadata, articleJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 import { JsonLd } from "@/components/JsonLd";
 import { ArrowLeft } from "lucide-react";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 export async function generateStaticParams() {
   try {
@@ -54,11 +54,47 @@ function formatDate(iso: string) {
   }
 }
 
-// Tiny markdown-lite renderer. Supports:
+// Markdown-lite renderer. Supports:
 //   - blank-line separated paragraphs
 //   - lines starting with `## ` as h2
 //   - lines starting with `### ` as h3
 //   - lines starting with `- ` grouped as unordered lists
+//   - lines starting with `> ` as blockquotes
+//   - ![alt](url) as images
+//   - **bold** and *italic* inline
+//   - [text](url) as links
+//   - --- as horizontal rules
+
+function renderInline(text: string) {
+  const parts: (string | React.ReactElement)[] = [];
+  const regex = /(\*\*(.+?)\*\*|\*(.+?)\*|\[(.+?)\]\((.+?)\))/g;
+  let lastIndex = 0;
+  let match;
+  let key = 0;
+
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
+    }
+    if (match[2]) {
+      parts.push(<strong key={key++}>{match[2]}</strong>);
+    } else if (match[3]) {
+      parts.push(<em key={key++}>{match[3]}</em>);
+    } else if (match[4] && match[5]) {
+      parts.push(
+        <a key={key++} href={match[5]} className="text-brand-300 hover:text-brand-200 underline">
+          {match[4]}
+        </a>
+      );
+    }
+    lastIndex = match.index + match[0].length;
+  }
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
+  return parts.length > 0 ? parts : text;
+}
+
 function renderBody(body: string) {
   const blocks = body
     .replace(/\r\n/g, "\n")
@@ -67,27 +103,59 @@ function renderBody(body: string) {
     .filter(Boolean);
 
   return blocks.map((block, i) => {
+    if (block === "---") {
+      return <hr key={i} className="my-8 border-ink-700" />;
+    }
     if (block.startsWith("### ")) {
-      return <h3 key={i}>{block.slice(4)}</h3>;
+      return <h3 key={i}>{renderInline(block.slice(4))}</h3>;
     }
     if (block.startsWith("## ")) {
-      return <h2 key={i}>{block.slice(3)}</h2>;
+      return <h2 key={i}>{renderInline(block.slice(3))}</h2>;
     }
     if (block.startsWith("# ")) {
-      return <h2 key={i}>{block.slice(2)}</h2>;
+      return <h2 key={i}>{renderInline(block.slice(2))}</h2>;
     }
+    // Image: ![alt](url)
+    const imgMatch = block.match(/^!\[(.*)]\((.+)\)$/);
+    if (imgMatch) {
+      return (
+        <figure key={i} className="my-8">
+          <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden border border-ink-700 bg-ink-900">
+            <Image
+              src={imgMatch[2]}
+              alt={imgMatch[1]}
+              fill
+              sizes="(min-width: 768px) 720px, 100vw"
+              className="object-cover"
+            />
+          </div>
+          {imgMatch[1] && (
+            <figcaption className="mt-2 text-center text-sm text-ink-400">{imgMatch[1]}</figcaption>
+          )}
+        </figure>
+      );
+    }
+    // Blockquote
     const lines = block.split("\n");
+    if (lines.every((l) => l.startsWith("> "))) {
+      return (
+        <blockquote key={i} className="border-l-2 border-brand-500/60 pl-4 italic text-ink-200">
+          {lines.map((l) => l.slice(2)).join(" ")}
+        </blockquote>
+      );
+    }
+    // Unordered list
     if (lines.every((l) => l.startsWith("- "))) {
       return (
         <ul key={i}>
           {lines.map((l, j) => (
-            <li key={j}>{l.slice(2)}</li>
+            <li key={j}>{renderInline(l.slice(2))}</li>
           ))}
         </ul>
       );
     }
-    // Paragraph: join inner newlines with spaces.
-    return <p key={i}>{block.replace(/\n/g, " ")}</p>;
+    // Paragraph: join inner newlines with spaces, render inline formatting.
+    return <p key={i}>{renderInline(block.replace(/\n/g, " "))}</p>;
   });
 }
 

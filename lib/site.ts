@@ -15,7 +15,7 @@ export const site = {
   legalName: "Used Slot Shop LLC",
   tagline: siteContent.tagline,
   logoUrl: siteContent.logoUrl || "/logo.png",
-  url: "https://usedslotshop.com",
+  url: "https://www.usedslotshop.com",
   vercelUrl: "https://used-slot-shop.vercel.app",
   phone: siteContent.phone,
   phoneHref: toTel(siteContent.phone),
@@ -27,7 +27,7 @@ export const site = {
   founded,
   yearsInBusiness: new Date().getFullYear() - founded,
   socials: siteContent.socials,
-  geo: { lat: 35.189, lng: -114.049 },
+  geo: { lat: 35.18945, lng: -114.04927 },
   brands: [
     { slug: "igt", name: "IGT", blurb: "Industry benchmark reels and video slots" },
     { slug: "bally", name: "Bally", blurb: "Iconic casino floor staples from Alpha to S9000" },

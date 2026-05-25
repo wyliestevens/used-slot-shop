@@ -3,7 +3,7 @@ import Image from "next/image";
 import { loadPosts } from "@/lib/blog";
 import { buildMetadata } from "@/lib/seo";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 export const metadata = buildMetadata({
   title: "Blog — Used Slot Shop",

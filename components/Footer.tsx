@@ -89,7 +89,7 @@ export default function Footer() {
           <a
             href="https://www.aipeakbiz.com"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer nofollow"
             className="font-semibold text-brand-300 hover:text-brand-200"
           >
             AI Peak Biz

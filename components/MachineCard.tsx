@@ -12,7 +12,7 @@ export default function MachineCard({ m }: { m: Machine }) {
       <div className="relative aspect-[4/5] overflow-hidden bg-ink-900">
         <Image
           src={m.image}
-          alt={m.name}
+          alt={`${m.name} refurbished slot machine for sale`}
           fill
           sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 100vw"
           className="object-cover transition duration-500 group-hover:scale-105"

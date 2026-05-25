@@ -15,7 +15,7 @@ import homepage from "@/data/content/homepage.json";
 export const metadata = buildMetadata({
   title: "Refurbished Casino Slot Machines for Sale — Shipped Nationwide",
   description:
-    "Used Slot Shop sells fully refurbished IGT, Bally, Aristocrat, WMS, Konami and Aruze slot machines with a 1-year warranty and free lifetime tech support. 33+ years. Nationwide shipping.",
+    "Refurbished IGT, Bally & Aristocrat slot machines with 1-year warranty and free lifetime tech support. 33+ years in business. Ships nationwide.",
   path: "/",
 });
 
@@ -94,7 +94,7 @@ export default function Home() {
               <div className="aspect-[4/5] relative rounded-3xl overflow-hidden shadow-glow border border-brand-500/30">
                 <Image
                   src={homepage.hero.image}
-                  alt="Featured slot machine"
+                  alt="Refurbished casino slot machine in showroom - Used Slot Shop"
                   fill
                   priority
                   sizes="(min-width: 1024px) 40vw, 90vw"

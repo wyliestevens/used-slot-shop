@@ -71,16 +71,17 @@ export function organizationJsonLd() {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
         opens: "08:00",
-        closes: "18:00",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: "Saturday",
-        opens: "09:00",
-        closes: "15:00",
+        closes: "16:00",
       },
     ],
-    sameAs: [site.socials.facebook, site.socials.instagram, site.socials.youtube].filter(Boolean),
+    logo: {
+      "@type": "ImageObject",
+      url: new URL(site.logoUrl, site.url).toString(),
+    },
+    hasMap: `https://www.google.com/maps?q=${site.geo.lat},${site.geo.lng}`,
+    ...(([site.socials.facebook, site.socials.instagram, site.socials.youtube].filter(Boolean).length > 0) && {
+      sameAs: [site.socials.facebook, site.socials.instagram, site.socials.youtube].filter(Boolean),
+    }),
   };
 }
 
@@ -107,12 +108,15 @@ export function productJsonLd(m: {
   inStock: number;
   condition: string;
 }) {
+  const priceValidUntil = new Date();
+  priceValidUntil.setFullYear(priceValidUntil.getFullYear() + 1);
   return {
     "@context": "https://schema.org",
     "@type": "Product",
+    "@id": `${site.url}/machines/${m.slug}#product`,
     name: m.name,
     description: m.description,
-    image: m.image,
+    image: [m.image],
     sku: m.slug,
     brand: { "@type": "Brand", name: m.brandLabel },
     itemCondition: "https://schema.org/RefurbishedCondition",
@@ -120,10 +124,30 @@ export function productJsonLd(m: {
       "@type": "Offer",
       url: `${site.url}/machines/${m.slug}`,
       priceCurrency: "USD",
-      price: m.price,
+      price: m.price.toFixed(2),
+      priceValidUntil: priceValidUntil.toISOString().split("T")[0],
       availability:
-        m.inStock > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+        m.inStock > 0 ? "https://schema.org/InStock" : "https://schema.org/MadeToOrder",
       seller: { "@type": "Organization", name: site.name },
+      shippingDetails: {
+        "@type": "OfferShippingDetails",
+        shippingDestination: {
+          "@type": "DefinedRegion",
+          addressCountry: "US",
+        },
+        deliveryTime: {
+          "@type": "ShippingDeliveryTime",
+          handlingTime: { "@type": "QuantitativeValue", minValue: 1, maxValue: 3, unitCode: "d" },
+          transitTime: { "@type": "QuantitativeValue", minValue: 5, maxValue: 10, unitCode: "d" },
+        },
+      },
+      hasMerchantReturnPolicy: {
+        "@type": "MerchantReturnPolicy",
+        applicableCountry: "US",
+        returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+        merchantReturnDays: 30,
+        returnMethod: "https://schema.org/ReturnByMail",
+      },
     },
   };
 }
@@ -160,6 +184,31 @@ export function articleJsonLd(p: {
         url: new URL(site.logoUrl || "/logo.png", site.url).toString(),
       },
     },
+  };
+}
+
+export function itemListJsonLd(items: { name: string; url: string; position: number }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    numberOfItems: items.length,
+    itemListElement: items.map((item) => ({
+      "@type": "ListItem",
+      position: item.position,
+      name: item.name,
+      url: item.url,
+    })),
+  };
+}
+
+export function websiteJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${site.url}/#website`,
+    name: site.name,
+    url: site.url,
+    publisher: { "@id": `${site.url}/#organization` },
   };
 }
 

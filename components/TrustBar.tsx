@@ -4,7 +4,7 @@ const items = [
   { icon: ShieldCheck, title: "1-Year Warranty", blurb: "Home-use coverage on every machine", tone: "brand" as const },
   { icon: Truck, title: "Nationwide Freight", blurb: "Insured pallet delivery, liftgate available", tone: "accent" as const },
   { icon: Wrench, title: "Free Lifetime Support", blurb: "Phone + video tech support, forever", tone: "brand" as const },
-  { icon: Award, title: "33+ Years Experience", blurb: "Trusted by collectors since 1992", tone: "accent" as const },
+  { icon: Award, title: "Since 1992", blurb: "Trusted by collectors for 34 years", tone: "accent" as const },
 ];
 
 const TONE: Record<"brand" | "accent", { bg: string; text: string }> = {

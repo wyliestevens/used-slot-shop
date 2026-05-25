@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AmbientGlow from "@/components/AmbientGlow";
 import { JsonLd } from "@/components/JsonLd";
-import { organizationJsonLd } from "@/lib/seo";
+import { organizationJsonLd, websiteJsonLd } from "@/lib/seo";
 import { site } from "@/lib/site";
 import { seriesByBrand } from "@/data/machines";
 
@@ -61,6 +61,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   }));
   return (
     <html lang="en" className={`${inter.variable} ${grotesk.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://images.leadconnectorhq.com" />
+        <link rel="dns-prefetch" href="https://images.leadconnectorhq.com" />
+      </head>
       <body>
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
@@ -72,7 +76,7 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', '${GA_ID}');`}
         </Script>
-        <JsonLd data={organizationJsonLd()} />
+        <JsonLd data={[organizationJsonLd(), websiteJsonLd()]} />
         <AmbientGlow />
         <a
           href="#main"
