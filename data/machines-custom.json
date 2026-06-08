@@ -1,5 +1,27 @@
 [
   {
+    "slug": "igt-s2000-haywire-2",
+    "name": "IGT S2000 Haywire",
+    "brand": "igt",
+    "model": "IGT S2000 16\" Top",
+    "type": "reel",
+    "price": 750,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/6f99310a2a4620f2ed706434617a3967e4ac94cc/public/uploads/unsorted/item_287_full_image.jpg",
+    "description": "IGT S2000 16\" top Haywire 3 coin. Enhanced sound, TITO, optional Free Play. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+    "highlights": [
+      "Classic mechanical reel action",
+      "Enhanced sound system",
+      "Ticket In – Ticket Out (TITO)",
+      "Updated bill validator ($1–$100)",
+      "1-year home-use warranty"
+    ],
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-06-08T23:33:05.312Z",
+    "updatedAt": "2026-06-08T23:33:05.312Z"
+  },
+  {
     "slug": "igt-s2000-10-x-pay-3-coin",
     "name": "IGT S2000 10 x pay ",
     "brand": "igt",
