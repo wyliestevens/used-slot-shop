@@ -1,5 +1,27 @@
 [
   {
+    "slug": "igt-s2000-diamond-tens",
+    "name": "IGT S2000 Diamond Tens",
+    "brand": "igt",
+    "type": "reel",
+    "price": 750,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/324107193e685000d48b6cfd650d435b254131a4/public/uploads/unsorted/item_308_full_image.jpg",
+    "description": "IGT S2000 16\" top Diamond Tens 3 coin. Enhanced sound, TITO, optional Free Play. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+    "highlights": [
+      "Classic mechanical reel action",
+      "Enhanced sound system",
+      "Ticket In – Ticket Out (TITO)",
+      "Updated bill validator ($1–$100)",
+      "1-year home-use warranty"
+    ],
+    "cabinet": "IGT S2000 16\" Top",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-06-08T23:47:49.626Z",
+    "updatedAt": "2026-06-08T23:47:49.626Z"
+  },
+  {
     "slug": "igt-s2000-titanic-sinking",
     "name": "IGT S2000 Titanic Sinking",
     "brand": "igt",
