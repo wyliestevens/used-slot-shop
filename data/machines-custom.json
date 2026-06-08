@@ -56,14 +56,15 @@
     "inStock": 1,
     "status": "published",
     "createdAt": "2026-06-08T23:29:08.307Z",
-    "updatedAt": "2026-06-08T23:39:09.923Z",
+    "updatedAt": "2026-06-08T23:40:28.576Z",
     "highlights": [
       "Classic mechanical reel action",
       "Enhanced sound system",
       "Ticket In – Ticket Out (TITO)",
       "Updated bill validator ($1–$100)",
       "1-year home-use warranty"
-    ]
+    ],
+    "cabinet": "IGT S2000 16\" Top"
   },
   {
     "slug": "igt-s2000-double-diamond",
