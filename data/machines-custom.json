@@ -1,5 +1,27 @@
 [
   {
+    "slug": "igt-s2000-red-white-blue-wild-star",
+    "name": "IGT S2000 Red/White/Blue Wild Star",
+    "brand": "igt",
+    "type": "reel",
+    "price": 750,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/f2e898c676d98af81fa3050c08dff508a65a2896/public/uploads/unsorted/item_440_full_image.jpg",
+    "description": "IGT S2000 16\" top Red/White/Blue Wild Star 3 coin. Enhanced sound, TITO, optional Free Play. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+    "highlights": [
+      "Classic mechanical reel action",
+      "Enhanced sound system",
+      "Ticket In – Ticket Out (TITO)",
+      "Updated bill validator ($1–$100)",
+      "1-year home-use warranty"
+    ],
+    "cabinet": "IGT S2000 16 Inch Top",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-06-11T21:49:33.542Z",
+    "updatedAt": "2026-06-11T21:49:33.542Z"
+  },
+  {
     "slug": "igt-s2000-diamond-tens",
     "name": "IGT S2000 Diamond Tens",
     "brand": "igt",
