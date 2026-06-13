@@ -1,5 +1,27 @@
 [
   {
+    "slug": "igt-s2000-double-strike-2",
+    "name": "IGT S2000 Double Strike",
+    "brand": "igt",
+    "type": "reel",
+    "price": 750,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/443352c8b2038d16081297fd5bdbf2c8477e660b/public/uploads/unsorted/item_716_full_image.jpg",
+    "description": "IGT S2000 16\" top Triple Strike 3 coin. Enhanced sound, TITO, optional Free Play. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+    "highlights": [
+      "Classic mechanical reel action",
+      "Enhanced sound system",
+      "Ticket In – Ticket Out (TITO)",
+      "Updated bill validator ($1–$100)",
+      "1-year home-use warranty"
+    ],
+    "cabinet": "IGT S2000 16'' Top",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-06-13T20:36:02.089Z",
+    "updatedAt": "2026-06-13T20:36:02.089Z"
+  },
+  {
     "slug": "igt-s2000-triple-diamond-2",
     "name": "IGT S2000 Triple Diamond",
     "brand": "igt",
