@@ -1,5 +1,27 @@
 [
   {
+    "slug": "igt-s2000-3x4x5x-double-times-pay",
+    "name": "IGT S2000 3x4x5x Double Times Pay",
+    "brand": "igt",
+    "type": "reel",
+    "price": 750,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/f35241e6c2041fd2b44a10ceecd9e6f3db7907e4/public/uploads/unsorted/item_577_full_image.jpg",
+    "description": "IGT S2000 16\" top 3x4x5x Double Times Pay 3 coin. Enhanced sound, TITO, optional Free Play. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+    "highlights": [
+      "Classic mechanical reel action",
+      "Enhanced sound system",
+      "Ticket In – Ticket Out (TITO)",
+      "Updated bill validator ($1–$100)",
+      "1-year home-use warranty"
+    ],
+    "cabinet": "IGT S2000 16'' Top",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-06-13T20:16:56.471Z",
+    "updatedAt": "2026-06-13T20:16:56.471Z"
+  },
+  {
     "slug": "igt-s2000-cat-and-dogs",
     "name": "IGT S2000 Cat & Dogs",
     "brand": "igt",
