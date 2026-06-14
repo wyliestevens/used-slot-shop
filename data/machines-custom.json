@@ -1,5 +1,27 @@
 [
   {
+    "slug": "igt-s2000-fox-and-hound-2",
+    "name": "IGT S2000 Fox & Hound",
+    "brand": "igt",
+    "type": "reel",
+    "price": 750,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/f6696c8c678a911f16fbc7c61b117596c7ed64dc/public/uploads/unsorted/item_748_full_image.jpg",
+    "description": "IGT S2000 16\" top Fox & Hound  5 coin 5 Line. Enhanced sound, TITO, optional Free Play. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+    "highlights": [
+      "Classic mechanical reel action",
+      "Enhanced sound system",
+      "Ticket In – Ticket Out (TITO)",
+      "Updated bill validator ($1–$100)",
+      "1-year home-use warranty"
+    ],
+    "cabinet": "IGT S2000 16'' Top",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-06-14T00:48:42.227Z",
+    "updatedAt": "2026-06-14T00:48:42.227Z"
+  },
+  {
     "slug": "igt-s2000-double-hearts",
     "name": "IGT S2000 Double Hearts",
     "brand": "igt",
