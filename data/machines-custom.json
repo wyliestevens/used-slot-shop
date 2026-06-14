@@ -1,5 +1,27 @@
 [
   {
+    "slug": "igt-s2000-black-and-white",
+    "name": "IGT S2000 Black And White",
+    "brand": "igt",
+    "type": "reel",
+    "price": 750,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/532bd6a675f6121053f185589c4f467b52c4d3d5/public/uploads/unsorted/item_750_full_image.jpg",
+    "description": "IGT S2000 16\" top Black And White 3coin. Enhanced sound, TITO, optional Free Play. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+    "highlights": [
+      "Classic mechanical reel action",
+      "Enhanced sound system",
+      "Ticket In – Ticket Out (TITO)",
+      "Updated bill validator ($1–$100)",
+      "1-year home-use warranty"
+    ],
+    "cabinet": "IGT S2000 16'' Top",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-06-14T00:53:59.536Z",
+    "updatedAt": "2026-06-14T00:53:59.536Z"
+  },
+  {
     "slug": "igt-s2000-hot-peppers",
     "name": "IGT S2000 Hot Peppers",
     "brand": "igt",
