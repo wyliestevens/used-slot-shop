@@ -1,5 +1,27 @@
 [
   {
+    "slug": "igt-s2000-triple-double-stars-2",
+    "name": "IGT S2000 Triple Double Stars",
+    "brand": "igt",
+    "type": "reel",
+    "price": 750,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/302c3e0b71ef7fb4a42f0681aa7493c1ecbc2a12/public/uploads/unsorted/item_537_full_image.jpg",
+    "description": "IGT S2000 16\" top Triple Double Stars 3 coin. Enhanced sound, TITO, optional Free Play. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+    "highlights": [
+      "Classic mechanical reel action",
+      "Enhanced sound system",
+      "Ticket In – Ticket Out (TITO)",
+      "Updated bill validator ($1–$100)",
+      "1-year home-use warranty"
+    ],
+    "cabinet": "IGT S2000 16'' Top",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-06-14T00:57:00.025Z",
+    "updatedAt": "2026-06-14T00:57:00.025Z"
+  },
+  {
     "slug": "igt-s2000-black-and-white",
     "name": "IGT S2000 Black And White",
     "brand": "igt",
