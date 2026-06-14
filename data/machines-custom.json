@@ -1,5 +1,27 @@
 [
   {
+    "slug": "igt-s2000-triple-cats-and-dogs",
+    "name": "IGT S2000 Triple Cats And Dogs ",
+    "brand": "igt",
+    "type": "reel",
+    "price": 750,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/67338a4e8b0a1b8fbc69446772d4279fd6f32283/public/uploads/unsorted/item_752_full_image.jpg",
+    "description": "IGT S2000 16\" top Triple Cats And Dogs 3 coin. Enhanced sound, TITO, optional Free Play. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+    "highlights": [
+      "Classic mechanical reel action",
+      "Enhanced sound system",
+      "Ticket In – Ticket Out (TITO)",
+      "Updated bill validator ($1–$100)",
+      "1-year home-use warranty"
+    ],
+    "cabinet": "IGT S2000 16'' Top",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-06-14T00:59:07.476Z",
+    "updatedAt": "2026-06-14T00:59:07.476Z"
+  },
+  {
     "slug": "igt-s2000-triple-double-stars-2",
     "name": "IGT S2000 Triple Double Stars",
     "brand": "igt",
