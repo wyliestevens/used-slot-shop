@@ -7,14 +7,14 @@
   "salesEmail": "usedslotshop@gmail.com",
   "serviceEmail": "usedslotshop@gmail.com",
   "address": {
-    "street": "7252 E Concho Dr Ste B",
-    "city": "Kingman",
+    "street": "6806 Frerichs Ranch Road",
+    "city": "Hackberry",
     "region": "AZ",
-    "postalCode": "86401",
+    "postalCode": "86411",
     "country": "US"
   },
   "hours": {
-    "weekdays": "Mon–Fri 8:00 AM – 4:00 PM MST",
+    "weekdays": "Mon–Fri 8:00 AM – 4:00 PM MST By Appointment Only",
     "saturday": "Sat By Appointment Only",
     "sunday": "Sun Closed"
   },
