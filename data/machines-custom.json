@@ -1,5 +1,20 @@
 [
   {
+    "slug": "igt-crystal-slots-gameking-x",
+    "name": "IGT Crystal Slots  GameKing X",
+    "brand": "igt",
+    "type": "reel",
+    "price": 7000,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/82067daa1e98d17d8874add6da46fdda68ad88ad/public/uploads/unsorted/IGT_Game_King_X.jpg",
+    "description": "IGT Crystal Slots platform : numerous poker variants, 4 Card Keno and many slots.",
+    "cabinet": "IGT Crystal Slots",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-06-23T21:12:04.823Z",
+    "updatedAt": "2026-06-23T21:12:04.823Z"
+  },
+  {
     "slug": "igt-double-mystical-mermaid",
     "name": "IGT Double Mystical Mermaid ",
     "brand": "igt",
