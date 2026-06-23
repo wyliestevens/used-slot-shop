@@ -12,7 +12,13 @@
     "inStock": 1,
     "status": "published",
     "createdAt": "2026-06-23T21:12:04.823Z",
-    "updatedAt": "2026-06-23T21:12:04.823Z"
+    "updatedAt": "2026-06-23T21:13:34.254Z",
+    "highlights": [
+      "Enhanced sound system",
+      "Ticket In – Ticket Out (TITO)",
+      "Updated bill validator ($1–$100)",
+      "1-year home-use warranty"
+    ]
   },
   {
     "slug": "igt-double-mystical-mermaid",
