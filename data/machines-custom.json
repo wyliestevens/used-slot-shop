@@ -1,5 +1,26 @@
 [
   {
+    "slug": "igt-crystal-slots-2",
+    "name": "IGT Crystal Slots",
+    "brand": "igt",
+    "type": "reel",
+    "price": 7000,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/41aa4333332d387eb8ba07a3485c722442523a7c/public/uploads/unsorted/IGT2X3X4X5XSuperTimesPay.jpg",
+    "description": "",
+    "highlights": [
+      "Enhanced sound system",
+      "Ticket In – Ticket Out (TITO)",
+      "Updated bill validator ($1–$100)",
+      "1-year home-use warranty"
+    ],
+    "cabinet": "IGT Crystal Slots",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-06-24T00:15:50.829Z",
+    "updatedAt": "2026-06-24T00:15:50.829Z"
+  },
+  {
     "slug": "igt-crystal-slots",
     "name": "IGT Crystal Slots ",
     "brand": "igt",
