@@ -1,5 +1,20 @@
 [
   {
+    "slug": "igt-crystal-slots-3",
+    "name": "IGT Crystal Slots",
+    "brand": "igt",
+    "type": "video",
+    "price": 7000,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/bf292a2b188d64af727344f86e45350d27f239d1/public/uploads/unsorted/IGT99Riches.jpg",
+    "description": "IGT 99 Riches - This IGT Crystal  Slots Platform",
+    "cabinet": "IGT Crystal Slots",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-06-24T01:03:09.282Z",
+    "updatedAt": "2026-06-24T01:03:09.282Z"
+  },
+  {
     "slug": "igt-crystal-slots-2",
     "name": "IGT Crystal Slots",
     "brand": "igt",
