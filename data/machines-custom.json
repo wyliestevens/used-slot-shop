@@ -12,7 +12,13 @@
     "inStock": 1,
     "status": "published",
     "createdAt": "2026-06-24T01:03:09.282Z",
-    "updatedAt": "2026-06-24T01:03:09.282Z"
+    "updatedAt": "2026-06-24T01:03:43.131Z",
+    "highlights": [
+      "Enhanced sound system",
+      "Ticket In – Ticket Out (TITO)",
+      "Updated bill validator ($1–$100)",
+      "1-year home-use warranty"
+    ]
   },
   {
     "slug": "igt-crystal-slots-2",
