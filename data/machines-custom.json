@@ -1,5 +1,20 @@
 [
   {
+    "slug": "igt-crystal-slot",
+    "name": "IGT Crystal Slot",
+    "brand": "igt",
+    "type": "reel",
+    "price": 7000,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/9761f11a9986b3a21d7207666440a8c34e93271f/public/uploads/unsorted/IGTBombay.tif",
+    "description": "",
+    "cabinet": "IGT Crystal Slots",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-06-25T00:31:40.538Z",
+    "updatedAt": "2026-06-25T00:31:40.538Z"
+  },
+  {
     "slug": "igt-crystal-slots-3",
     "name": "IGT Crystal Slot 99 Riches",
     "brand": "igt",
