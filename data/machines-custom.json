@@ -6,13 +6,19 @@
     "type": "video",
     "price": 7000,
     "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/2ecc4076a9fe249f40e33f343ff306364b1d9647/public/uploads/unsorted/IGT1421.jpg",
-    "description": "",
+    "description": "IGT 1421 - This IGT Crystal Slots Platform",
     "cabinet": "IGT Crystal  Slots",
     "condition": "Professionally Refurbished",
     "inStock": 1,
     "status": "published",
     "createdAt": "2026-06-29T21:08:56.180Z",
-    "updatedAt": "2026-06-29T21:08:56.180Z"
+    "updatedAt": "2026-06-29T21:10:39.452Z",
+    "highlights": [
+      "Enhanced sound system",
+      "Ticket In – Ticket Out (TITO)",
+      "Updated bill validator ($1–$100)",
+      "1-year home-use warranty"
+    ]
   },
   {
     "slug": "igt-crystal-slots-3",
