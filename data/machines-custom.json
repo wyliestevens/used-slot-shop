@@ -1,5 +1,20 @@
 [
   {
+    "slug": "igt-1421",
+    "name": "IGT 1421",
+    "brand": "igt",
+    "type": "video",
+    "price": 7000,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/2ecc4076a9fe249f40e33f343ff306364b1d9647/public/uploads/unsorted/IGT1421.jpg",
+    "description": "",
+    "cabinet": "IGT Crystal  Slots",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-06-29T21:08:56.180Z",
+    "updatedAt": "2026-06-29T21:08:56.180Z"
+  },
+  {
     "slug": "igt-crystal-slots-3",
     "name": "IGT Crystal Slot 99 Riches",
     "brand": "igt",
