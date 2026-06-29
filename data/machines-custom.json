@@ -1,5 +1,20 @@
 [
   {
+    "slug": "igt-crystal-slot-age-of-aurora",
+    "name": "IGT Crystal Slot Age Of Aurora",
+    "brand": "igt",
+    "type": "reel",
+    "price": 7000,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/fb7e26908db63fed0d491f7c612d0ca369bc2803/public/uploads/unsorted/IGTAgeofAurora.jpg",
+    "description": "IGT Age Of Aurora- This IGT Crystal Slots Platform",
+    "cabinet": "IGT Crystal Slots",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-06-29T21:17:07.219Z",
+    "updatedAt": "2026-06-29T21:17:07.219Z"
+  },
+  {
     "slug": "igt-1421",
     "name": "IGT 1421 Voyages of  Zhenghe",
     "brand": "igt",
