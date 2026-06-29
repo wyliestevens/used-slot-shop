@@ -1,7 +1,7 @@
 [
   {
     "slug": "igt-crystal-slot-age-of-aurora",
-    "name": "IGT Crystal Slot Age Of Aurora",
+    "name": "IGT  Age Of Aurora",
     "brand": "igt",
     "type": "reel",
     "price": 7000,
@@ -12,7 +12,13 @@
     "inStock": 1,
     "status": "published",
     "createdAt": "2026-06-29T21:17:07.219Z",
-    "updatedAt": "2026-06-29T21:17:07.219Z"
+    "updatedAt": "2026-06-29T21:18:04.406Z",
+    "highlights": [
+      "Enhanced sound system",
+      "Ticket In – Ticket Out (TITO)",
+      "Updated bill validator ($1–$100)",
+      "1-year home-use warranty"
+    ]
   },
   {
     "slug": "igt-1421",
