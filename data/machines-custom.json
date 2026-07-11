@@ -1,5 +1,26 @@
 [
   {
+    "slug": "igt-crystal-slot-artic-goddess",
+    "name": "IGT Crystal Slot Artic Goddess",
+    "brand": "igt",
+    "type": "reel",
+    "price": 6000,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/f75d318f143dab2d4ac71e110a01f244950a9995/public/uploads/unsorted/IGTArticGoddess.jpg",
+    "description": "IGT Artic Goddess This IGT Crystal Core Slots",
+    "highlights": [
+      "Enhanced sound system",
+      "Ticket In – Ticket Out (TITO)",
+      "Updated bill validator ($1–$100)",
+      "1-year home-use warranty"
+    ],
+    "cabinet": "IGT Crystal Core Slots ",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-07-11T00:32:04.881Z",
+    "updatedAt": "2026-07-11T00:32:04.881Z"
+  },
+  {
     "slug": "igt-crystal-slot-all-star-poker-iii",
     "name": "IGT Crystal Slot All Star Poker III",
     "brand": "igt",
