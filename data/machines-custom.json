@@ -1,5 +1,26 @@
 [
   {
+    "slug": "igt-crystal-slot-all-star-poker-iii",
+    "name": "IGT Crystal Slot All Star Poker III",
+    "brand": "igt",
+    "type": "video-poker",
+    "price": 6000,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/291fb03485c47965cf09987f9ccfa07a347f752c/public/uploads/unsorted/IGTAllStarPokerIII_3.jpg",
+    "description": "",
+    "highlights": [
+      "Enhanced sound system",
+      "Ticket In – Ticket Out (TITO)",
+      "Updated bill validator ($1–$100)",
+      "1-year home-use warranty"
+    ],
+    "cabinet": "IGT Crystal Core Slots",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-07-11T00:21:00.906Z",
+    "updatedAt": "2026-07-11T00:21:00.906Z"
+  },
+  {
     "slug": "igt-crystal-slot-age-of-aurora",
     "name": "IGT Crystal Slot Age Of Aurora",
     "brand": "igt",
