@@ -58,9 +58,10 @@
       "shipping",
       "how-to"
     ],
-    "status": "draft",
+    "status": "published",
     "createdAt": "2026-05-25T12:00:00.000Z",
-    "updatedAt": "2026-05-25T12:00:00.000Z"
+    "updatedAt": "2026-07-12T22:31:58.579Z",
+    "publishedAt": "2026-07-12T22:31:58.579Z"
   },
   {
     "slug": "igt-s2000-americas-most-popular-home-slot-machine",
