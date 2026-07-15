@@ -26,7 +26,7 @@
     "brand": "igt",
     "type": "video",
     "price": 4000,
-    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/baf4c002f2ee3f1089dea1b2d0b07b0ab98b4798/public/uploads/unsorted/IGTBig5Safari.jpg",
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/cbefbc557b3cce862ee73c2880ff22461618581b/public/uploads/igt-big-5-safari-crystal-slot/IGTBig5Safari.jpg",
     "description": "IGT Big 5 Safari This IGT Crystal Core Slots",
     "highlights": [
       "Enhanced sound system",
@@ -39,7 +39,7 @@
     "inStock": 1,
     "status": "published",
     "createdAt": "2026-07-15T21:54:32.468Z",
-    "updatedAt": "2026-07-15T21:54:32.468Z"
+    "updatedAt": "2026-07-15T22:03:18.483Z"
   },
   {
     "slug": "igt-big-5-cats-crystal-slot",
