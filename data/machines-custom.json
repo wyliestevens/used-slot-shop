@@ -1,5 +1,26 @@
 [
   {
+    "slug": "igt-crystal-slot-aztec-adventure",
+    "name": "IGT Crystal Slot Aztec Adventure",
+    "brand": "igt",
+    "type": "reel",
+    "price": 4000,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/060824fe97f4d18aac59efc8fdd6c46b90554e53/public/uploads/unsorted/IGTAztecAdventure.jpg",
+    "description": "IGT Aztec Adventure This IGT Crystal Core Slots",
+    "highlights": [
+      "Enhanced sound system",
+      "Ticket In – Ticket Out (TITO)",
+      "Updated bill validator ($1–$100)",
+      "1-year home-use warranty"
+    ],
+    "cabinet": "IGT Crystal Core Slots",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-07-15T20:18:46.561Z",
+    "updatedAt": "2026-07-15T20:18:46.561Z"
+  },
+  {
     "slug": "igt-crystal-slot-artic-goddess",
     "name": "IGT Crystal Slot Artic Goddess",
     "brand": "igt",
