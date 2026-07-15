@@ -1,5 +1,26 @@
 [
   {
+    "slug": "igt-babooshka",
+    "name": "IGT Babooshka",
+    "brand": "igt",
+    "type": "video",
+    "price": 4000,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/00abfbe5d4808637e99c256cff3c785383e77a21/public/uploads/unsorted/IGTBabooshka.jpg",
+    "description": "IGT Babooshka This IGT Crystal Core Slots",
+    "highlights": [
+      "Enhanced sound system",
+      "Ticket In – Ticket Out (TITO)",
+      "Updated bill validator ($1–$100)",
+      "1-year home-use warranty"
+    ],
+    "cabinet": "IGT Crystal Core Slots",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-07-15T21:03:29.747Z",
+    "updatedAt": "2026-07-15T21:03:29.747Z"
+  },
+  {
     "slug": "igt-aztec-temple-crystal-slot",
     "name": "IGT Aztec Temple  Crystal Slot",
     "brand": "igt",
