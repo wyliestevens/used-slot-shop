@@ -1,5 +1,26 @@
 [
   {
+    "slug": "igt-cats-crystal-slot",
+    "name": "IGT Cats Crystal Slot",
+    "brand": "igt",
+    "type": "video",
+    "price": 4000,
+    "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/474c395249f8fb1ad2392114bd0dd557ebd09bc9/public/uploads/unsorted/IGTCats.jpg",
+    "description": "IGT Cats This IGT Crystal Core Slots",
+    "highlights": [
+      "Enhanced sound system",
+      "Ticket In – Ticket Out (TITO)",
+      "Updated bill validator ($1–$100)",
+      "1-year home-use warranty"
+    ],
+    "cabinet": "IGT Crystal Core Slots",
+    "condition": "Professionally Refurbished",
+    "inStock": 1,
+    "status": "published",
+    "createdAt": "2026-07-16T01:49:30.134Z",
+    "updatedAt": "2026-07-16T01:49:30.134Z"
+  },
+  {
     "slug": "igt-caveman-keno",
     "name": "IGT Caveman Keno",
     "brand": "igt",
