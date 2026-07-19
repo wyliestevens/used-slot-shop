@@ -89,9 +89,10 @@
       "buying guide",
       "education"
     ],
-    "status": "draft",
+    "status": "published",
     "createdAt": "2026-05-25T12:00:00.000Z",
-    "updatedAt": "2026-05-25T12:00:00.000Z"
+    "updatedAt": "2026-07-19T13:21:16.881Z",
+    "publishedAt": "2026-07-19T13:21:16.881Z"
   },
   {
     "slug": "how-to-set-up-your-slot-machine-at-home",
