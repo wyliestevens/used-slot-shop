@@ -154,9 +154,10 @@
       "buying guide",
       "featured"
     ],
-    "status": "draft",
+    "status": "published",
     "createdAt": "2026-05-25T12:00:00.000Z",
-    "updatedAt": "2026-05-25T12:00:00.000Z"
+    "updatedAt": "2026-07-24T16:01:35.734Z",
+    "publishedAt": "2026-07-24T16:01:35.734Z"
   },
   {
     "slug": "igt-vs-bally-vs-aristocrat-comparing-slot-machine-brands",
