@@ -218,9 +218,10 @@
       "education",
       "how-to"
     ],
-    "status": "draft",
+    "status": "published",
     "createdAt": "2026-05-25T12:00:00.000Z",
-    "updatedAt": "2026-05-25T12:00:00.000Z"
+    "updatedAt": "2026-07-27T17:01:49.654Z",
+    "publishedAt": "2026-07-27T17:01:49.654Z"
   },
   {
     "slug": "where-to-find-slot-machine-parts",
