@@ -234,9 +234,10 @@
       "maintenance",
       "parts"
     ],
-    "status": "draft",
+    "status": "published",
     "createdAt": "2026-05-25T12:00:00.000Z",
-    "updatedAt": "2026-05-25T12:00:00.000Z"
+    "updatedAt": "2026-07-27T17:01:58.810Z",
+    "publishedAt": "2026-07-27T17:01:58.810Z"
   },
   {
     "slug": "25-year-rule-antique-slot-machine-laws",
