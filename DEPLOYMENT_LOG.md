@@ -4,6 +4,31 @@ A running record of every build, deploy, and meaningful change to the site. Newe
 
 ---
 
+## v0.7.5 — Replace Terms of Service with full purchase agreement
+**Date:** 2026-07-31
+**Status:** ✅ Live
+**Headline commits:**
+- `_pending_` content(terms): replace placeholder ToS with full machine + used-parts purchase agreement
+
+### What changed
+Replaced the short placeholder Terms of Service at `/terms` with the owner-provided full agreement. Content, verbatim from the owner, is organized into readable sections while preserving exact wording:
+
+- Refurbished-to-order disclosures (age, imperfections, stock photos, pre-ship video approval)
+- Setup & programming ($150 change fee, reprogramming voids warranty)
+- Curbside shipping & Bill of Lading inspection
+- Tech support (remote-only, business hours EST, $75/hr out of warranty)
+- eKey $300 hold (IGT Family 14 machines)
+- Surge protection / leave powered on
+- Home-entertainment-only intended use + right to cancel orders
+- "Terms and Conditions for Purchasing Used Parts" (Buyer's Agreement) as a numbered list with nested returns/shipping bullets
+
+Numbered agreement uses explicit `list-decimal` classes since `.prose-slot` only styles `ul`. No other pages or components touched.
+
+### Verification
+- JSX/markup reviewed; uses existing `Section` + `prose-slot` conventions. Local `tsc` not installed (build runs on Vercel).
+
+---
+
 ## v0.7.4 — Bugfix: blog form race condition + clearer missing-field error
 **Date:** 2026-05-18
 **Status:** ✅ Live
