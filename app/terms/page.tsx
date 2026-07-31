@@ -4,7 +4,7 @@ import { Section } from "@/components/Section";
 export const metadata = buildMetadata({
   title: "Terms of Service",
   description:
-    "Terms governing your purchase of refurbished used slot machines and used parts from Slot Machines Unlimited.",
+    "Terms governing your purchase of refurbished used slot machines and used parts from Used Slot Shop.",
   path: "/terms",
 });
 
@@ -82,20 +82,20 @@ export default function TermsPage() {
 
         <h2>Intended use</h2>
         <p>
-          Slot Machines Unlimited sells slot machines for home entertainment only.
+          Used Slot Shop sells slot machines for home entertainment only.
           We highly encourage having freeplay set up for credit input on the
           machine(s). Coin handling can be sold to select states only. We do not
           condone any illegal activity with the gaming devices.
         </p>
         <p>
-          Slot Machines Unlimited reserves the right to cancel an order at our
+          Used Slot Shop reserves the right to cancel an order at our
           discretion.
         </p>
 
         <h2>Terms and Conditions for Purchasing Used Parts</h2>
         <p>
           This Buyer&rsquo;s Agreement outlines the terms and conditions for the
-          purchase of used slot machine parts from Slot Machines Unlimited Inc. By
+          purchase of used slot machine parts from Used Slot Shop. By
           making a purchase, you agree to the following:
         </p>
 
@@ -106,12 +106,12 @@ export default function TermsPage() {
             the product description.
           </li>
           <li>
-            Parts are sold &ldquo;as-is,&rdquo; and Slot Machines Unlimited Inc
+            Parts are sold &ldquo;as-is,&rdquo; and Used Slot Shop
             makes no additional guarantees or warranties beyond the provided
             condition statement.
           </li>
           <li>
-            <strong>Technical Support.</strong> Slot Machines Unlimited Inc does not
+            <strong>Technical Support.</strong> Used Slot Shop does not
             provide troubleshooting assistance or support for installation of
             purchased parts. It is the buyer&rsquo;s sole responsibility to ensure
             compatibility and perform any required setup or repairs. If you are
@@ -132,7 +132,7 @@ export default function TermsPage() {
               </li>
               <li>
                 Refunds will be issued after the returned items have been inspected
-                and verified by Slot Machines Unlimited Inc.
+                and verified by Used Slot Shop.
               </li>
             </ul>
           </li>
