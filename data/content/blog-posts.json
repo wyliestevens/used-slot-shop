@@ -282,9 +282,10 @@
       "maintenance",
       "troubleshooting"
     ],
-    "status": "draft",
+    "status": "published",
     "createdAt": "2026-05-25T12:00:00.000Z",
-    "updatedAt": "2026-05-25T12:00:00.000Z"
+    "updatedAt": "2026-07-31T21:39:49.722Z",
+    "publishedAt": "2026-07-31T21:39:49.722Z"
   },
   {
     "slug": "used-slot-machines-vs-new-is-refurbished-worth-it",
