@@ -59,7 +59,7 @@ export default function TermsPage() {
         <p>
           We do not have on-site technicians, you will be responsible for doing the
           work on the machine with our technician&rsquo;s guidance. Our technicians
-          work during normal business hours. We are in Eastern Standard Time. Please
+          work during normal business hours. We are in Mountain Standard Time. Please
           make sure your calls are within reasonable hours. Tech support outside of
           warranty period is available for $75 per hour plus cost of parts.
         </p>
