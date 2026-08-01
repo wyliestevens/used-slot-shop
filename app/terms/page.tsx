@@ -18,8 +18,8 @@ export default function TermsPage() {
       <div className="prose-slot max-w-3xl">
         <h2>Refurbished to order</h2>
         <p>
-          Please understand you are purchasing a used slot machine. Here at Slot
-          Machines Unlimited we refurbish every machine to order. These machines
+          Please understand you are purchasing a used slot machine. Here at Used
+          Slot Shop we refurbish every machine to order. These machines
           are up to 25+ years old and probably will have imperfections including
           but not limited to: scratches, chips, wear on button panel, nicks and
           dents in the exterior cabinet. We strive to clean each machine and only
