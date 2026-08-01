@@ -1,45 +1,38 @@
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
 import { Section } from "@/components/Section";
-import { site } from "@/lib/site";
+import PageSections from "@/components/PageSections";
+import type { PageContent } from "@/lib/pages";
+import content from "@/data/content/pages/privacy.json";
+
+const page = content as PageContent;
 
 export const metadata = buildMetadata({
-  title: "Privacy Policy",
-  description: "How Used Slot Shop collects, uses, and protects your information.",
+  title: page.metaTitle,
+  description: page.metaDescription,
   path: "/privacy",
 });
 
 export default function PrivacyPage() {
   return (
-    <Section eyebrow="Legal" title="Privacy Policy" subtitle="Last updated: 2026-04-19">
-      <div className="prose-slot max-w-3xl">
-        <p>
-          Used Slot Shop ("we", "us") respects your privacy. This policy explains what
-          information we collect and how we use it.
-        </p>
-        <h2>What we collect</h2>
-        <ul>
-          <li>Information you submit via contact or quote forms (name, email, phone, state, message)</li>
-          <li>Transaction details required to process your order</li>
-          <li>Standard web analytics (pages visited, approximate location, device type)</li>
-        </ul>
-        <h2>How we use it</h2>
-        <p>
-          We use your information to respond to inquiries, process orders, ship and service
-          machines, and improve our site. We do not sell your personal information to third
-          parties.
-        </p>
-        <h2>Cookies & analytics</h2>
-        <p>
-          We may use first-party cookies and privacy-respecting analytics to understand how
-          visitors use the site. You can disable cookies in your browser settings.
-        </p>
-        <h2>Contact</h2>
-        <p>
-          Questions about this policy? Email{" "}
-          <a href={`mailto:${site.email}`}>{site.email}</a> or call{" "}
-          <a href={site.phoneHref}>{site.phone}</a>.
-        </p>
-      </div>
-    </Section>
+    <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Privacy Policy", path: "/privacy" },
+        ])}
+      />
+      <Section eyebrow={page.eyebrow}>
+        <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+          {page.title}
+        </h1>
+        {page.subtitle ? (
+          <p className="mt-4 mb-12 text-ink-300 text-lg leading-relaxed">{page.subtitle}</p>
+        ) : null}
+        <div className="prose-slot max-w-3xl">
+          <PageSections sections={page.sections} />
+        </div>
+      </Section>
+    </>
   );
 }

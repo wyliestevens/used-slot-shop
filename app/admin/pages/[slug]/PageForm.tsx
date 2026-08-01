@@ -220,9 +220,22 @@ export default function PageForm({ slug, initial }: { slug: string; initial: Pag
 
             <div>
               <div className="flex items-center justify-between mb-1.5">
-                <label className="text-sm font-medium text-ink-200">Bullets</label>
+                <div className="flex items-center gap-3">
+                  <label className="text-sm font-medium text-ink-200">
+                    {section.ordered ? "List items (numbered)" : "Bullets"}
+                  </label>
+                  <label className="inline-flex items-center gap-1.5 text-xs text-ink-400 cursor-pointer select-none">
+                    <input
+                      type="checkbox"
+                      checked={Boolean(section.ordered)}
+                      onChange={(e) => updateSection(i, { ordered: e.target.checked })}
+                      className="h-3.5 w-3.5 rounded border-ink-600 bg-ink-900 text-brand-500 focus:ring-brand-500/40"
+                    />
+                    Numbered list
+                  </label>
+                </div>
                 <button type="button" onClick={() => addBullet(i)} className="text-xs text-brand-300 hover:text-brand-200 inline-flex items-center gap-1">
-                  <Plus className="h-3 w-3" /> Add bullet
+                  <Plus className="h-3 w-3" /> Add {section.ordered ? "item" : "bullet"}
                 </button>
               </div>
               <div className="space-y-2">
@@ -282,8 +295,9 @@ function normalize(raw: any): PageContent {
           heading: s?.heading ?? "",
           paragraphs: Array.isArray(s?.paragraphs) ? s.paragraphs : [],
           bullets: Array.isArray(s?.bullets) ? s.bullets : [],
+          ordered: Boolean(s?.ordered),
         }))
-      : [{ heading: "", paragraphs: [], bullets: [] }],
+      : [{ heading: "", paragraphs: [], bullets: [], ordered: false }],
   };
   return base;
 }

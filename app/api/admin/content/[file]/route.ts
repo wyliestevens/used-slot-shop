@@ -12,6 +12,8 @@ const ALLOWED: ContentFile[] = [
   "shipping",
   "warranty",
   "maintenance",
+  "terms",
+  "privacy",
 ];
 
 export async function GET(

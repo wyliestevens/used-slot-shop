@@ -6,6 +6,8 @@ export type PageSection = {
   heading?: string;
   paragraphs?: string[];
   bullets?: string[];
+  // When true, the bullets render as a numbered <ol> instead of a bulleted <ul>.
+  ordered?: boolean;
 };
 
 export type PageContent = {
@@ -22,7 +24,9 @@ export type PageSlug =
   | "buying-guide"
   | "shipping"
   | "warranty"
-  | "maintenance";
+  | "maintenance"
+  | "terms"
+  | "privacy";
 
 // Friendly labels for admin UI listings.
 export const PAGE_META: Record<PageSlug | "faq", { label: string; path: string; description: string }> = {
@@ -55,5 +59,15 @@ export const PAGE_META: Record<PageSlug | "faq", { label: string; path: string; 
     label: "Maintenance",
     path: "/maintenance",
     description: "Repair services, parts, platforms we support.",
+  },
+  terms: {
+    label: "Terms of Service",
+    path: "/terms",
+    description: "Purchase agreement, setup, shipping, tech support, used-parts terms.",
+  },
+  privacy: {
+    label: "Privacy Policy",
+    path: "/privacy",
+    description: "What information we collect and how we use it.",
   },
 };

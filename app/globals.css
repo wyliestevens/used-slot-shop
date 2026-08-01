@@ -68,6 +68,9 @@ body {
   .prose-slot ul {
     @apply list-disc pl-6 space-y-2 text-ink-200 mb-4;
   }
+  .prose-slot ol {
+    @apply list-decimal pl-6 space-y-2 text-ink-200 mb-4 marker:font-semibold marker:text-brand-300;
+  }
   .prose-slot a {
     @apply text-brand-300 hover:text-brand-200 underline;
   }

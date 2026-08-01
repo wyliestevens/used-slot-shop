@@ -4,7 +4,7 @@ import { PAGE_META } from "@/lib/pages";
 
 export const dynamic = "force-dynamic";
 
-const SLUGS = ["about", "buying-guide", "faq", "shipping", "warranty", "maintenance"] as const;
+const SLUGS = ["about", "buying-guide", "faq", "shipping", "warranty", "maintenance", "terms", "privacy"] as const;
 
 export default function AdminPagesIndex() {
   return (

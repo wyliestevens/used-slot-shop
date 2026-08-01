@@ -12,7 +12,9 @@ export type ContentFile =
   | "faq"
   | "shipping"
   | "warranty"
-  | "maintenance";
+  | "maintenance"
+  | "terms"
+  | "privacy";
 
 const FILE_PATHS: Record<ContentFile, string> = {
   site: "data/content/site.json",
@@ -23,6 +25,8 @@ const FILE_PATHS: Record<ContentFile, string> = {
   shipping: "data/content/pages/shipping.json",
   warranty: "data/content/pages/warranty.json",
   maintenance: "data/content/pages/maintenance.json",
+  terms: "data/content/pages/terms.json",
+  privacy: "data/content/pages/privacy.json",
 };
 
 // Editable copy pages surfaced by the /admin/pages editor (excludes site + homepage,
@@ -34,6 +38,8 @@ export const PAGE_CONTENT_FILES: ContentFile[] = [
   "shipping",
   "warranty",
   "maintenance",
+  "terms",
+  "privacy",
 ];
 
 export async function loadContent<T = any>(

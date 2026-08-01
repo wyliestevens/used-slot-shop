@@ -150,14 +150,14 @@ export const toolSchemas = [
     },
   },
 
-  // ─── Page copy (About, Buying Guide, FAQ, Shipping, Warranty, Maintenance) ───
+  // ─── Page copy (About, Buying Guide, FAQ, Shipping, Warranty, Maintenance, Terms, Privacy) ───
   {
     name: "get_page_copy",
-    description: "Read the editable copy for one of: about, buying-guide, faq, shipping, warranty, maintenance.",
+    description: "Read the editable copy for one of: about, buying-guide, faq, shipping, warranty, maintenance, terms, privacy.",
     input_schema: {
       type: "object",
       properties: {
-        page: { type: "string", enum: ["about", "buying-guide", "faq", "shipping", "warranty", "maintenance"] },
+        page: { type: "string", enum: ["about", "buying-guide", "faq", "shipping", "warranty", "maintenance", "terms", "privacy"] },
       },
       required: ["page"],
     },
@@ -165,11 +165,11 @@ export const toolSchemas = [
   {
     name: "update_page_copy",
     description:
-      "Replace or deep-merge page copy. For regular pages the shape is {metaTitle, metaDescription, eyebrow, title, subtitle, sections:[{heading, paragraphs[], bullets[]}]}. For `faq` the shape is an array of {q, a}. When adding/removing/reordering sections or FAQ entries, supply the full array — arrays are replaced wholesale.",
+      "Replace or deep-merge page copy. For regular pages the shape is {metaTitle, metaDescription, eyebrow, title, subtitle, sections:[{heading, paragraphs[], bullets[], ordered?}]}. Set ordered:true on a section to render its bullets as a numbered list. For `faq` the shape is an array of {q, a}. When adding/removing/reordering sections or FAQ entries, supply the full array — arrays are replaced wholesale.",
     input_schema: {
       type: "object",
       properties: {
-        page: { type: "string", enum: ["about", "buying-guide", "faq", "shipping", "warranty", "maintenance"] },
+        page: { type: "string", enum: ["about", "buying-guide", "faq", "shipping", "warranty", "maintenance", "terms", "privacy"] },
         patch: {
           description:
             "Object (for pages) or array (for FAQ). Object deep-merges; array replaces wholesale.",

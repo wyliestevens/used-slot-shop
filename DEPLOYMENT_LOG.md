@@ -4,6 +4,30 @@ A running record of every build, deploy, and meaningful change to the site. Newe
 
 ---
 
+## v0.7.6 — Terms & Privacy are now admin-editable (Pages CMS + chat agent)
+**Date:** 2026-08-01
+**Status:** ✅ Live
+**Headline commits:**
+- `_pending_` feat(admin): bring /terms and /privacy into the generic Pages CMS; add numbered-list support
+
+### What changed
+The Terms of Service and Privacy Policy were hardcoded TSX, so they couldn't be edited from `/admin` (only from code). Brought both into the existing generic **Pages** CMS so the owner can edit them with no code:
+
+- **New editable content files:** `data/content/pages/terms.json` and `data/content/pages/privacy.json` (PageContent schema — metaTitle, metaDescription, eyebrow, title, subtitle, sections[]).
+- **Public pages now render from JSON** via `PageSections` (same pattern as `/warranty`), instead of inline JSX. Routes and URLs unchanged; Footer links still work.
+- **Wired into every editing surface** by adding `terms` + `privacy` to the shared lists: `lib/content.ts` (`ContentFile`, `FILE_PATHS`, `PAGE_CONTENT_FILES`), the admin content API allow-list, `lib/pages.ts` (`PageSlug` + `PAGE_META`), the `/admin/pages` index, and the chat agent's `get_page_copy`/`update_page_copy` enums. They now appear in the admin **Pages** tab and are editable by the natural-language chat agent.
+- **Numbered-list support:** added optional `ordered?: boolean` to `PageSection`; `PageSections` renders an `<ol>` when set (new `.prose-slot ol` styling), and the Pages form gained a per-section "Numbered list" toggle. Used for the used-parts Buyer's Agreement.
+
+### Why
+Owner needs to update Terms himself without a developer. Reusing the existing Pages CMS (rather than a bespoke terms editor) means one editing surface for all copy pages, and the chat agent picks it up for free.
+
+### Verification
+- Both JSON files parse (11 terms sections incl. 1 ordered list; 5 privacy sections).
+- Type wiring reviewed: both `Record<>` maps over `ContentFile`/`PageSlug` updated; no exhaustive switches. Local build not run (no node_modules); mirrors the already-building `/warranty` pattern.
+- TODO after deploy: open `/admin/pages`, edit Terms, Save & redeploy, confirm live.
+
+---
+
 ## v0.7.5 — Replace Terms of Service with full purchase agreement
 **Date:** 2026-07-31
 **Status:** ✅ Live

@@ -1,0 +1,40 @@
+{
+  "metaTitle": "Privacy Policy",
+  "metaDescription": "How Used Slot Shop collects, uses, and protects your information.",
+  "eyebrow": "Legal",
+  "title": "Privacy Policy",
+  "subtitle": "Last updated: 2026-07-31",
+  "sections": [
+    {
+      "paragraphs": [
+        "Used Slot Shop (\"we\", \"us\") respects your privacy. This policy explains what information we collect and how we use it."
+      ]
+    },
+    {
+      "heading": "What we collect",
+      "bullets": [
+        "Information you submit via contact or quote forms (name, email, phone, state, message)",
+        "Transaction details required to process your order",
+        "Standard web analytics (pages visited, approximate location, device type)"
+      ]
+    },
+    {
+      "heading": "How we use it",
+      "paragraphs": [
+        "We use your information to respond to inquiries, process orders, ship and service machines, and improve our site. We do not sell your personal information to third parties."
+      ]
+    },
+    {
+      "heading": "Cookies & analytics",
+      "paragraphs": [
+        "We may use first-party cookies and privacy-respecting analytics to understand how visitors use the site. You can disable cookies in your browser settings."
+      ]
+    },
+    {
+      "heading": "Contact",
+      "paragraphs": [
+        "Questions about this policy? Reach us at the email address or phone number listed on our Contact page."
+      ]
+    }
+  ]
+}
