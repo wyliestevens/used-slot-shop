@@ -7,10 +7,10 @@
   "salesEmail": "usedslotshop@gmail.com",
   "serviceEmail": "usedslotshop@gmail.com",
   "address": {
-    "street": "6806 Frerichs Ranch Road",
-    "city": "Hackberry",
+    "street": "5146 W Burro Dr",
+    "city": "Golden Valley",
     "region": "AZ",
-    "postalCode": "86411",
+    "postalCode": "86413",
     "country": "US"
   },
   "hours": {
@@ -19,7 +19,7 @@
     "sunday": "Sun Closed"
   },
   "socials": {
-    "facebook": "61576423573633",
+    "facebook": "",
     "instagram": "",
     "youtube": ""
   }
