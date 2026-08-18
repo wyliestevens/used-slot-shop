@@ -7,6 +7,7 @@ import { Section } from "@/components/Section";
 import TrustBar from "@/components/TrustBar";
 import MachineCard from "@/components/MachineCard";
 import Faq from "@/components/Faq";
+import HomeSearch from "@/components/HomeSearch";
 import { machines, featuredMachines, machineOfTheDay } from "@/data/machines";
 import { faqs } from "@/lib/faq";
 import { site } from "@/lib/site";
@@ -70,7 +71,13 @@ export default function Home() {
               <p className="mt-6 text-lg text-ink-200 max-w-xl leading-relaxed">
                 {homepage.hero.subtitle}
               </p>
-              <div className="mt-8 flex flex-wrap items-center gap-3">
+
+              {/* SEARCH BAR */}
+              <div className="mt-8">
+                <HomeSearch machines={machines} />
+              </div>
+
+              <div className="mt-5 flex flex-wrap items-center gap-3">
                 <Link href={homepage.hero.primaryCtaHref} className="btn-primary">
                   {homepage.hero.primaryCtaText} <ArrowRight className="h-4 w-4" />
                 </Link>
