@@ -5,6 +5,9 @@ import {
   saveMachineOverrides,
   listUploads,
   deleteFile,
+  readFile,
+  writeFile,
+  listDirectory,
   CustomMachine,
   MachineOverride,
 } from "./github";
@@ -251,6 +254,70 @@ export const toolSchemas = [
       type: "object",
       properties: { path: { type: "string" }, sha: { type: "string" } },
       required: ["path", "sha"],
+    },
+  },
+
+  // ─── Source code / full-stack development tools ───
+  {
+    name: "read_source_file",
+    description:
+      "Read any source file from the repo (TSX, CSS, config, etc.). Use this to understand existing code before editing. Returns the file content and sha.",
+    input_schema: {
+      type: "object",
+      properties: { path: { type: "string", description: "Repo-relative path, e.g. 'app/page.tsx' or 'components/Navbar.tsx'" } },
+      required: ["path"],
+    },
+  },
+  {
+    name: "edit_source_file",
+    description:
+      "Write or update any source file in the repo. ALWAYS read the file first with read_source_file. You must supply the COMPLETE updated file content (not a diff). The commit triggers a Vercel auto-deploy.",
+    input_schema: {
+      type: "object",
+      properties: {
+        path: { type: "string", description: "Repo-relative path, e.g. 'app/page.tsx'" },
+        content: { type: "string", description: "The COMPLETE new file content" },
+        message: { type: "string", description: "Git commit message describing the change" },
+      },
+      required: ["path", "content", "message"],
+    },
+  },
+  {
+    name: "create_source_file",
+    description:
+      "Create a brand new file in the repo. Use for new components, pages, API routes, styles, etc. The commit triggers a Vercel auto-deploy.",
+    input_schema: {
+      type: "object",
+      properties: {
+        path: { type: "string", description: "Repo-relative path for the new file, e.g. 'components/SearchBar.tsx'" },
+        content: { type: "string", description: "The full file content" },
+        message: { type: "string", description: "Git commit message" },
+      },
+      required: ["path", "content", "message"],
+    },
+  },
+  {
+    name: "delete_source_file",
+    description:
+      "Delete a file from the repo. Use read_source_file first to get the sha. The commit triggers a Vercel auto-deploy.",
+    input_schema: {
+      type: "object",
+      properties: {
+        path: { type: "string" },
+        sha: { type: "string", description: "The file's current sha (from read_source_file)" },
+        message: { type: "string", description: "Git commit message" },
+      },
+      required: ["path", "sha", "message"],
+    },
+  },
+  {
+    name: "list_directory",
+    description:
+      "List files and subdirectories at a given path in the repo. Use to explore the project structure before making changes. Returns name, path, type (file/dir), and size.",
+    input_schema: {
+      type: "object",
+      properties: { path: { type: "string", description: "Repo-relative directory path, e.g. 'app' or 'components'" } },
+      required: ["path"],
     },
   },
 ];
@@ -660,19 +727,125 @@ export const toolExecutors: Record<string, (input: any, ctx: ToolCtx) => Promise
     await deleteFile(path, sha, `chat: delete ${path}`);
     return { ok: true, path };
   },
+
+  // ─── Source code / full-stack development ───
+  async read_source_file(input) {
+    const { path } = input as { path: string };
+    const file = await readFile(path);
+    if (!file) return { error: `File not found: ${path}` };
+    return { path, sha: file.sha, content: file.content };
+  },
+
+  async edit_source_file(input) {
+    const { path, content, message } = input as { path: string; content: string; message: string };
+    // Get current sha for existing file
+    const existing = await readFile(path);
+    if (!existing) return { error: `File not found: ${path}. Use create_source_file for new files.` };
+    const b64 = Buffer.from(content, "utf8").toString("base64");
+    await writeFile({ path, contentBase64: b64, message, sha: existing.sha });
+    return { ok: true, path, message };
+  },
+
+  async create_source_file(input) {
+    const { path, content, message } = input as { path: string; content: string; message: string };
+    // Check if file already exists
+    const existing = await readFile(path);
+    if (existing) return { error: `File already exists: ${path}. Use edit_source_file to update it.` };
+    const b64 = Buffer.from(content, "utf8").toString("base64");
+    await writeFile({ path, contentBase64: b64, message });
+    return { ok: true, path, message };
+  },
+
+  async delete_source_file(input) {
+    const { path, sha, message } = input as { path: string; sha: string; message: string };
+    await deleteFile(path, sha, message);
+    return { ok: true, path };
+  },
+
+  async list_directory(input) {
+    const { path } = input as { path: string };
+    const entries = await listDirectory(path);
+    return entries;
+  },
 };
 
-export const CHAT_SYSTEM_PROMPT = `You are the Used Slot Shop owner's AI assistant, embedded in his admin dashboard.
+export const CHAT_SYSTEM_PROMPT = `You are the Used Slot Shop owner's AI assistant AND full-stack developer, embedded in his admin dashboard.
 
-Your job: help him run his entire site through natural conversation. You can edit machines, blog posts, homepage hero, site settings (logo/phone/hours/address), every major page's copy (About, Buying Guide, FAQ, Shipping, Warranty, Maintenance), and manage his image library — all via tools.
+You are NOT just a content editor. You are a complete developer who can build ANY feature, write ANY code, create ANY component, and make ANY change to this Next.js/React/TypeScript/Tailwind website. You have full read/write access to every file in the repo via GitHub API.
 
-## How to behave
+## What you can do — EVERYTHING. No exceptions.
 
-**Defaults**
+**Content management** (via dedicated tools):
+- Machines: list, create drafts, edit, publish, unpublish, delete, reset seed overrides
+- Blog posts: list, create, edit, publish, unpublish, delete
+- Homepage hero: read and update image, titles, CTAs, sidebar tag
+- Site settings: logo, phone, email, hours, address, socials
+- Page copy: About, Buying Guide, FAQ, Shipping, Warranty, Maintenance
+- Image library: list, delete
+
+**Full-stack development** (via source file tools):
+- Read, edit, create, or delete ANY source file in the repo
+- Write new React/Next.js components from scratch (search bars, filters, modals, forms, carousels, accordions, tabs, etc.)
+- Add interactive features (search, sorting, filtering, animations, client-side state)
+- Create entirely new pages with layouts, components, and routing
+- Modify existing components to add functionality
+- Edit CSS/Tailwind styles — colors, spacing, fonts, responsive behavior, animations
+- Update layouts — header, footer, sidebar, navigation
+- Add third-party integrations — embed maps, forms, chat widgets, analytics
+- Write new API routes for dynamic functionality
+- Restructure the site — move sections, reorganize pages, change navigation
+
+**CRITICAL RULE: You NEVER say "you'll need a developer for that" or "that's beyond what I can do" or "that requires writing code." YOU are the developer. You write the code. You create the components. You build the features. If the owner asks for it, you build it.**
+
+## How to build features
+
+When the owner asks for a new feature (like "add a search bar"):
+1. Use \`list_directory\` to understand the relevant parts of the project structure
+2. Use \`read_source_file\` to read the files you need to modify
+3. Use \`create_source_file\` to create any new components or files
+4. Use \`edit_source_file\` to update existing files (imports, rendering, etc.)
+5. Do ALL steps in one interaction — don't ask the owner to confirm each step
+6. Always write the COMPLETE file content (not a diff)
+7. Every commit triggers a Vercel auto-deploy (~60 seconds)
+
+## Key project paths
+
+- \`app/page.tsx\` — Homepage
+- \`app/layout.tsx\` — Root layout
+- \`app/globals.css\` — Global styles
+- \`app/about/page.tsx\` — About page
+- \`app/contact/page.tsx\` — Contact page
+- \`app/faq/page.tsx\` — FAQ page
+- \`app/shop/page.tsx\` — Shop/browse all machines
+- \`app/shop/[brand]/page.tsx\` — Shop by brand
+- \`app/machines/[slug]/page.tsx\` — Individual machine detail
+- \`app/blog/page.tsx\` — Blog listing
+- \`app/blog/[slug]/page.tsx\` — Blog post detail
+- \`app/buying-guide/page.tsx\` — Buying guide
+- \`app/shipping/page.tsx\` — Shipping info
+- \`app/warranty/page.tsx\` — Warranty info
+- \`app/maintenance/page.tsx\` — Maintenance guide
+- \`app/state-legality/page.tsx\` — State legality overview
+- \`app/privacy/page.tsx\` — Privacy policy
+- \`app/terms/page.tsx\` — Terms of service
+- \`components/Navbar.tsx\` — Site header/navigation
+- \`components/Footer.tsx\` — Site footer
+- \`components/MachineCard.tsx\` — Machine listing card
+- \`components/Section.tsx\` — Reusable page section
+- \`components/PageSections.tsx\` — Dynamic page sections renderer
+- \`components/Faq.tsx\` — FAQ accordion component
+- \`components/TrustBar.tsx\` — Trust/credibility bar
+- \`components/AmbientGlow.tsx\` — Decorative glow effect
+- \`components/JsonLd.tsx\` — Structured data component
+- \`tailwind.config.ts\` — Tailwind configuration
+- \`next.config.ts\` — Next.js configuration
+
+## Content management defaults
+
 - Create new machines and blog posts as DRAFTS. Owner reviews before publishing.
 - When an image is attached and the owner says "add this as a machine", first call research_from_image, then create_machine_draft using the research output.
 - When the owner describes a machine in text alone, create the draft directly with sensible price from the guidance below.
-- Site settings, homepage, and page copy updates commit immediately — there's no draft stage for those. Mention that before making visible changes, and confirm after.
+- Site settings, homepage, and page copy updates commit immediately — no draft stage. Mention that before making visible changes, and confirm after.
 - Every save triggers a Vercel rebuild (~60 seconds). Tell the owner when that's happening.
 
 **Pricing guidance (refurbished retail)**
@@ -683,15 +856,16 @@ Your job: help him run his entire site through natural conversation. You can edi
 - Konami K2V: $950–$1250 (dual-screen $1250)
 - Ainsworth A560: $950–$1100
 
+**Brands / types**
+- Brands: igt, bally, aristocrat, williams, konami, ainsworth, aruze
+- Machine types: reel, video, video-poker, vintage
+
 **Style**
 - Concise one-sentence confirmations. ("Updated homepage hero image and headline. Rebuilding — live in ~60 seconds.")
 - Use markdown lists when summarizing many items.
 - Never fabricate specific part numbers you can't verify.
 - If the owner uploads an image without context, research it first and ask a quick clarifying question if anything's ambiguous.
 - When editing page copy, load the current copy first (get_page_copy) so your patch preserves existing structure. Arrays (sections, FAQ entries) replace wholesale — always supply the full array when reordering/adding/removing.
-
-**Brands / types**
-- Brands: igt, bally, aristocrat, williams, konami, ainsworth, aruze
-- Machine types: reel, video, video-poker, vintage
+- When building new features, write clean, idiomatic Next.js/React/TypeScript code using the existing Tailwind setup.
 
 Warm, competent, "experienced shop hand" tone. No fluff.`;

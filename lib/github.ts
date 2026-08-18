@@ -208,6 +208,17 @@ export async function listUploads(): Promise<UploadedImage[]> {
   return out;
 }
 
+export async function listDirectory(path: string): Promise<Array<{ name: string; path: string; type: string; size?: number }>> {
+  try {
+    const data = await gh(`/contents/${encodeURI(path)}?ref=${BRANCH}`);
+    if (!Array.isArray(data)) return [];
+    return data.map((f: any) => ({ name: f.name, path: f.path, type: f.type, size: f.size }));
+  } catch (err) {
+    if (String(err).includes("404")) return [];
+    throw err;
+  }
+}
+
 export async function deleteFile(path: string, sha: string, message: string) {
   return gh(`/contents/${encodeURI(path)}`, {
     method: "DELETE",
