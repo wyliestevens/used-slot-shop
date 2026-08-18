@@ -4,6 +4,7 @@ import { useState, useMemo, useRef, useEffect } from "react";
 import { Search, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { Machine } from "@/data/machines";
 
 interface Props {
@@ -15,6 +16,7 @@ export default function HomeSearch({ machines }: Props) {
   const [open, setOpen] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -27,7 +29,7 @@ export default function HomeSearch({ machines }: Props) {
           (m.type && m.type.toLowerCase().includes(q)) ||
           (m.tagline && m.tagline.toLowerCase().includes(q))
       )
-      .slice(0, 8);
+      .slice(0, 6);
   }, [query, machines]);
 
   // Close dropdown when clicking outside
@@ -57,7 +59,24 @@ export default function HomeSearch({ machines }: Props) {
     setQuery("");
   };
 
+  // Navigate to full search results page
+  const goToSearch = () => {
+    const q = query.trim();
+    if (!q) return;
+    setOpen(false);
+    router.push(`/search?q=${encodeURIComponent(q)}`);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") goToSearch();
+    if (e.key === "Escape") {
+      setOpen(false);
+      setQuery("");
+    }
+  };
+
   const showDropdown = open && query.trim().length > 0;
+  const searchHref = `/search?q=${encodeURIComponent(query.trim())}`;
 
   return (
     <div ref={containerRef} className="relative w-full max-w-2xl mx-auto">
@@ -70,8 +89,9 @@ export default function HomeSearch({ machines }: Props) {
           value={query}
           onChange={handleChange}
           onFocus={() => query.trim() && setOpen(true)}
+          onKeyDown={handleKeyDown}
           placeholder="Search by name, brand, or type…"
-          className="w-full rounded-full border border-ink-600 bg-ink-900/80 backdrop-blur-sm pl-11 pr-10 py-3.5 text-sm text-white placeholder-ink-400 outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/30 transition"
+          className="w-full rounded-full border border-ink-600 bg-ink-900/80 backdrop-blur-sm pl-11 pr-28 py-3.5 text-sm text-white placeholder-ink-400 outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/30 transition"
           aria-label="Search slot machines"
           aria-expanded={showDropdown}
           aria-autocomplete="list"
@@ -80,15 +100,21 @@ export default function HomeSearch({ machines }: Props) {
         {query && (
           <button
             onClick={handleClear}
-            className="absolute right-4 text-ink-400 hover:text-white transition"
+            className="absolute right-[5.5rem] text-ink-400 hover:text-white transition"
             aria-label="Clear search"
           >
             <X className="h-4 w-4" />
           </button>
         )}
+        <button
+          onClick={goToSearch}
+          className="absolute right-2 rounded-full bg-brand-500 hover:bg-brand-400 text-ink-950 px-4 py-2 text-sm font-semibold transition"
+        >
+          Search
+        </button>
       </div>
 
-      {/* Dropdown */}
+      {/* Dropdown — quick preview */}
       {showDropdown && (
         <div className="absolute top-full left-0 right-0 mt-2 rounded-2xl border border-ink-700 bg-ink-900/95 backdrop-blur-md shadow-2xl overflow-hidden z-50">
           {results.length > 0 ? (
@@ -128,14 +154,14 @@ export default function HomeSearch({ machines }: Props) {
                   </li>
                 ))}
               </ul>
-              {/* View all results link */}
+              {/* View all results */}
               <div className="border-t border-ink-700 px-4 py-2.5">
                 <Link
-                  href={`/shop`}
+                  href={searchHref}
                   onClick={handleSelect}
                   className="text-xs text-brand-400 hover:text-brand-300 font-semibold transition"
                 >
-                  Browse all {machines.length} machines →
+                  View all results for &ldquo;{query.trim()}&rdquo; →
                 </Link>
               </div>
             </>
