@@ -16,6 +16,7 @@ export type BlogPost = {
   createdAt: string; // ISO
   updatedAt: string;
   publishedAt?: string;
+  scheduledAt?: string; // ISO — cron job auto-publishes when this date passes
 };
 
 const BLOG_PATH = "data/content/blog-posts.json";

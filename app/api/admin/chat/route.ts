@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { toolSchemas, toolExecutors, CHAT_SYSTEM_PROMPT } from "@/lib/chat-tools";
 
 export const runtime = "nodejs";
-export const maxDuration = 60;
+export const maxDuration = 120;
 
 type Msg = { role: "user" | "assistant"; content: any };
 

@@ -83,7 +83,9 @@ export default function ChatInterface() {
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ messages: next }),
       });
-      const data = await res.json();
+      const text = await res.text();
+      let data: any;
+      try { data = JSON.parse(text); } catch { throw new Error(text.slice(0, 200) || "Chat failed — server returned non-JSON response"); }
       if (!res.ok) throw new Error(data.error || "Chat failed");
       // The server returns the full updated conversation. Use it.
       setMessages(data.messages);

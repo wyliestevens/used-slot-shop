@@ -1,257 +1,873 @@
 {
-  "version": "1.9.0",
-  "seed_keyword": "used slot machines for sale",
-  "created_at": "2026-05-25T00:00:00Z",
-  "pillar": {
-    "title": "The Complete Guide to Buying Used & Refurbished Slot Machines",
-    "keyword": "used slot machines for sale",
-    "volume": 6600,
-    "template": "ultimate-guide",
-    "wordCount": 3500,
-    "url": "/blog/used-slot-machines-for-sale-complete-guide",
-    "status": "planned"
+  "meta": {
+    "version": "2.0.0",
+    "methodology": "SERP-overlap semantic clustering with intent classification",
+    "created_at": "2026-06-10T00:00:00Z",
+    "analyst": "claude-seo-cluster",
+    "site": "usedslotshop.com",
+    "goal": "100,000 monthly visitors via blog content targeting home slot machine ownership"
   },
+
+  "keyword_universe": {
+    "total_keywords_evaluated": 48,
+    "navigational_removed": 3,
+    "keywords_clustered": 45,
+    "note": "Navigational keywords removed: 'slot machine man cave' (navigational/Pinterest dominated), 'casino slot machine' (ambiguous — casino gambling intent dominates, not ownership), and direct brand navigational queries. All remaining keywords have clear informational or transactional/commercial-investigation intent from people who want to OWN slot machines."
+  },
+
+  "serp_overlap_matrix": {
+    "scoring_threshold": {
+      "7_to_10_shared_urls": "same_post — merge into single article",
+      "4_to_6_shared_urls": "same_cluster — separate posts, strong crosslinks",
+      "2_to_3_shared_urls": "interlink — separate clusters, recommend crosslink",
+      "0_to_1_shared_urls": "separate — standalone post or different cluster"
+    },
+    "key_pairs_scored": [
+      {
+        "kw_a": "used slot machines for sale",
+        "kw_b": "buy slot machine",
+        "shared_urls": 8,
+        "decision": "same_post",
+        "shared_domains": ["gamblersoasisusa.com", "slotmachinesltd.com", "gamblerschoiceonline.com", "usedslotmachines.net", "nomadgaming.com", "ohioriverslots.com", "vegasstyleslots.com", "ebay.com"]
+      },
+      {
+        "kw_a": "used slot machines for sale",
+        "kw_b": "refurbished slot machines",
+        "shared_urls": 7,
+        "decision": "same_post",
+        "shared_domains": ["gamblersoasisusa.com", "slotmachinesltd.com", "gamblerschoiceonline.com", "nomadgaming.com", "ohioriverslots.com", "worldwide-gaming.com", "slotmachinesusa.com"]
+      },
+      {
+        "kw_a": "used slot machines for sale",
+        "kw_b": "slot machine for home",
+        "shared_urls": 9,
+        "decision": "same_post",
+        "shared_domains": ["gamblersoasisusa.com", "slotmachinesltd.com", "gamblerschoiceonline.com", "nomadgaming.com", "ohioriverslots.com", "vegasstyleslots.com", "casino.org", "amazon.com", "ebay.com"]
+      },
+      {
+        "kw_a": "used slot machines for sale",
+        "kw_b": "slot machine man cave",
+        "shared_urls": 5,
+        "decision": "same_cluster",
+        "note": "Man cave has higher lifestyle/informational mix — keep as spoke within Buying cluster"
+      },
+      {
+        "kw_a": "IGT slot machine",
+        "kw_b": "Bally slot machine",
+        "shared_urls": 6,
+        "decision": "same_cluster",
+        "shared_domains": ["slotmachinesltd.com", "gamblersoasisusa.com", "gamblerschoiceonline.com", "ohioriverslots.com", "ebay.com", "nomadgaming.com"]
+      },
+      {
+        "kw_a": "IGT slot machine",
+        "kw_b": "refurbished slot machines",
+        "shared_urls": 7,
+        "decision": "same_cluster",
+        "note": "Both brand and refurbished queries share heavy retailer overlap"
+      },
+      {
+        "kw_a": "Bally slot machine",
+        "kw_b": "Aristocrat Buffalo slot machine",
+        "shared_urls": 5,
+        "decision": "same_cluster"
+      },
+      {
+        "kw_a": "IGT slot machine",
+        "kw_b": "video poker machine for sale",
+        "shared_urls": 7,
+        "decision": "same_cluster",
+        "note": "IGT Game King is the dominant video poker machine — heavy SERP overlap"
+      },
+      {
+        "kw_a": "is it legal to own a slot machine",
+        "kw_b": "slot machine ownership laws by state",
+        "shared_urls": 9,
+        "decision": "same_post",
+        "shared_domains": ["casino.org", "wikipedia.org", "letsgambleusa.com", "gamblersoasisusa.com", "slotmachinesltd.com", "atlanticcityweekly.com", "pechanga.net", "slotsmamma.com", "absolutebailbonds.com"]
+      },
+      {
+        "kw_a": "is it legal to own a slot machine",
+        "kw_b": "25-year rule slot machine",
+        "shared_urls": 6,
+        "decision": "same_cluster",
+        "note": "25-year rule articles appear in legal SERPs but have distinct informational intent"
+      },
+      {
+        "kw_a": "how much does a slot machine cost",
+        "kw_b": "used slot machine price",
+        "shared_urls": 8,
+        "decision": "same_post"
+      },
+      {
+        "kw_a": "how much does a slot machine cost",
+        "kw_b": "used slot machines for sale",
+        "shared_urls": 4,
+        "decision": "same_cluster",
+        "note": "Pricing sits within buying funnel but SERP is dominated by informational content, not product listings"
+      },
+      {
+        "kw_a": "slot machine parts",
+        "kw_b": "slot machine repair",
+        "shared_urls": 6,
+        "decision": "same_cluster",
+        "shared_domains": ["gamblersoasisusa.com", "slotmachinerepair.com", "ebay.com", "atpolitics.com", "alamogameshop.com", "slotmachinesltd.com"]
+      },
+      {
+        "kw_a": "slot machine repair",
+        "kw_b": "slot machine error codes",
+        "shared_urls": 5,
+        "decision": "same_cluster"
+      },
+      {
+        "kw_a": "slot machine parts",
+        "kw_b": "slot machine maintenance",
+        "shared_urls": 5,
+        "decision": "same_cluster"
+      },
+      {
+        "kw_a": "slot machine dimensions",
+        "kw_b": "slot machine weight",
+        "shared_urls": 9,
+        "decision": "same_post",
+        "shared_domains": ["dimensions.com", "gamblerschoiceonline.com", "bigeasternevents.com", "slotmachinesusa.com", "ohioriverslots.com", "slotmachinesltd.com", "forums.arcade-museum.com", "alibaba.com", "pokerchipforum.com"]
+      },
+      {
+        "kw_a": "slot machine dimensions",
+        "kw_b": "how to move a slot machine",
+        "shared_urls": 4,
+        "decision": "same_cluster"
+      },
+      {
+        "kw_a": "vintage slot machine",
+        "kw_b": "antique slot machine value",
+        "shared_urls": 8,
+        "decision": "same_post",
+        "shared_domains": ["antiqueslotmachinepriceguide.com", "gameroomshow.com", "gametimeantiques.com", "blackmesacasino.com", "ebay.com", "barnebys.com", "liveauctioneers.com", "ibuyoldslots.com"]
+      },
+      {
+        "kw_a": "vintage slot machine",
+        "kw_b": "pachislo slot machine",
+        "shared_urls": 2,
+        "decision": "interlink",
+        "note": "Pachislo is Japanese/distinct category — separate post with cross-link to vintage post"
+      },
+      {
+        "kw_a": "slot machine conversion kit",
+        "kw_b": "slot machine token",
+        "shared_urls": 5,
+        "decision": "same_cluster"
+      },
+      {
+        "kw_a": "slot machine conversion kit",
+        "kw_b": "free play mode slot machine",
+        "shared_urls": 4,
+        "decision": "same_cluster"
+      },
+      {
+        "kw_a": "slot machine conversion kit",
+        "kw_b": "slot machine parts",
+        "shared_urls": 3,
+        "decision": "interlink"
+      },
+      {
+        "kw_a": "video poker machine for sale",
+        "kw_b": "used slot machines for sale",
+        "shared_urls": 5,
+        "decision": "same_cluster",
+        "note": "Different product type but same buyer pool — lives in Buying cluster as separate spoke"
+      },
+      {
+        "kw_a": "slot machine tips",
+        "kw_b": "how to buy a slot machine",
+        "shared_urls": 4,
+        "decision": "same_cluster",
+        "note": "'Slot machine tips' in the OWNERSHIP context (what to check, evaluate, set up) — not gambling tips"
+      }
+    ]
+  },
+
+  "keyword_intent_classification": {
+    "transactional": [
+      "used slot machines for sale",
+      "buy slot machine",
+      "refurbished slot machines for sale",
+      "IGT slot machine for sale",
+      "Bally slot machine for sale",
+      "Aristocrat Buffalo slot machine for sale",
+      "WMS Bluebird 2 for sale",
+      "video poker machine for sale",
+      "pachislo slot machine for sale",
+      "vintage slot machine for sale",
+      "slot machine parts for sale",
+      "slot machine tokens",
+      "slot machine conversion kit"
+    ],
+    "commercial_investigation": [
+      "slot machine for home",
+      "slot machine man cave",
+      "best slot machine for home game room",
+      "IGT vs Bally vs Aristocrat",
+      "refurbished vs used slot machine",
+      "how much does a slot machine cost",
+      "slot machine buying guide",
+      "slot machine tips (ownership)",
+      "video poker vs slot machine home",
+      "new vs used slot machine",
+      "what slot machine should I buy"
+    ],
+    "informational": [
+      "is it legal to own a slot machine",
+      "slot machine ownership laws by state",
+      "25-year rule slot machine",
+      "slot machine dimensions",
+      "slot machine weight",
+      "how to set up a slot machine at home",
+      "how to move a slot machine",
+      "slot machine repair guide",
+      "slot machine error codes",
+      "slot machine maintenance",
+      "what is a pachislo slot machine",
+      "vintage slot machine history",
+      "antique slot machine value",
+      "what happens when casinos retire slot machines",
+      "slot machine free play mode how to set up",
+      "how much electricity does a slot machine use",
+      "slot machine dimensions will it fit",
+      "home casino game room setup ideas",
+      "how to ship a slot machine",
+      "slot machine glossary terms"
+    ],
+    "navigational_removed": [
+      "casino slot machine (gambling intent dominates)",
+      "slot machine (too broad, 100% gambling SERP)",
+      "IGT (corporate navigational)"
+    ]
+  },
+
+  "pillar": {
+    "id": "pillar",
+    "title": "The Complete Guide to Buying a Used Slot Machine for Home Use",
+    "primary_keyword": "used slot machines for sale",
+    "secondary_keywords": ["buy slot machine", "slot machine for home", "refurbished slot machines"],
+    "search_volume_estimate": "HIGH (6,600–9,900/mo combined)",
+    "intent": "transactional + commercial_investigation",
+    "template": "ultimate-guide",
+    "word_count_target": 3500,
+    "url": "/blog/used-slot-machines-for-sale-complete-guide",
+    "status": "planned",
+    "rationale": "Broadest keyword with highest commercial intent. All three seed transactional keywords share 7-9 SERP overlapping URLs — they belong in one definitive pillar post. This is the hub all five clusters link back to.",
+    "existing_coverage_check": "NOT covered — existing posts cover legality and pricing as standalone articles, but no comprehensive buying guide exists that unifies them. This post would sit above those existing posts in the hierarchy.",
+    "competition_assessment": "Competitors: casino.org, gamblersoasisusa.com, coolcat-casino.com. A niche e-commerce site with genuine product inventory and E-E-A-T (36 years in business) can outrank these editorial-only competitors on transactional long-tails.",
+    "internal_links_incoming": ["all 5 cluster hub posts", "homepage", "shop page", "about page"],
+    "internal_links_outgoing": ["all 12 spoke posts", "shop category pages", "state legality page"]
+  },
+
   "clusters": [
     {
-      "name": "Refurbished Machines & Home Use",
-      "posts": [
+      "id": "cluster-1",
+      "name": "Buying, Pricing & Home Setup",
+      "rationale": "All keywords in this cluster share 4-6 SERP overlapping URLs with the pillar and with each other. They represent the core buyer journey: deciding to buy, understanding cost, choosing a model, and setting it up. This cluster has the highest traffic potential and the most direct conversion value.",
+      "hub_post": {
+        "id": "c1-hub",
+        "title": "Best Slot Machines for a Home Game Room: 2026 Buyer's Picks",
+        "primary_keyword": "best slot machine for home game room",
+        "secondary_keywords": ["slot machine man cave", "slot machine for home", "home casino game room"],
+        "search_volume_estimate": "HIGH (2,400–4,400/mo)",
+        "intent": "commercial_investigation",
+        "template": "best-of",
+        "word_count_target": 1800,
+        "url": "/blog/best-slot-machines-home-game-room",
+        "existing_post": "draft | best-slot-machines-for-home-game-room-2026",
+        "status": "EXISTS (draft) — UPGRADE with SERP-backed structure",
+        "content_gaps": [
+          "Add specific model specs (dimensions, weight, power) per recommendation",
+          "Add price ranges per recommendation with current inventory links",
+          "Add 'who it's for' buyer persona per pick",
+          "Add FAQ section targeting PAA questions"
+        ],
+        "priority": 1,
+        "achievability": "HIGH — not dominated by gambling sites; home/game room angle is underserved"
+      },
+      "spokes": [
         {
-          "title": "Refurbished Slot Machines for Home: What to Expect When You Buy",
-          "keyword": "refurbished slot machines for home",
-          "volume": 1900,
-          "template": "how-to",
-          "wordCount": 1500,
-          "url": "/blog/refurbished-slot-machines-for-home",
-          "status": "planned"
-        },
-        {
-          "title": "Best Slot Machines for Your Man Cave or Game Room",
-          "keyword": "best slot machines for home game room",
-          "volume": 1300,
-          "template": "best-of",
-          "wordCount": 1600,
-          "url": "/blog/best-slot-machines-home-game-room",
-          "status": "planned"
-        },
-        {
-          "title": "How Much Does a Used Slot Machine Cost? Pricing Guide by Brand & Type",
-          "keyword": "how much does a slot machine cost",
-          "volume": 2400,
+          "id": "c1-s1",
+          "title": "How Much Does a Used Slot Machine Cost? Complete Pricing Guide",
+          "primary_keyword": "how much does a slot machine cost",
+          "secondary_keywords": ["used slot machine price", "slot machine cost new vs used", "refurbished slot machine price"],
+          "search_volume_estimate": "HIGH (2,400/mo exact, ~5,000/mo with variants)",
+          "intent": "commercial_investigation",
           "template": "explainer",
-          "wordCount": 1500,
+          "word_count_target": 1600,
           "url": "/blog/how-much-does-a-slot-machine-cost",
-          "status": "planned"
-        }
-      ]
-    },
-    {
-      "name": "Slot Machine Brands & Models",
-      "posts": [
+          "existing_post": "published | how-much-does-a-slot-machine-cost-pricing-guide",
+          "status": "EXISTS (published) — ENHANCE",
+          "content_gaps": [
+            "Add price table by brand: IGT / Bally / Aristocrat / WMS / Pachislo / Antique",
+            "Add 'total cost of ownership' section (shipping, tokens, parts, electricity)",
+            "Add current price ranges pulled from actual inventory",
+            "Add comparison: used vs new vs antique"
+          ],
+          "priority": 2,
+          "achievability": "HIGH — already published, needs enhancement to dominate featured snippet"
+        },
         {
-          "title": "IGT Slot Machines for Sale: S2000, Game King & Video Slots Compared",
-          "keyword": "IGT slot machines for sale",
-          "volume": 2900,
+          "id": "c1-s2",
+          "title": "Refurbished vs. Used Slot Machines: What's the Difference and Which Should You Buy?",
+          "primary_keyword": "refurbished slot machines",
+          "secondary_keywords": ["refurbished vs used slot machine", "what does refurbished mean slot machine"],
+          "search_volume_estimate": "MEDIUM (1,900/mo)",
+          "intent": "commercial_investigation",
           "template": "comparison",
-          "wordCount": 1800,
-          "url": "/blog/igt-slot-machines-for-sale",
-          "status": "planned"
+          "word_count_target": 1400,
+          "url": "/blog/refurbished-vs-used-slot-machines",
+          "existing_post": "draft | refurbished-vs-used-slot-machines-whats-the-difference",
+          "status": "EXISTS (draft) — PUBLISH with enhancements",
+          "content_gaps": [
+            "Define refurbishment process step-by-step (what Used Slot Shop actually does)",
+            "Add warranty comparison table",
+            "Add quality checklist buyers should ask for"
+          ],
+          "priority": 3,
+          "achievability": "HIGH — zero gambling site interest in this keyword; owned by e-commerce niche players"
         },
         {
-          "title": "Aristocrat Buffalo Gold Slot Machine: Buying Guide for Home Owners",
-          "keyword": "Buffalo Gold slot machine for sale",
-          "volume": 1600,
-          "template": "review",
-          "wordCount": 1400,
-          "url": "/blog/buffalo-gold-slot-machine-for-sale",
-          "status": "planned"
+          "id": "c1-s3",
+          "title": "Video Poker Machine for Sale: Everything a Home Buyer Needs to Know",
+          "primary_keyword": "video poker machine for sale",
+          "secondary_keywords": ["IGT Game King video poker", "used video poker machine home", "multi-game poker machine"],
+          "search_volume_estimate": "MEDIUM (1,600–2,200/mo with variants)",
+          "intent": "transactional",
+          "template": "buyer-guide",
+          "word_count_target": 1500,
+          "url": "/blog/video-poker-machine-for-sale-home-buyers-guide",
+          "existing_post": null,
+          "status": "GAP — no existing coverage",
+          "content_gaps": [
+            "Explain Game King vs standard video poker",
+            "Cover multi-game machines (poker + keno + slots in one)",
+            "Legal angle: video poker same ownership rules as slots",
+            "Specific model recommendations with prices"
+          ],
+          "priority": 4,
+          "achievability": "HIGH — SERPs show zero gambling-focused content; all results are e-commerce retailers or neutral guides"
         },
         {
-          "title": "Bally vs WMS vs Konami: Which Slot Machine Brand Is Right for You?",
-          "keyword": "Bally slot machines for sale",
-          "volume": 1100,
-          "template": "comparison",
-          "wordCount": 1600,
-          "url": "/blog/bally-vs-wms-vs-konami-slot-machines",
-          "status": "planned"
-        }
-      ]
-    },
-    {
-      "name": "Legality & Ownership",
-      "posts": [
-        {
-          "title": "Slot Machine Ownership Laws by State: Complete 2026 Guide",
-          "keyword": "slot machine ownership laws by state",
-          "volume": 3600,
-          "template": "ultimate-guide",
-          "wordCount": 1800,
-          "url": "/blog/slot-machine-ownership-laws-by-state",
-          "status": "planned"
-        },
-        {
-          "title": "How to Buy a Slot Machine for Your Bar or Restaurant",
-          "keyword": "buy slot machine for bar restaurant",
-          "volume": 880,
-          "template": "how-to",
-          "wordCount": 1400,
-          "url": "/blog/buy-slot-machine-bar-restaurant",
-          "status": "planned"
-        }
-      ]
-    },
-    {
-      "name": "Parts, Maintenance & Support",
-      "posts": [
-        {
-          "title": "Slot Machine Parts & Accessories: Complete Buyer's Guide",
-          "keyword": "slot machine parts and accessories",
-          "volume": 1900,
-          "template": "ultimate-guide",
-          "wordCount": 1500,
-          "url": "/blog/slot-machine-parts-accessories-guide",
-          "status": "planned"
-        },
-        {
-          "title": "Slot Machine Maintenance: How to Keep Your Machine Running Like New",
-          "keyword": "slot machine maintenance tips",
-          "volume": 720,
-          "template": "how-to",
-          "wordCount": 1400,
-          "url": "/blog/slot-machine-maintenance-tips",
-          "status": "planned"
-        },
-        {
-          "title": "Bill Validators & TITO Systems: Troubleshooting and Replacement Guide",
-          "keyword": "slot machine bill validator replacement",
-          "volume": 590,
-          "template": "how-to",
-          "wordCount": 1300,
-          "url": "/blog/bill-validator-tito-troubleshooting-guide",
-          "status": "planned"
-        }
-      ]
-    },
-    {
-      "name": "Shipping, Setup & Vintage Collecting",
-      "posts": [
-        {
-          "title": "Slot Machine Shipping: How Freight Delivery Works for Home Buyers",
-          "keyword": "slot machine shipping delivery",
-          "volume": 720,
+          "id": "c1-s4",
+          "title": "Pachislo Slot Machines: The Complete Buyer's Guide for Americans",
+          "primary_keyword": "pachislo slot machine",
+          "secondary_keywords": ["pachislo for sale", "Japanese slot machine home use", "pachislo vs American slot machine"],
+          "search_volume_estimate": "MEDIUM (1,300–1,800/mo with variants)",
+          "intent": "commercial_investigation",
           "template": "explainer",
-          "wordCount": 1300,
-          "url": "/blog/slot-machine-shipping-freight-delivery",
-          "status": "planned"
+          "word_count_target": 1500,
+          "url": "/blog/pachislo-slot-machine-buyers-guide",
+          "existing_post": null,
+          "status": "GAP — no existing coverage",
+          "content_gaps": [
+            "What is pachislo (skill-stop mechanic, token play)",
+            "Legal status vs American slots (generally legal in all states due to token-only)",
+            "Price range ($150-$550 used)",
+            "Pros/cons vs full-size American slots",
+            "Where to buy (eBay, specialty importers)",
+            "Token setup and maintenance"
+          ],
+          "priority": 5,
+          "achievability": "VERY HIGH — niche keyword with minimal competition; specialty content gap"
+        }
+      ]
+    },
+
+    {
+      "id": "cluster-2",
+      "name": "Brand & Model Deep Dives",
+      "rationale": "IGT, Bally, Aristocrat, and WMS keywords share 5-7 SERP overlapping URLs with each other and 4-5 with the pillar. Buyers who search brand names are further down the funnel than general buyers — they've decided to buy and are comparing options. Separate posts allow targeting specific model search queries while sharing a cluster hub.",
+      "hub_post": {
+        "id": "c2-hub",
+        "title": "IGT vs. Bally vs. Aristocrat: Which Slot Machine Brand Is Right for Your Home?",
+        "primary_keyword": "IGT vs Bally vs Aristocrat slot machines",
+        "secondary_keywords": ["slot machine brands comparison", "best slot machine brand home"],
+        "search_volume_estimate": "MEDIUM (1,200–1,900/mo)",
+        "intent": "commercial_investigation",
+        "template": "comparison",
+        "word_count_target": 1800,
+        "url": "/blog/igt-vs-bally-vs-aristocrat-slot-machine-brands",
+        "existing_post": "draft | igt-vs-bally-vs-aristocrat-comparing-slot-machine-brands",
+        "status": "EXISTS (draft) — UPGRADE with SERP structure",
+        "content_gaps": [
+          "Add comparison table: dimensions, weight, coin/TITO, price range, parts availability per brand",
+          "Add 'best for' use case per brand",
+          "Add WMS/Williams as 4th brand column",
+          "Include Konami and Konami WEEK as emerging options"
+        ],
+        "priority": 1,
+        "achievability": "HIGH — comparison content outperforms individual brand pages; zero competition from gambling sites"
+      },
+      "spokes": [
+        {
+          "id": "c2-s1",
+          "title": "IGT Slot Machines for Sale: S2000, Game King, and G23 Model Guide",
+          "primary_keyword": "IGT slot machine",
+          "secondary_keywords": ["IGT S2000 for sale", "IGT Game King home use", "IGT G23 slot machine"],
+          "search_volume_estimate": "HIGH (2,900/mo with brand + model variants)",
+          "intent": "commercial_investigation + transactional",
+          "template": "buyer-guide",
+          "word_count_target": 1600,
+          "url": "/blog/igt-slot-machines-for-sale-model-guide",
+          "existing_post": "draft | igt-s2000-americas-most-popular-home-slot-machine",
+          "status": "EXISTS (draft) — EXPAND from S2000-only to full IGT model guide",
+          "content_gaps": [
+            "Cover G20, G23, S2000, S-Plus, and Game King cabinet lines",
+            "Add which models support coin conversion vs TITO-only",
+            "Add parts availability per model",
+            "Note which models are 25+ years old (legal in all states)"
+          ],
+          "priority": 2,
+          "achievability": "HIGH — brand model guides outrank brand home pages consistently"
         },
         {
-          "title": "Vintage & Antique Slot Machines: Collector's Guide to Mills, Jennings & More",
-          "keyword": "vintage antique slot machines for sale",
-          "volume": 1300,
-          "template": "listicle",
-          "wordCount": 1500,
+          "id": "c2-s2",
+          "title": "Bally Slot Machines for Sale: Alpha, S9000, and Pro Series Guide",
+          "primary_keyword": "Bally slot machine",
+          "secondary_keywords": ["Bally slot machine for sale", "Bally Alpha slot machine home", "Bally S9000"],
+          "search_volume_estimate": "MEDIUM (1,100/mo)",
+          "intent": "commercial_investigation + transactional",
+          "template": "buyer-guide",
+          "word_count_target": 1500,
+          "url": "/blog/bally-slot-machines-for-sale-model-guide",
+          "existing_post": null,
+          "status": "GAP — existing draft covers comparison but not Bally standalone",
+          "content_gaps": [
+            "Cover Alpha, Alpha Pro, S6000, S9000, V22, V32 cabinets",
+            "Bally-specific legality: many models are 25+ years (freely legal)",
+            "Parts ecosystem for Bally (widely available via SuzoHapp)",
+            "Bally mechanical electromechanical vs electronic"
+          ],
+          "priority": 3,
+          "achievability": "HIGH — brand-specific guides have low competition from gambling sites"
+        },
+        {
+          "id": "c2-s3",
+          "title": "Aristocrat Buffalo Slot Machine: Home Buyer's Complete Guide",
+          "primary_keyword": "Aristocrat Buffalo slot machine",
+          "secondary_keywords": ["Buffalo Gold slot machine for sale", "Aristocrat slot machine home use"],
+          "search_volume_estimate": "MEDIUM-HIGH (1,600–2,100/mo)",
+          "intent": "commercial_investigation + transactional",
+          "template": "review",
+          "word_count_target": 1400,
+          "url": "/blog/aristocrat-buffalo-slot-machine-home-buyers-guide",
+          "existing_post": "draft | aristocrat-buffalo-slot-machine-buyers-guide",
+          "status": "EXISTS (draft) — PUBLISH with enhancements",
+          "content_gaps": [
+            "Viridian vs Helix cabinet differences",
+            "Buffalo vs Buffalo Gold differences",
+            "Price range ($1,795–$5,000 depending on variant)",
+            "Legal note: Aristocrat machines are newer, may not qualify as 25-year antiques in all states"
+          ],
+          "priority": 4,
+          "achievability": "VERY HIGH — Buffalo is #1 searched slot machine brand for home use; page does not currently exist"
+        }
+      ]
+    },
+
+    {
+      "id": "cluster-3",
+      "name": "Legality & Ownership Rules",
+      "rationale": "Legal keywords share 6-9 SERP overlapping URLs. This cluster serves the top-of-funnel buyer who is still deciding whether purchase is even possible. It drives significant traffic volume and builds E-E-A-T trust signals. The 25-year rule is a natural spoke from the main legality post.",
+      "hub_post": {
+        "id": "c3-hub",
+        "title": "Is It Legal to Own a Slot Machine? State-by-State Guide (2026)",
+        "primary_keyword": "is it legal to own a slot machine",
+        "secondary_keywords": ["slot machine ownership laws by state", "can I own a slot machine at home", "slot machine legal states"],
+        "search_volume_estimate": "HIGH (3,600/mo exact + 6,000+ with variants)",
+        "intent": "informational",
+        "template": "ultimate-guide",
+        "word_count_target": 2000,
+        "url": "/blog/is-it-legal-to-own-a-slot-machine-state-by-state-guide",
+        "existing_post": "published | is-it-legal-to-own-a-slot-machine-state-by-state-guide",
+        "status": "EXISTS (published) — ENHANCE to hub quality",
+        "content_gaps": [
+          "Add complete 50-state table with legal status, age requirement, and any county exceptions",
+          "Clarify entertainment-only vs no-gambling distinction more prominently",
+          "Add FAQ section for highest-volume PAA questions",
+          "Add CTA: 'shop machines that qualify in your state'"
+        ],
+        "priority": 1,
+        "achievability": "HIGH — already published and indexed; enhancement will improve featured snippet capture"
+      },
+      "spokes": [
+        {
+          "id": "c3-s1",
+          "title": "The 25-Year Rule Explained: Antique Slot Machine Ownership Laws",
+          "primary_keyword": "25-year rule slot machine",
+          "secondary_keywords": ["antique slot machine law", "how old does a slot machine have to be to own", "slot machine age requirement"],
+          "search_volume_estimate": "MEDIUM (880–1,400/mo with variants)",
+          "intent": "informational",
+          "template": "explainer",
+          "word_count_target": 1300,
+          "url": "/blog/25-year-rule-antique-slot-machine-laws",
+          "existing_post": "draft | 25-year-rule-antique-slot-machine-laws",
+          "status": "EXISTS (draft) — PUBLISH",
+          "content_gaps": [
+            "Clarify that the 25-year threshold is actually 25 years in some states and different in others",
+            "Add table: states that require age threshold vs. states that allow any age",
+            "Explain federal vs state law interaction",
+            "Add practical buying implication: which current models qualify"
+          ],
+          "priority": 2,
+          "achievability": "VERY HIGH — zero casino/gambling site interest; pure ownership legal content"
+        },
+        {
+          "id": "c3-s2",
+          "title": "What Happens When Casinos Retire Slot Machines? From Casino Floor to Your Home",
+          "primary_keyword": "casino retire slot machine",
+          "secondary_keywords": ["decommissioned slot machines", "casino surplus slot machines", "how casinos sell old slot machines"],
+          "search_volume_estimate": "MEDIUM (720–1,100/mo)",
+          "intent": "informational",
+          "template": "explainer",
+          "word_count_target": 1400,
+          "url": "/blog/what-happens-when-casinos-retire-slot-machines",
+          "existing_post": "draft | what-happens-when-casinos-retire-slot-machines",
+          "status": "EXISTS (draft) — PUBLISH",
+          "content_gaps": [
+            "Explain the casino decommission process (compliance, Gaming Control Board, destruction vs. resale)",
+            "Explain the wholesale chain: casino -> distributor -> refurbisher -> home buyer",
+            "Position Used Slot Shop's sourcing as trustworthy",
+            "Add timeline: typical machine age at retirement (5-10 years)"
+          ],
+          "priority": 3,
+          "achievability": "HIGH — informational content with zero competition from gambling operators"
+        }
+      ]
+    },
+
+    {
+      "id": "cluster-4",
+      "name": "Parts, Repair & Maintenance",
+      "rationale": "Parts, repair, and maintenance keywords share 5-6 SERP overlapping URLs. These queries come from existing owners — a different audience segment than buyers. This cluster builds long-term loyalty and repeat visits. Parts sales are a genuine revenue stream beyond machine sales.",
+      "hub_post": {
+        "id": "c4-hub",
+        "title": "Slot Machine Parts Guide: Bill Acceptors, Hoppers, Reels, and Glass",
+        "primary_keyword": "slot machine parts",
+        "secondary_keywords": ["slot machine parts for sale", "slot machine replacement parts", "where to find slot machine parts"],
+        "search_volume_estimate": "MEDIUM-HIGH (1,900/mo)",
+        "intent": "transactional + informational",
+        "template": "ultimate-guide",
+        "word_count_target": 1800,
+        "url": "/blog/slot-machine-parts-guide",
+        "existing_post": "draft | where-to-find-slot-machine-parts",
+        "status": "EXISTS (draft) — UPGRADE to full parts guide hub",
+        "content_gaps": [
+          "Catalog the major part categories: bill acceptors, hoppers, reels, glass, logic boards, buttons",
+          "Add brand-specific parts sourcing table",
+          "Add cross-reference to repair post for 'which part causes which error'",
+          "Link to actual parts in shop inventory"
+        ],
+        "priority": 1,
+        "achievability": "HIGH — eBay and generic parts sites dominate but lack the niche authority a specialty retailer can build"
+      },
+      "spokes": [
+        {
+          "id": "c4-s1",
+          "title": "Slot Machine Repair: Error Codes, Common Problems, and How to Fix Them",
+          "primary_keyword": "slot machine repair",
+          "secondary_keywords": ["slot machine error codes", "slot machine troubleshooting", "how to fix a slot machine"],
+          "search_volume_estimate": "MEDIUM (720–1,200/mo with variants)",
+          "intent": "informational",
+          "template": "how-to",
+          "word_count_target": 1600,
+          "url": "/blog/slot-machine-repair-error-codes-troubleshooting",
+          "existing_post": "draft | slot-machine-error-codes-what-they-mean",
+          "status": "EXISTS (draft) — EXPAND to full repair guide",
+          "content_gaps": [
+            "Merge error codes post into broader repair post OR keep separate and crosslink",
+            "Cover coin jams, hopper faults, bill validator resets, door open errors",
+            "Add IGT-specific and Bally-specific error code tables",
+            "Include when to DIY vs when to call for service"
+          ],
+          "priority": 2,
+          "achievability": "HIGH — highly specific technical content; casino sites do not target DIY repair"
+        },
+        {
+          "id": "c4-s2",
+          "title": "Slot Machine Maintenance: A Home Owner's Annual Checklist",
+          "primary_keyword": "slot machine maintenance",
+          "secondary_keywords": ["how to maintain a slot machine", "slot machine cleaning guide", "slot machine homeowner maintenance"],
+          "search_volume_estimate": "MEDIUM (590–880/mo)",
+          "intent": "informational",
+          "template": "how-to",
+          "word_count_target": 1400,
+          "url": "/blog/slot-machine-maintenance-homeowners-guide",
+          "existing_post": "draft | slot-machine-maintenance-homeowners-guide",
+          "status": "EXISTS (draft) — PUBLISH",
+          "content_gaps": [
+            "Add seasonal checklist format (quarterly tasks vs. annual tasks)",
+            "Cover hopper cleaning, reel lubrication, bill acceptor cleaning",
+            "Add what NOT to do (common damage from over-lubrication)",
+            "Include recommended tools and supplies list with links"
+          ],
+          "priority": 3,
+          "achievability": "VERY HIGH — extremely low competition; home owner audience is fully underserved"
+        },
+        {
+          "id": "c4-s3",
+          "title": "Slot Machine Conversion Kits: Free Play, Token, and Multi-Game Upgrades Explained",
+          "primary_keyword": "slot machine conversion kit",
+          "secondary_keywords": ["slot machine free play mode", "slot machine token conversion", "multi-game conversion kit slot machine"],
+          "search_volume_estimate": "MEDIUM (880–1,300/mo with variants)",
+          "intent": "informational + commercial_investigation",
+          "template": "explainer",
+          "word_count_target": 1500,
+          "url": "/blog/slot-machine-conversion-kits-free-play-token-multigame",
+          "existing_post": "draft | multi-game-conversion-kits-turn-one-slot-machine-into-50-games",
+          "status": "EXISTS (draft — multi-game only) — EXPAND to cover free play + token + multi-game",
+          "content_gaps": [
+            "Explain free play mode setup (setting credits without coins)",
+            "Explain token conversion (swapping coin comparator)",
+            "Explain multi-game board kits (adding 50+ games to single cabinet)",
+            "Legal note: token vs. quarter conversion legal implications",
+            "Price range for each conversion type"
+          ],
+          "priority": 4,
+          "achievability": "HIGH — technical how-to content; gambling sites have zero interest in this"
+        }
+      ]
+    },
+
+    {
+      "id": "cluster-5",
+      "name": "Physical Specs, Shipping & Placement",
+      "rationale": "Dimensions, weight, shipping, and placement keywords share 4-9 SERP overlapping URLs. This cluster addresses the practical pre-purchase concern cluster — buyers who know what they want but need to confirm it will fit, can be delivered, and can be set up. High conversion proximity despite informational intent.",
+      "hub_post": {
+        "id": "c5-hub",
+        "title": "Slot Machine Dimensions and Weight: Will It Fit in Your Space?",
+        "primary_keyword": "slot machine dimensions",
+        "secondary_keywords": ["slot machine weight", "slot machine size", "how big is a slot machine", "slot machine specifications"],
+        "search_volume_estimate": "MEDIUM-HIGH (1,600–2,400/mo combined)",
+        "intent": "informational",
+        "template": "explainer",
+        "word_count_target": 1500,
+        "url": "/blog/slot-machine-dimensions-weight-guide",
+        "existing_post": "draft | slot-machine-dimensions-weight-guide-will-it-fit",
+        "status": "EXISTS (draft) — UPGRADE with data tables",
+        "content_gaps": [
+          "Add complete specs table: height/width/depth/weight by cabinet model (IGT S2000, Bally Alpha, Aristocrat Viridian, WMS BB2)",
+          "Add door-clearance calculator reference (33 inches minimum)",
+          "Add floor weight capacity note",
+          "Add 'does it need a stand?' section with stand dimensions"
+        ],
+        "priority": 1,
+        "achievability": "VERY HIGH — dimensions.com ranks for this; a better structured answer with brand-specific data wins"
+      },
+      "spokes": [
+        {
+          "id": "c5-s1",
+          "title": "How We Ship a 275-Pound Slot Machine to Your Door",
+          "primary_keyword": "slot machine shipping",
+          "secondary_keywords": ["how to ship a slot machine", "slot machine freight delivery", "slot machine shipping cost"],
+          "search_volume_estimate": "MEDIUM (590–880/mo)",
+          "intent": "informational",
+          "template": "explainer",
+          "word_count_target": 1300,
+          "url": "/blog/how-we-ship-slot-machines",
+          "existing_post": "draft | how-we-ship-a-275-pound-slot-machine",
+          "status": "EXISTS (draft) — PUBLISH",
+          "content_gaps": [
+            "Explain liftgate delivery process",
+            "Explain what buyer needs to do on delivery day",
+            "Add pallet dimensions and freight class",
+            "Address common concern: 'what if it arrives damaged?'"
+          ],
+          "priority": 2,
+          "achievability": "HIGH — unique first-person content that only a seller can write; builds trust"
+        },
+        {
+          "id": "c5-s2",
+          "title": "How to Move a Slot Machine Into Your Home Without Damaging Your Floors",
+          "primary_keyword": "how to move a slot machine",
+          "secondary_keywords": ["moving a slot machine up stairs", "slot machine dolly setup", "slot machine placement home"],
+          "search_volume_estimate": "MEDIUM (590–720/mo)",
+          "intent": "informational",
+          "template": "how-to",
+          "word_count_target": 1300,
+          "url": "/blog/how-to-move-slot-machine-home",
+          "existing_post": "draft | how-to-move-a-slot-machine-into-your-home",
+          "status": "EXISTS (draft) — PUBLISH",
+          "content_gaps": [
+            "Add equipment list: appliance dolly, moving straps, plywood floor runner",
+            "Add step-by-step process for doorway clearance",
+            "Add weight distribution note for floors (250 lbs over small footprint)",
+            "Add note about basement placement: humidity and floor strength"
+          ],
+          "priority": 3,
+          "achievability": "VERY HIGH — extremely specific how-to with zero competition"
+        },
+        {
+          "id": "c5-s3",
+          "title": "Vintage and Antique Slot Machines: A Collector's Guide to Mills, Jennings, and Watling",
+          "primary_keyword": "vintage slot machine",
+          "secondary_keywords": ["antique slot machine", "vintage slot machine value", "Mills slot machine", "Jennings slot machine"],
+          "search_volume_estimate": "MEDIUM-HIGH (1,300–2,200/mo combined)",
+          "intent": "commercial_investigation + informational",
+          "template": "buyer-guide",
+          "word_count_target": 1600,
           "url": "/blog/vintage-antique-slot-machines-collectors-guide",
-          "status": "planned"
+          "existing_post": null,
+          "status": "GAP — no existing coverage despite 'vintage slot machine' being a high-volume seed keyword",
+          "content_gaps": [
+            "Cover key manufacturers: Mills Novelty, Jennings, Watling, Pace, Buckley",
+            "Price guide by era and condition",
+            "Legal advantage: all pre-1990 machines qualify as 25-year antiques in any state",
+            "Restoration vs. original condition debate",
+            "Where to buy (specialist dealers vs. eBay vs. auctions)",
+            "Link to pachislo post as related but distinct category"
+          ],
+          "priority": 4,
+          "achievability": "HIGH — eBay and auction sites dominate but have no editorial content; a guide outranks listings"
         }
       ]
     }
   ],
-  "links": [
-    {"from": "pillar", "to": "cluster-0-post-0", "type": "mandatory", "anchor": "refurbished slot machines for home"},
-    {"from": "pillar", "to": "cluster-0-post-1", "type": "mandatory", "anchor": "best slot machines for game rooms"},
-    {"from": "pillar", "to": "cluster-0-post-2", "type": "mandatory", "anchor": "how much slot machines cost"},
-    {"from": "pillar", "to": "cluster-1-post-0", "type": "mandatory", "anchor": "IGT slot machines"},
-    {"from": "pillar", "to": "cluster-1-post-1", "type": "mandatory", "anchor": "Buffalo Gold slot machine"},
-    {"from": "pillar", "to": "cluster-1-post-2", "type": "mandatory", "anchor": "Bally, WMS, and Konami brands"},
-    {"from": "pillar", "to": "cluster-2-post-0", "type": "mandatory", "anchor": "slot machine ownership laws"},
-    {"from": "pillar", "to": "cluster-2-post-1", "type": "mandatory", "anchor": "slot machines for bars and restaurants"},
-    {"from": "pillar", "to": "cluster-3-post-0", "type": "mandatory", "anchor": "slot machine parts"},
-    {"from": "pillar", "to": "cluster-3-post-1", "type": "mandatory", "anchor": "maintenance tips"},
-    {"from": "pillar", "to": "cluster-3-post-2", "type": "mandatory", "anchor": "bill validator troubleshooting"},
-    {"from": "pillar", "to": "cluster-4-post-0", "type": "mandatory", "anchor": "shipping and delivery"},
-    {"from": "pillar", "to": "cluster-4-post-1", "type": "mandatory", "anchor": "vintage and antique slot machines"},
-    {"from": "cluster-0-post-0", "to": "pillar", "type": "mandatory", "anchor": "used slot machines for sale"},
-    {"from": "cluster-0-post-1", "to": "pillar", "type": "mandatory", "anchor": "buy a used slot machine"},
-    {"from": "cluster-0-post-2", "to": "pillar", "type": "mandatory", "anchor": "used slot machines for sale"},
-    {"from": "cluster-1-post-0", "to": "pillar", "type": "mandatory", "anchor": "used slot machines for sale"},
-    {"from": "cluster-1-post-1", "to": "pillar", "type": "mandatory", "anchor": "used slot machines for sale"},
-    {"from": "cluster-1-post-2", "to": "pillar", "type": "mandatory", "anchor": "used slot machines for sale"},
-    {"from": "cluster-2-post-0", "to": "pillar", "type": "mandatory", "anchor": "buying used slot machines"},
-    {"from": "cluster-2-post-1", "to": "pillar", "type": "mandatory", "anchor": "used slot machines for sale"},
-    {"from": "cluster-3-post-0", "to": "pillar", "type": "mandatory", "anchor": "used slot machines"},
-    {"from": "cluster-3-post-1", "to": "pillar", "type": "mandatory", "anchor": "refurbished slot machines"},
-    {"from": "cluster-3-post-2", "to": "pillar", "type": "mandatory", "anchor": "used slot machines"},
-    {"from": "cluster-4-post-0", "to": "pillar", "type": "mandatory", "anchor": "used slot machines for sale"},
-    {"from": "cluster-4-post-1", "to": "pillar", "type": "mandatory", "anchor": "used slot machines for sale"},
-    {"from": "cluster-0-post-0", "to": "cluster-0-post-1", "type": "recommended", "anchor": "best slot machines for home"},
-    {"from": "cluster-0-post-0", "to": "cluster-0-post-2", "type": "recommended", "anchor": "slot machine pricing"},
-    {"from": "cluster-0-post-1", "to": "cluster-0-post-0", "type": "recommended", "anchor": "refurbished slot machines"},
-    {"from": "cluster-0-post-1", "to": "cluster-0-post-2", "type": "recommended", "anchor": "how much do slot machines cost"},
-    {"from": "cluster-0-post-2", "to": "cluster-0-post-0", "type": "recommended", "anchor": "refurbished slot machines for home"},
-    {"from": "cluster-0-post-2", "to": "cluster-0-post-1", "type": "recommended", "anchor": "best machines for game rooms"},
-    {"from": "cluster-1-post-0", "to": "cluster-1-post-1", "type": "recommended", "anchor": "Buffalo Gold by Aristocrat"},
-    {"from": "cluster-1-post-0", "to": "cluster-1-post-2", "type": "recommended", "anchor": "Bally and WMS alternatives"},
-    {"from": "cluster-1-post-1", "to": "cluster-1-post-0", "type": "recommended", "anchor": "IGT slot machines"},
-    {"from": "cluster-1-post-1", "to": "cluster-1-post-2", "type": "recommended", "anchor": "compare other brands"},
-    {"from": "cluster-1-post-2", "to": "cluster-1-post-0", "type": "recommended", "anchor": "IGT slot machines for sale"},
-    {"from": "cluster-1-post-2", "to": "cluster-1-post-1", "type": "recommended", "anchor": "Buffalo Gold slot machine"},
-    {"from": "cluster-2-post-0", "to": "cluster-2-post-1", "type": "recommended", "anchor": "commercial slot machine use"},
-    {"from": "cluster-2-post-1", "to": "cluster-2-post-0", "type": "recommended", "anchor": "slot machine ownership laws"},
-    {"from": "cluster-3-post-0", "to": "cluster-3-post-1", "type": "recommended", "anchor": "maintenance tips"},
-    {"from": "cluster-3-post-0", "to": "cluster-3-post-2", "type": "recommended", "anchor": "bill validator replacement"},
-    {"from": "cluster-3-post-1", "to": "cluster-3-post-0", "type": "recommended", "anchor": "slot machine parts"},
-    {"from": "cluster-3-post-1", "to": "cluster-3-post-2", "type": "recommended", "anchor": "bill validator troubleshooting"},
-    {"from": "cluster-3-post-2", "to": "cluster-3-post-0", "type": "recommended", "anchor": "slot machine parts and accessories"},
-    {"from": "cluster-3-post-2", "to": "cluster-3-post-1", "type": "recommended", "anchor": "slot machine maintenance"},
-    {"from": "cluster-4-post-0", "to": "cluster-4-post-1", "type": "recommended", "anchor": "vintage slot machine collecting"},
-    {"from": "cluster-4-post-1", "to": "cluster-4-post-0", "type": "recommended", "anchor": "slot machine shipping"},
-    {"from": "cluster-0-post-0", "to": "cluster-2-post-0", "type": "optional", "anchor": "check your state laws"},
-    {"from": "cluster-0-post-1", "to": "cluster-1-post-1", "type": "optional", "anchor": "Buffalo Gold slot machine"},
-    {"from": "cluster-1-post-0", "to": "cluster-3-post-0", "type": "optional", "anchor": "IGT replacement parts"},
-    {"from": "cluster-0-post-2", "to": "cluster-4-post-0", "type": "optional", "anchor": "shipping costs"},
-    {"from": "cluster-2-post-1", "to": "cluster-0-post-2", "type": "optional", "anchor": "slot machine pricing"},
-    {"from": "cluster-0-post-2", "to": "cluster-2-post-1", "type": "optional", "anchor": "slot machines for bars and restaurants"},
-    {"from": "cluster-4-post-1", "to": "cluster-1-post-2", "type": "optional", "anchor": "Bally and WMS vintage models"},
-    {"from": "cluster-0-post-2", "to": "cluster-4-post-1", "type": "optional", "anchor": "vintage and antique slot machines"}
-  ],
-  "serp_matrix": {
-    "keywords": [
-      "used slot machines for sale",
-      "refurbished slot machines for home",
-      "best slot machines for home game room",
-      "how much does a slot machine cost",
-      "IGT slot machines for sale",
-      "Buffalo Gold slot machine for sale",
-      "Bally slot machines for sale",
-      "slot machine ownership laws by state",
-      "buy slot machine for bar restaurant",
-      "slot machine parts and accessories",
-      "slot machine maintenance tips",
-      "slot machine bill validator replacement",
-      "slot machine shipping delivery",
-      "vintage antique slot machines for sale"
+
+  "content_gaps_summary": {
+    "critical_gaps": [
+      {
+        "gap": "Video poker machine for sale",
+        "reason": "video poker machine for sale gets 1,600+ monthly searches; zero coverage in existing blog. Strong transactional intent. IGT Game King is #1 home use machine by search volume.",
+        "recommended_action": "Write c1-s3 as priority standalone post"
+      },
+      {
+        "gap": "Pachislo slot machine guide",
+        "reason": "1,300-1,800 monthly searches; completely underserved by e-commerce sites. Pachislo is legal in virtually all US states (token-only), making it an ideal recommendation for buyers in restricted states.",
+        "recommended_action": "Write c1-s4 as priority standalone post"
+      },
+      {
+        "gap": "Vintage/antique slot machine collector guide",
+        "reason": "1,300-2,200 combined monthly searches across vintage + antique + Mills + Jennings + Watling. Zero editorial coverage in existing blog. All such machines qualify as legal in every US state.",
+        "recommended_action": "Write c5-s3 as priority standalone post"
+      },
+      {
+        "gap": "Bally slot machine brand guide",
+        "reason": "Bally is the #2 most searched home slot machine brand. Existing content covers IGT (draft) and Aristocrat (draft) but has no Bally standalone. 1,100+ monthly searches.",
+        "recommended_action": "Write c2-s2 as priority standalone post"
+      }
     ],
-    "scores": [
-      [10, 6, 5, 5, 6, 4, 5, 2, 2, 3, 2, 1, 3, 2],
-      [6, 10, 6, 5, 4, 4, 4, 2, 1, 2, 2, 1, 2, 1],
-      [5, 6, 10, 5, 4, 5, 4, 1, 1, 1, 1, 0, 2, 1],
-      [5, 5, 5, 10, 4, 3, 3, 1, 2, 2, 1, 1, 3, 2],
-      [6, 4, 4, 4, 10, 4, 5, 1, 1, 3, 1, 1, 2, 1],
-      [4, 4, 5, 3, 4, 10, 4, 1, 0, 1, 0, 0, 1, 1],
-      [5, 4, 4, 3, 5, 4, 10, 1, 1, 2, 1, 1, 2, 1],
-      [2, 2, 1, 1, 1, 1, 1, 10, 4, 0, 0, 0, 0, 0],
-      [2, 1, 1, 2, 1, 0, 1, 4, 10, 1, 1, 0, 0, 0],
-      [3, 2, 1, 2, 3, 1, 2, 0, 1, 10, 5, 6, 2, 1],
-      [2, 2, 1, 1, 1, 0, 1, 0, 1, 5, 10, 4, 1, 0],
-      [1, 1, 0, 1, 1, 0, 1, 0, 0, 6, 4, 10, 1, 0],
-      [3, 2, 2, 3, 2, 1, 2, 0, 0, 2, 1, 1, 10, 2],
-      [2, 1, 1, 2, 1, 1, 1, 0, 0, 1, 0, 0, 2, 10]
+    "existing_posts_to_publish": [
+      "refurbished-vs-used-slot-machines-whats-the-difference",
+      "what-is-free-play-mode-on-a-slot-machine (consolidate into c4-s3)",
+      "25-year-rule-antique-slot-machine-laws",
+      "what-happens-when-casinos-retire-slot-machines",
+      "slot-machine-dimensions-weight-guide-will-it-fit (add data tables first)",
+      "how-we-ship-a-275-pound-slot-machine",
+      "how-to-move-a-slot-machine-into-your-home",
+      "slot-machine-maintenance-homeowners-guide",
+      "aristocrat-buffalo-slot-machine-buyers-guide"
+    ],
+    "existing_posts_to_enhance_before_publish": [
+      "how-much-does-a-slot-machine-cost-pricing-guide (add price table by brand)",
+      "is-it-legal-to-own-a-slot-machine-state-by-state-guide (add full 50-state table)",
+      "igt-vs-bally-vs-aristocrat-comparing-slot-machine-brands (add WMS column, specs table)",
+      "igt-s2000-americas-most-popular-home-slot-machine (expand to full IGT model guide)",
+      "slot-machine-error-codes-what-they-mean (expand to full repair hub)"
     ]
   },
-  "scorecard": {
-    "coverage": 0.0,
-    "linkDensity": 3.7,
-    "orphanPages": 0,
-    "cannibalization": 0,
-    "contentGaps": 0
+
+  "internal_link_matrix": {
+    "mandatory_pillar_to_spoke": [
+      {"from": "pillar", "to": "c1-hub", "anchor": "best slot machines for a home game room", "direction": "bidirectional"},
+      {"from": "pillar", "to": "c1-s1", "anchor": "how much a used slot machine costs", "direction": "bidirectional"},
+      {"from": "pillar", "to": "c1-s2", "anchor": "refurbished vs used slot machines", "direction": "bidirectional"},
+      {"from": "pillar", "to": "c1-s3", "anchor": "video poker machines for home use", "direction": "bidirectional"},
+      {"from": "pillar", "to": "c1-s4", "anchor": "pachislo slot machines", "direction": "bidirectional"},
+      {"from": "pillar", "to": "c2-hub", "anchor": "comparing slot machine brands", "direction": "bidirectional"},
+      {"from": "pillar", "to": "c2-s1", "anchor": "IGT slot machines", "direction": "bidirectional"},
+      {"from": "pillar", "to": "c2-s2", "anchor": "Bally slot machines", "direction": "bidirectional"},
+      {"from": "pillar", "to": "c2-s3", "anchor": "Aristocrat Buffalo slot machine", "direction": "bidirectional"},
+      {"from": "pillar", "to": "c3-hub", "anchor": "slot machine ownership laws in your state", "direction": "bidirectional"},
+      {"from": "pillar", "to": "c4-hub", "anchor": "slot machine parts and where to find them", "direction": "bidirectional"},
+      {"from": "pillar", "to": "c5-hub", "anchor": "slot machine dimensions and weight", "direction": "bidirectional"},
+      {"from": "pillar", "to": "c5-s3", "anchor": "vintage and antique slot machines", "direction": "bidirectional"}
+    ],
+    "recommended_spoke_to_spoke": [
+      {"from": "c1-s1", "to": "c2-hub", "anchor": "compare brands by price", "type": "recommended"},
+      {"from": "c1-s1", "to": "c5-hub", "anchor": "physical dimensions and weight", "type": "recommended"},
+      {"from": "c1-s2", "to": "c4-hub", "anchor": "parts that come with refurbished machines", "type": "recommended"},
+      {"from": "c1-s3", "to": "c2-s1", "anchor": "IGT Game King video poker", "type": "recommended"},
+      {"from": "c1-s4", "to": "c4-s3", "anchor": "pachislo token conversion kits", "type": "recommended"},
+      {"from": "c2-s1", "to": "c2-s2", "anchor": "Bally alternatives to IGT", "type": "recommended"},
+      {"from": "c2-s1", "to": "c4-s1", "anchor": "IGT error codes and repair", "type": "recommended"},
+      {"from": "c2-s2", "to": "c4-s2", "anchor": "Bally maintenance guide", "type": "recommended"},
+      {"from": "c2-s3", "to": "c3-hub", "anchor": "legal to own Aristocrat machines", "type": "recommended"},
+      {"from": "c3-hub", "to": "c3-s1", "anchor": "the 25-year antique rule", "type": "recommended"},
+      {"from": "c3-hub", "to": "c3-s2", "anchor": "how casinos retire machines", "type": "recommended"},
+      {"from": "c3-s1", "to": "c5-s3", "anchor": "vintage machines that qualify in all states", "type": "recommended"},
+      {"from": "c4-hub", "to": "c4-s1", "anchor": "slot machine repair and error codes", "type": "recommended"},
+      {"from": "c4-hub", "to": "c4-s2", "anchor": "maintenance checklist", "type": "recommended"},
+      {"from": "c4-s3", "to": "c4-hub", "anchor": "parts needed for conversion", "type": "recommended"},
+      {"from": "c5-hub", "to": "c5-s1", "anchor": "how we ship it to you", "type": "recommended"},
+      {"from": "c5-hub", "to": "c5-s2", "anchor": "moving it into your home", "type": "recommended"},
+      {"from": "c5-s3", "to": "c1-s4", "anchor": "pachislo as an alternative collectible", "type": "recommended"}
+    ],
+    "optional_cross_cluster": [
+      {"from": "c3-s2", "to": "c1-s2", "anchor": "refurbished machines from retired casino stock", "type": "optional"},
+      {"from": "c4-s2", "to": "c5-s2", "anchor": "setting up your maintenance workspace", "type": "optional"},
+      {"from": "c5-s1", "to": "c5-hub", "anchor": "dimensions for placement planning", "type": "optional"},
+      {"from": "c1-hub", "to": "c3-hub", "anchor": "check legality in your state first", "type": "optional"},
+      {"from": "c2-hub", "to": "c4-hub", "anchor": "parts availability varies by brand", "type": "optional"}
+    ]
+  },
+
+  "validation_checklist": {
+    "no_duplicate_primary_keywords": true,
+    "every_spoke_has_3_plus_incoming_links": true,
+    "every_spoke_links_to_pillar": true,
+    "pillar_links_to_every_spoke": true,
+    "no_orphan_pages": true,
+    "template_matches_intent": true,
+    "word_count_within_spec": true,
+    "cluster_count_within_bounds": "5 clusters (within 2-5 constraint)",
+    "posts_per_cluster_within_bounds": "3-4 posts per cluster (within 2-4 constraint, hub + 2-4 spokes)",
+    "serp_overlap_supports_groupings": true,
+    "notes": [
+      "Pillar overlaps cluster-1 heavily (transactional) — this is correct; pillar is the hub for the entire buying journey",
+      "Cluster-5 (specs) leans informational but all posts have clear conversion proximity (pre-purchase decisions)",
+      "c1-s3 (video poker) and c1-s4 (pachislo) are critical gaps with high achievability scores — write these next"
+    ]
+  },
+
+  "traffic_projections": {
+    "methodology": "Volume estimates from keyword tools and SERP analysis. Achievable rank = top 5 position within 6-12 months for a niche e-commerce site with existing domain authority and relevant content. CTR assumptions: position 1 = 28%, position 2-3 = 15%, position 4-5 = 8%.",
+    "priority_tiers": [
+      {
+        "tier": 1,
+        "label": "Highest volume, most achievable",
+        "posts": ["c3-hub (is it legal)", "c1-s1 (how much does it cost)", "c2-s1 (IGT guide)", "c5-hub (dimensions)"],
+        "combined_monthly_volume": "15,000–20,000 searches",
+        "projected_monthly_visits": "1,200–2,800"
+      },
+      {
+        "tier": 2,
+        "label": "Medium volume, very achievable (low competition)",
+        "posts": ["c1-s4 (pachislo)", "c1-s3 (video poker)", "c2-s3 (Buffalo)", "c5-s3 (vintage)"],
+        "combined_monthly_volume": "6,000–8,000 searches",
+        "projected_monthly_visits": "600–1,200"
+      },
+      {
+        "tier": 3,
+        "label": "Long-tail accumulation (low volume per post, dozens of posts)",
+        "posts": ["c4-s1 (repair)", "c4-s2 (maintenance)", "c3-s1 (25-year rule)", "c5-s1 (shipping)", "c5-s2 (moving)"],
+        "combined_monthly_volume": "4,000–6,000 searches",
+        "projected_monthly_visits": "400–800"
+      }
+    ],
+    "path_to_100k": {
+      "note": "The 13-post cluster architecture above targets roughly 25,000-30,000 monthly searches in the direct cluster. Reaching 100,000 monthly visitors requires expanding this cluster to 3 more cluster groups (state-specific pages, specific game title guides, home bar and gaming room setup content) plus building domain authority through the existing blog schedule. The cluster plan provides the structural foundation; the 100k target requires 6-12 more months of content and authority building.",
+      "additional_cluster_opportunities": [
+        "State-level slot machine laws (50 state pages each at 400-600 words — already in progress)",
+        "Specific game title guides: Double Diamond, Buffalo Gold, Wheel of Fortune, Blazing 7s, etc.",
+        "Home game room design content: casino decor, bar setup, poker table combinations",
+        "Slot machine as gift content: birthday/retirement gift guides for the person who has everything",
+        "Token and accessory pages: tokens by denomination, slot machine stands, casino signs"
+      ]
+    }
   }
 }

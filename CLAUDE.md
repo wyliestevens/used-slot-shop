@@ -7,38 +7,57 @@
 - **Repo:** github.com/wyliestevens/used-slot-shop
 - **Domain:** www.usedslotshop.com
 
-## Last Session: 2026-05-25
+## Last Session: 2026-06-10
 
 ### What Was Done
-- Cloned repo from GitHub into this working directory
-- Ran comprehensive 18-skill SEO audit using claude-seo
-- Applied 20+ code-level SEO fixes (see SEO-MASTER-REPORT.md for full list)
-- Key fixes: www canonical, OG image, schema improvements, hours consistency, HSTS, AVIF, blog ISR, H1 tags, alt text, sitemap, robots.txt
+- **Blog auto-publish system built:**
+  - Added `scheduledAt` field to BlogPost type
+  - Created `/api/cron/publish` endpoint (auto-publishes drafts when scheduledAt passes)
+  - Configured `vercel.json` with cron: Mon/Wed/Fri at 10am UTC
+  - Scheduled all 29 draft posts on Mon/Wed/Fri from Jun 12 → Aug 17, 2026
+  - Posts prioritized by keyword search volume (cluster plan research)
+- **Scheduled remote agent created:**
+  - Trigger ID: `trig_0142QhHZTZFvdLMnUp7wfz6y`
+  - Runs every Monday at 8am Phoenix time (3pm UTC)
+  - Writes 3 new SEO blog posts per week with web research
+  - Commits directly to main branch → Vercel auto-deploys
+  - Manage at: https://claude.ai/code/scheduled/trig_0142QhHZTZFvdLMnUp7wfz6y
+- **SERP-based keyword cluster plan created:**
+  - 5 content clusters, 13 hub+spoke posts planned
+  - 4 critical content gaps identified (video poker, pachislo, vintage, Bally)
+  - Full internal link matrix in `cluster-plan.md` and `cluster-plan.json`
+- **Removed aipeakbiz.com link from footer** (replaced with copyright)
 - Build verified — all changes compile successfully
 
-### Additional Fixes Applied (same session, later)
-- Added shop page pagination (24 per page with numbered navigation)
-- Added ItemList schema to shop page
-- Compressed /public/uploads/ images (26MB -> 20MB)
-- Compressed logo.png (284KB -> 66KB)
-- Fixed years inconsistency ("36+ Years" -> "Since 1992")
-- Added Google Maps embed to contact page
-- Upgraded blog renderer (now supports images, bold, italic, links, blockquotes)
-- Wrote and published 20 blog posts (3 published, 17 on Mon/Wed/Fri schedule)
-- Blog targets ~38,000 words of content covering 20 high-intent keywords
+### Previous Session: 2026-05-25
+- Initial SEO audit and 20+ code-level fixes
+- Blog system built with 32 posts (3 published, 29 drafts)
+- Shop pagination, image compression, schema improvements
+
+### Blog Publishing Pipeline
+- **3 published** (live now)
+- **29 drafts scheduled** (Jun 12 → Aug 17, auto-publish via Vercel cron)
+- **New posts** written weekly by remote agent (starts Jun 15, ongoing)
+- **Target:** 100,000 monthly visitors via content strategy
 
 ### What's Next
-1. **Blog:** Continue writing 3 posts/week (Mon/Wed/Fri) — ongoing
-2. **External:** Set up Google Business Profile, social media, domain email
-3. **Favicon:** Generate proper favicon.ico + apple-touch-icon set
-4. **Google Merchant Center:** Create product feed for Shopping results
-5. **State pages:** Expand from 150 words to 400-600 words each
+1. **External:** Set up Google Business Profile, social media, domain email
+2. **Favicon:** Generate proper favicon.ico + apple-touch-icon set
+3. **Google Merchant Center:** Create product feed for Shopping results
+4. **State pages:** Expand from 150 words to 400-600 words each
+5. **Vercel env:** Add `CRON_SECRET` environment variable for cron endpoint security
 
 ## Key Files
 - `lib/seo.ts` — All schema generation (Organization, Product, WebSite, FAQ, Article, Breadcrumb)
 - `lib/site.ts` — Site config (URL, NAP, brands)
+- `lib/blog.ts` — Blog post type (includes scheduledAt field), load/save via GitHub API
+- `data/content/blog-posts.json` — All blog posts (published, draft, scheduled)
 - `data/content/site.json` — Admin-editable site settings
 - `data/machines.ts` — Product seed data (334 machines)
+- `app/api/cron/publish/route.ts` — Auto-publish cron endpoint
+- `vercel.json` — Cron schedule config (Mon/Wed/Fri 10am UTC)
+- `cluster-plan.md` — SEO keyword cluster strategy
+- `cluster-plan.json` — Full SERP overlap matrix and internal link data
 - `next.config.ts` — Headers, image config, AVIF
 - `app/sitemap.ts` — Dynamic sitemap generation
 - `SEO-MASTER-REPORT.md` — Full audit results and remaining work checklist
