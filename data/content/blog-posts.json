@@ -426,9 +426,10 @@
       "upgrades",
       "DIY"
     ],
-    "status": "draft",
+    "status": "published",
     "createdAt": "2026-05-25T12:00:00.000Z",
-    "updatedAt": "2026-05-25T12:00:00.000Z"
+    "updatedAt": "2026-08-18T18:29:18.570Z",
+    "publishedAt": "2026-08-18T18:29:18.570Z"
   },
   {
     "slug": "slot-machine-insurance-protecting-your-investment",
