@@ -394,9 +394,10 @@
       "investment",
       "hospitality"
     ],
-    "status": "draft",
+    "status": "published",
     "createdAt": "2026-05-25T12:00:00.000Z",
-    "updatedAt": "2026-05-25T12:00:00.000Z"
+    "updatedAt": "2026-08-18T18:28:46.365Z",
+    "publishedAt": "2026-08-18T18:28:46.365Z"
   },
   {
     "slug": "how-to-manage-slot-machine-noise-volume-control-muting-soundproofing",
