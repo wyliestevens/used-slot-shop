@@ -27,10 +27,14 @@ export default function ChatInterface() {
   const [sending, setSending] = useState(false);
   const [uploading, setUploading] = useState(false);
   const [err, setErr] = useState("");
+  const chatRef = useRef<HTMLDivElement>(null);
   const endRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    endRef.current?.scrollIntoView({ behavior: "smooth" });
+    const container = chatRef.current;
+    if (container) {
+      container.scrollTop = container.scrollHeight;
+    }
   }, [messages, sending]);
 
   async function attach(files: FileList | null) {
@@ -105,7 +109,7 @@ export default function ChatInterface() {
 
   return (
     <div className="space-y-4">
-      <div className="card p-4 min-h-[420px] max-h-[65vh] overflow-y-auto space-y-3">
+      <div ref={chatRef} className="card p-4 min-h-[420px] max-h-[65vh] overflow-y-auto space-y-3">
         {messages.length === 0 && (
           <div className="text-center py-10">
             <Sparkles className="h-8 w-8 text-brand-400 mx-auto mb-3" />
