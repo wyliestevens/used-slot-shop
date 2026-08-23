@@ -1237,15 +1237,16 @@
     "highlights": [
       "Classic mechanical reel action",
       "Enhanced sound system",
-      "Ticket In – Ticket Out (TITO)",
+      "Ticket In – Ticket Out (TITO) Extra Charge",
       "Updated bill validator ($1–$100)",
-      "1-year home-use warranty"
+      "1-year home-use warranty",
+      "Crating Fee for shipping slot machine"
     ],
     "condition": "Professionally Refurbished",
     "inStock": 1,
     "status": "draft",
     "createdAt": "2026-06-08T23:33:05.312Z",
-    "updatedAt": "2026-08-17T21:00:55.814Z",
+    "updatedAt": "2026-08-23T20:14:15.077Z",
     "cabinet": "IGT S2000 16\" Top"
   },
   {
