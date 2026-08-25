@@ -877,6 +877,7 @@
     "image": "https://raw.githubusercontent.com/wyliestevens/used-slot-shop/7349c3a1cde1a252edddae4ae25de100bf0a80a0/public/uploads/unsorted/item_536_full_image.jpg",
     "description": "IGT S2000 16\" top 3x4x5x Double Times Pay 3 coin. Enhanced sound, TITO, optional Free Play. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
     "highlights": [
+      "Item 1",
       "Classic mechanical reel action",
       "Enhanced sound system",
       "Ticket In – Ticket Out (TITO) Extra Charge",
@@ -889,7 +890,7 @@
     "inStock": 1,
     "status": "published",
     "createdAt": "2026-06-13T20:14:31.781Z",
-    "updatedAt": "2026-08-25T00:20:16.058Z",
+    "updatedAt": "2026-08-25T00:22:24.528Z",
     "model": "Item 1"
   },
   {
