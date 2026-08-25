@@ -870,7 +870,7 @@
   },
   {
     "slug": "igt-s2000-cat-and-dogs",
-    "name": "Item 1 IGT S2000 Cat & Dogs",
+    "name": "IGT S2000 Cat & Dogs",
     "brand": "igt",
     "type": "reel",
     "price": 750,
@@ -889,7 +889,7 @@
     "inStock": 1,
     "status": "published",
     "createdAt": "2026-06-13T20:14:31.781Z",
-    "updatedAt": "2026-08-25T00:24:40.479Z",
+    "updatedAt": "2026-08-25T00:27:57.817Z",
     "model": "Item 1"
   },
   {
