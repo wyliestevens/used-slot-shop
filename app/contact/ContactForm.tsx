@@ -49,7 +49,10 @@ export default function ContactForm() {
         <Field name="phone" label="Phone (optional)" type="tel" />
         <Field name="state" label="State" placeholder="e.g. Arizona" />
       </div>
-      <Field name="machine" label="Machine you're interested in" placeholder="e.g. IGT S2000 Double Diamond" />
+      <div className="grid sm:grid-cols-2 gap-4">
+        <Field name="zip" label="Zip code" placeholder="e.g. 90210" />
+        <Field name="machine" label="Machine you're interested in" placeholder="e.g. IGT S2000 Double Diamond" />
+      </div>
       <div>
         <label className="text-sm font-medium text-ink-200 block mb-1.5">
           How can we help?
