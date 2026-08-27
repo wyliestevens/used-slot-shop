@@ -75,10 +75,11 @@
       "igt",
       "product guide"
     ],
-    "status": "draft",
+    "status": "published",
     "createdAt": "2026-05-25T12:00:00.000Z",
-    "updatedAt": "2026-05-25T12:00:00.000Z",
-    "scheduledAt": "2026-06-15T10:00:00.000Z"
+    "updatedAt": "2026-08-27T20:25:05.518Z",
+    "scheduledAt": "2026-06-15T10:00:00.000Z",
+    "publishedAt": "2026-08-29T12:00:00.000Z"
   },
   {
     "slug": "refurbished-vs-used-slot-machines-whats-the-difference",
