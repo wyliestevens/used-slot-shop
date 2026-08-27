@@ -211,10 +211,11 @@
       "aristocrat",
       "product guide"
     ],
-    "status": "draft",
+    "status": "published",
     "createdAt": "2026-05-25T12:00:00.000Z",
-    "updatedAt": "2026-05-25T12:00:00.000Z",
-    "scheduledAt": "2026-06-24T10:00:00.000Z"
+    "updatedAt": "2026-08-27T20:59:00.097Z",
+    "scheduledAt": "2026-06-24T10:00:00.000Z",
+    "publishedAt": "2026-09-06T12:00:00.000Z"
   },
   {
     "slug": "what-is-free-play-mode-on-a-slot-machine",
