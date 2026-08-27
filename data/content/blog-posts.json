@@ -442,10 +442,11 @@
       "tips",
       "investment"
     ],
-    "status": "draft",
+    "status": "published",
     "createdAt": "2026-05-25T12:00:00.000Z",
-    "updatedAt": "2026-05-25T12:00:00.000Z",
-    "scheduledAt": "2026-08-14T10:00:00.000Z"
+    "updatedAt": "2026-08-27T20:22:45.040Z",
+    "scheduledAt": "2026-08-14T10:00:00.000Z",
+    "publishedAt": "2026-08-27T20:22:45.040Z"
   },
   {
     "slug": "slot-machine-lighting-mods-led-upgrades-ambient-effects",
