@@ -564,10 +564,10 @@
       "jennings",
       "watling"
     ],
-    "status": "draft",
+    "status": "published",
     "createdAt": "2026-08-24T10:00:00.000Z",
-    "updatedAt": "2026-08-24T10:00:00.000Z",
+    "updatedAt": "2026-08-27T20:22:24.795Z",
     "scheduledAt": "2026-08-31T10:00:00.000Z",
-    "publishedAt": null
+    "publishedAt": "2026-08-27T20:22:24.795Z"
   }
 ]
