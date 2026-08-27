@@ -524,11 +524,11 @@
       "igt",
       "game-king"
     ],
-    "status": "draft",
+    "status": "published",
     "createdAt": "2026-08-24T10:00:00.000Z",
-    "updatedAt": "2026-08-24T10:00:00.000Z",
+    "updatedAt": "2026-08-27T20:22:30.612Z",
     "scheduledAt": "2026-08-26T10:00:00.000Z",
-    "publishedAt": null
+    "publishedAt": "2026-08-27T20:22:30.612Z"
   },
   {
     "slug": "pachislo-slot-machine-buyers-guide",
