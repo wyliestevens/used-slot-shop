@@ -109,10 +109,11 @@
       "how-to",
       "setup"
     ],
-    "status": "draft",
+    "status": "published",
     "createdAt": "2026-05-25T12:00:00.000Z",
-    "updatedAt": "2026-05-25T12:00:00.000Z",
-    "scheduledAt": "2026-07-15T10:00:00.000Z"
+    "updatedAt": "2026-08-27T20:25:21.733Z",
+    "scheduledAt": "2026-07-15T10:00:00.000Z",
+    "publishedAt": "2026-08-31T12:00:00.000Z"
   },
   {
     "slug": "slot-machine-maintenance-homeowners-guide",
