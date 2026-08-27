@@ -458,10 +458,11 @@
       "upgrades",
       "DIY"
     ],
-    "status": "draft",
+    "status": "published",
     "createdAt": "2026-05-25T12:00:00.000Z",
-    "updatedAt": "2026-05-25T12:00:00.000Z",
-    "scheduledAt": "2026-08-17T10:00:00.000Z"
+    "updatedAt": "2026-08-27T20:22:42.528Z",
+    "scheduledAt": "2026-08-17T10:00:00.000Z",
+    "publishedAt": "2026-08-27T20:22:42.528Z"
   },
   {
     "slug": "multi-game-conversion-kits-turn-one-slot-machine-into-50-games",
