@@ -509,11 +509,10 @@
       "education",
       "buying guide"
     ],
-    "status": "published",
+    "status": "draft",
     "createdAt": "2026-05-25T12:00:00.000Z",
-    "updatedAt": "2026-08-27T20:22:37.248Z",
-    "scheduledAt": "2026-07-03T10:00:00.000Z",
-    "publishedAt": "2026-08-27T20:22:37.248Z"
+    "updatedAt": "2026-08-28T13:18:26.736Z",
+    "scheduledAt": "2026-07-03T10:00:00.000Z"
   },
   {
     "slug": "slot-machine-dimensions-weight-guide-will-it-fit",
