@@ -140,11 +140,10 @@
       "buying guide",
       "education"
     ],
-    "status": "published",
+    "status": "draft",
     "createdAt": "2026-05-25T12:00:00.000Z",
-    "updatedAt": "2026-08-27T20:27:02.372Z",
-    "scheduledAt": "2026-07-20T10:00:00.000Z",
-    "publishedAt": "2026-09-02T12:00:00.000Z"
+    "updatedAt": "2026-08-28T13:19:37.527Z",
+    "scheduledAt": "2026-07-20T10:00:00.000Z"
   },
   {
     "slug": "best-slot-machines-for-home-game-room-2026",
