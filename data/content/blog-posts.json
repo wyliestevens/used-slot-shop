@@ -581,10 +581,9 @@
       "jennings",
       "watling"
     ],
-    "status": "published",
+    "status": "draft",
     "createdAt": "2026-08-24T10:00:00.000Z",
-    "updatedAt": "2026-08-27T20:22:24.795Z",
-    "scheduledAt": "2026-08-31T10:00:00.000Z",
-    "publishedAt": "2026-08-27T20:22:24.795Z"
+    "updatedAt": "2026-08-28T13:18:38.570Z",
+    "scheduledAt": "2026-08-31T10:00:00.000Z"
   }
 ]
