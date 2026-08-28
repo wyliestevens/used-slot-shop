@@ -561,11 +561,10 @@
       "japanese-slots",
       "skill-stop"
     ],
-    "status": "published",
+    "status": "draft",
     "createdAt": "2026-08-24T10:00:00.000Z",
-    "updatedAt": "2026-08-27T20:22:27.936Z",
-    "scheduledAt": "2026-08-28T10:00:00.000Z",
-    "publishedAt": "2026-08-27T20:22:27.936Z"
+    "updatedAt": "2026-08-28T13:18:35.206Z",
+    "scheduledAt": "2026-08-28T10:00:00.000Z"
   },
   {
     "slug": "vintage-antique-slot-machines-collectors-guide",
