@@ -326,11 +326,10 @@
       "buying guide",
       "seasonal"
     ],
-    "status": "published",
+    "status": "draft",
     "createdAt": "2026-05-25T12:00:00.000Z",
-    "updatedAt": "2026-08-28T13:09:53.019Z",
-    "scheduledAt": "2026-07-29T10:00:00.000Z",
-    "publishedAt": "2026-09-13T12:00:00.000Z"
+    "updatedAt": "2026-08-28T13:18:58.152Z",
+    "scheduledAt": "2026-07-29T10:00:00.000Z"
   },
   {
     "slug": "how-to-move-a-slot-machine-into-your-home",
