@@ -174,11 +174,10 @@
       "buying guide",
       "education"
     ],
-    "status": "published",
+    "status": "draft",
     "createdAt": "2026-05-25T12:00:00.000Z",
-    "updatedAt": "2026-08-27T20:58:48.005Z",
-    "scheduledAt": "2026-06-22T10:00:00.000Z",
-    "publishedAt": "2026-09-04T12:00:00.000Z"
+    "updatedAt": "2026-08-28T13:19:31.393Z",
+    "scheduledAt": "2026-06-22T10:00:00.000Z"
   },
   {
     "slug": "how-much-electricity-does-a-slot-machine-use",
