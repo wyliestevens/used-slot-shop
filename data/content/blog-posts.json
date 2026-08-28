@@ -364,10 +364,11 @@
       "lifestyle",
       "entertainment"
     ],
-    "status": "draft",
+    "status": "published",
     "createdAt": "2026-05-25T12:00:00.000Z",
-    "updatedAt": "2026-05-25T12:00:00.000Z",
-    "scheduledAt": "2026-07-31T10:00:00.000Z"
+    "updatedAt": "2026-08-28T13:09:56.845Z",
+    "scheduledAt": "2026-07-31T10:00:00.000Z",
+    "publishedAt": "2026-09-15T12:00:00.000Z"
   },
   {
     "slug": "slot-machine-glossary-75-terms-every-buyer-should-know",
