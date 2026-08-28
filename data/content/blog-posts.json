@@ -493,11 +493,10 @@
       "upgrades",
       "education"
     ],
-    "status": "published",
+    "status": "draft",
     "createdAt": "2026-05-25T12:00:00.000Z",
-    "updatedAt": "2026-08-27T20:22:39.907Z",
-    "scheduledAt": "2026-07-01T10:00:00.000Z",
-    "publishedAt": "2026-08-27T20:22:39.907Z"
+    "updatedAt": "2026-08-28T13:18:24.276Z",
+    "scheduledAt": "2026-07-01T10:00:00.000Z"
   },
   {
     "slug": "what-happens-when-casinos-retire-slot-machines",
