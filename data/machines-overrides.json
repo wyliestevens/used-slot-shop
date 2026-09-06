@@ -3942,10 +3942,10 @@
   {
     "slug": "aristocrat-mark-v-buffalo",
     "patch": {
-      "description": "Aristocrat Mark V coinless Buffalo — the iconic floor favorite. Bonus features, multi-line, single denomination , 19-inch LCD, or monitor . Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+      "description": "Aristocrat Mark 6 coinless Buffalo — the iconic floor favorite. Bonus features, multi-line, single denomination , 19-inch LCD, or monitor . Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
       "brand": "aristocrat",
       "type": "video",
-      "cabinet": "Aristocrat Mark V",
+      "cabinet": "Aristocrat Mark 6",
       "condition": "Professionally Refurbished",
       "inStock": 1,
       "highlights": [
@@ -3953,9 +3953,10 @@
         "Bonus rounds + enhanced sound",
         "19-inch LCD display or Monitor",
         "1-year home-use warranty"
-      ]
+      ],
+      "name": "Aristocrat Mark 6 Buffalo"
     },
-    "updatedAt": "2026-08-12T21:47:33.082Z"
+    "updatedAt": "2026-09-06T19:55:09.379Z"
   },
   {
     "slug": "aristocrat-mark-v-tiki-torch",
