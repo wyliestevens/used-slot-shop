@@ -3924,10 +3924,10 @@
   {
     "slug": "aristocrat-mark-v-50-dragons",
     "patch": {
-      "description": "Aristocrat Mark V coinless 50 Dragons. Bonus features, multi-line, single denomination, 19-inch LCD, or monitor , updated bill validator. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+      "description": "Aristocrat Mark 6 coinless 50 Dragons. Bonus features, multi-line, single denomination, 19-inch LCD, or monitor , updated bill validator. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
       "brand": "aristocrat",
       "type": "video",
-      "cabinet": "Aristocrat Mark V",
+      "cabinet": "Aristocrat Mark 6",
       "condition": "Professionally Refurbished",
       "inStock": 1,
       "highlights": [
@@ -3935,9 +3935,10 @@
         "Bonus rounds + enhanced sound",
         "19-inch LCD display or monitor",
         "1-year home-use warranty"
-      ]
+      ],
+      "name": "Aristocrat Mark 6 50 Dragons"
     },
-    "updatedAt": "2026-08-12T21:50:45.559Z"
+    "updatedAt": "2026-09-06T19:56:27.220Z"
   },
   {
     "slug": "aristocrat-mark-v-buffalo",
