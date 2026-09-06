@@ -3962,10 +3962,10 @@
   {
     "slug": "aristocrat-mark-v-tiki-torch",
     "patch": {
-      "description": "Aristocrat Mark V coinless Tiki Torch. Bonus features, multi-line, single denomination, 19-inch LCD, updated bill validator. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
+      "description": "Aristocrat Mark 6 coinless Tiki Torch. Bonus features, multi-line, single denomination, 19-inch LCD, updated bill validator. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
       "brand": "aristocrat",
       "type": "video",
-      "cabinet": "Aristocrat Mark V",
+      "cabinet": "Aristocrat Mark 6",
       "condition": "Professionally Refurbished",
       "inStock": 1,
       "highlights": [
@@ -3973,9 +3973,10 @@
         "Bonus rounds + enhanced sound",
         "19-inch LCD display or monitor",
         "1-year home-use warranty"
-      ]
+      ],
+      "name": "Aristocrat Mark 6 Tiki Torch"
     },
-    "updatedAt": "2026-08-12T21:49:20.971Z"
+    "updatedAt": "2026-09-06T19:57:08.428Z"
   },
   {
     "slug": "igt-video-044-cleopatra-2",
