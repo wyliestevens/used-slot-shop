@@ -19,7 +19,8 @@
     "inStock": 1,
     "status": "published",
     "createdAt": "2026-07-16T01:49:30.134Z",
-    "updatedAt": "2026-08-23T20:18:01.002Z"
+    "updatedAt": "2026-09-14T00:23:23.655Z",
+    "model": "Item # 1"
   },
   {
     "slug": "igt-caveman-keno",
