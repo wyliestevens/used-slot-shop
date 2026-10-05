@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { loadPosts, getPostBySlug, type BlogPost } from "@/lib/blog";
+import { loadPostsLocal, type BlogPost } from "@/lib/blog";
 import { buildMetadata, articleJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 import { JsonLd } from "@/components/JsonLd";
 import { ArrowLeft } from "lucide-react";
@@ -9,14 +9,9 @@ import { ArrowLeft } from "lucide-react";
 export const revalidate = 3600;
 
 export async function generateStaticParams() {
-  try {
-    const { posts } = await loadPosts();
-    return posts
-      .filter((p) => p.status === "published")
-      .map((p) => ({ slug: p.slug }));
-  } catch {
-    return [];
-  }
+  return loadPostsLocal()
+    .filter((p) => p.status === "published")
+    .map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({
@@ -25,7 +20,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = await getPostBySlug(slug).catch(() => null);
+  const post = loadPostsLocal().find((p) => p.slug === slug) ?? null;
   if (!post || post.status !== "published") {
     return buildMetadata({
       title: "Post not found",
@@ -165,12 +160,7 @@ export default async function BlogPostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  let post: BlogPost | null = null;
-  try {
-    post = await getPostBySlug(slug);
-  } catch {
-    post = null;
-  }
+  const post: BlogPost | null = loadPostsLocal().find((p) => p.slug === slug) ?? null;
   if (!post || post.status !== "published") notFound();
 
   const published = post.publishedAt || post.createdAt;

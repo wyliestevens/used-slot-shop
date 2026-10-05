@@ -1,8 +1,13 @@
 // Blog post persistence. Data lives at data/content/blog-posts.json in the
 // git repo; read/write goes through the GitHub Contents API so the admin UI
 // can mutate the file and Vercel rebuilds automatically.
+//
+// Public pages use loadPostsLocal() which reads from the filesystem — this
+// avoids runtime dependency on GITHUB_TOKEN for read-only rendering.
 
 import { readFile, writeFile } from "./github";
+import { readFileSync } from "fs";
+import { join } from "path";
 
 export type BlogPost = {
   slug: string;
@@ -21,6 +26,18 @@ export type BlogPost = {
 
 const BLOG_PATH = "data/content/blog-posts.json";
 
+/** Read posts from local filesystem — for public pages (no GitHub token needed). */
+export function loadPostsLocal(): BlogPost[] {
+  try {
+    const raw = readFileSync(join(process.cwd(), BLOG_PATH), "utf8");
+    const parsed = JSON.parse(raw) as BlogPost[];
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+}
+
+/** Read posts via GitHub API — needed by admin routes that also write back. */
 export async function loadPosts(): Promise<{ posts: BlogPost[]; sha: string | null }> {
   const file = await readFile(BLOG_PATH);
   if (!file) return { posts: [], sha: null };

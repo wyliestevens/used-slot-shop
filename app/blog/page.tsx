@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { loadPosts } from "@/lib/blog";
+import { loadPostsLocal } from "@/lib/blog";
 import { buildMetadata } from "@/lib/seo";
 
 export const revalidate = 3600;
@@ -25,13 +25,7 @@ function formatDate(iso: string) {
 }
 
 export default async function BlogIndexPage() {
-  let posts: Awaited<ReturnType<typeof loadPosts>>["posts"] = [];
-  try {
-    const res = await loadPosts();
-    posts = res.posts;
-  } catch {
-    posts = [];
-  }
+  const posts = loadPostsLocal();
   const published = posts
     .filter((p) => p.status === "published")
     .sort((a, b) => {
