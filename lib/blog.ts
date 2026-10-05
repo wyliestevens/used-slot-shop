@@ -6,8 +6,7 @@
 // avoids runtime dependency on GITHUB_TOKEN for read-only rendering.
 
 import { readFile, writeFile } from "./github";
-import { readFileSync } from "fs";
-import { join } from "path";
+import postsData from "@/data/content/blog-posts.json";
 
 export type BlogPost = {
   slug: string;
@@ -26,15 +25,9 @@ export type BlogPost = {
 
 const BLOG_PATH = "data/content/blog-posts.json";
 
-/** Read posts from local filesystem — for public pages (no GitHub token needed). */
+/** Read posts from bundled JSON — for public pages (no GitHub token needed). */
 export function loadPostsLocal(): BlogPost[] {
-  try {
-    const raw = readFileSync(join(process.cwd(), BLOG_PATH), "utf8");
-    const parsed = JSON.parse(raw) as BlogPost[];
-    return Array.isArray(parsed) ? parsed : [];
-  } catch {
-    return [];
-  }
+  return postsData as BlogPost[];
 }
 
 /** Read posts via GitHub API — needed by admin routes that also write back. */
