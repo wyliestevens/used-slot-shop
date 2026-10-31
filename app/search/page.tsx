@@ -7,12 +7,13 @@ import Link from "next/link";
 import { Search } from "lucide-react";
 import SearchRedirector from "@/components/SearchRedirector";
 
-export function generateMetadata({
+export async function generateMetadata({
   searchParams,
 }: {
-  searchParams: { q?: string };
+  searchParams: Promise<{ q?: string }>;
 }) {
-  const q = searchParams?.q?.trim() ?? "";
+  const params = await searchParams;
+  const q = params?.q?.trim() ?? "";
   return buildMetadata({
     title: q
       ? `Search results for "${q}" — Used Slot Shop`
