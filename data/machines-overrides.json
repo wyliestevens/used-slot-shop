@@ -5798,8 +5798,9 @@
         "Ticket In – Ticket Out (TITO)",
         "Updated bill validator ($1–$100)",
         "1-year home-use warranty"
-      ]
+      ],
+      "price": 850
     },
-    "updatedAt": "2026-05-10T23:21:44.218Z"
+    "updatedAt": "2026-11-27T21:23:43.387Z"
   }
 ]
