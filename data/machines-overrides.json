@@ -647,9 +647,10 @@
         "Ticket In – Ticket Out (TITO)",
         "Updated bill validator ($1–$100)",
         "1-year home-use warranty"
-      ]
+      ],
+      "price": 1150
     },
-    "updatedAt": "2026-05-06T14:40:27.952Z"
+    "updatedAt": "2026-11-27T20:09:15.127Z"
   },
   {
     "slug": "igt-game-king-31-games-9-top",
