@@ -1195,9 +1195,10 @@
         "Ticket In – Ticket Out (TITO)",
         "Updated bill validator ($1–$100)",
         "1-year home-use warranty"
-      ]
+      ],
+      "price": 950
     },
-    "updatedAt": "2026-05-06T15:12:04.106Z"
+    "updatedAt": "2026-11-27T19:24:07.832Z"
   },
   {
     "slug": "igt-s2000-sevens-and-stars-rwb",
