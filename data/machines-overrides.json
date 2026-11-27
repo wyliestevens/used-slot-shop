@@ -607,9 +607,10 @@
         "Ticket In – Ticket Out (TITO)",
         "Updated bill validator ($1–$100)",
         "1-year home-use warranty"
-      ]
+      ],
+      "price": 1150
     },
-    "updatedAt": "2026-05-06T14:38:58.989Z"
+    "updatedAt": "2026-11-27T20:08:28.430Z"
   },
   {
     "slug": "igt-s2000-triple-butterfly-sevens",
