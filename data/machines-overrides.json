@@ -1112,9 +1112,10 @@
         "Ticket In – Ticket Out (TITO)",
         "Updated bill validator ($1–$100)",
         "1-year home-use warranty"
-      ]
+      ],
+      "price": 850
     },
-    "updatedAt": "2026-05-06T15:09:11.916Z"
+    "updatedAt": "2026-11-27T18:57:13.032Z"
   },
   {
     "slug": "igt-s2000-five-times-pay-wild",
