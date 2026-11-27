@@ -5226,9 +5226,10 @@
         "Ticket In – Ticket Out (TITO)",
         "Updated bill validator ($1–$100)",
         "1-year home-use warranty"
-      ]
+      ],
+      "price": 950
     },
-    "updatedAt": "2026-05-10T22:16:38.441Z"
+    "updatedAt": "2026-11-27T21:33:48.664Z"
   },
   {
     "slug": "igt-s2000-9top-tabasco-3c",
