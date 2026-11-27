@@ -1504,9 +1504,10 @@
         "Ticket In – Ticket Out (TITO) System",
         "Updated bill validator ($1–$100)",
         "1-year home-use warranty"
-      ]
+      ],
+      "price": 850
     },
-    "updatedAt": "2026-05-06T15:32:37.168Z"
+    "updatedAt": "2026-11-27T19:05:46.920Z"
   },
   {
     "slug": "igt-vs9-tailgate-party",
