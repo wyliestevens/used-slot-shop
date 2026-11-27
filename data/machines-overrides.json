@@ -4697,9 +4697,10 @@
         "Ticket In – Ticket Out (TITO)",
         "Updated bill validator ($1–$100)",
         "1-year home-use warranty"
-      ]
+      ],
+      "price": 850
     },
-    "updatedAt": "2026-05-10T19:57:47.008Z"
+    "updatedAt": "2026-11-27T20:46:00.226Z"
   },
   {
     "slug": "igt-s2000-9top-triple-zesty-hot-peppers-2c",
