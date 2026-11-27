@@ -4618,9 +4618,10 @@
         "Ticket In – Ticket Out (TITO)",
         "Updated bill validator ($1–$100)",
         "1-year home-use warranty"
-      ]
+      ],
+      "price": 950
     },
-    "updatedAt": "2026-05-08T01:30:01.896Z"
+    "updatedAt": "2026-11-27T20:35:02.329Z"
   },
   {
     "slug": "igt-s2000-9top-wild-cherry-3c",
