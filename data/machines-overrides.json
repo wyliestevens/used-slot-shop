@@ -1052,9 +1052,10 @@
         "1-year home-use warranty"
       ],
       "description": "IGT S2000 16\"-top 3 coin play. Enhanced sound, TITO, optional Free Play. Professionally refurbished by certified technicians at Used Slot Shop's Kingman, Arizona warehouse. Ships in a fully insured crate nationwide.",
-      "name": "IGT S2000 Triple Strike"
+      "name": "IGT S2000 Triple Strike",
+      "price": 850
     },
-    "updatedAt": "2026-05-06T15:06:28.332Z"
+    "updatedAt": "2026-11-27T18:52:55.953Z"
   },
   {
     "slug": "igt-s2000-double-diamond-haywire",
