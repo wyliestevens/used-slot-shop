@@ -2417,9 +2417,10 @@
         "Updated bill validator ($1–$100)",
         "1-year home-use warranty"
       ],
-      "name": "IGT S2000 Triple Double Stars "
+      "name": "IGT S2000 Triple Double Stars ",
+      "price": 850
     },
-    "updatedAt": "2026-05-06T17:17:32.399Z"
+    "updatedAt": "2026-11-27T19:48:59.462Z"
   },
   {
     "slug": "igt-s2000-triple-double-stars-2coin",
