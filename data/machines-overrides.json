@@ -567,9 +567,10 @@
         "Ticket In – Ticket Out (TITO)",
         "Updated bill validator ($1–$100)",
         "1-year home-use warranty"
-      ]
+      ],
+      "price": 1150
     },
-    "updatedAt": "2026-05-06T01:15:24.759Z"
+    "updatedAt": "2026-11-27T19:01:13.652Z"
   },
   {
     "slug": "igt-s2000-triple-red-hot-sevens-5reel",
