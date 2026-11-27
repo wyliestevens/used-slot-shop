@@ -2140,9 +2140,10 @@
         "Ticket In – Ticket Out (TITO)",
         "Updated bill validator ($1–$100)",
         "1-year home-use warranty"
-      ]
+      ],
+      "price": 950
     },
-    "updatedAt": "2026-05-06T15:59:48.741Z"
+    "updatedAt": "2026-11-27T19:11:33.256Z"
   },
   {
     "slug": "igt-s2000-rwb-wild-star",
