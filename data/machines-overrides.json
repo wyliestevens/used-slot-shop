@@ -5394,9 +5394,10 @@
         "Ticket In – Ticket Out (TITO)",
         "Updated bill validator ($1–$100)",
         "1-year home-use warranty"
-      ]
+      ],
+      "price": 850
     },
-    "updatedAt": "2026-05-10T22:34:14.866Z"
+    "updatedAt": "2026-11-27T21:06:49.109Z"
   },
   {
     "slug": "igt-s2000-9top-phantom-opera-2c",
