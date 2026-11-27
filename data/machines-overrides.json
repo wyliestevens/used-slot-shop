@@ -5555,9 +5555,10 @@
         "Ticket In – Ticket Out (TITO)",
         "Updated bill validator ($1–$100)",
         "1-year home-use warranty"
-      ]
+      ],
+      "price": 850
     },
-    "updatedAt": "2026-05-10T22:53:58.238Z"
+    "updatedAt": "2026-11-27T21:12:11.375Z"
   },
   {
     "slug": "igt-s2000-9top-five-times-pay-rwb-2c",
