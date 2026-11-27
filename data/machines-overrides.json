@@ -448,9 +448,10 @@
         "Ticket In – Ticket Out (TITO)",
         "Updated bill validator ($1–$100)",
         "1-year home-use warranty"
-      ]
+      ],
+      "price": 1150
     },
-    "updatedAt": "2026-05-06T14:58:41.148Z"
+    "updatedAt": "2026-11-27T18:43:00.610Z"
   },
   {
     "slug": "igt-s2000-double-diamond-run",
