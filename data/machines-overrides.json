@@ -5246,9 +5246,10 @@
         "Updated bill validator ($1–$100)",
         "1-year home-use warranty",
         "Crating Fee for shipping slot machine"
-      ]
+      ],
+      "price": 950
     },
-    "updatedAt": "2026-08-27T00:33:17.170Z"
+    "updatedAt": "2026-11-27T21:33:12.058Z"
   },
   {
     "slug": "igt-s2000-9top-tabasco-2c",
